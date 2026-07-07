@@ -1,307 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Fish Buddy v1.9.14 - Fishing Companion for Canada & USA</title>
-    <meta name="description" content="Best Fish Buddy - The ultimate fishing companion app for Canadian and US waters. Track catches, identify 305 fish species, interactive map with nautical charts, depth overlays, weather radar, and more!">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0A0E1A; background: #F0F4FF; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* ─── Header (matches app splash screen) ─── */
-        header {
-            background: linear-gradient(to bottom, #0A1628 0%, #0D2137 30%, #0A1A2E 70%, #06101E 100%);
-            color: white; padding: 40px 0 50px; text-align: center;
-        }
-        header .logo { margin-bottom: 8px; }
-        header h1 {
-            font-size: 2.8em; font-weight: 800; letter-spacing: 1.5px;
-            color: #76FF03; margin-bottom: 6px;
-        }
-        header .tagline {
-            font-size: 1em; font-weight: 400; color: white;
-            letter-spacing: 3px; margin-bottom: 4px;
-        }
-        header .version-label {
-            font-size: 0.75em; font-weight: 700; color: #76FF03;
-            letter-spacing: 4px; margin-bottom: 8px;
-        }
-        header .flags { font-size: 2em; margin: 8px 0 16px; letter-spacing: 8px; }
-        .download-buttons { display: flex; justify-content: center; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 15px 36px; border-radius: 14px; text-decoration: none;
-            font-weight: 700; font-size: 1em; transition: all 0.2s;
-            letter-spacing: 1.5px;
-        }
-        .btn-free { background: #00BCD4; color: #003544; }
-        .btn-pro { background: #76FF03; color: #003544; box-shadow: 0 4px 20px rgba(118,255,3,0.3); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
-        .btn-small { padding: 10px 24px; font-size: 0.85em; letter-spacing: 1px; }
-
-        /* ─── Section ─── */
-        section { padding: 60px 0; }
-        section h2 { font-size: 1.8em; font-weight: 700; text-align: center; margin-bottom: 16px; }
-        section .subtitle { text-align: center; color: #888; font-size: 1em; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-        /* ─── Features ─── */
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .feature { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s; }
-        .feature:hover { transform: translateY(-2px); }
-        .feature .icon { font-size: 2em; margin-bottom: 10px; }
-        .feature h3 { font-size: 1.1em; margin-bottom: 6px; color: #0A1628; }
-        .feature p { font-size: 0.9em; color: #666; line-height: 1.6; }
-        .feature .pro-badge {
-            display: inline-block; background: linear-gradient(135deg, #FFD700, #FFA000);
-            color: #3E2723; font-size: 0.65em; font-weight: 700; padding: 2px 10px;
-            border-radius: 20px; margin-left: 8px; vertical-align: middle;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-
-        /* ─── Comparison Table ─── */
-        .comparison { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .comparison table { width: 100%; border-collapse: collapse; }
-        .comparison th { padding: 16px 20px; text-align: center; font-size: 1.1em; font-weight: 700; }
-        .comparison th:first-child { text-align: left; }
-        .comparison th.free-col { background: #E0F7FA; color: #006064; }
-        .comparison th.pro-col { background: linear-gradient(135deg, #FFF8E1, #FFF3CD); color: #3E2723; }
-        .comparison td { padding: 14px 20px; border-top: 1px solid #E0E0E0; font-size: 0.9em; }
-        .comparison td:first-child { font-weight: 600; }
-        .comparison td:nth-child(2) { text-align: center; }
-        .comparison td:nth-child(3) { text-align: center; }
-        .comparison .check { color: #4CAF50; font-size: 1.2em; }
-        .comparison .cross { color: #E53935; font-size: 1.2em; }
-        .comparison .count { color: #888; font-size: 0.85em; }
-
-        /* ─── QR ─── */
-        .qr-section { text-align: center; }
-        .qr-box { display: inline-block; background: white; padding: 20px; border-radius: 20px; box-shadow: 0 2px 15px rgba(0,0,0,0.08); }
-        .qr-box img { width: 200px; height: 200px; display: block; }
-
-        /* ─── Contact ─── */
-        .contact-info { text-align: center; background: white; border-radius: 16px; padding: 40px; max-width: 500px; margin: 0 auto; }
-        .contact-info p { margin: 8px 0; font-size: 1em; color: #555; }
-        .contact-info a { color: #00BCD4; text-decoration: none; font-weight: 600; }
-
-        /* ─── Footer ─── */
-        footer { background: #0A0E1A; color: #888; padding: 36px 0; text-align: center; font-size: 1.02em; line-height: 1.8; }
-        footer a { color: #00BCD4; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8em; }
-            .download-buttons { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 300px; justify-content: center; }
-            .comparison th, .comparison td { padding: 10px 12px; font-size: 0.8em; }
-            .features { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Fish Buddy — Ultimate Fishing Companion for Canada & USA</title>
+  <meta name="description" content="Best Fish Buddy is the ultimate fishing companion app for Canadian and US waters. Track catches, identify 305 fish species, use interactive maps with nautical charts, depth overlays, weather radar, and more.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="https://www.bestfishbuddy.com/">
+  <link rel="icon" type="image/png" href="/assets/app-logo.png">
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="logo"><img src="assets/app-logo.png" alt="Best Fish Buddy" style="height:160px;"></div>
-        <h1>Best Fish Buddy</h1>
-        <div class="tagline">FOR BRAGGING RIGHTS!</div>
-        <div class="version-label">PRO-VERSION</div>
-        <div class="flags">🇨🇦  🇺🇸</div>
-        <div class="download-buttons">
-            <a href="https://tinyurl.com/bfree1914" class="btn btn-free">📱 Download Free</a>
-            <a href="https://tinyurl.com/bpro1914" class="btn btn-pro">⭐ Get Pro</a>
-        </div>
-    </div>
-</header>
+<!-- ─── Navigation ─── -->
+<nav>
+  <div class="container">
+    <a href="/" class="logo-link">
+      <img src="/assets/app-logo.png" alt="Best Fish Buddy">
+      Best Fish Buddy
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/features/">Features</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/faq/">FAQ</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-<!-- ─── Features ─── -->
-<section id="features">
-    <div class="container">
-        <h2>Everything You Need for a Great Day on the Water</h2>
-        <p class="subtitle">From logging your catch to finding the best fishing times — Best Fish Buddy has you covered.</p>
-        <div class="features">
-            <div class="feature">
-                <div class="icon">🎣</div>
-                <h3>Log Your Catches</h3>
-                <p>Record every catch with species, weight, length, location (GPS auto-fills), weather, and photos. Voice logging lets you go hands-free — just say "record"!</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🎣</div>
-                <h3>Trip Management</h3>
-                <p>Group catches into fishing trips with custom names. View stats per trip — total catches, species breakdown, biggest fish, and date range. New catches are auto-tagged with the active trip. Rename or remove trips anytime.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🌊</div>
-                <h3>Water Conditions</h3>
-                <p>Log water clarity (clear/stained/muddy) and flow rate (slow/moderate/fast) with every catch. Track what conditions produce the best results over time.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🔔</div>
-                <h3>Smart Reminders</h3>
-                <p>Daily notifications remind you to log your catches. Optional solunar alerts notify you when the best fishing times begin. All customizable in the About screen.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🐟</div>
-                <h3>Fish ID Field Guide</h3>
-                <p>Identify any fish with 305 freshwater species in the database. Each species has photos, descriptions, size ranges, habitat info, diet, and fishing tips. Filter by water type or browse by region.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🗺️</div>
-                <h3>Interactive Map with Tools Panel</h3>
-                <p>See all your catches plotted on a map with species pins. A collapsible side panel gives you quick access to nautical charts, depth contours, weather radar, GPS locate, and saved spots. Long-press anywhere to save a spot or log a depth reading.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🚢</div>
-                <h3>Nautical Charts & Depth Overlays</h3>
-                <p>OpenSeaMap overlays show water depths, shipwrecks, buoys, and navigation aids. Toggle depth contour lines to find drop-offs, deep holes, and underwater structure where fish hold.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">☁️</div>
-                <h3>Weather Radar Overlay</h3>
-                <p>See live weather on the map — toggle between cloud cover, precipitation radar, and temperature overlays. Plan around incoming storms or find the clearest skies for your trip.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">📥</div>
-                <h3>Offline Region Selector</h3>
-                <p>Tap two corners on the map to select exactly which area to cache. Name your region and it downloads base maps plus active overlays (nautical, depth, weather) for offline use. Manage regions individually.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">⚖️</div>
-                <h3>Crowdsourced Depth Logging</h3>
-                <p>Long-press on the map to log a depth reading from your fish finder (or an estimate). Saved with exact GPS coordinates. Toggle depth markers on the map to see all logged depths. Every submission helps build a free community depth database.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🌤️</div>
-                <h3>Weather & Best Times</h3>
-                <p>Real-time weather conditions and 5-day forecast. Solunar-based predictions show you the best fishing periods, moon phases, wind, and marine conditions for your location. Get push notification alerts for severe weather.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🎤</div>
-                <h3>Voice Controls</h3>
-                <p>Hands-free operation — say "fish buddy jason caught a pike" to tally fish per angler. Voice fills in catch forms: "photo", "weighs 5 lb", "length 20 inches", "save".</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🧰</div>
-                <h3>Tackle Box</h3>
-                <p>Track your lures, hooks, lines, and baits. Browse 30+ common lure types with photos and target species. Get weather-aware tackle recommendations for your target fish.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">📊</div>
-                <h3>Stats & Achievements</h3>
-                <p>Detailed charts of your fishing activity, personal records, species breakdown. Earn badges: First Catch, Master Angler, Species Collector, Big Catch, and more.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">📅</div>
-                <h3>Calendar & Gallery</h3>
-                <p>View your catch history on a calendar heatmap — days with catches are highlighted. Browse all catch photos in a gallery view.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">👥</div>
-                <h3>Community Stats <span class="pro-badge">Pro</span></h3>
-                <p>Search any lake in Canada and the US to see what fellow anglers are catching. See top lures, best weather conditions, and peak months — powered by Google Places. Plan your trip before you go!</p>
-            </div>
-            <div class="feature">
-                <div class="icon">☁️</div>
-                <h3>Cloud Sync <span class="pro-badge">Pro</span></h3>
-                <p>Back up your catches to the cloud and sync across devices. Fish Together mode lets you share catches and chat with friends in real time during a session.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🔔</div>
-                <h3>Push Notifications</h3>
-                <p>Get notified for weather alerts (severe storms, high winds), daily solunar best fishing times, and Fish Together session activity. Permission is requested contextually — not on first launch.</p>
-            </div>
-            <div class="feature">
-                <div class="icon">🌍</div>
-                <h3>Multi-Language</h3>
-                <p>Available in English, French, Spanish, German, and Ukrainian. Full translation of all features, help text, and walkthrough.</p>
-            </div>
-        </div>
+<!-- ─── Hero ─── -->
+<section class="hero">
+  <div class="container">
+    <img src="/assets/app-logo.png" alt="Best Fish Buddy" class="hero-logo">
+    <div class="badge">VERSION 1.10.0</div>
+    <h1>Best Fish Buddy</h1>
+    <p class="tagline">FOR BRAGGING RIGHTS!</p>
+    <div class="flags">🇨🇦  🇺🇸</div>
+    <p class="subtitle">The all-in-one fishing companion. Log catches, explore interactive maps with nautical charts &amp; weather radar, identify 305 species, and unlock insights that make every trip better.</p>
+    <div class="hero-buttons">
+      <a href="/free/" class="btn btn-free">📱 Download Free</a>
+      <a href="/pro/" class="btn btn-pro">⭐ Get Pro</a>
     </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">305</div>
+        <div class="stat-label">Fish Species</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">18+</div>
+        <div class="stat-label">Features</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">🇨🇦🇺🇸</div>
+        <div class="stat-label">Canada &amp; USA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Features Overview ─── -->
+<section id="features">
+  <div class="container">
+    <h2 class="section-title">Everything You Need for a Great Day on the Water</h2>
+    <p class="section-subtitle">From logging your first catch to exploring community lake stats — Best Fish Buddy grows with you.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🎣</div>
+        <h3>Log Your Catches</h3>
+        <p>Record every catch with species, weight, length, GPS location, weather, and photos. Voice logging lets you go hands-free — just say "record"!</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎣</div>
+        <h3>Trip Management</h3>
+        <p>Group catches into fishing trips with stats per trip — total catches, species breakdown, biggest fish, and date range. Auto-tag new catches to the active trip.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌊</div>
+        <h3>Water Conditions</h3>
+        <p>Log water clarity and flow rate with every catch. Track what conditions produce the best results over time to refine your strategy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🐟</div>
+        <h3>Fish ID Field Guide</h3>
+        <p>Identify 305 freshwater species with photos, descriptions, size ranges, habitat info, diet, and fishing tips. Filter by water type or browse by region.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🗺️</div>
+        <h3>Interactive Map Tools</h3>
+        <p>See catches plotted on a map with species pins. Access nautical charts, depth contours, weather radar, GPS locate, and saved spots from a collapsible side panel.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🚢</div>
+        <h3>Nautical Charts &amp; Depth</h3>
+        <p>OpenSeaMap overlays show water depths, shipwrecks, buoys, and navigation aids. Toggle depth contour lines to find drop-offs and underwater structure.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">☁️</div>
+        <h3>Weather Radar Overlay</h3>
+        <p>See live weather on the map — cloud cover, precipitation radar, and temperature overlays. Plan around incoming storms or find the clearest skies.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📥</div>
+        <h3>Offline Region Selector</h3>
+        <p>Select any area on the map to cache for offline use. Base maps plus active overlays (nautical, depth, weather) are downloaded for your selected region.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚖️</div>
+        <h3>Crowdsourced Depth Logging</h3>
+        <p>Long-press on the map to log a depth reading from your fish finder. Saved with exact GPS coordinates — every submission helps build a free community depth database.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌤️</div>
+        <h3>Weather &amp; Best Times</h3>
+        <p>Real-time weather, 5-day forecast, and solunar-based predictions showing best fishing periods, moon phases, wind, and marine conditions. Severe weather alerts via push notification.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎤</div>
+        <h3>Voice Controls</h3>
+        <p>Hands-free operation — "fish buddy jason caught a pike" tallies fish per angler. Voice fills in catch forms: "photo", "weighs 5 lb", "length 20 inches", "save".</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🧰</div>
+        <h3>Tackle Box</h3>
+        <p>Track lures, hooks, lines, and baits. Browse 30+ common lure types with photos and target species. Get weather-aware tackle recommendations for your target fish.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h3>Stats &amp; Achievements</h3>
+        <p>Detailed charts of your fishing activity, personal records, and species breakdown. Earn badges: First Catch, Master Angler, Species Collector, Big Catch, and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📅</div>
+        <h3>Calendar &amp; Gallery</h3>
+        <p>View your catch history on a calendar heatmap. Browse all catch photos in a gallery view to relive your best days on the water.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">👥</div>
+        <h3>Community Stats <span class="pro-tag">Pro</span></h3>
+        <p>Search any lake in Canada and the US to see what fellow anglers are catching. See top lures, best weather conditions, and peak months — powered by Google Places.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">☁️</div>
+        <h3>Cloud Sync <span class="pro-tag">Pro</span></h3>
+        <p>Back up your catches to the cloud and sync across devices. Fish Together mode lets you share catches and chat with friends in real time during a session.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ─── Free vs Pro ─── -->
-<section id="compare" style="background: white;">
-    <div class="container">
-        <h2>Free vs Pro</h2>
-        <p class="subtitle">Start with the Free version — upgrade to Pro when you're ready for the full experience.</p>
-        <div class="comparison">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th class="free-col">🆓 Free</th>
-                        <th class="pro-col">⭐ Pro</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Log catches with photos, GPS & weather</td><td><span class="check">✓</span> <span class="count">(10 catch limit)</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Fish ID — 305 species field guide</td><td><span class="check">✓</span> <span class="count">(first 10)</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Interactive map with catch pins</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Map tools: nautical, depth, weather radar</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Offline region caching</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Weather & 5-day forecast</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Solunar best fishing times</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Tackle box & catalog</td><td><span class="check">✓</span> <span class="count">(10 items)</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Voice controls</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Calendar & gallery</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Multi-language (EN/FR/ES/DE/UK)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Community lake stats</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Cloud sync & Fish Together sessions</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Stats, charts & achievement badges</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Delete catches</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Unlimited catches & tackle</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-                    <tr style="background: #FAFAFA; font-weight: 700;">
-                        <td></td>
-                        <td style="text-align:center;"><a href="https://tinyurl.com/bfree1914" class="btn btn-free btn-small">📱 Download Free</a></td>
-                        <td style="text-align:center;"><a href="https://tinyurl.com/bpro1914" class="btn btn-pro btn-small">⭐ Get Pro</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<section class="alt" id="compare">
+  <div class="container">
+    <h2 class="section-title">Free vs Pro</h2>
+    <p class="section-subtitle">Start with the Free version — upgrade to Pro when you're ready for the full experience.</p>
+    <div class="comparison-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="free-col">🆓 Free</th>
+            <th class="pro-col">⭐ Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Log catches with photos, GPS &amp; weather</td><td><span class="check">✓</span> <span class="count">10 catch limit</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Fish ID — 305 species field guide</td><td><span class="check">✓</span> <span class="count">first 10 species</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Interactive map with catch pins</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Map tools: nautical, depth, weather radar</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Offline region caching</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Weather &amp; 5-day forecast</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Solunar best fishing times</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Tackle box &amp; catalog</td><td><span class="check">✓</span> <span class="count">10 items</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Voice controls</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Calendar &amp; gallery</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Multi-language (EN/FR/ES/DE/UK)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Community lake stats</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Cloud sync &amp; Fish Together</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Stats, charts &amp; achievements</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Delete catches</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Unlimited catches &amp; tackle</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
+          <tr class="btn-row">
+            <td></td>
+            <td><a href="/free/" class="btn btn-free btn-sm">📱 Download Free</a></td>
+            <td><a href="/pro/" class="btn btn-pro btn-sm">⭐ Get Pro</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </section>
 
-<!-- ─── QR ─── -->
-<section id="download">
-    <div class="container qr-section">
-        <h2>Scan to Download Free</h2>
-        <p class="subtitle">Point your phone camera at the QR code to get the Free version instantly.</p>
-        <div class="qr-box">
-            <img src="assets/qr-free.png" alt="QR Code - Download Best Fish Buddy Free">
-        </div>
-        <p style="margin-top:12px;color:#888;font-size:0.9em;">Or visit <a href="https://tinyurl.com/bfree1914" style="color:#00BCD4;">tinyurl.com/bfree1914</a> on your phone</p>
+<!-- ─── CTA ─── -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="section-title" style="color:#76FF03;">Ready to Hit the Water?</h2>
+    <p>Whether you're a weekend angler or a seasoned pro, Best Fish Buddy has the tools you need to log, explore, and improve every trip.</p>
+    <div class="hero-buttons">
+      <a href="/free/" class="btn btn-free">📱 Download Free</a>
+      <a href="/pro/" class="btn btn-pro">⭐ Get Pro</a>
     </div>
+  </div>
 </section>
 
-<!-- ─── Contact ─── -->
-<section id="contact" style="background: white;">
-    <div class="container" style="text-align:center;">
-        <h2>Get Started Today</h2>
-        <p class="subtitle">Download the Free version or upgrade to Pro. Questions? We're here to help.</p>
-        <div class="contact-info">
-            <p>📧 <a href="mailto:BestfishBuddy@gmail.com">BestfishBuddy@gmail.com</a></p>
-            <p style="font-size:0.85em;color:#999;margin-top:12px;">Interested in Pro? Email us to purchase a license code.<br>Pro is a one-time purchase — unlock everything forever.</p>
-        </div>
-    </div>
-</section>
-
+<!-- ─── Footer ─── -->
 <footer>
-    <div class="container">
-        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-            <div style="display:flex;align-items:center;gap:12px;">
-                <img src="assets/contact-logo.png" alt="Maison Louis Design" style="height:160px;opacity:0.9;">
-                <p style="font-size:1.08em;">© Maison Louis Design</p>
-            </div>
-            <p>
-                <a href="mailto:BestfishBuddy@gmail.com">Contact</a> ·
-                <a href="https://tinyurl.com/bfree1914">Download Free</a> ·
-                <a href="https://tinyurl.com/bpro1914">Get Pro</a>
-            </p>
-        </div>
-        <p style="font-size:0.96em;margin-top:16px;text-align:center;">Built with ❤️ for anglers across Canada and the United States</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/contact-logo.png" alt="Maison Louis Design">
+        <p>Best Fish Buddy is built with ❤️ for anglers across Canada and the United States. Created by Maison Louis Design.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Downloads</h4>
+        <ul>
+          <li><a href="/free/">Free Version</a></li>
+          <li><a href="/pro/">Pro Version</a></li>
+          <li><a href="/dev/">Developer Build</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Maison Louis Design. All rights reserved.</p>
+      <p><a href="mailto:BestfishBuddy@gmail.com">BestfishBuddy@gmail.com</a></p>
+    </div>
+  </div>
 </footer>
 
+<script>
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
 </body>
 </html>
