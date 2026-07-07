@@ -175,33 +175,36 @@ nav .nav-links a.active {
   pointer-events: none;
 }
 .hero .container { position: relative; z-index: 1; }
-.hero-logo { height: 140px; width: auto; margin-bottom: 16px; }
-.hero h1 {
+.hero-logo { height: 140px; width: auto; }
+.hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.hero-title-block { text-align: left; }
+.hero-title-block .flags {
+  font-size: 1.6rem;
+  letter-spacing: 8px;
+  margin-bottom: 2px;
+}
+.hero-title-block h1 {
   font-size: 3.2rem;
   font-weight: 800;
   letter-spacing: 1px;
   color: #76FF03;
-  margin-bottom: 6px;
+  margin-bottom: 0;
+  line-height: 1.1;
 }
-.hero .tagline {
+.hero-title-block .tagline {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 4px;
   color: rgba(255,255,255,0.8);
-  margin-bottom: 4px;
 }
-.hero .badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: #76FF03;
-  background: rgba(118,255,3,0.1);
-  padding: 4px 16px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-}
-.hero .flags { font-size: 2rem; letter-spacing: 8px; margin: 8px 0 20px; }
+/* (moved to .hero-title-block rules above) */
 .hero .subtitle {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.7);
@@ -465,8 +468,10 @@ footer .footer-bottom p { font-size: 0.82rem; color: #6b7280; }
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   .hero { padding: 48px 0 64px; }
-  .hero h1 { font-size: 2.2rem; }
-  .hero-logo { height: 100px; }
+  .hero-title-block h1 { font-size: 2.2rem; }
+  .hero-logo { height: 80px; }
+  .hero-main { gap: 20px; }
+  .hero-title-block { text-align: center; }
   .hero-stats { gap: 24px; margin-top: 40px; }
   section { padding: 48px 0; }
   .features-grid { grid-template-columns: 1fr; }
@@ -493,7 +498,10 @@ footer .footer-bottom p { font-size: 0.82rem; color: #6b7280; }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.7rem; }
+  .hero-title-block h1 { font-size: 1.7rem; }
+  .hero-main { flex-direction: column; gap: 12px; }
+  .hero-title-block { text-align: center; }
+  .hero-title-block .flags { font-size: 1.4rem; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .hero-buttons .btn { width: 100%; max-width: 280px; }
   footer .footer-grid { grid-template-columns: 1fr; }
