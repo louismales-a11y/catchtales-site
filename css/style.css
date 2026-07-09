@@ -453,13 +453,13 @@ body.dream-theme {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.35);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 #fish-container {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 1;
+  z-index: -1;
   pointer-events: none;
   overflow: hidden;
 }
@@ -471,7 +471,7 @@ body.dream-theme {
 }
 .dream-fish img {
   display: block;
-  filter: brightness(0.7) contrast(1.1);
+  filter: brightness(1.8) contrast(0.9);
   image-rendering: auto;
 }
 body.dream-theme p {

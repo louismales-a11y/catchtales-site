@@ -31,7 +31,7 @@
         var h = window.innerHeight;
         state.size = 25 + Math.random() * 70;
         state.y = 0.03 * h + Math.random() * 0.9 * h;
-        state.opacity = 0.08 + Math.random() * 0.25;
+        state.opacity = 0.25 + Math.random() * 0.4;
         state.speed = 0.15 + Math.random() * 0.8;
         state.bobFreq = 1.5 + Math.random() * 4;
         state.bobAmp = 4 + Math.random() * 12;
@@ -55,7 +55,7 @@
         var h = window.innerHeight;
         f.size = 25 + Math.random() * 70;
         f.y = 0.03 * h + Math.random() * 0.9 * h;
-        f.opacity = 0.08 + Math.random() * 0.25;
+        f.opacity = 0.25 + Math.random() * 0.4;
         f.speed = 0.15 + Math.random() * 0.8;
         f.bobFreq = 1.5 + Math.random() * 4;
         f.bobAmp = 4 + Math.random() * 12;
