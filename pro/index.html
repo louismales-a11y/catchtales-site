@@ -28,46 +28,35 @@
       backdrop-filter: blur(8px);
     }
     .icon { font-size: 3rem; margin-bottom: 16px; }
-    h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
-    .version { color: #76FF03; font-size: 0.9rem; margin-bottom: 16px; }
+    h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+    .version { color: #76FF03; font-size: 0.9rem; margin-bottom: 20px; }
     p { font-size: 1rem; line-height: 1.6; opacity: 0.8; margin-bottom: 8px; }
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 14px 36px;
+      margin-top: 16px;
+      padding: 16px 44px;
       background: linear-gradient(135deg, #FFD700, #FFA000);
       color: #0A1628;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       border-radius: 12px;
       text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
     }
     .btn:hover { filter: brightness(1.1); }
-    .fallback { margin-top: 16px; font-size: 0.85rem; opacity: 0.5; }
-    .fallback a { color: #00BCD4; }
+    .btn:active { transform: scale(0.97); }
+    .back { margin-top: 20px; font-size: 0.85rem; opacity: 0.5; }
+    .back a { color: #00BCD4; }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="icon">⭐</div>
-    <h1>Downloading CatchTales Pro…</h1>
+    <h1>CatchTales Pro</h1>
     <div class="version">v2.14.27</div>
-    <p>Your download should start automatically.</p>
-    <p>If it doesn't, click the button below.</p>
-    <a href="/downloads/CatchTales-v2.14.27-pro.apk" class="btn" download="CatchTales-v2.14.27-pro.apk">📱 Download Now</a>
-    <p class="fallback"><a href="/">← Back to CatchTales.com</a></p>
+    <p>Tap the button below to download.</p>
+    <a href="/downloads/CatchTales-v2.14.27-pro.apk" class="btn" download="CatchTales-v2.14.27-pro.apk">📱 Download Pro</a>
+    <p class="back"><a href="/">← Back to CatchTales.com</a></p>
   </div>
-  <script>
-    // Trigger download from the same origin — no navigation to GitHub
-    (function() {
-      var a = document.createElement('a');
-      a.href = '/downloads/CatchTales-v2.14.27-pro.apk';
-      a.download = 'CatchTales-v2.14.27-pro.apk';
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    })();
-  </script>
 </body>
 </html>
