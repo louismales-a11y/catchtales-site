@@ -691,3 +691,51 @@ footer .footer-bottom p { font-size: 0.82rem; color: #6b7280; }
   .comparison-wrap .btn-row td { padding: 8px; }
   .comparison-wrap .btn-sm { padding: 5px 8px; font-size: 0.65rem; letter-spacing: 0; }
 }
+
+/* ─── Feature Screenshots / Phone Mockups ─── */
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+.mockup-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mockup-item {
+  text-align: center;
+}
+.mockup-item img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mockup-item img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+.mockup-label {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .mockup-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .mockup-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .mockup-item img {
+    max-width: 240px;
+  }
+}
