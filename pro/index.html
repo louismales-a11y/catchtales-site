@@ -54,12 +54,20 @@
     <div class="version">v2.14.27</div>
     <p>Your download should start automatically.</p>
     <p>If it doesn't, click the button below.</p>
-    <a href="https://github.com/louismales-a11y/CatchTales/releases/download/v2.14.27/CatchTales-v2.14.27-pro.apk" class="btn" download>📱 Download Now</a>
+    <a href="/downloads/CatchTales-v2.14.27-pro.apk" class="btn" download="CatchTales-v2.14.27-pro.apk">📱 Download Now</a>
     <p class="fallback"><a href="/">← Back to CatchTales.com</a></p>
   </div>
   <script>
-    // Trigger auto-download from GitHub Releases (direct file, no GitHub page shown)
-    window.location.href = 'https://github.com/louismales-a11y/CatchTales/releases/download/v2.14.27/CatchTales-v2.14.27-pro.apk';
+    // Trigger download from the same origin — no navigation to GitHub
+    (function() {
+      var a = document.createElement('a');
+      a.href = '/downloads/CatchTales-v2.14.27-pro.apk';
+      a.download = 'CatchTales-v2.14.27-pro.apk';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    })();
   </script>
 </body>
 </html>
