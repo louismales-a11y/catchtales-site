@@ -3,287 +3,349 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CatchTales — The All-Canada & USA Fishing Companion App</title>
-  <meta name="description" content="CatchTales is a Canada/USA-wide fishing companion app. Track catches, identify 305 freshwater species across Canada and the United States, use interactive maps with nautical charts, depth overlays, weather radar, and more — everywhere you fish in North America.">
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-  <!-- Open Graph / Social sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://catchtales.com/">
-  <meta property="og:title" content="CatchTales — The All-Canada &amp; USA Fishing Companion App">
-  <meta property="og:description" content="CatchTales is a Canada/USA-wide fishing companion app. Track catches, identify 305 freshwater species, explore interactive maps with nautical charts, weather radar, and more.">
-  <meta property="og:image" content="https://catchtales.com/assets/app-logo.png">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="CatchTales">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="CatchTales — The All-Canada &amp; USA Fishing Companion App">
-  <meta name="twitter:description" content="CatchTales is a Canada/USA-wide fishing companion app. Track catches, identify 305 freshwater species, explore interactive maps, and more.">
-  <meta name="twitter:image" content="https://catchtales.com/assets/app-logo.png">
-  <link rel="stylesheet" href="/css/style.css?v=3">
-  <link rel="canonical" href="https://catchtales.com/">
-  <link rel="icon" type="image/png" href="/assets/app-logo.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CatchTales",
-    "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "Android",
-    "description": "A Canada/USA-wide fishing companion app for anglers across Canada and the United States. Log catches, identify 305 freshwater species, explore interactive maps, and more.",
-    "areaServed": [
-      {"@type": "Country", "name": "Canada"},
-      {"@type": "Country", "name": "United States"}
-    ],
-    "audience": {
-      "@type": "Audience",
-      "geographicArea": [
-        {"@type": "Country", "name": "Canada"},
-        {"@type": "Country", "name": "United States"}
-      ]
+  <title>CatchTales — For Bragging Rights!</title>
+  <meta name="description" content="CatchTales — For Bragging Rights! The all-in-one fishing companion for Canadian and US waters. Log catches, explore maps, identify 305 species.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/catchtales-192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/catchtales-16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF; line-height: 1.6; overflow-x: hidden;
+      background: #0A1628;
     }
-  }
-  </script>
+    .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+    .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; pointer-events: none; }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.8; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto;  }
+    .swim-fish.f1 { width: 100px; top: 12%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 80px; top: 30%; animation-duration: 28s; animation-delay: -5s; }
+    .swim-fish.f3 { width: 120px; top: 50%; animation-duration: 18s; animation-delay: -11s; }
+    .swim-fish.f4 { width: 85px; top: 68%; animation-duration: 25s; animation-delay: -7s; }
+    .swim-fish.f5 { width: 105px; top: 82%; animation-duration: 20s; animation-delay: -3s; }
+    @keyframes swim {
+      0% { left: calc(100vw + 80px); }
+      100% { left: -140px; }
+    }
+    .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── Header ─── */
+    header { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    .header-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .header-logo img { width: 32px; height: 32px; border-radius: 6px; }
+    .header-logo span { font-size: 1.2em; font-weight: 700; color: #76FF03; letter-spacing: 1px; font-family: 'Bungee', sans-serif; }
+    .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
+    header nav { display: flex; flex-wrap: wrap; gap: 4px; }
+    header nav a { color: #B0C4DE; text-decoration: none; font-size: 14px; margin-left: 18px; transition: color 0.2s; position: relative; }
+    header nav a:hover { color: #76FF03; }
+    header nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #76FF03; transition: width 0.2s; }
+    header nav a:hover::after { width: 100%; }
+
+    /* ─── Hero ─── */
+    .hero {
+      padding: 60px 0 50px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      text-align: left;
+    }
+    .hero-text { flex: 1; }
+    .hero-image { flex: 1; text-align: center; }
+    .hero-image img {
+      width: 100%; max-width: 440px; border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .hero h1 {
+      font-size: 3.5em; font-weight: 400;
+      font-family: 'Luckiest Guy', cursive;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      text-shadow:
+        3px 3px 0 #0D2137,
+        -1px -1px 0 #0D2137,
+        1px -1px 0 #0D2137,
+        -1px 1px 0 #0D2137,
+        1px 1px 0 #0D2137,
+        4px 4px 0 #0A1628,
+        5px 5px 0 #0A1628,
+        6px 6px 0 rgba(0,0,0,0.3),
+        7px 7px 4px rgba(0,0,0,0.2);
+    }
+    .hero .tagline { font-size: 0.9em; letter-spacing: 6px; color: #fff; opacity: 0.5; margin-bottom: 12px; font-family: 'Bungee', sans-serif; }
+    .hero .sub { font-size: 1.1em; color: #B0C4DE; max-width: 480px; line-height: 1.7; margin-bottom: 28px; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, #00BCD4, #26C6DA); color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(0,188,212,0.5); }
+    .btn-secondary { background: rgba(0,188,212,0.08); color: #00BCD4; border: 2px solid rgba(0,188,212,0.4); backdrop-filter: blur(8px); }
+    .btn-secondary:hover { background: rgba(0,188,212,0.18); transform: translateY(-3px); border-color: #00BCD4; }
+
+    /* ─── Stats ─── */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 30px 0 50px; max-width: 700px; margin: 0 auto; }
+    .stat { text-align: center; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.04); }
+    .stat .num { font-size: 1.6em; font-weight: 800; background: linear-gradient(135deg, #76FF03, #00BCD4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat .label { font-size: 0.75em; color: #8899AA; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ─── Photo Strip ─── */
+    .photo-strip {
+      margin: 40px 0;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      height: 300px;
+    }
+    .photo-strip img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .photo-strip .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,22,40,0.7), rgba(10,22,40,0.3));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 24px; text-align: center;
+    }
+    .photo-strip .overlay h3 {
+      font-size: 1.6em; font-weight: 700; color: #fff;
+      font-family: 'Bungee', sans-serif;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .photo-strip .overlay p {
+      font-size: 1em; color: #B0C4DE; max-width: 500px;
+      margin-top: 8px;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+
+    /* ─── Features ─── */
+    .section-title { text-align: center; font-size: 1.8em; font-weight: 700; color: #fff; margin-bottom: 36px; }
+    .section-title span { background: linear-gradient(135deg, #76FF03, #00BCD4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card {
+      background: rgba(14,20,34,0.45); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.05); border-radius: 14px;
+      padding: 24px 20px; transition: all 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .card .phone-frame { margin-top: auto; }
+    .card:hover { background: rgba(14,20,34,0.7); transform: translateY(-4px); border-color: rgba(0,188,212,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .card .icon { font-size: 2em; margin-bottom: 10px; }
+    .card h3 { font-size: 1em; color: #fff; margin-bottom: 4px; }
+    .card p { font-size: 13px; color: #99B0CC; }
+    .card .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 2px 8px; border-radius: 4px; background: rgba(255,193,7,0.2); color: #FFD54F; margin-bottom: 8px; }
+    /* ─── Phone Frame ─── */
+    .phone-frame {
+      width: 100%; max-width: 240px;
+      margin: 12px auto 0;
+      background: #000;
+      border-radius: 20px;
+      padding: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .phone-frame .notch {
+      width: 60px; height: 6px;
+      background: #111;
+      border-radius: 3px;
+      margin: 0 auto 6px;
+    }
+    .phone-frame .screen {
+      width: 100%; aspect-ratio: 3/5;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0A1628;
+    }
+    .phone-frame .screen img,
+    .phone-frame .screen svg {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ─── Download ─── */
+    .download { padding: 50px 0; text-align: center; margin: 40px 0; border-radius: 20px; background: linear-gradient(135deg, rgba(0,188,212,0.08), rgba(118,255,3,0.04)); border: 1px solid rgba(0,188,212,0.1); backdrop-filter: blur(8px); }
+    .download h2 { font-size: 1.6em; color: #fff; margin-bottom: 8px; }
+    .download p { color: #B0C4DE; margin-bottom: 24px; font-size: 1em; }
+    .download-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .version-note { font-size: 0.8em; color: #667; margin-top: 12px; }
+
+    /* ─── Footer ─── */
+    footer { padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+    footer .links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    footer .links a { color: #99B0CC; text-decoration: none; font-size: 18px; transition: color 0.2s; }
+    footer .links a:hover { color: #00BCD4; }
+    footer .copy { color: #667; font-size: 14px; letter-spacing: 0.5px; }
+
+    @media (max-width: 700px) {
+      .hero { flex-direction: column; text-align: center; padding: 40px 0 30px; }
+      .hero .sub { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero h1 { font-size: 2em; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 20px 0 30px; }
+      .stat .num { font-size: 1.3em; }
+      .photo-strip { height: 200px; }
+      .photo-strip .overlay h3 { font-size: 1.2em; }
+      header nav a { margin-left: 12px; font-size: 13px; }
+      footer .links a { font-size: 15px; gap: 16px; }
+    }
+    @media (max-width: 600px) {
+      .nav-toggle { display: block; }
+      header nav { display: none; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; }
+      header nav.open { display: flex; }
+      header nav a { margin-left: 0; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    }
+  </style>
 </head>
-<body class="dream-theme">
-<!-- Dream overlay & fish -->
-<div id="dream-overlay"></div>
-<div id="fish-container"></div>
-
-<!-- ─── Navigation ─── -->
-<nav>
-  <div class="container">
-    <a href="/" class="logo-link">
-      <img src="/assets/app-logo.png" alt="CatchTales">
-      CatchTales
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/features/">Features</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/cloud/">🔒 Pro Login</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/contact/">Contact</a></li>
-    </ul>
+<body>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+    <div class="swim-fish f1"><img src="/tfish1.png" alt=""></div>
+    <div class="swim-fish f2"><img src="/tfish2.png" alt=""></div>
+    <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
+    <div class="swim-fish f4"><img src="/tfish4.png" alt=""></div>
+    <div class="swim-fish f5"><img src="/tfish5.png" alt=""></div>
   </div>
-</nav>
 
-<!-- ─── Hero ─── -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-main">
-      <img src="/assets/app-logo.png" alt="CatchTales" class="hero-logo">
-      <div class="hero-title-block">
+  <div class="content">
+    <header>
+      <a href="/" class="header-logo">
+        <img src="/logo.png" alt="CatchTales">
+        <img src="/catchtales-logo.png" alt="CatchTales" style="height: 70px; width: auto; display: block;">
+      </a>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <nav id="navLinks">
+        <a href="/">Home</a>
+        <a href="/features/">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/cloud/">🔒 Pro Login</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-text">
+        <p class="tagline">CANADA / USA VERSION</p>
         <h1>CatchTales</h1>
-        <p class="tagline">FOR BRAGGING RIGHTS!</p>
-        <div class="flags" style="font-size:0.9rem;margin-top:4px;">🇨🇦 CANADA + 🇺🇸 USA — COVERS BOTH COUNTRIES</div>
+        <p class="sub">The all-in-one fishing companion for North American waters. Log catches, explore interactive maps, identify 305 species — all with voice controls.</p>
+        <div class="hero-buttons">
+          <a href="/download/CatchTales-v2.14.27-pro.apk" class="btn btn-primary" download>⬇️ Download Pro</a>
+          <a href="/download/CatchTales-v2.14.27-free.apk" class="btn btn-secondary" download>🆓 Download Free</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/images/screenshot-main.png" alt="CatchTales app screenshot" style="max-width: 400px;">
       </div>
     </div>
-    <p class="subtitle">The all-in-one fishing companion for <strong>all of Canada and the United States</strong>. Log your catches, explore interactive maps with nautical charts &amp; weather radar, identify 305 species found across both countries, and get solunar predictions — all in one beautifully designed app.</p>
-  </div>
-</section>
 
-<!-- ─── Overview ─── -->
-<section id="overview">
-  <div class="container">
-    <h2 class="section-title">Your Ultimate Fishing Companion</h2>
-    <p class="section-subtitle">Everything you need to log, explore, and improve every trip — from your first cast to your personal best.</p>
-    <div class="features-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="feature-card" style="text-align:center;">
-        <div class="icon" style="font-size:2.5rem;">🎣</div>
-        <h3>Log &amp; Track</h3>
-        <p>Record every catch with species, weight, length, GPS location, weather, and photos. Voice logging lets you go hands-free.</p>
-      </div>
-      <div class="feature-card" style="text-align:center;">
-        <div class="icon" style="font-size:2.5rem;">🌊</div>
-        <h3>Two App Skins</h3>
-        <p>Choose between <strong>Dream</strong> — an underwater background with animated fish silhouettes in dark mode — or <strong>Classic</strong> — a clean interface with 5 color themes and light/dark toggle.</p>
-      </div>
-      <div class="feature-card" style="text-align:center;">
-        <div class="icon" style="font-size:2.5rem;">🗺️</div>
-        <h3>Interactive Maps</h3>
-        <p>Nautical charts, depth contours, weather radar, and catch pins — all on one map. Explore new waters with confidence.</p>
-      </div>
-      <div class="feature-card" style="text-align:center;">
-        <div class="icon" style="font-size:2.5rem;">🐟</div>
-        <h3>Fish ID Guide</h3>
-        <p>Identify 305 freshwater species with photos, descriptions, habitat info, and fishing tips for every catch.</p>
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat"><div class="num">300+</div><div class="label">Fish Species</div></div>
+      <div class="stat"><div class="num">14</div><div class="label">Features</div></div>
+      <div class="stat"><div class="num">AI</div><div class="label">Powered</div></div>
+      <div class="stat"><div class="num">5</div><div class="label">Languages</div></div>
+    </div>
+
+    <!-- Featured Photo Strip -->
+    <div class="photo-strip">
+      <img src="/images/angling-ocean.jpg" alt="Angler fishing in the ocean">
+      <div class="overlay">
+        <h3>🎣 Fish Smarter, Brag Bigger</h3>
+        <p>From lake to ocean — CatchTales works everywhere you fish. AI-powered identification, weather, solunar, and maps in your pocket.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ─── Key Features ─── -->
-<section class="alt" id="features">
-  <div class="container">
-    <h2 class="section-title">Built for Anglers, by Anglers</h2>
-    <p class="section-subtitle">Every feature is designed to make your time on the water more productive and more enjoyable.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="icon">🎣</div>
-        <h3>Catch Logging &amp; Trip Management</h3>
-        <p>Record every detail — species, weight, length, GPS, weather, photos. Group catches into <strong>Fishing Trips</strong> with per-trip stats — total catches, species breakdown, biggest fish, and date range. Voice controls mean you never have to put down your rod.</p>
-      </div>
-      <div class="feature-card">
+    <!-- Feature Preview -->
+    <h2 class="section-title">Built for <span>Anglers</span></h2>
+    <div class="grid">
+      <div class="card">
         <div class="icon">🐟</div>
-        <h3>Fish ID Field Guide</h3>
-        <p>305 freshwater species at your fingertips. Each entry includes photos, descriptions, size ranges, habitat, diet, and expert fishing tips. Filter by water type or region.</p>
+        <div class="badge">AI POWERED</div>
+        <h3>AI Fish ID</h3>
+        <p>Snap a photo and AI identifies the species instantly.</p>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-fishid.png" alt="Fish species close-up"></div></div>
       </div>
-      <div class="feature-card">
-        <div class="icon">🗺️</div>
-        <h3>Interactive Map with Tools</h3>
-        <p>See your catches plotted on the map with species pins. Toggle nautical charts, depth contours, and weather radar — all in a collapsible side panel.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🌤️</div>
-        <h3>Weather &amp; Solunar Predictions</h3>
-        <p>Real-time conditions, 5-day forecast, and solunar-based predictions. Know the best fishing periods, moon phases, wind, and marine conditions before you go. Get push notifications for severe weather alerts and daily solunar best times.</p>
-      </div>
-      <div class="feature-card">
+      <div class="card">
         <div class="icon">🎤</div>
-        <h3>Hands-Free Voice Controls</h3>
-        <p>"Fish buddy jason caught a pike" — voice fills in your catch forms. Say "photo", "weighs 5 lb", "length 20 inches", "save". No typing required. Also includes a <strong>Device Setup</strong> guide to get your phone mounted and ready.</p>
+        <h3>Voice Recording</h3>
+        <p>Log catches hands-free. Just speak naturally.</p>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-catches.png" alt="Voice recording screen"></div></div>
       </div>
-      <div class="feature-card">
+      <div class="card">
+        <div class="icon">🗺️</div>
+        <h3>Interactive Map</h3>
+        <p>Nautical charts, depth contours, and weather overlays.</p>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-map.png" alt="Interactive map screen"></div></div>
+      </div>
+      <div class="card">
+        <div class="icon">🌤️</div>
+        <h3>Weather &amp; Solunar</h3>
+        <p>5-day forecast, best fishing times, moon phase.</p>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-weather.png" alt="Weather and solunar screen"></div></div>
+      </div>
+      <div class="card">
         <div class="icon">🏆</div>
-        <h3>Brag Board <span class="pro-tag">Pro</span></h3>
-        <p>Share your catch photos with the community! Like and comment on other anglers' catches. Turn every fishing story into a friendly competition.</p>
+        <h3>Brag Board</h3>
+        <p>Share photos, like and comment. Show off your catch!</p>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-brag.png" alt="Proud angler with catch"></div></div>
       </div>
-      <div class="feature-card">
+      <div class="card">
         <div class="icon">☁️</div>
-        <h3>Cloud Sync <span class="pro-tag">Pro</span></h3>
-        <p>Back up your data and sync across devices. Fish Together mode lets you share catches and chat with friends in real time during a session.</p>
+        <h3>Cloud Sync</h3>
+        <p>Back up, sync across devices, fish with friends.</p>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-cloudsync.png" alt="Cloud sync screen"></div></div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:36px;">
-      <a href="/features/" class="btn btn-outline-dark">View All Features →</a>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="/features/" class="btn btn-secondary">View All 14 Features →</a>
     </div>
-  </div>
-</section>
 
-<!-- ─── Skins Showcase ─── -->
-<section id="skins">
-  <div class="container">
-    <h2 class="section-title">Two Ways to Fish</h2>
-    <p class="section-subtitle">Choose the look that matches your style — switch anytime from the 3-dot menu.</p>
-    <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="feature-card" style="text-align:center;background:linear-gradient(135deg,#0A1628,#0D2137);border-color:#1a3a5c;">
-        <div style="font-size:3rem;margin-bottom:12px;">🌊</div>
-        <h3 style="color:#76FF03;">Dream Skin</h3>
-        <p style="color:rgba(255,255,255,0.7);">Immersive underwater background with animated fish silhouettes — Pike, Perch, Walleye, Bass, and Sunfish swim across your screen. Dark mode locked for full effect. The ultimate fishing atmosphere.</p>
+    <!-- Download -->
+    <div class="download">
+      <h2>📲 Get CatchTales</h2>
+      <p>Ready to start bragging? Download the app and hit the water.</p>
+      <div class="download-buttons">
+        <a href="/download/CatchTales-v2.14.27-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.27-pro.apk">⬇️ Download Pro v2.14.27</a>
+        <a href="/download/CatchTales-v2.14.27-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.27-free.apk">🆓 Download Free v2.14.27</a>
       </div>
-      <div class="feature-card" style="text-align:center;">
-        <div style="font-size:3rem;margin-bottom:12px;">🎨</div>
-        <h3>Classic Skin</h3>
-        <p>Clean, plain background with your choice of <strong>5 color themes</strong> (Ocean Blue, Forest Green, Sunset Orange, Midnight, Lakeside). Light/dark toggle available. Professional and distraction-free.</p>
-      </div>
+      <p class="version-note">Free version available — upgrade to Pro for unlimited catches and all features.</p>
     </div>
-  </div>
-</section>
 
-<!-- ─── Free vs Pro ─── -->
-<section id="compare">
-  <div class="container">
-    <h2 class="section-title">Free vs Pro</h2>
-    <p class="section-subtitle">Start with the Free version — upgrade to Pro when you're ready for the full experience.</p>
-    <div class="comparison-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th class="free-col">🆓 Free</th>
-            <th class="pro-col">⭐ Pro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Log catches with photos, GPS &amp; weather</td><td><span class="check">✓</span> <span class="count">10 catch limit</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Fish ID — 305 species field guide</td><td><span class="check">✓</span> <span class="count">first 10 species</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Interactive map with catch pins</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Map tools: nautical, depth, weather radar</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Offline region caching</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Weather &amp; 5-day forecast</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Solunar best fishing times</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Voice controls</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Calendar &amp; gallery</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Multi-language (EN/FR/ES/DE/UK)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Community lake stats</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Cloud sync &amp; Fish Together</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Stats, charts &amp; achievements</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>Unlimited catches &amp; tackle</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td></tr>
-          <tr class="btn-row">
-            <td></td>
-            <td><a href="/free/" class="btn btn-free btn-sm">📱 Download Free</a></td>
-            <td><a href="/pro/" class="btn btn-pro btn-sm">⭐ Get Pro</a></td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Blog Preview -->
+    <div style="text-align: center; padding: 20px 0 40px;">
+      <h2 class="section-title">🎣 Fishing <span>Resources</span></h2>
+      <p style="color: #B0C4DE; margin-bottom: 24px;">Tips, guides, and how-tos for anglers across Canada and the United States.</p>
+      <a href="/blog/" class="btn btn-secondary">📖 Visit Our Blog →</a>
     </div>
-  </div>
-</section>
 
-<!-- ─── CTA ─── -->
-<section class="cta-section">
-  <div class="container">
-    <h2 class="section-title" style="color:#76FF03;">Ready to Hit the Water?</h2>
-    <p>Whether you're a weekend angler or a seasoned pro, CatchTales has the tools you need to log, explore, and improve every trip.</p>
-    <div class="hero-buttons">
-      <a href="/free/" class="btn btn-free">📱 Download Free</a>
-      <a href="/pro/" class="btn btn-pro">⭐ Get Pro</a>
-    </div>
-    <p style="margin-top:20px;font-size:0.85rem;color:rgba(255,255,255,0.5);">Questions? <a href="/contact/" style="color:#00BCD4;">Get in touch</a></p>
+    <!-- Footer -->
+    <footer>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/features/">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/cloud/">🔒 Pro User Login</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="copy">© 2026 Maison Louis Design — Designed for anglers everywhere 🎣</p>
+    </footer>
   </div>
-</section>
-
-<!-- ─── Footer ─── -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/contact-logo.png" alt="Maison Louis Design" loading="lazy">
-        <p>CatchTales is built with ❤️ for anglers across Canada and the United States. Created by Maison Louis Design.</p>
-      </div>
-      <div>
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/features/">Features</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/cloud/">🔒 Pro Login</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Downloads</h4>
-        <ul>
-          <li><a href="/free/">Free Version</a></li>
-          <li><a href="/pro/">Pro Version</a></li>
-          <li><a href="/dev/">Developer Build</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="/privacy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Maison Louis Design. All rights reserved.</p>
-      <p><a href="mailto:catchtales@yahoo.com">catchtales@yahoo.com</a></p>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('navToggle').addEventListener('click', function() {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-</script>
-<script src="/js/dream-fish.js"></script>
 </body>
 </html>

@@ -3,140 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About CatchTales — Canada & USA Fishing Companion App</title>
-  <meta name="description" content="CatchTales is built for anglers across all of Canada and the United States. Learn about the app, its 305-species fish database, interactive maps, and more.">
-  <meta name="robots" content="index, follow">
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://catchtales.com/about/">
-  <meta property="og:title" content="About CatchTales — Canada &amp; USA Fishing Companion App">
-  <meta property="og:description" content="CatchTales is built for anglers across all of Canada and the United States. Learn about the 305-species fish database, interactive maps, and more.">
-  <meta property="og:image" content="https://catchtales.com/assets/app-logo.png">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="CatchTales">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About CatchTales — Canada &amp; USA Fishing Companion App">
-  <meta name="twitter:description" content="CatchTales is built for anglers across all of Canada and the United States.">
-  <meta name="twitter:image" content="https://catchtales.com/assets/app-logo.png">
-  <link rel="stylesheet" href="/css/style.css?v=3">
-  <link rel="canonical" href="https://catchtales.com/about/">
-  <link rel="icon" type="image/png" href="/assets/app-logo.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "CatchTales",
-    "applicationCategory": "LifestyleApplication",
-    "operatingSystem": "Android",
-    "description": "A fishing companion app for all of Canada and the United States. Built by Maison Louis Design for anglers across North America.",
-    "areaServed": ["Canada", "United States"]
-  }
-  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/catchtales-192.png">
+  <title>About — CatchTales</title>
+  <meta name="description" content="About CatchTales - the hands-free fishing companion app.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF; line-height: 1.6; overflow-x: hidden;
+      background: #0A1628;
+    }
+    .underwater-bg {
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh; z-index: 0; overflow: hidden;
+    }
+    .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .underwater-bg .overlay {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(10, 22, 40, 0.45); z-index: 1; pointer-events: none;
+    }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.75; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto; transform: scaleX(-1); }
+    .swim-fish.f1 { width: 75px; top: 20%; animation-duration: 24s; }
+    .swim-fish.f2 { width: 50px; top: 50%; animation-duration: 30s; animation-delay: -8s; }
+    .swim-fish.f3 { width: 85px; top: 75%; animation-duration: 20s; animation-delay: -15s; }
+    @keyframes swim {
+      0% { left: -140px; }
+      100% { left: calc(100vw + 80px); }
+    }
+    .content { position: relative; z-index: 3; max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    .header-logo { display: flex; align-items: center; gap: 10px; }
+    .header-logo img { width: 32px; height: 32px; border-radius: 6px; }
+    .header-logo span { font-size: 1.1em; font-weight: 700; color: #76FF03; letter-spacing: 1px; }
+    .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
+    header nav { display: flex; flex-wrap: wrap; gap: 4px; }
+    header nav a { color: #B0C4DE; text-decoration: none; font-size: 14px; margin-left: 18px; transition: color 0.2s; }
+    header nav a:hover { color: #76FF03; }
+    header nav a.active { color: #76FF03; }
+
+    .page-title { padding: 40px 0 20px; text-align: center; }
+    .page-title h1 { font-size: 2em; color: #76FF03; }
+    .page-title p { color: #B0C4DE; font-size: 1em; margin-top: 8px; }
+
+    .about-card { background: rgba(14,20,34,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px; margin-bottom: 20px; }
+    .about-card h2 { font-size: 1.2em; color: #fff; margin-bottom: 12px; }
+    .about-card p { font-size: 15px; color: #B0C4DE; margin-bottom: 12px; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card .email { color: #00BCD4; text-decoration: none; font-size: 16px; }
+    .about-card .email:hover { text-decoration: underline; }
+
+    footer { padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: 40px; }
+    footer .links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: 18px; }
+    footer .links a:hover { color: #00BCD4; }
+    footer .copy { color: #99B0CC; font-size: 16px; }
+
+    @media (max-width: 700px) {
+      header nav a { margin-left: 12px; font-size: 13px; }
+    }
+    @media (max-width: 600px) {
+      .nav-toggle { display: block; }
+      header nav { display: none; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; }
+      header nav.open { display: flex; }
+      header nav a { margin-left: 0; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    }
+  </style>
 </head>
-<body class="dream-theme">
-<div id="dream-overlay"></div>
-<div id="fish-container"></div>
-
-<nav>
-  <div class="container">
-    <a href="/" class="logo-link">
-      <img src="/assets/app-logo.png" alt="CatchTales">
-      CatchTales
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="/features/">Features</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/cloud/">🔒 Pro Login</a></li>
-      <li><a href="/about/" class="active">About</a></li>
-      <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/contact/">Contact</a></li>
-    </ul>
+<body>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+    <div class="swim-fish f1"><img src="/tfish1.png" alt=""></div>
+    <div class="swim-fish f2"><img src="/tfish2.png" alt=""></div>
+    <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
   </div>
-</nav>
 
-<section class="page-header">
-  <div class="container">
-    <h1>About CatchTales</h1>
-    <p>The story behind the app — built by anglers, for anglers.</p>
-  </div>
-</section>
+  <div class="content">
+    <header>
+      <div class="header-logo">
+        <img src="/logo.png" alt="CatchTales"><span>CatchTales</span>
+      </div>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <nav id="navLinks">
+        <a href="/">Home</a>
+        <a href="/features/">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/cloud/">🔒 Pro Login</a>
+        <a href="/about/" class="active">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </header>
 
-<section class="content-page">
-  <div class="container">
-    <div class="card">
-      <h2>Our Mission</h2>
-      <p>CatchTales was created to give every angler — from weekend casters to tournament veterans — a powerful, easy-to-use tool to track their fishing adventures, learn from every trip, and connect with a community that shares their passion.</p>
-      <p>Fishing isn't just about the catch. It's about the early mornings, the quiet water, the stories shared, and the thrill of the unknown. CatchTales helps you capture all of it.</p>
-
-      <h2>What Makes Us Different</h2>
-      <p>Most fishing apps are either too simple (just a notebook) or too complex (designed for biologists). CatchTales hits the sweet spot — powerful enough for serious anglers but intuitive enough that you'll start logging your first catch in under a minute.</p>
-      <p>We combine <strong>catch logging</strong>, <strong>fish identification</strong> (305 species), <strong>interactive mapping</strong> with nautical charts and weather radar, <strong>solunar predictions</strong>, <strong>tackle tracking</strong>, <strong>voice controls</strong>, a <strong>Brag Board</strong> for sharing catches, <strong>Fishing Trips</strong>, and a unique <strong>dual skin system</strong> (Dream underwater mode or Classic themes) — all in one beautifully designed app.</p>
-
-      <h2>Built for All of Canada &amp; the United States</h2>
-      <p>From the Great Lakes to the Gulf Coast, from BC's salmon rivers to Florida's bass lakes — CatchTales covers <strong>all of North America</strong>, not just one region. Our 305-species field guide covers freshwater fish across <strong>both Canada and the United States</strong>, and our map data includes Canadian and US waters with detailed nautical charts. Whether you fish in Ontario, Texas, British Columbia, or Florida, CatchTales works for you.</p>
-
-      <h2>Free vs Pro</h2>
-      <p>We believe everyone should have access to great fishing tools. The <strong>Free version</strong> gives you catch logging, fish ID, weather, solunar times, tackle box, voice controls, and more — with reasonable limits. The <strong>Pro version</strong> unlocks the full experience: unlimited catches, interactive maps with all overlays, offline regions, community stats, cloud sync, achievements, and everything else we've built.</p>
-      <p>Pro is a <strong>one-time purchase</strong> — no subscriptions, no recurring fees. Unlock everything forever.</p>
-
-      <h2>Created by Maison Louis Design</h2>
-      <p>CatchTales is developed by Maison Louis Design, a small independent studio passionate about crafting high-quality digital experiences. We believe in building apps that are beautiful, functional, and genuinely useful.</p>
-      <p>Have questions, feedback, or ideas? We'd love to hear from you — reach out at <a href="mailto:catchtales@yahoo.com">catchtales@yahoo.com</a>.</p>
+    <div class="page-title">
+      <h1>About CatchTales</h1>
+      <p>Your hands-free fishing companion for North American waters.</p>
     </div>
-  </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/contact-logo.png" alt="Maison Louis Design" loading="lazy">
-        <p>CatchTales is built with ❤️ for anglers across Canada and the United States. Created by Maison Louis Design.</p>
-      </div>
-      <div>
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/features/">Features</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/cloud/">🔒 Pro Login</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Downloads</h4>
-        <ul>
-          <li><a href="/free/">Free Version</a></li>
-          <li><a href="/pro/">Pro Version</a></li>
-          <li><a href="/dev/">Developer Build</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="/privacy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Service</a></li>
-        </ul>
-      </div>
+    <div class="about-card">
+      <h2>🎣 The App</h2>
+      <p>CatchTales is a fishing companion app designed for anglers who want to focus on fishing, not typing. Track catches by voice, snap selfies with your fish, and never lose a fishing memory.</p>
+      <p>With AI-powered fish identification, smart tackle recommendations, and cloud sync, CatchTales helps you fish smarter and brag bigger.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Maison Louis Design. All rights reserved.</p>
-      <p><a href="mailto:catchtales@yahoo.com">catchtales@yahoo.com</a></p>
+
+    <div class="about-card">
+      <h2>🤖 AI Features</h2>
+      <p>Powered by Google Gemini AI, CatchTales can identify fish from photos, answer questions about your catch data, recommend the best lures for your conditions, and understand natural language voice commands.</p>
     </div>
+
+    <div class="about-card">
+      <h2>🗺️ Coverage</h2>
+      <p>Canada &amp; United States — freshwater and saltwater. 300+ fish species in the built-in identification guide, with nautical charts and depth data for thousands of lakes and waterways.</p>
+    </div>
+
+    <div class="about-card">
+      <h2>🔧 Built With</h2>
+      <p>Flutter &amp; Dart • SQLite • Firebase • OpenStreetMap + OpenSeaMap • OpenWeatherMap • Google Gemini AI • Google Places</p>
+    </div>
+
+    <div class="about-card" style="text-align: center;">
+      <h2>❤️ Designed By</h2>
+      <img src="/contact_logo.png" alt="Maison Louis Design" style="width: 80px; height: 80px; border-radius: 20px; margin: 16px 0;">
+      <p>Maison Louis Design — a small design studio passionate about building tools that make outdoor adventures better.</p>
+      <p>📧 <a href="mailto:catchtales@yahoo.com" class="email">catchtales@yahoo.com</a></p>
+    </div>
+
+    <footer>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/features/">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/cloud/">🔒 Pro User Login</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="copy">© 2026 Maison Louis Design — Made with ❤️ for anglers everywhere 🎣</p>
+    </footer>
   </div>
-</footer>
-
-<script>
-  document.getElementById('navToggle').addEventListener('click', function() {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-
-</script>
-<script src="/js/dream-fish.js"></script>
 </body>
 </html>
