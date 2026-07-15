@@ -24,10 +24,12 @@
     body {
       background: #0A1628;
     }
+
+    /* ─── Background (behind everything) ─── */
     .underwater-bg {
       position: fixed; top: 0; left: 0;
       width: 100vw; height: 100vh;
-      z-index: 0;
+      z-index: -1;
       overflow: hidden;
       pointer-events: none;
     }
@@ -60,9 +62,6 @@
 
     /* ─── Site Header ─── */
     .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,6 +69,8 @@
       background: rgba(10,22,40,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      z-index: 100;
     }
     .site-header .logo-link {
       display: flex;
@@ -92,13 +93,17 @@
       font-size: 13px;
       margin-left: 16px;
       transition: color 0.2s;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     .site-header nav a:hover {
       color: #76FF03;
     }
     .site-header nav a.active {
       color: #76FF03;
+    }
+
+    /* ─── Flutter canvas sits below header naturally ─── */
+    flt-canvas-container {
+      display: block !important;
     }
 
     loading {
@@ -139,6 +144,28 @@
     <div class="swim-fish f4"><img src="/tfish4.png" alt=""></div>
     <div class="swim-fish f5"><img src="/tfish5.png" alt=""></div>
   </div>
+
   <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    // When Flutter creates its canvas container, position it below the header
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        m.addedNodes.forEach(function(n) {
+          if (n.tagName === 'FLT-CANVAS-CONTAINER') {
+            n.style.setProperty('position', 'fixed', 'important');
+            n.style.setProperty('top', '56px', 'important');
+            n.style.setProperty('left', '0', 'important');
+            n.style.setProperty('right', '0', 'important');
+            n.style.setProperty('bottom', '0', 'important');
+            n.style.setProperty('width', 'auto', 'important');
+            n.style.setProperty('height', 'auto', 'important');
+            observer.disconnect();
+          }
+        });
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
 </body>
 </html>
