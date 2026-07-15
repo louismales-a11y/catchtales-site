@@ -48972,7 +48972,7 @@ s=A.a3(l?n:J.aC(m,"profilePhotoUrl"))
 if(s==null)s=""
 l=A.b([],t.p)
 r=k.length!==0
-if(r)l.push(new A.aw(B.qB,A.U(k,n,n,n,A.X(n,n,B.A,n,n,n,n,n,n,n,n,13,n,n,n,n,n,!0,n,n,n,n,n,n,n,n),n,n),n))
+if(r)l.push(new A.aw(B.qB,A.U(k,n,n,n,A.X(n,n,B.A,n,B.k,n,n,n,n,n,n,13,n,n,n,n,n,!0,n,n,n,n,n,n,n,n),n,n),n))
 q=B.r.aw(0.15)
 p=s.length===0
 o=!p?this.a.abn(s):n
