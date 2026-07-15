@@ -1,0 +1,36 @@
+# 🎯 Canonical Website — CatchTales.com
+
+**This is THE live website repo.** All edits here go live.
+
+| What | Where |
+|------|-------|
+| **Repo** | `louismales-a11y/catchtales-site` |
+| **Live URL** | https://catchtales.com |
+| **GitHub Pages** | Auto-deploys from `main` branch via GitHub Actions |
+| **Local path** | `/home/louis/catchtales-site` |
+
+## What NOT to confuse this with
+
+| Directory | What it is | Git remote |
+|-----------|-----------|------------|
+| `~/catchtales-site` | **🌐 THE WEBSITE** (this one) | `louismales-a11y/catchtales-site` |
+| `~/CatchTales` | Flutter mobile app (Android) | `louismales-a11y/CatchTales` |
+| `~/CatchTales-Dev` | Flutter app — dev branch | `louismales-a11y/CatchTales-Dev` |
+| `~/CatchTales-Free` | Flutter app — free variant | `louismales-a11y/CatchTales-Free` |
+| `~/catchtales_cloud` | Flutter web build output (deployed **inside** this site at `/cloud/`) | Not a git repo — part of this site |
+
+## Workflow
+
+1. Edit files in `~/catchtales-site`
+2. `git add` + `git commit` + `git push`
+3. GitHub Actions auto-deploys to catchtales.com
+4. Takes ~1-2 minutes to go live
+
+## Last verified correct state
+
+- **Commit:** `f5f7bcc` — "Remove entire hero section"
+- **Date:** July 15, 2026
+
+---
+
+> ⚠️ **For pi (AI assistant):** This is THE website repo. When the user says "my website", "GitHub site", or "catchtales.com", always work in **`/home/louis/catchtales-site`**. Do not confuse with `~/CatchTales/` (Flutter app), `~/CatchTales-Dev/` (app dev), `~/CatchTales-Free/` (app free), or `~/catchtales_cloud/` (cloud build output — deployed inside this site). If unsure, read this file first.
