@@ -47,42 +47,6 @@
     header nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #76FF03; transition: width 0.2s; }
     header nav a:hover::after { width: 100%; }
 
-    /* ─── Hero ─── */
-    .hero {
-      padding: 60px 0 50px;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      text-align: left;
-    }
-    .hero-text { flex: 1; }
-    .hero-image { flex: 1; text-align: center; }
-    .hero-image img {
-      width: 100%; max-width: 440px; border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    .hero h1 {
-      font-size: 3.5em; font-weight: 400;
-      font-family: 'Luckiest Guy', cursive;
-      color: #FFFFFF;
-      letter-spacing: 2px;
-      line-height: 1.2;
-      text-shadow:
-        3px 3px 0 #0D2137,
-        -1px -1px 0 #0D2137,
-        1px -1px 0 #0D2137,
-        -1px 1px 0 #0D2137,
-        1px 1px 0 #0D2137,
-        4px 4px 0 #0A1628,
-        5px 5px 0 #0A1628,
-        6px 6px 0 rgba(0,0,0,0.3),
-        7px 7px 4px rgba(0,0,0,0.2);
-    }
-    .hero .tagline { font-size: 0.9em; letter-spacing: 6px; color: #fff; opacity: 0.5; margin-bottom: 12px; font-family: 'Bungee', sans-serif; }
-    .hero .sub { font-size: 1.1em; color: #B0C4DE; max-width: 480px; line-height: 1.7; margin-bottom: 28px; }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; }
     .btn-primary { background: linear-gradient(135deg, #00BCD4, #26C6DA); color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
@@ -185,10 +149,7 @@
     footer .copy { color: #667; font-size: 14px; letter-spacing: 0.5px; }
 
     @media (max-width: 700px) {
-      .hero { flex-direction: column; text-align: center; padding: 40px 0 30px; }
-      .hero .sub { margin-left: auto; margin-right: auto; }
-      .hero-buttons { justify-content: center; }
-      .hero h1 { font-size: 2em; }
+
       .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 20px 0 30px; }
       .stat .num { font-size: 1.3em; }
       .photo-strip { height: 200px; }
@@ -235,20 +196,7 @@
       </nav>
     </header>
 
-    <!-- Hero -->
-    <div class="hero">
-      <div class="hero-text">
-        <h1>CatchTales</h1>
-        <p class="sub">The all-in-one fishing companion for North American waters. Log catches, explore interactive maps, identify 305 species — all with voice controls.</p>
-        <div class="hero-buttons">
-          <a href="/download/CatchTales-v2.14.27-pro.apk" class="btn btn-primary" download>⬇️ Download Pro</a>
-          <a href="/download/CatchTales-v2.14.27-free.apk" class="btn btn-secondary" download>🆓 Download Free</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="/images/screenshot-main.png" alt="CatchTales app screenshot" style="max-width: 400px;">
-      </div>
-    </div>
+
 
     <!-- Stats -->
     <div class="stats">
