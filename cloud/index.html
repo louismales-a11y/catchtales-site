@@ -20,10 +20,31 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #0A1628;
+      overflow: hidden;
+    }
+    .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+    .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; pointer-events: none; }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.8; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto; }
+    .swim-fish.f1 { width: 100px; top: 12%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 80px; top: 30%; animation-duration: 28s; animation-delay: -5s; }
+    .swim-fish.f3 { width: 120px; top: 50%; animation-duration: 18s; animation-delay: -11s; }
+    .swim-fish.f4 { width: 85px; top: 68%; animation-duration: 25s; animation-delay: -7s; }
+    .swim-fish.f5 { width: 105px; top: 82%; animation-duration: 20s; animation-delay: -3s; }
+    @keyframes swim {
+      0% { left: calc(100vw + 80px); }
+      100% { left: -140px; }
+    }
+    #flutter-container {
+      position: relative;
+      z-index: 3;
+      width: 100vw;
+      height: 100vh;
     }
     loading {
       display: flex;
@@ -37,6 +58,17 @@
   </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+    <div class="swim-fish f1"><img src="/tfish1.png" alt=""></div>
+    <div class="swim-fish f2"><img src="/tfish2.png" alt=""></div>
+    <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
+    <div class="swim-fish f4"><img src="/tfish4.png" alt=""></div>
+    <div class="swim-fish f5"><img src="/tfish5.png" alt=""></div>
+  </div>
+  <div id="flutter-container">
+    <script src="flutter_bootstrap.js" async></script>
+  </div>
 </body>
 </html>

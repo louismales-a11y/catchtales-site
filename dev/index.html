@@ -34,8 +34,7 @@
     .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 24px; }
     header { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
     .header-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .header-logo img { width: 32px; height: 32px; border-radius: 6px; }
-    .header-logo span { font-size: 1.1em; font-weight: 700; color: #76FF03; letter-spacing: 1px; }
+    .header-logo img { height: 60px; width: auto; border-radius: 6px; }
     .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
     header nav { display: flex; flex-wrap: wrap; gap: 4px; }
     header nav a { color: #B0C4DE; text-decoration: none; font-size: 14px; margin-left: 18px; transition: color 0.2s; position: relative; }
@@ -84,7 +83,7 @@
   <div class="content">
     <header>
       <a href="/" class="header-logo">
-        <img src="/logo.png" alt="CatchTales"><span>CatchTales</span>
+        <img src="/catchtales-logo.png" alt="CatchTales" style="height: 60px; width: auto;">
       </a>
       <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
       <nav id="navLinks">
