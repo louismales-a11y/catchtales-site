@@ -20,12 +20,13 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      margin: 0;
+      padding: 0;
       background: #0A1628;
     }
 
-    /* ─── Background (behind everything) ─── */
+    /* ─── Background ─── */
     .underwater-bg {
       position: fixed; top: 0; left: 0;
       width: 100vw; height: 100vh;
@@ -60,8 +61,11 @@
       100% { left: -140px; }
     }
 
-    /* ─── Site Header ─── */
+    /* ─── Fixed Header ─── */
     .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -69,8 +73,6 @@
       background: rgba(10,22,40,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
-      position: relative;
-      z-index: 100;
     }
     .site-header .logo-link {
       display: flex;
@@ -99,18 +101,6 @@
     }
     .site-header nav a.active {
       color: #76FF03;
-    }
-
-    /* ─── Flutter canvas positioned below header ─── */
-    flt-canvas-container {
-      position: fixed !important;
-      top: 56px !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      width: auto !important;
-      height: auto !important;
-      display: block !important;
     }
 
     loading {
