@@ -103,6 +103,15 @@
       color: #76FF03;
     }
 
+    /* ─── Transparent Flutter canvas so underwater bg shows through ─── */
+    flt-canvas-container,
+    flt-canvas-container > div {
+      background: transparent !important;
+    }
+    flt-canvas-container canvas {
+      background: transparent !important;
+    }
+
     loading {
       display: flex;
       align-items: center;
