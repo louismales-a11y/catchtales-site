@@ -101,8 +101,15 @@
       color: #76FF03;
     }
 
-    /* ─── Flutter canvas sits below header naturally ─── */
+    /* ─── Flutter canvas positioned below header ─── */
     flt-canvas-container {
+      position: fixed !important;
+      top: 56px !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: auto !important;
+      height: auto !important;
       display: block !important;
     }
 
@@ -146,26 +153,5 @@
   </div>
 
   <script src="flutter_bootstrap.js" async></script>
-
-  <script>
-    // When Flutter creates its canvas container, position it below the header
-    var observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        m.addedNodes.forEach(function(n) {
-          if (n.tagName === 'FLT-CANVAS-CONTAINER') {
-            n.style.setProperty('position', 'fixed', 'important');
-            n.style.setProperty('top', '56px', 'important');
-            n.style.setProperty('left', '0', 'important');
-            n.style.setProperty('right', '0', 'important');
-            n.style.setProperty('bottom', '0', 'important');
-            n.style.setProperty('width', 'auto', 'important');
-            n.style.setProperty('height', 'auto', 'important');
-            observer.disconnect();
-          }
-        });
-      });
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-  </script>
 </body>
 </html>
