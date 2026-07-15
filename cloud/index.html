@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/cloud/">
+  <base href="/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="CatchTales Cloud Dashboard - View your catches online">
@@ -25,93 +25,6 @@
       padding: 0;
       background: #0A1628;
     }
-
-    /* ─── Background ─── */
-    .underwater-bg {
-      position: fixed; top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .underwater-bg img.bg {
-      width: 100%; height: 100%;
-      object-fit: cover; opacity: 0.6;
-    }
-    .underwater-bg .overlay {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(10,22,40,0.45);
-      pointer-events: none;
-    }
-    .swim-fish {
-      position: absolute;
-      opacity: 0.8;
-      animation: swim linear infinite;
-      pointer-events: none;
-    }
-    .swim-fish img { width: 100%; height: auto; }
-    .swim-fish.f1 { width: 100px; top: 12%; animation-duration: 22s; }
-    .swim-fish.f2 { width: 80px; top: 30%; animation-duration: 28s; animation-delay: -5s; }
-    .swim-fish.f3 { width: 120px; top: 50%; animation-duration: 18s; animation-delay: -11s; }
-    .swim-fish.f4 { width: 85px; top: 68%; animation-duration: 25s; animation-delay: -7s; }
-    .swim-fish.f5 { width: 105px; top: 82%; animation-duration: 20s; animation-delay: -3s; }
-    @keyframes swim {
-      0% { left: calc(100vw + 80px); }
-      100% { left: -140px; }
-    }
-
-    /* ─── Fixed Header ─── */
-    .site-header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 24px;
-      background: rgba(10,22,40,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .site-header .logo-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-    .site-header .logo-link img {
-      height: 40px;
-      width: auto;
-    }
-    .site-header nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .site-header nav a {
-      color: #B0C4DE;
-      text-decoration: none;
-      font-size: 13px;
-      margin-left: 16px;
-      transition: color 0.2s;
-    }
-    .site-header nav a:hover {
-      color: #76FF03;
-    }
-    .site-header nav a.active {
-      color: #76FF03;
-    }
-
-    /* ─── Transparent Flutter canvas so underwater bg shows through ─── */
-    flt-canvas-container,
-    flt-canvas-container > div {
-      background: transparent !important;
-    }
-    flt-canvas-container canvas {
-      background: transparent !important;
-    }
-
     loading {
       display: flex;
       align-items: center;
@@ -124,33 +37,6 @@
   </style>
 </head>
 <body>
-  <div class="site-header">
-    <a href="/" class="logo-link">
-      <img src="/catchtales-logo.png" alt="CatchTales">
-    </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/features/">Features</a>
-      <a href="/blog/">Blog</a>
-      <a href="/cloud/" class="active">🔒 Pro Login</a>
-      <a href="/about/">About</a>
-      <a href="/faq/">FAQ</a>
-      <a href="/contact/">Contact</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-    </nav>
-  </div>
-
-  <div class="underwater-bg">
-    <img src="/underwater.jpg" alt="" class="bg">
-    <div class="overlay"></div>
-    <div class="swim-fish f1"><img src="/tfish1.png" alt=""></div>
-    <div class="swim-fish f2"><img src="/tfish2.png" alt=""></div>
-    <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
-    <div class="swim-fish f4"><img src="/tfish4.png" alt=""></div>
-    <div class="swim-fish f5"><img src="/tfish5.png" alt=""></div>
-  </div>
-
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

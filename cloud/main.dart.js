@@ -25056,7 +25056,7 @@ if(a.as!==q)return q?-1:1
 return 0},
 b0M(a,b){var s=A.a1(b).i("a0<1,e9>")
 s=A.Z(new A.a0(b,new A.abB(),s),s.i("am.E"))
-return A.b05(!0,s,a,B.a_O,!0,B.L9,null)},
+return A.b05(!0,s,a,B.a_N,!0,B.L9,null)},
 aJy(a){var s
 try{a.eb()}catch(s){a.Ri()}a.w=B.afi
 try{a.bg(A.baO())}catch(s){}},
@@ -25617,7 +25617,7 @@ _.as=!0
 _.at=!1
 _.$ti=d},
 QM(a,b){var s
-if(a.j(0,b))return new A.NT(B.a_M)
+if(a.j(0,b))return new A.NT(B.a_L)
 s=A.b([],t.fJ)
 A.c2()
 a.od(new A.afW(b,A.aV(t.u),s))
@@ -32099,7 +32099,7 @@ xQ(){var s=this.Q
 s===$&&A.a()
 return s},
 xR(a,b,c,d){var s,r,q,p
-if(a<0||b<0)return B.a_J
+if(a<0||b<0)return B.a_I
 s=this.a
 s===$&&A.a()
 s=s.a
@@ -32360,7 +32360,7 @@ j(a,b){if(b==null)return!1
 if(!(b instanceof A.C7))return!1
 return b.d===this.d&&b.b==this.b&&A.hs(b.c,this.c)},
 gp(a){var s=this,r=s.c
-return A.Q(s.d,s.a,s.b,A.bA(r==null?B.a_N:r),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
+return A.Q(s.d,s.a,s.b,A.bA(r==null?B.a_M:r),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
 $iiv:1}
 A.AV.prototype={
 X7(a,b){var s=this.QO(a),r=A.bi(new A.a8l(this,b,s))
@@ -44982,7 +44982,7 @@ if(s==null||s.length<b)s=this.c=new Uint8Array(b)
 return J.iW(B.Y.gcm(s),s.byteOffset,b)}}
 A.auy.prototype={
 E(a,b){this.FF(0,b,0,b.length,!1)},
-aF(a){this.FF(0,B.a_E,0,0,!0)}}
+aF(a){this.FF(0,B.a_D,0,0,!0)}}
 A.aue.prototype={
 FF(a,b,c,d,e){var s=this.b.Z6(b,c,d,e)
 if(s!=null)this.a.E(0,A.hZ(s,0,null))
@@ -49253,7 +49253,7 @@ r.push(B.dl)
 r=A.aZ(s,A.m7(r),B.o,B.t,s,s,s,s,s,s,s,s,s)
 return r}}
 A.aeA.prototype={
-$2(a,b){var s,r,q,p=null,o=B.a_D[b],n=A.aQ(8),m=A.cU(B.W),l=t.p,k=A.b([A.bG(A.b([A.cK(o.a,B.r,p,24),B.f0,A.d3(A.U(o.b,p,p,p,B.acX,p,p),1)],l),B.y,B.p,B.q,0),B.bK,A.U(o.c,p,p,p,B.abU,p,p),B.bK,A.U(o.d,p,p,p,B.aci,p,p)],l)
+$2(a,b){var s,r,q,p=null,o=B.a0p[b],n=A.aQ(8),m=A.cU(B.W),l=t.p,k=A.b([A.bG(A.b([A.cK(o.a,B.r,p,24),B.f0,A.d3(A.U(o.b,p,p,p,B.acX,p,p),1)],l),B.y,B.p,B.q,0),B.bK,A.U(o.c,p,p,p,B.abU,p,p),B.bK,A.U(o.d,p,p,p,B.aci,p,p)],l)
 o=o.e
 if(o!=null){s=B.r.az(0.06)
 r=A.aQ(6)
@@ -50903,11 +50903,11 @@ return s==null?g:B.Yy[s]
 case 134:s=A.bS(h.b0(0,b))
 return s==null?g:B.a0J[s]
 case 135:s=A.bS(h.b0(0,b))
-return s==null?g:B.a0o[s]
+return s==null?g:B.a0n[s]
 case 136:s=A.bS(h.b0(0,b))
 return s==null?g:B.Zu[s]
 case 137:s=A.bS(h.b0(0,b))
-return s==null?g:B.a0l[s]
+return s==null?g:B.a0k[s]
 case 138:r=h.b0(0,b)
 r.toString
 t.W.a(r)
@@ -63763,7 +63763,7 @@ r.f=s.d},
 $S:0}
 A.Rl.prototype={
 K(a){var s=this.c.O(0,new A.l(0,40.95))
-return A.aR2(A.Oq(null,B.Kb,!0),B.a4,new A.wQ(1,B.a09,new A.cM(B.ES,B.w)),s,1.25,B.a7T)}}
+return A.aR2(A.Oq(null,B.Kb,!0),B.a4,new A.wQ(1,B.a08,new A.cM(B.ES,B.w)),s,1.25,B.a7T)}}
 A.rW.prototype={
 H(){return"MaterialType."+this.b}}
 A.DY.prototype={
@@ -69187,7 +69187,7 @@ return new A.ol(r.a.dc(s.gj9()),r.b,r.c)},
 da(a){var s=this.b
 return s.a.c.da(a.a0(0,s.gj9()))},
 rD(){var s,r,q=this.b,p=q.gj9()
-if(!isFinite(p.a)||!isFinite(p.b))return B.a_L
+if(!isFinite(p.a)||!isFinite(p.b))return B.a_K
 s=q.f
 if(s==null){s=q.a.c.rD()
 q.f=s}if(p.j(0,B.k))r=s
@@ -78772,7 +78772,7 @@ break
 case 1:return A.z(q,r)}})
 return A.A($async$GM,r)},
 ad3(a,b){var s,r,q,p
-if(a===b)return B.a_K
+if(a===b)return B.a_J
 s=A.b([],t.QP)
 if(a==null)s.push(b)
 else{r=B.b.fT(B.h1,a)
@@ -81118,7 +81118,7 @@ this.i9()}}
 A.pH.prototype={
 k(a){return"Entry#"+A.bv(this)+"("+this.d.k(0)+")"}}
 A.An.prototype={
-aj(){return new A.HV(A.aV(t.mf),B.a_Q,null,null)},
+aj(){return new A.HV(A.aV(t.mf),B.a_P,null,null)},
 aAf(a,b){return this.w.$2(a,b)},
 awr(a,b){return this.x.$2(a,b)}}
 A.HV.prototype={
@@ -81352,7 +81352,7 @@ r=n.gahy()
 q=n.a
 q=q.ch
 q.toString
-l.a=A.b1y(!0,A.aQv(B.o,r,s,q,A.aVs(),n.gajp(),m,n.gajS(),B.a_G,!0,"nav",B.adt),"Navigator Scope",!0,m,m,m,m)}else n.a.toString
+l.a=A.b1y(!0,A.aQv(B.o,r,s,q,A.aVs(),n.gajp(),m,n.gajS(),B.a_F,!0,"nav",B.adt),"Navigator Scope",!0,m,m,m,m)}else n.a.toString
 l.b=null
 s=n.a
 s.toString
@@ -83926,7 +83926,7 @@ h.IA()
 r=h.gadU()
 q=q.wA
 h.e!==$&&A.bl()
-h.e=new A.Ub(s,new A.c6(B.a2L,l),new A.rR(),p,B.cS,0,k,h.gagf(),h.gagh(),r,B.cS,0,j,h.gag9(),h.gagb(),r,i,B.a_P,f,g.CW,g.cx,g.cy,o,g,n,m,g.x,q,new A.Oy(),new A.Oy())
+h.e=new A.Ub(s,new A.c6(B.a2L,l),new A.rR(),p,B.cS,0,k,h.gagf(),h.gagh(),r,B.cS,0,j,h.gag9(),h.gagb(),r,i,B.a_O,f,g.CW,g.cx,g.cy,o,g,n,m,g.x,q,new A.Oy(),new A.Oy())
 return h},
 z5(a,b){var s,r,q,p=this,o=p.a.c,n=o.a.a.length
 if(n<a.b||n<a.a)return
@@ -87058,7 +87058,7 @@ j(a,b){var s=this
 if(b==null)return!1
 if(J.W(b)!==A.m(s))return!1
 return b instanceof A.b5&&b.a===s.a&&b.b==s.b&&b.d===s.d&&A.cT(null,null)},
-gp(a){return A.Q(this.a,this.b,null,this.d,A.bA(B.a_F),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
+gp(a){return A.Q(this.a,this.b,null,this.d,A.bA(B.a_E),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
 k(a){return"IconData(U+"+B.c.e6(B.i.mx(this.a,16).toUpperCase(),5,"0")+")"}}
 A.rr.prototype={
 cw(a){return!this.w.j(0,a.w)},
@@ -88188,7 +88188,7 @@ b=r?a1:a3.fr
 if(b==null)b=a2.b.c.z
 a3=r?a1:a3.fx
 if(a3==null)a3=a2.b.c.Q
-a=new A.E2(a4,s,q,p,m,o,n,a5,g===!0,a6,a7,i,h,l,k,j,f,new A.w0(a1),B.a_H,e===!0,d,c,b,a3,A.b2x(a2))
+a=new A.E2(a4,s,q,p,m,o,n,a5,g===!0,a6,a7,i,h,l,k,j,f,new A.w0(a1),B.a_G,e===!0,d,c,b,a3,A.b2x(a2))
 if(!a.j(0,a0.e))a0.a3(new A.aAg(a0,a))},
 BC(){if(this.d==null)this.rf()},
 K6(){this.rf()},
@@ -94691,7 +94691,7 @@ r.Au()
 return s.aP()},
 l(){var s,r,q,p,o=this
 for(s=o.b,r=s.length,q=o.gGQ(),p=0;p<s.length;s.length===r||(0,A.I)(s),++p)s[p].I(0,q)
-o.b=B.a_I
+o.b=B.a_H
 o.y=!1
 o.dO()},
 es(a,b){return a.nB(b)},
@@ -104767,7 +104767,7 @@ B.aa=new A.VX()
 B.cv=new A.VY()
 B.oX=new A.at5()
 B.f7=new A.W3(0,0,0,0)
-B.a_H=s([],A.an("F<aag>"))
+B.a_G=s([],A.an("F<aag>"))
 B.ah2=new A.atc()
 B.hW=new A.Ws()
 B.bZ=new A.Wt()
@@ -105496,10 +105496,10 @@ B.Xo=s([239,191,189],t.t)
 B.mu=s(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],t.s)
 B.rK=s([304],t.t)
 B.XR=s([4,9,14,19],t.t)
-B.a0p=s([137,80,78,71,13,10,26,10],t.Z)
+B.a0o=s([137,80,78,71,13,10,26,10],t.Z)
 B.Wp=new A.oo(0,"png")
 B.Wy=new A.l4(B.Wp,!1,0,"png")
-B.Wn=new A.mt(B.a0p,B.Wy,0,"png")
+B.Wn=new A.mt(B.a0o,B.Wy,0,"png")
 B.a0r=s([71,73,70,56,55,97],t.Z)
 B.Wm=new A.mt(B.a0r,B.iT,1,"gif87a")
 B.a_e=s([71,73,70,56,57,97],t.Z)
@@ -105546,8 +105546,8 @@ B.jU=new A.n9(5,"end")
 B.Ys=s([B.dm,B.f3,B.cR,B.hC,B.bi,B.jU],A.an("F<n9>"))
 B.Z8=s([2,1.13276676],t.n)
 B.Xt=s([2.18349805,1.20311921],t.n)
-B.a0_=s([2.33888662,1.28698796],t.n)
-B.a08=s([2.48660575,1.36351941],t.n)
+B.a_Z=s([2.33888662,1.28698796],t.n)
+B.a07=s([2.48660575,1.36351941],t.n)
 B.YB=s([2.62226596,1.44717976],t.n)
 B.YV=s([2.7514899,1.53385819],t.n)
 B.a_6=s([3.36298265,1.98288283],t.n)
@@ -105555,7 +105555,7 @@ B.Zk=s([4.08649929,2.23811846],t.n)
 B.ZP=s([4.85481134,2.47563463],t.n)
 B.YI=s([5.62945551,2.72948597],t.n)
 B.Z9=s([6.43023796,2.98020421],t.n)
-B.rP=s([B.Z8,B.Xt,B.a0_,B.a08,B.YB,B.YV,B.a_6,B.Zk,B.ZP,B.YI,B.Z9],t.zg)
+B.rP=s([B.Z8,B.Xt,B.a_Z,B.a07,B.YB,B.YV,B.a_6,B.Zk,B.ZP,B.YI,B.Z9],t.zg)
 B.Yw=s(["AM","PM"],t.s)
 B.rQ=s(["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],t.s)
 B.EA=new A.Af(0,"server")
@@ -105563,10 +105563,10 @@ B.Yy=s([B.EA],A.an("F<Af>"))
 B.Yz=s([B.kC,B.kD],A.an("F<Az>"))
 B.YC=s(["BC","AD"],t.s)
 B.YH=s([18,15,10,12,15,18,15,12,12],t.n)
-B.a_V=s(["Largemouth Bass","Smallmouth Bass","Spotted Bass","Northern Pike","Muskellunge","Chain Pickerel","Pickerel","Redfish","Snook"],t.s)
+B.a_U=s(["Largemouth Bass","Smallmouth Bass","Spotted Bass","Northern Pike","Muskellunge","Chain Pickerel","Pickerel","Redfish","Snook"],t.s)
 B.ch=s(["spring","summer","fall"],t.s)
 B.ahe=s(["dawn","day","dusk","night"],t.s)
-B.a8G=new A.cq("Spinnerbait","Spinnerbait","A safety-pin shaped lure with one or two spinning metal blades that flash and vibrate, and a skirted jig head with a hidden hook. The blades create thumping vibration and flash that fish detect through their lateral lines, making spinnerbaits deadly in stained or muddy water. Available in single-blade (Colorado) for slow, thumpy retrieves or double-blade (Indiana/Willow) for faster, flashier presentations.",B.a_V,"Best seasons: Spring through fall \u2014 especially prespawn and postspawn when bass are aggressive. Best conditions: Stained or muddy water, overcast days, wind-chopped water. The vibration helps fish find it when visibility is low.\n\nRetrieve techniques:\n\u2022 Slow roll \u2014 reel just fast enough to spin the blade, bumping the bottom. Best in cold water (under 15\xb0C).\n\u2022 Burn and kill \u2014 reel fast then stop suddenly, letting it fall on slack line. Strikes often come on the fall.\n\u2022 Yo-yo \u2014 lift rod tip sharply, let it fall back. Great for working deep weed edges.\n\nColors: White/chartreuse for stained water, black/blue for dark water, natural shad for clear water.\n\nGear: 7' medium-heavy rod, 12-17 lb fluorocarbon or 30-40 lb braid. A trailer hook adds hook-ups on short-striking fish.\n\nBest locations: Weed lines, lily pad edges, submerged timber, docks, and riprap banks.","\ud83d\udd04",B.ch)
+B.a8G=new A.cq("Spinnerbait","Spinnerbait","A safety-pin shaped lure with one or two spinning metal blades that flash and vibrate, and a skirted jig head with a hidden hook. The blades create thumping vibration and flash that fish detect through their lateral lines, making spinnerbaits deadly in stained or muddy water. Available in single-blade (Colorado) for slow, thumpy retrieves or double-blade (Indiana/Willow) for faster, flashier presentations.",B.a_U,"Best seasons: Spring through fall \u2014 especially prespawn and postspawn when bass are aggressive. Best conditions: Stained or muddy water, overcast days, wind-chopped water. The vibration helps fish find it when visibility is low.\n\nRetrieve techniques:\n\u2022 Slow roll \u2014 reel just fast enough to spin the blade, bumping the bottom. Best in cold water (under 15\xb0C).\n\u2022 Burn and kill \u2014 reel fast then stop suddenly, letting it fall on slack line. Strikes often come on the fall.\n\u2022 Yo-yo \u2014 lift rod tip sharply, let it fall back. Great for working deep weed edges.\n\nColors: White/chartreuse for stained water, black/blue for dark water, natural shad for clear water.\n\nGear: 7' medium-heavy rod, 12-17 lb fluorocarbon or 30-40 lb braid. A trailer hook adds hook-ups on short-striking fish.\n\nBest locations: Weed lines, lily pad edges, submerged timber, docks, and riprap banks.","\ud83d\udd04",B.ch)
 B.a0X=s(["Largemouth Bass","Smallmouth Bass","Northern Pike","Chain Pickerel"],t.s)
 B.ahg=s(["dawn","dusk","night"],t.s)
 B.a8L=new A.cq("Buzzbait","Spinnerbait","A specialised topwater spinnerbait with a large propeller-style blade mounted above the hook that churns and sputters across the surface like a fleeing baitfish or frog. The blade creates a distinctive buzzing sound and V-shaped wake that triggers explosive reaction strikes. One of the most exciting ways to catch bass because you see the entire strike.",B.a0X,"Best seasons: Late spring through early fall \u2014 when water temps exceed 18\xb0C. Prime time: Early morning, dusk, and overcast days. Night fishing with black buzzbaits is extremely effective in summer.\n\nRetrieve technique: Keep the rod tip up at 45\xb0 and reel steadily \u2014 the blade MUST stay on the surface to make noise. Vary the speed: fast creates more commotion, slow creates a wider wake. When a fish strikes, DO NOT set the hook immediately \u2014 wait 1-2 seconds until you feel the weight. Buzzbaits have a single hook and fish often swipe at it first before actually eating it.\n\nColors: White is universal. Black for night fishing. Chartreuse for stained water.\n\nGear: 7' to 7'6\" medium-heavy rod, 17-20 lb fluorocarbon or 30-40 lb braid. The longer rod helps with hook sets and casting distance.\n\nBest locations: Weed flats, lily pads, shallow shorelines, and around boat docks.","\ud83d\udca8",B.ch)
@@ -105575,9 +105575,9 @@ B.a8X=new A.cq("Crankbait","Crankbait","A hard-bodied lure with a plastic lip (b
 B.Zi=s(["Largemouth Bass","Striped Bass","White Bass","Walleye","Redfish","Speckled Trout","Bluefish"],t.s)
 B.mD=s(["spring","fall"],t.s)
 B.a8J=new A.cq("Lipless Crankbait","Crankbait",'A sinking, vibrating lure with no diving bill \u2014 just a solid body with a flat face that creates tight vibration on retrieve. Also called a "rat-L-trap" or "vibe". Because it has no bill, it sinks freely and can be fished at any depth by counting it down. The tight, high-frequency rattle mimics a fleeing baitfish and is excellent for calling fish from a distance. One of the best "search baits" for covering water fast.',B.Zi,"Best seasons: Spring and fall when fish are schooled up on baitfish. Deadly for fall feeding frenzies when bass are chasing shad on flats.\n\nRetrieve techniques:\n\u2022 Yo-yo \u2014 cast, let it sink to desired depth, then sharply lift rod tip and let it flutter back. Most strikes happen on the fall. Count it down: 1 second per foot of depth.\n\u2022 Steady burn \u2014 fast retrieve just below the surface for aggressive fish.\n\u2022 Stop-and-go \u2014 reel fast, pause, let it sink. Covers the water column.\n\nPro tip: Downsize in clear water (1/4 oz), upsize in stained water or wind (1/2-3/4 oz). Red or orange hooks are a factory option \u2014 they add a triggering flash.\n\nColors: Chrome/blue, gold/black, and red crawfish are staples. Match the local baitfish.\n\nGear: 7' medium-heavy rod, 12-17 lb fluorocarbon. Casting allows precise depth control. Braided line with a fluorocarbon leader works well for feeling the vibration.","\ud83d\udcf3",B.mD)
-B.a0h=s(["Largemouth Bass","Smallmouth Bass","Spotted Bass","Walleye","Northern Pike","Channel Catfish","Blue Catfish"],t.s)
+B.a0g=s(["Largemouth Bass","Smallmouth Bass","Spotted Bass","Walleye","Northern Pike","Channel Catfish","Blue Catfish"],t.s)
 B.eH=s(["spring","summer","fall","winter"],t.s)
-B.a8R=new A.cq("Jig","Jig","A lead head moulded onto a hook, typically dressed with a rubber or silicone skirt and often tipped with a soft plastic trailer. Jigs are extremely versatile \u2014 they can be hopped, dragged, swam, or pitched. The jig imitates a crawfish, baitfish, or leech depending on how it's worked. They excel in cold water when fish are sluggish and want a slow, easy meal. Jigs are also one of the best lures for catching larger-than-average fish because they present a substantial meal that bigger fish prefer.",B.a0h,"Best seasons: Year-round. Jigs shine in cold water (under 12\xb0C) when fish are slow and want easy targets. Also excellent in prespawn when crawfish are active.\n\nRetrieve techniques:\n\u2022 Drag and hop \u2014 cast to cover, let it sink on semi-slack line (feel the tick), hop it 6-12 inches by lifting rod tip, let it fall back on tight line. Strikes are subtle \u2014 usually just a mushy feeling or line twitch.\n\u2022 Swim jig \u2014 reel steadily just above the bottom with a compact trailer (swim bait or chunk).\n\u2022 Pitch and flip \u2014 pitch into heavy cover and let it fall on tight line. Braided line helps pull fish out of thick stuff.\n\nPro tip: Trim the skirt to just past the hook bend \u2014 it improves hook-ups. Add a rattle bead for noise in stained water. Use a chunk-style trailer in warm water, a creature bait in cold water.\n\nColors: Brown/purple (crawfish), green pumpkin (universal), black/blue (dark water).\n\nGear: 7' to 7'6\" heavy-action rod for flipping, 15-20 lb fluorocarbon or 40-50 lb braid. Sensitive rod tip is critical for feeling subtle bites.","\ud83e\udea8",B.eH)
+B.a8R=new A.cq("Jig","Jig","A lead head moulded onto a hook, typically dressed with a rubber or silicone skirt and often tipped with a soft plastic trailer. Jigs are extremely versatile \u2014 they can be hopped, dragged, swam, or pitched. The jig imitates a crawfish, baitfish, or leech depending on how it's worked. They excel in cold water when fish are sluggish and want a slow, easy meal. Jigs are also one of the best lures for catching larger-than-average fish because they present a substantial meal that bigger fish prefer.",B.a0g,"Best seasons: Year-round. Jigs shine in cold water (under 12\xb0C) when fish are slow and want easy targets. Also excellent in prespawn when crawfish are active.\n\nRetrieve techniques:\n\u2022 Drag and hop \u2014 cast to cover, let it sink on semi-slack line (feel the tick), hop it 6-12 inches by lifting rod tip, let it fall back on tight line. Strikes are subtle \u2014 usually just a mushy feeling or line twitch.\n\u2022 Swim jig \u2014 reel steadily just above the bottom with a compact trailer (swim bait or chunk).\n\u2022 Pitch and flip \u2014 pitch into heavy cover and let it fall on tight line. Braided line helps pull fish out of thick stuff.\n\nPro tip: Trim the skirt to just past the hook bend \u2014 it improves hook-ups. Add a rattle bead for noise in stained water. Use a chunk-style trailer in warm water, a creature bait in cold water.\n\nColors: Brown/purple (crawfish), green pumpkin (universal), black/blue (dark water).\n\nGear: 7' to 7'6\" heavy-action rod for flipping, 15-20 lb fluorocarbon or 40-50 lb braid. Sensitive rod tip is critical for feeling subtle bites.","\ud83e\udea8",B.eH)
 B.a_m=s(["Largemouth Bass","Smallmouth Bass","Spotted Bass","Walleye"],t.s)
 B.a90=new A.cq("Football Jig","Jig","A specialised jig with a wide, football-shaped lead head that rocks side-to-side on the bottom without tipping over. The wide design keeps the hook upright as it's dragged over rocks and gravel, preventing snags while presenting the trailer naturally. Purpose-built for fishing rocky bottoms, chunk rock banks, gravel points, and riprap. The football shape also creates a subtle side-to-side wobble that mimics a crawfish moving defensively across the bottom.",B.a_m,"Best seasons: Spring (prespawn) and fall when bass relate to rocky structure. Also effective in summer on deep rock piles and ledges.\n\nRetrieve: Drag it slowly across the bottom \u2014 do not hop it aggressively. The football head should tick and wobble over rocks. Keep your rod tip low and maintain bottom contact. Most strikes feel like a mushy bump or slight weight.\n\nTrailers: Use a crawfish-style trailer (Zoom Super Chunk, Strike King Rage Craw) in green pumpkin or brown. Trim the trailer to about 2.5-3\" for best action.\n\nColors: Brown/purple or green pumpkin for clear water. Black/blue for stained water.\n\nGear: 7'2\" to 7'6\" heavy-action rod, 15-20 lb fluorocarbon line. The heavy rod is needed for solid hook sets through the jig's thick head.","\u26bd",B.mD)
 B.a_2=s(["Largemouth Bass","Smallmouth Bass","Spotted Bass","Crappie","Rock Bass"],t.s)
@@ -105595,9 +105595,9 @@ B.mE=s(["summer"],t.s)
 B.a8I=new A.cq("Drop Shot Rig","Soft Plastic","A finesse rig where the weight is tied at the end of the line, with the hook tied 12-24 inches above it using a Palomar knot. The weight sits on the bottom while the bait suspends above it, quivering in place. The drop shot is among the most effective presentations for deep, clear water and heavily pressured fish that have seen every other rig. It presents the bait naturally because the line comes from above, not from the side like a traditional jig head.",B.a0y,'Best seasons: Summer when fish are deep (10-30 ft). Also effective in clear water year-round. The drop shot excels when fish are suspended off the bottom and won\'t chase.\n\nRigging: 1. Tie a Palomar knot with a long tag end (12-24"). 2. Pass the tag end back through the hook eye. 3. Tie the weight to the tag end. 4. Use a finesse worm (4") or minnow bait. 5. Hook the bait through the nose \u2014 it must hang perfectly straight.\n\nRetrieve: Once the weight hits bottom, shake the rod tip gently \u2014 the bait should quiver without moving the weight. Lift the weight 6-12 inches and let it settle. Most bites feel like a tap or the weight suddenly feeling lighter.\n\nColors: Natural shades \u2014 green pumpkin, morning dawn, watermelon. Use lighter colours in clearer water.\n\nGear: 6\'8" to 7\'2" medium-light spinning rod, 6-10 lb fluorocarbon line. A sensitive rod tip is critical for feeling subtle drop shot bites. Use a #1 or #2 hook for finesse worms.',"\ud83d\udccf",B.mE)
 B.ZI=s(["Smallmouth Bass","Largemouth Bass","Spotted Bass","Walleye","Crappie","Yellow Perch"],t.s)
 B.a94=new A.cq("Ned Rig","Soft Plastic",'A short, finesse soft plastic (usually a "Zinker" or "Finesse TRD") on a light mushroom-head jig with a flat bottom. The flat head lets the bait stand upright on the bottom, wobbling subtly with any water movement. The Ned rig took the fishing world by storm in the 2010s for its incredible effectiveness on pressured smallmouth and largemouth in clear water. It\'s maddeningly simple yet devastatingly effective when nothing else works.',B.ZI,"Best seasons: Year-round, but truly shines in cold water (under 10\xb0C) when fish are sluggish and won't chase. Also deadly in high-pressure fisheries.\n\nRigging: Thread the bait onto the jig head so it sits flush with the bottom. Trim the bait shorter if fish are short-striking \u2014 a 2\" bait often out-fishes a 3\".\n\nRetrieve: Cast, let it sink on semi-slack line, then drag or hop it very slowly. The magic is in the pause \u2014 let it sit for 10-20 seconds between moves. Watch your line for any tick or twitch. Most strikes are incredibly subtle \u2014 the line just moves sideways or feels heavy.\n\nColors: Green pumpkin (best overall), hot craw, and purple. Use darker colours in stained water.\n\nGear: 6'6\" to 7' medium-light spinning rod, 6-10 lb fluorocarbon. You NEED fluorocarbon \u2014 it sinks and keeps the bait in contact with the bottom. The rod should be very sensitive to detect light bites.","\ud83e\uddf7",B.eH)
-B.a01=s(["Largemouth Bass","Smallmouth Bass","Northern Pike","Striped Bass","Snook","Redfish"],t.s)
+B.a00=s(["Largemouth Bass","Smallmouth Bass","Northern Pike","Striped Bass","Snook","Redfish"],t.s)
 B.ahf=s(["dawn","dusk"],t.s)
-B.a91=new A.cq("Popper","Topwater",'A concave-faced topwater lure that creates a loud "pop" and spray when twitched, followed by a resting pause. The pop mimics a baitfish struggling on the surface, attracting fish from below. The pause is critical \u2014 most strikes happen 2-5 seconds after the pop when fish track the disturbance and attack. Poppers work best in calm water where the surface disturbance travels farther and fish can pinpoint the sound.',B.a01,"Best seasons: Late spring through early fall. Water temps above 18\xb0C. Prime times: Early morning (dawn to 9am) and early evening (5pm to dusk). Overcast days can extend topwater action all day.\n\nRetrieve: Cast near cover, let it sit until ripples dissipate, then pop with a sharp rod-tip twitch. Pause 3-5 seconds between pops. The cadence matters: pop-pop-pause, pop-pause, or pop-pop-pop-pause. Experiment until you find what they want.\n\nPro tip: If a fish strikes and misses, don't reel in \u2014 pop it again immediately. They often come back for a second strike.\n\nColors: Bone or white (universal), black (night fishing), frog patterns (vegetation).\n\nGear: 6'6\" to 7' medium rod, 12-17 lb fluorocarbon or monofilament (mono floats and helps topwater action). A moderate-fast action rod helps prevent tearing the hooks out.","\ud83d\udca5",B.ch)
+B.a91=new A.cq("Popper","Topwater",'A concave-faced topwater lure that creates a loud "pop" and spray when twitched, followed by a resting pause. The pop mimics a baitfish struggling on the surface, attracting fish from below. The pause is critical \u2014 most strikes happen 2-5 seconds after the pop when fish track the disturbance and attack. Poppers work best in calm water where the surface disturbance travels farther and fish can pinpoint the sound.',B.a00,"Best seasons: Late spring through early fall. Water temps above 18\xb0C. Prime times: Early morning (dawn to 9am) and early evening (5pm to dusk). Overcast days can extend topwater action all day.\n\nRetrieve: Cast near cover, let it sit until ripples dissipate, then pop with a sharp rod-tip twitch. Pause 3-5 seconds between pops. The cadence matters: pop-pop-pause, pop-pause, or pop-pop-pop-pause. Experiment until you find what they want.\n\nPro tip: If a fish strikes and misses, don't reel in \u2014 pop it again immediately. They often come back for a second strike.\n\nColors: Bone or white (universal), black (night fishing), frog patterns (vegetation).\n\nGear: 6'6\" to 7' medium rod, 12-17 lb fluorocarbon or monofilament (mono floats and helps topwater action). A moderate-fast action rod helps prevent tearing the hooks out.","\ud83d\udca5",B.ch)
 B.a_b=s(["Largemouth Bass","Smallmouth Bass","Striped Bass","Snook","Redfish","Speckled Trout","Northern Pike"],t.s)
 B.a0L=s(["summer","fall"],t.s)
 B.a98=new A.cq("Walking Bait","Topwater",'A cigar-shaped topwater lure designed to "walk the dog" \u2014 zig-zag across the surface with a side-to-side sliding motion when retrieved with a rhythmic rod-tip twitching technique. The erratic, wounded-baitfish action drives predatory fish crazy. Walking baits excel over open water, grass flats, and along weed edges. The Zara Spook is the most famous walking bait ever made.',B.a_b,"Best seasons: Summer and early fall \u2014 warm water, aggressive fish. Also effective during the fall baitfish migration. Works best in calm water conditions (light wind or less).\n\nWalk-the-dog technique: 1. Cast and point rod tip at the water. 2. Snap the rod tip down 6-12 inches while simultaneously reeling slack. 3. The bait should dart sideways. 4. Repeat in a steady rhythm \u2014 the bait walks in a zig-zag. 5. Vary speed: fast walking triggers reaction, slow walking triggers follows.\n\nPro tip: If fish follow but don't strike, speed up or change direction. If they boil behind it, pause \u2014 they often eat it when it stops.\n\nColors: Bone/silver, bright chartreuse, or black for night.\n\nGear: 7' medium-heavy rod with a moderate-fast action, 14-17 lb monofilament (mono floats and aids the walking action). Braid also works but requires rod-tip adjustments.","\ud83d\udeb6",B.a0L)
@@ -105613,8 +105613,8 @@ B.a0N=s(["summer","winter"],t.s)
 B.a97=new A.cq("Jigging Spoon","Spoon","A heavy metal spoon designed specifically for vertical jigging in deep water. Jigging spoons are thicker and heavier than casting spoons so they sink fast and flutter erratically on the fall. They are dropped straight down to the fish and worked vertically rather than cast. Essential for deep lake trout, walleye on structure, and ice fishing. The flutter fall triggers reaction strikes from fish holding deep.",B.Ya,"Best seasons: Summer when fish hold deep (20-50 ft). Ice fishing \u2014 jigging spoons are the #1 lure for lake trout and walleye through the ice. Also effective year-round for deep structure.\n\nTechnique: 1. Drop to the bottom or to the depth where fish are holding. 2. Lift rod tip sharply 2-4 ft. 3. Follow the spoon back down with your rod tip as it flutters. 4. Watch your line \u2014 strikes happen on the fall and look like line twitching or stopping.\n\nPro tip: Add a minnow head or strip of bait to the hook for reluctant fish. The scent and taste triggers fish to hold on longer.\n\nSizes: 1/4 oz for walleye, 1/2-1 oz for lake trout, 2-4 oz for tuna and deep water.\n\nColors: Silver, glow (for deep water and ice), gold, and chartreuse.\n\nGear: 6'6\" to 7' medium-heavy to heavy rod, 15-30 lb braid. Braid eliminates stretch for better sensitivity and hook sets at depth. A high-speed reel (6:1+) helps quickly regain line.","\u2b07\ufe0f",B.a0N)
 B.YS=s(["Walleye","Channel Catfish","Blue Catfish","Crappie","Yellow Perch","Redfish","Speckled Trout","Flounder","Bluegill"],t.s)
 B.a9_=new A.cq("Live Bait Rig","Live Bait","A basic hook-and-weight rig for presenting live bait naturally. Typically consists of a hook tied to a leader, with a weight above a swivel so the fish can take the bait without feeling the weight. Using live bait is often the most effective way to catch fish, especially in cold water or high-pressure fisheries where fish are wary of artificials. Common live baits include nightcrawlers, minnows, shiners, leeches, crayfish, shrimp, and cut bait.",B.YS,'Best seasons: Year-round. Live bait works in every season and condition. Especially effective when fish are in a negative mood or during cold fronts.\n\nRigging tips:\n\u2022 Slip sinker rig (most versatile) \u2014 egg sinker slides on main line above a swivel, with 18-36" leader to the hook. Fish can take bait and run without feeling weight.\n\u2022 Carolina rig \u2014 heavier weight (3/4-2 oz) above swivel with longer leader (2-4 ft). Best for surf fishing and deep water.\n\u2022 Split shot rig \u2014 light weight pinched on the line 12-18" above the hook. Best for panfish and shallow water.\n\nHook selection: Use circle hooks for catch-and-release (they hook in the corner of the mouth). Use J-hooks for live minnows (hook through the lips or back). Match hook size to bait size \u2014 the hook point should be exposed.\n\nBait selection: Nightcrawlers for catfish and panfish. Shiners for bass. Minnows for walleye and crappie. Leeches for walleye. Shrimp for saltwater.\n\nGear: 6\'6" to 7\' medium rod, 10-17 lb monofilament or fluorocarbon. A sensitive rod tip helps detect subtle live-bite taps.',"\ud83e\udeb1",B.eH)
-B.a03=s(["Largemouth Bass","Striped Bass","Redfish","Flounder","Channel Catfish"],t.s)
-B.a8Q=new A.cq("Carolina Rig","Live Bait","A specialised bottom rig where a heavy egg sinker (3/4-2 oz) slides freely on the main line above a barrel swivel, with a 2-4 ft fluorocarbon leader to the hook. The weight ticks and taps along the bottom while the bait floats naturally above it. The Carolina rig excels at covering deep flats, points, and channels. It's especially effective for suspending soft plastics above grass beds and presenting baits naturally in deep, clear water.",B.a03,"Best seasons: Late spring through fall when fish are on deep flats and points. Also effective for summer deep-water patterns (15-30 ft).\n\nRigging: 1. Thread egg sinker onto main line. 2. Tie a barrel swivel. 3. Tie 2-4 ft leader to the other end of swivel. 4. Tie hook (3/0 to 5/0) with your favourite soft plastic. 5. Peg the weight with a toothpick if you want it fixed (rarely done).\n\nRetrieve: Drag it slowly \u2014 lift rod tip to move the weight 6-12 inches, then let it settle. The weight should tick along the bottom. Watch your line for any tick or twitch. Most strikes are subtle.\n\nBait selection: Soft plastic lizards, worms, and creatures. Use a 6-8\" worm for bass, smaller for panfish. Green pumpkin and watermelon are staple colours.\n\nGear: 7' to 7'6\" medium-heavy rod, 12-17 lb fluorocarbon main line, 10-15 lb fluorocarbon leader. A longer rod helps with casting heavy weights.","\ud83d\udd17",B.ch)
+B.a02=s(["Largemouth Bass","Striped Bass","Redfish","Flounder","Channel Catfish"],t.s)
+B.a8Q=new A.cq("Carolina Rig","Live Bait","A specialised bottom rig where a heavy egg sinker (3/4-2 oz) slides freely on the main line above a barrel swivel, with a 2-4 ft fluorocarbon leader to the hook. The weight ticks and taps along the bottom while the bait floats naturally above it. The Carolina rig excels at covering deep flats, points, and channels. It's especially effective for suspending soft plastics above grass beds and presenting baits naturally in deep, clear water.",B.a02,"Best seasons: Late spring through fall when fish are on deep flats and points. Also effective for summer deep-water patterns (15-30 ft).\n\nRigging: 1. Thread egg sinker onto main line. 2. Tie a barrel swivel. 3. Tie 2-4 ft leader to the other end of swivel. 4. Tie hook (3/0 to 5/0) with your favourite soft plastic. 5. Peg the weight with a toothpick if you want it fixed (rarely done).\n\nRetrieve: Drag it slowly \u2014 lift rod tip to move the weight 6-12 inches, then let it settle. The weight should tick along the bottom. Watch your line for any tick or twitch. Most strikes are subtle.\n\nBait selection: Soft plastic lizards, worms, and creatures. Use a 6-8\" worm for bass, smaller for panfish. Green pumpkin and watermelon are staple colours.\n\nGear: 7' to 7'6\" medium-heavy rod, 12-17 lb fluorocarbon main line, 10-15 lb fluorocarbon leader. A longer rod helps with casting heavy weights.","\ud83d\udd17",B.ch)
 B.a0A=s(["Yellow Perch","Walleye","Crappie","Bluegill","Lake Trout","Northern Pike"],t.s)
 B.j1=s(["winter"],t.s)
 B.a8K=new A.cq("Ice Jig","Ice Fishing","A tiny, lightweight jig (1/80 to 1/16 oz) designed for fishing through ice holes. Usually tipped with a wax worm, spike (maggot), or small minnow head. Ice jigs come in wild colours and shapes \u2014 ratsos, forage minnows, tungsten jigs, and tear-drop shapes. Tungsten jigs are popular because they drop faster and transmit vibration better. Ultra-light rods with spring bobbers are used to detect the subtle bites.",B.a0A,"Best seasons: Winter, obviously! Ice fishing season (typically December-March depending on location). First ice and last ice are usually the most productive.\n\nTechnique: 1. Drop the jig to just above the bottom. 2. Jig with short, sharp lifts (1-6 inches). 3. Let it sit completely still for 10-30 seconds between jigging sequences. 4. Watch the spring bobber \u2014 the slightest twitch means a bite.\n\nPro tip: Pound the bottom a few times to create a puff of sediment \u2014 this attracts fish to the area, then present your jig just above the cloud.\n\nTipping baits: Wax worms for panfish, spikes for perch, minnow heads for walleye and lake trout. Always keep baits lively.\n\nElectronics: A flasher or fish finder is worth its weight in gold \u2014 you can see your jig and the fish's reaction in real-time.\n\nGear: 24-32\" ultra-light ice rod, 2-4 lb monofilament or fluorocarbon. A spring bobber on the rod tip is essential for detecting light bites.","\ud83e\uddca",B.j1)
@@ -105633,8 +105633,8 @@ B.ZR=s(["Striped Bass","Bluefish","Flounder","Redfish","Cobia","King Mackerel","
 B.a8W=new A.cq("Bucktail Jig","Saltwater",'A lead-head jig dressed with bucktail (deer hair) and often synthetic flash fibres. One of the oldest and most dependable saltwater lures. The bucktail breathes and pulses on the drop, imitating a baitfish or squid. Bucktail jigs can be hopped along the bottom, swam at mid-depth, or cast and retrieved. They work in both surf and bays year-round. White is the most famous colour \u2014 "white bucktail" is universally recognised as a striped bass killer.',B.ZR,"Best seasons: Year-round \u2014 bucktails work in every season. Spring and fall striped bass runs are prime time. Summer for flounder on the flats. Winter for deep-water holdovers.\n\nRetrieve: \u2022 Hop along the bottom \u2014 lift rod tip, let it fall back. Effective for flounder and stripers.\n\u2022 Slow swim \u2014 steady retrieve just off the bottom. Great for redfish and trout.\n\u2022 Fast retrieve \u2014 aggressive action for bluefish and mackerel.\n\nPro tip: Add a soft plastic trailer (Gulp!, paddle tail) for extra scent and action. Use a stinger hook (small treble attached to the main hook) for short-striking fish.\n\nSizes: 1/4-1/2 oz for inshore, 3/4-2 oz for surf and deep water.\n\nColors: White (universal), chartreuse/white (stained water), all-yellow (flounder), and all-black (night fishing).\n\nGear: 7' to 8' medium-heavy spinning rod, 15-30 lb braid. A fast-action rod provides good hook-setting power.","\ud83e\udeae",B.eH)
 B.a18=s(["King Mackerel","Spanish Mackerel","Mahi Mahi","Bluefin Tuna","Yellowfin Tuna","Sailfish","Striped Bass","Bluefish"],t.s)
 B.a93=new A.cq("Trolling Spoon","Saltwater",'A large metal spoon designed to be trolled behind a moving boat at speeds of 4-10 knots. The spoon wobbles and flashes, imitating a fleeing baitfish. Trolling spoons come in various sizes (4-12") and weights (1-8 oz) depending on target species and trolling depth. They are the go-to lure for offshore trolling for tuna, mackerel, and mahi mahi, as well as inshore trolling for striped bass and bluefish.',B.a18,'Best seasons: Late spring through fall when pelagic species are migrating. Tuna: summer through early fall. Mackerel: spring and fall runs.\n\nTrolling setup: \u2022 Use Planer boards or downriggers to reach desired depth. \u2022 Let out 50-150 ft of line behind the boat depending on depth and speed. \u2022 Trolling speed: 5-8 knots for most species, slower for striped bass.\n\nPro tips: \u2022 Use wire or heavy fluorocarbon leader (40-80 lb) for toothy species. \u2022 Vary the distance behind the boat and the trolling speed until you find fish. \u2022 Use a stinger hook (daisy chain) for short-striking fish like mackerel.\n\nSpoon sizes: 3-4" for Spanish mackerel, 6-8" for king mackerel and mahi, 8-12" for tuna and sailfish.\n\nColors: Silver (best all-around), gold (stained water), chartreuse, and green/blue combinations for clear tropical water.\n\nGear: Trolling rod (7-8\') with conventional reel, 30-50 lb braid. Use a wind-on leader for tuna. Heavy-duty outrigger clips for multiple lines.',"\ud83d\udea4",B.ch)
-B.a0j=s(["Walleye","Perch","Northern Pike","Lake Trout","Whitefish"],t.s)
-B.a8P=new A.cq("Bottom Bouncer","Ice Fishing Rig","A weighted wire rig that bounces along the bottom \u2014 keeps your bait at the perfect depth while ice fishing.",B.a0j,"Designed for ice fishing tip-ups and jigging rods.\n\nHow to use:\n\u2022 Attach to your line above the hook \u2014 the weight rides on the bottom.\n\u2022 The wire arm bounces along, keeping bait just off the bottom.\n\u2022 Great for walleye and perch on muddy or uneven bottoms.\n\u2022 Tip-up setup: Use a quick-strike rig with two hooks.\n\u2022 Jigging: Lift and drop slowly \u2014 the bottom bouncer keeps tension.\n\nWeights: 1/4 oz for shallow (10-20 ft), 1/2-3/4 oz for deeper water.\nColors: Plain lead (best), painted chartreuse or glow for dark water.","\ud83c\udfa3",B.j1)
+B.a0i=s(["Walleye","Perch","Northern Pike","Lake Trout","Whitefish"],t.s)
+B.a8P=new A.cq("Bottom Bouncer","Ice Fishing Rig","A weighted wire rig that bounces along the bottom \u2014 keeps your bait at the perfect depth while ice fishing.",B.a0i,"Designed for ice fishing tip-ups and jigging rods.\n\nHow to use:\n\u2022 Attach to your line above the hook \u2014 the weight rides on the bottom.\n\u2022 The wire arm bounces along, keeping bait just off the bottom.\n\u2022 Great for walleye and perch on muddy or uneven bottoms.\n\u2022 Tip-up setup: Use a quick-strike rig with two hooks.\n\u2022 Jigging: Lift and drop slowly \u2014 the bottom bouncer keeps tension.\n\nWeights: 1/4 oz for shallow (10-20 ft), 1/2-3/4 oz for deeper water.\nColors: Plain lead (best), painted chartreuse or glow for dark water.","\ud83c\udfa3",B.j1)
 B.YR=s(["Northern Pike","Walleye","Lake Trout","Pickerel","Musky"],t.s)
 B.a8Y=new A.cq("Norwegian Hook","Ice Fishing Rig","A specialized treble hook rig used in ice fishing tip-ups \u2014 features a unique wire design that hooks fish as they take the bait.",B.YR,"The Norwegian hook is the go-to for tip-up ice fishing.\n\nWhy it works:\n\u2022 Wire design opens when fish takes bait \u2014 sets the hook automatically.\n\u2022 Holds live bait (minnows) perfectly without killing them.\n\u2022 Two hooks increase hook-up ratio on light-biting winter fish.\n\nTip-up setup:\n\u2022 Use a quick-strike rig: Norwegian hook on front, treble on back.\n\u2022 Hook the minnow through the lips or dorsal fin.\n\u2022 Set your tip-up so the bait hangs 1-3 ft off the bottom.\n\u2022 When the flag goes up, let the fish run for 3-5 seconds before setting.\n\nSizes: #2-#4 for perch and walleye, #1/0-#2/0 for pike and lakers.\nColor options: Red (most popular), glow-in-the-dark for dark water.","\ud83e\ude9d",B.j1)
 B.mx=s([B.a8G,B.a8L,B.a8X,B.a8J,B.a8R,B.a90,B.a8V,B.a8M,B.a8O,B.a8S,B.a8I,B.a94,B.a91,B.a98,B.a92,B.a96,B.a8H,B.a97,B.a9_,B.a8Q,B.a8K,B.a95,B.a8N,B.a8T,B.a8Z,B.a8U,B.a8W,B.a93,B.a8P,B.a8Y],A.an("F<cq>"))
@@ -105725,82 +105725,51 @@ B.Fn=new A.vc()
 B.ju=new A.U3(1,"page")
 B.jv=new A.fj(B.bE,B.ju)
 B.a_w=s([B.Fn,B.jv],A.an("F<bg>"))
-B.Vv=new A.b5(58337,"MaterialIcons",!1)
-B.afs=new A.f6(B.Vv,"Voice Recording","Log catches completely hands-free with natural speech commands.",'Tap the \ud83c\udfa4 mic button at the bottom of the screen and speak naturally.\n\n\u2022 Say "[name] caught [species]" \u2014 e.g. "Jason caught a largemouth bass"\n\u2022 Add location: "at Lake St. Clair", "from the pier", "in the channel"\n\u2022 The form opens with all details pre-filled from your voice\n\nThe app learns from your edits! Fix a species name once and future voice commands auto-correct.','Fix a species name once (tap to edit) and future voice commands auto-correct. Example: edit "pipe" \u2192 "pike" once, then saying "caught a pipe" auto-records as "pike".')
-B.rm=new A.b5(57527,"MaterialIcons",!1)
-B.afE=new A.f6(B.rm,"AI Fish ID","Snap a photo and AI instantly identifies the species.","Open the Fish ID feature and tap the camera button.\n\n\u2022 Take or choose a photo of your catch\n\u2022 AI analyzes the photo and suggests matching species\n\u2022 View detailed info about the identified species\n\nPerfect for identifying unfamiliar catches or confirming your guess.",'Use the sort feature to prioritise fish you haven\'t caught yet. Mark species as "Mastered" to track your expertise.')
-B.Vt=new A.b5(58312,"MaterialIcons",!1)
-B.afq=new A.f6(B.Vt,"Interactive Map","Nautical charts, depth contours, GPS tracking, and weather overlays.","See all your catches plotted on an interactive map with species pins.\n\n\u2022 Tap a pin to see species and angler\n\u2022 Pinch to zoom and pan around\n\u2022 Right-side menu: Offline maps, Nautical charts, Depth contours, Weather overlays\n\nLong-press anywhere to log a depth reading. Toggle depth logs on/off in the side menu.\nEvery submission helps build a free community depth database!","GPS and weather are automatic when you log a catch. Download offline map tiles before heading out to areas with poor cell service.")
-B.VJ=new A.b5(59097,"MaterialIcons",!1)
-B.afy=new A.f6(B.VJ,"Weather & Forecast","Current conditions and 5-day forecast for your location.","View real-time weather data including temperature, humidity, wind speed and direction.\n\n\u2022 Current conditions at your location\n\u2022 5-day forecast with highs and lows\n\u2022 Wind speed and direction for planning\n\nWeather data is automatically attached to every catch you log, so you can see what conditions produce the best fishing.","Cold weather (under 12\xb0C)? Jigs and slow presentations score higher. Warm weather? Topwater and spinnerbaits get a boost.")
-B.Vx=new A.b5(58416,"MaterialIcons",!1)
-B.afv=new A.f6(B.Vx,"Solunar Calendar","Best fishing times based on moon phase and position.","The solunar calendar shows major and minor feeding periods for each day.\n\n\u2022 Major periods: Best fishing times (usually 1-2 hours long)\n\u2022 Minor periods: Secondary feeding times\n\u2022 Moon phase indicator shows current lunar cycle\n\u2022 Combines with dawn/dusk times for peak action\n\nPlan your trips around major feeding periods for the best results.","Fish during major periods for the best results. New moon and full moon phases produce the most active feeding. Combine with dawn/dusk for peak action.")
-B.Vh=new A.b5(57548,"MaterialIcons",!1)
-B.afp=new A.f6(B.Vh,"Stats & Analytics","Detailed statistics on your catches, species breakdown, and trends.","View comprehensive statistics about your fishing history.\n\n\u2022 Total catches, species count, and weight tracking\n\u2022 Species breakdown with counts per fish type\n\u2022 Trip and session summaries\n\u2022 Export your data for external analysis","Export your data as CSV for Excel, JSON for complete backups, or KML to see all your catch locations on Google Earth.")
-B.Vm=new A.b5(57900,"MaterialIcons",!1)
-B.afA=new A.f6(B.Vm,"Brag Board","Share photos of your biggest catches with the community.","Post your catch photos to the Brag Board and connect with other anglers.\n\n\u2022 Upload photos of your biggest catches\n\u2022 Add species, description, and details\n\u2022 Like and comment on other anglers' posts\n\u2022 Build your reputation in the fishing community",null)
-B.W8=new A.b5(984763,"MaterialIcons",!1)
-B.aft=new A.f6(B.W8,"Calendar View","See your fishing history organized on a calendar.","Browse your catch history by date on an interactive calendar.\n\n\u2022 Days with catches are highlighted\n\u2022 Tap any day to see catches from that trip\n\u2022 Navigate between months and years\n\u2022 Get a quick overview of your fishing activity",null)
-B.Vj=new A.b5(57691,"MaterialIcons",!1)
-B.afu=new A.f6(B.Vj,"Prepare for Fishing","Pre-trip checklist to make sure you're ready to hit the water.","Get organized before your fishing trip with the Prepare checklist.\n\n\u2705 Add Anglers \u2014 List who's coming along\n\u2705 Check Weather \u2014 View forecast for your trip\n\u2b50 Best Fishing Times \u2014 Check solunar peaks\n\u2705 Set Up Tackle \u2014 Choose your lures and gear\n\u2705 Review Fish ID \u2014 Study target species\n\u2705 Check Map & Spots \u2014 Plan where to fish\n\ud83c\udfa3 Start New Trip \u2014 Begin your fishing session\n\nItems auto-check based on your data (e.g. anglers check once added).","Items auto-check based on your data. Use the summary card at the bottom to see your readiness at a glance.")
-B.Vq=new A.b5(58186,"MaterialIcons",!1)
-B.afr=new A.f6(B.Vq,"Tackle Box","Build a digital tackle box. Track which lures work best.","Manage your fishing tackle digitally.\n\n\u2022 Add tackle items with photos\n\u2022 Categorize by type: spinnerbait, crankbait, jig, soft plastic, spoon, topwater\n\u2022 Tag target species for each lure\n\u2022 Add fishing tips for each piece of tackle\n\u2022 Browse the catalog of recommended tackle","Build your tackle box from the catalog first \u2014 each entry comes pre-loaded with target species and fishing tips.")
-B.afx=new A.f6(B.rm,"Today's Pick","AI-powered lure recommendation based on current conditions.","Get personalized lure recommendations from AI based on:\n\n\u2022 Current weather conditions\n\u2022 Season and time of year\n\u2022 Time of day\n\u2022 Water temperature and clarity\n\nThe AI considers what typically works best for current conditions.","Cold weather? Jigs and slow presentations. Warm weather? Topwater and spinnerbaits. Overcast days are prime for topwater.")
-B.VM=new A.b5(61282,"MaterialIcons",!1)
-B.afD=new A.f6(B.VM,"Cloud Sync","Back up catches to the cloud and sync across devices.","Keep your data safe and accessible everywhere.\n\n\u2601\ufe0f **Cloud Sync:** Upload and download your catch data\n\ud83d\udcf1 **Cross-device:** Access your data from any device\n\ud83c\udf10 **Web Dashboard:** View your catches online at catchtales.com/cloud\n\n\ud83c\udfa3 **Fish Together \u2014 How to use:**\n1. Tap Fish Together from the Cloud Sync screen\n2. Enter your name and Start a Session\n3. A session code appears (e.g. PIKE-73) \u2014 share it with your buddy\n4. They join with the code \u2014 chat, share catches, and share GPS!","Sync before switching devices. Share your session code with a buddy for Fish Together.")
-B.afw=new A.f6(B.ro,"Selfie Camera","Auto-capture selfie camera with countdown timer.","Take perfect catch photos every time with the auto selfie camera.\n\n\u2022 Opens the front camera automatically\n\u2022 3-second countdown so you can pose with your fish\n\u2022 Auto-captures \u2014 no need to tap the screen\n\u2022 Photo is saved directly to your catch entry",null)
-B.Vn=new A.b5(57962,"MaterialIcons",!1)
-B.afz=new A.f6(B.Vn,"Export & Import","Export catches as CSV, JSON, or KML files.","Three export formats for different needs:\n\n\ud83d\udcca **CSV (Excel/Sheets)** \u2014 Opens in any spreadsheet app. All fields included: species, weight, length, GPS, weather, notes.\n\n\ud83d\udcbe **JSON (Backup)** \u2014 Raw structured data perfect for backups or transferring to another app.\n\n\ud83c\udf0d **KML (Google Earth)** \u2014 GPS coordinates formatted for Google Earth. See all your catch locations on a map.\n\n\ud83d\udcc5 Filter by date range to export specific trips or seasons.","CSV for Excel analysis. JSON for complete backups. KML to see locations on Google Earth.")
-B.VK=new A.b5(59111,"MaterialIcons",!1)
-B.afB=new A.f6(B.VK,"WiFi-Only Mode","Only transfer data over WiFi to save mobile data.","Toggle WiFi-only mode to restrict data transfers to WiFi connections only.\n\n\u2022 Cloud sync only runs on WiFi\n\u2022 Weather updates wait for WiFi\n\u2022 Map downloads use WiFi only\n\nPerfect for when you're out on the water and want to save your mobile data plan.",null)
-B.VH=new A.b5(59079,"MaterialIcons",!1)
-B.afC=new A.f6(B.VH,"Pro Features","Unlimited catches, AI fish ID, advanced stats, cloud sync, and more.","The Pro version unlocks the full CatchTales experience:\n\n\u2022 Unlimited catch logging\n\u2022 AI-powered fish identification\n\u2022 Advanced statistics and analytics\n\u2022 Cloud sync and backup\n\u2022 Brag Board social features\n\u2022 Weather and solunar data\n\u2022 No ads, no limits","Download the Pro version from the CatchTales website to unlock all features!")
-B.a_D=s([B.afs,B.afE,B.afq,B.afy,B.afv,B.afp,B.afA,B.aft,B.afu,B.afr,B.afx,B.afD,B.afw,B.afz,B.afB,B.afC],A.an("F<f6>"))
-B.a_K=s([],t.QP)
+B.a_J=s([],t.QP)
 B.t4=s([],A.an("F<bcN>"))
-B.a_O=s([],t.D)
-B.a_M=s([],t.fJ)
-B.a_L=s([],t.ER)
+B.a_N=s([],t.D)
+B.a_L=s([],t.fJ)
+B.a_K=s([],t.ER)
 B.ahi=s([],t.ss)
 B.t1=s([],t.tc)
 B.iZ=s([],t.jl)
 B.t3=s([],t.wi)
-B.a_G=s([],A.an("F<lh<@>>"))
+B.a_F=s([],A.an("F<lh<@>>"))
 B.mB=s([],t.AO)
-B.a_I=s([],t.D1)
+B.a_H=s([],t.D1)
 B.mA=s([],t.QF)
-B.a_J=s([],t.Lx)
-B.a_P=s([],t.AS)
-B.a_Q=s([],t.p)
-B.a_N=s([],t.n)
-B.a_E=s([],t.t)
+B.a_I=s([],t.Lx)
+B.a_O=s([],t.AS)
+B.a_P=s([],t.p)
+B.a_M=s([],t.n)
+B.a_D=s([],t.t)
 B.t2=s([],t.ee)
-B.a_F=s([],t._m)
+B.a_E=s([],t._m)
 B.t5=s(["S","M","T","W","T","F","S"],t.s)
 B.t6=s(["J","F","M","A","M","J","J","A","S","O","N","D"],t.s)
 B.a3I=new A.l(0,2)
 B.Fe=new A.eQ(0.75,B.hR,B.pv,B.a3I,1.5)
-B.a09=s([B.Fe],t.sq)
+B.a08=s([B.Fe],t.sq)
 B.h1=s([B.dv,B.d_,B.hP,B.hQ,B.kB],t.QP)
 B.EB=new A.nO(0,"count")
 B.EC=new A.nO(1,"sum")
 B.ED=new A.nO(2,"average")
-B.a0l=s([B.EB,B.EC,B.ED],A.an("F<nO>"))
+B.a0k=s([B.EB,B.EC,B.ED],A.an("F<nO>"))
 B.m=s(["USA","Canada"],t.s)
-B.a0e=s([u.fY,u.E,"Use darker lures in stained water, natural colors in clear water"],t.s)
-B.Sm=new A.f("Largemouth Bass","Micropterus salmoides",B.m,"30\u201360 cm, up to 10 kg","Lakes, ponds, rivers","Freshwater","Fish, frogs, crayfish","Spinnerbaits, crankbaits, plastic worms","The most popular game fish in the USA. Known for aggressive strikes and acrobatic leaps when hooked. Prefers warm, vegetated waters with plenty of cover like logs and lily pads.",B.a0e,B.ce)
+B.a0d=s([u.fY,u.E,"Use darker lures in stained water, natural colors in clear water"],t.s)
+B.Sm=new A.f("Largemouth Bass","Micropterus salmoides",B.m,"30\u201360 cm, up to 10 kg","Lakes, ponds, rivers","Freshwater","Fish, frogs, crayfish","Spinnerbaits, crankbaits, plastic worms","The most popular game fish in the USA. Known for aggressive strikes and acrobatic leaps when hooked. Prefers warm, vegetated waters with plenty of cover like logs and lily pads.",B.a0d,B.ce)
 B.a_q=s(["Focus on rocky banks and gravel bottoms","Crayfish-colored lures are deadly","Smallmouth put up an incredible fight on light tackle"],t.s)
 B.cd=new A.j(1,0.5529411764705883,0.43137254901960786,0.38823529411764707,B.d)
 B.RD=new A.f("Smallmouth Bass","Micropterus dolomieu",B.m,"25\u201350 cm, up to 5 kg","Clear lakes, rocky rivers","Freshwater","Crayfish, small fish, insects","Tube jigs, crankbaits, drop-shot rigs","Considered the hardest fighting bass species pound-for-pound. Bronzy-green with vertical bars. Prefers cooler, clearer water than largemouth.",B.a_q,B.cd)
 B.f=s(["USA"],t.s)
-B.a07=s(["Found mostly in flowing waters and current","Fish near bluff banks and points","Spotted bass tend to school \u2014 catch one, more are near"],t.s)
-B.UL=new A.f("Spotted Bass","Micropterus punctulatus",B.f,"25\u201350 cm, up to 4 kg","Rivers, reservoirs, streams","Freshwater","Fish, crayfish, insects","Crankbaits, spinnerbaits, soft plastics","Often mistaken for largemouth but has a smaller mouth and rows of dark spots below the lateral line. Aggressive and adaptable.",B.a07,B.p5)
+B.a06=s(["Found mostly in flowing waters and current","Fish near bluff banks and points","Spotted bass tend to school \u2014 catch one, more are near"],t.s)
+B.UL=new A.f("Spotted Bass","Micropterus punctulatus",B.f,"25\u201350 cm, up to 4 kg","Rivers, reservoirs, streams","Freshwater","Fish, crayfish, insects","Crankbaits, spinnerbaits, soft plastics","Often mistaken for largemouth but has a smaller mouth and rows of dark spots below the lateral line. Aggressive and adaptable.",B.a06,B.p5)
 B.ZZ=s(["Fish near docks and overhanging trees in summer","Use small hooks with live bait for best results","They school \u2014 if you catch one, more are nearby"],t.s)
 B.So=new A.f("Bluegill","Lepomis macrochirus",B.m,"15\u201325 cm, up to 2 kg","Ponds, lakes, slow rivers","Freshwater","Insects, small crustaceans","Worms, small jigs, flies","A panfish favorite for beginners and experts alike. Colorful body with a distinctive dark gill flap. Excellent for kids to catch and makes for great table fare.",B.ZZ,B.l3)
 B.ZS=s(["Fish around submerged brush piles and docks","Use light tackle \u2014 crappie have soft mouths","Spring spawning season is the best time to catch limits"],t.s)
 B.O6=new A.f("Crappie","Pomoxis",B.f,"20\u201335 cm, up to 2 kg","Lakes, ponds, slow rivers","Freshwater","Small fish, insects, crustaceans","Small jigs, minnows under a bobber","Highly popular panfish known for schooling behavior and delicious white meat. Two main species: Black Crappie and White Crappie.",B.ZS,B.i7)
-B.a_X=s(["Fish at dawn, dusk, or after dark \u2014 their eyes are light-sensitive","Troll with bottom-bouncing rigs in deeper lakes","Jig with a minnow-tipped jig head near rocky bottoms"],t.s)
-B.TL=new A.f("Walleye","Sander vitreus",B.m,"30\u201360 cm, up to 8 kg","Lakes, rivers, reservoirs","Freshwater","Small fish, insects","Jigs, crankbaits, live minnows, spinner rigs","A prized game fish with excellent eyesight adapted for low light. Named for their opaque, glassy eyes. One of the best-tasting freshwater fish.",B.a_X,B.ic)
+B.a_W=s(["Fish at dawn, dusk, or after dark \u2014 their eyes are light-sensitive","Troll with bottom-bouncing rigs in deeper lakes","Jig with a minnow-tipped jig head near rocky bottoms"],t.s)
+B.TL=new A.f("Walleye","Sander vitreus",B.m,"30\u201360 cm, up to 8 kg","Lakes, rivers, reservoirs","Freshwater","Small fish, insects","Jigs, crankbaits, live minnows, spinner rigs","A prized game fish with excellent eyesight adapted for low light. Named for their opaque, glassy eyes. One of the best-tasting freshwater fish.",B.a_W,B.ic)
 B.YO=s(["Found in big river systems with current","Use brighter jigs than you would for walleye","Good eating \u2014 very similar to walleye"],t.s)
 B.bN=new A.j(1,0.47058823529411764,0.5647058823529412,0.611764705882353,B.d)
 B.Qn=new A.f("Sauger","Sander canadensis",B.m,"25\u201345 cm, up to 3 kg","Large rivers, reservoirs","Freshwater","Small fish, insects","Jigs, spinners, live minnows","A smaller cousin of the walleye with a more slender body. Distinguished by dark saddle marks on the dorsal fin. Prefers large, turbid rivers.",B.YO,B.bN)
@@ -105813,8 +105782,8 @@ B.Mm=new A.f("Channel Catfish","Ictalurus punctatus",B.m,"30\u201370 cm, up to 1
 B.Xv=s(["Fish deep main river channels","Use fresh cut bait \u2014 shad is excellent","Blue cats are powerful fighters \u2014 use heavy gear"],t.s)
 B.ig=new A.j(1,0.08235294117647059,0.396078431372549,0.7529411764705882,B.d)
 B.TI=new A.f("Blue Catfish","Ictalurus furcatus",B.f,"50\u2013120 cm, up to 50 kg","Large rivers, reservoirs","Freshwater","Fish, mussels, crustaceans","Cut bait, live bait, trotlines","The largest North American catfish species. Bluish-gray body with a distinctly forked tail. Can grow to over 100 pounds in large rivers.",B.Xv,B.ig)
-B.a06=s(["Fish near deep holes and log jams","Use live sunfish or goldfish as bait","Night fishing is most productive"],t.s)
-B.No=new A.f("Flathead Catfish","Pylodictis olivaris",B.f,"40\u2013100 cm, up to 40 kg","Rivers, large streams","Freshwater","Live fish only","Live bait, large hooks, heavy gear","A large predatory catfish with a flattened head and yellow-brown body. Unlike other catfish, flatheads prefer live prey and are ambush predators.",B.a06,B.cd)
+B.a05=s(["Fish near deep holes and log jams","Use live sunfish or goldfish as bait","Night fishing is most productive"],t.s)
+B.No=new A.f("Flathead Catfish","Pylodictis olivaris",B.f,"40\u2013100 cm, up to 40 kg","Rivers, large streams","Freshwater","Live fish only","Live bait, large hooks, heavy gear","A large predatory catfish with a flattened head and yellow-brown body. Unlike other catfish, flatheads prefer live prey and are ambush predators.",B.a05,B.cd)
 B.a_7=s(["Look for birds diving \u2014 they signal baitfish schools","Use surfcasting gear from beaches and jetties","Live eels are the ultimate bait for trophy stripers"],t.s)
 B.MW=new A.f("Striped Bass","Morone saxatilis",B.m,"40\u2013100 cm, up to 30 kg","Coastal waters, rivers, lakes","Freshwater, Saltwater","Fish, squid, crustaceans","Poppers, swimbaits, live eels, heavy spinning gear","A powerful migratory fish with distinctive horizontal stripes. Anadromous \u2014 lives in saltwater but spawns in freshwater. Known for surface blitzes.",B.a_7,B.ig)
 B.Yc=s(["Spring spawning runs up rivers are prime time","Use small shiny lures that imitate shad","They school \u2014 find one and you will find many"],t.s)
@@ -105862,9 +105831,9 @@ B.O0=new A.f("Tarpon","Megalops atlanticus",B.ta,"100\u2013200 cm, up to 120 kg"
 B.a1e=s(["Fish around mangrove shorelines and dock pilings","Use live pilchards or shrimp","Snook season is strictly regulated \u2014 know the rules"],t.s)
 B.J0=new A.j(1,0.9764705882352941,0.6588235294117647,0.1450980392156863,B.d)
 B.Oo=new A.f("Snook","Centropomus undecimalis",B.f,"40\u201390 cm, up to 15 kg","Estuaries, mangroves, beaches","Freshwater, Saltwater","Fish, shrimp, crabs","Live bait, soft plastics, topwater plugs","A prized inshore game fish of Florida and the Gulf. Silvery with a distinctive black lateral line. Known for powerful runs around structure.",B.a1e,B.J0)
-B.a0m=s(["Fish shallow flats at high tide","Use polarized sunglasses to spot tailing fish","Bonefish are catch and release \u2014 handle with care"],t.s)
+B.a0l=s(["Fish shallow flats at high tide","Use polarized sunglasses to spot tailing fish","Bonefish are catch and release \u2014 handle with care"],t.s)
 B.po=new A.j(1,0.8117647058823529,0.8470588235294118,0.8627450980392157,B.d)
-B.R9=new A.f("Bonefish","Albula vulpes",B.f,"40\u201375 cm, up to 5 kg","Shallow flats, tropical waters","Saltwater","Crabs, shrimp, worms","Flies, small jigs, live shrimp",'The "grey ghost of the flats." One of the fastest fish on the flats. Extremely wary with incredible speed \u2014 makes long, powerful runs.',B.a0m,B.po)
+B.R9=new A.f("Bonefish","Albula vulpes",B.f,"40\u201375 cm, up to 5 kg","Shallow flats, tropical waters","Saltwater","Crabs, shrimp, worms","Flies, small jigs, live shrimp",'The "grey ghost of the flats." One of the fastest fish on the flats. Extremely wary with incredible speed \u2014 makes long, powerful runs.',B.a0l,B.po)
 B.Yv=s(["Use live crabs for best results","Permit have soft mouths \u2014 set the hook gently","Fish the flats during spawning season (spring-summer)"],t.s)
 B.q_=new A.j(1,0.3607843137254902,0.4196078431372549,0.7529411764705882,B.d)
 B.NE=new A.f("Permit","Trachinotus falcatus",B.f,"50\u2013100 cm, up to 20 kg","Shallow flats, reefs, wrecks","Saltwater","Crabs, shrimp, mollusks","Crab flies, live crabs, jigs","Considered the ultimate flats challenge. Tall, silver body with a forked tail. Incredible power and wariness make them a trophy for any angler.",B.Yv,B.q_)
@@ -105878,13 +105847,13 @@ B.a_d=s(["Look for diving birds feeding on baitfish","Use small shiny lures with
 B.qd=new A.j(1,0.30980392156862746,0.7647058823529411,0.9686274509803922,B.d)
 B.Mz=new A.f("Spanish Mackerel","Scomberomorus maculatus",B.f,"30\u201360 cm, up to 5 kg","Coastal waters, bays","Saltwater","Small fish, shrimp","Small spoons, jigs, live bait","A smaller mackerel with yellow spots and sharp teeth. Schooling fish that provides fast action on light tackle. Excellent table fare.",B.a_d,B.qd)
 B.t_=s(["USA","Asia/Pacific","Australia"],t.s)
-B.a_T=s(["Look for floating logs, pallets, or weed lines","Use brightly colored trolling lures","Mahi mahi change color rapidly when caught \u2014 amazing to watch"],t.s)
+B.a_S=s(["Look for floating logs, pallets, or weed lines","Use brightly colored trolling lures","Mahi mahi change color rapidly when caught \u2014 amazing to watch"],t.s)
 B.i_=new A.j(1,1,0.8392156862745098,0,B.d)
-B.Sn=new A.f("Mahi Mahi (Dorado)","Coryphaena hippurus",B.t_,"60\u2013120 cm, up to 20 kg","Offshore waters, floating debris","Saltwater","Fish, squid, crustaceans","Trolling lures, live bait, fly","One of the most colorful fish in the sea \u2014 brilliant blue, green, and gold. Found around floating debris and weed lines. Acrobatic fighters.",B.a_T,B.i_)
+B.Sn=new A.f("Mahi Mahi (Dorado)","Coryphaena hippurus",B.t_,"60\u2013120 cm, up to 20 kg","Offshore waters, floating debris","Saltwater","Fish, squid, crustaceans","Trolling lures, live bait, fly","One of the most colorful fish in the sea \u2014 brilliant blue, green, and gold. Found around floating debris and weed lines. Acrobatic fighters.",B.a_S,B.i_)
 B.ZT=s(["USA","Europe","Canada"],t.s)
-B.a_U=s(["Use heavy tackle \u2014 these fish are incredibly powerful","Troll with large lures or live bait","Bluefin command premium prices \u2014 tag and release recommended"],t.s)
+B.a_T=s(["Use heavy tackle \u2014 these fish are incredibly powerful","Troll with large lures or live bait","Bluefin command premium prices \u2014 tag and release recommended"],t.s)
 B.lb=new A.j(1,0.050980392156862744,0.2784313725490196,0.6313725490196078,B.d)
-B.Mr=new A.f("Bluefin Tuna","Thunnus thynnus",B.ZT,"100\u2013300 cm, up to 450 kg","Open ocean","Saltwater","Fish, squid, crustaceans","Heavy trolling gear, stand-up rods, live bait","The king of tuna. A massive, powerful pelagic fish that can weigh over 1,000 pounds. Prized for sushi. One of the most challenging sport fish.",B.a_U,B.lb)
+B.Mr=new A.f("Bluefin Tuna","Thunnus thynnus",B.ZT,"100\u2013300 cm, up to 450 kg","Open ocean","Saltwater","Fish, squid, crustaceans","Heavy trolling gear, stand-up rods, live bait","The king of tuna. A massive, powerful pelagic fish that can weigh over 1,000 pounds. Prized for sushi. One of the most challenging sport fish.",B.a_T,B.lb)
 B.a0U=s(["Look for breaking fish and diving birds","Use chunk bait to chum them to the boat","Yellowfin are premier sushi-grade fish"],t.s)
 B.Re=new A.f("Yellowfin Tuna","Thunnus albacares",B.t_,"60\u2013180 cm, up to 100 kg","Open ocean","Saltwater","Fish, squid, crustaceans","Trolling lures, poppers, live bait","A fast, powerful tuna with bright yellow fins and a metallic blue back. Known for blistering runs and excellent table quality.",B.a0U,B.i_)
 B.rT=s(["USA","Asia/Pacific","Africa"],t.s)
@@ -105927,8 +105896,8 @@ B.PC=new A.f("Bull Trout","Salvelinus confluentus",B.da,"30\u201370 cm, up to 10
 B.ZJ=s(["Found in BC and Yukon coastal watersheds","Use bright-colored lures in coastal streams","Anadromous Dolly Varden return to spawn in fall"],t.s)
 B.HR=new A.j(1,1,0.4392156862745098,0.2627450980392157,B.d)
 B.Sg=new A.f("Dolly Varden","Salvelinus malma",B.da,"25\u201360 cm, up to 5 kg","Cold coastal rivers, lakes","Freshwater, Saltwater","Fish, insects, crustaceans","Spoons, spinners, flies","A beautiful char with pale spots on a dark back, sometimes with pink spots. Found in coastal rivers of BC and Yukon. Some populations are anadromous.",B.ZJ,B.HR)
-B.a04=s(["Found in stocked lakes across Canada","Use spoons and spinners in spring and fall","Splake are aggressive feeders \u2014 great for beginners"],t.s)
-B.SS=new A.f("Splake","Salvelinus fontinalis",B.da,"30\u201360 cm, up to 5 kg","Lakes, ponds","Freshwater","Small fish, insects, crustaceans","Spoons, spinners, jigs, flies","A hatchery hybrid between lake trout and brook trout. Combines the growth rate of lake trout with the fighting spirit of brook trout. Stocked across Canada.",B.a04,B.kU)
+B.a03=s(["Found in stocked lakes across Canada","Use spoons and spinners in spring and fall","Splake are aggressive feeders \u2014 great for beginners"],t.s)
+B.SS=new A.f("Splake","Salvelinus fontinalis",B.da,"30\u201360 cm, up to 5 kg","Lakes, ponds","Freshwater","Small fish, insects, crustaceans","Spoons, spinners, jigs, flies","A hatchery hybrid between lake trout and brook trout. Combines the growth rate of lake trout with the fighting spirit of brook trout. Stocked across Canada.",B.a03,B.kU)
 B.a1_=s(["Troll with small spoons or flies in BC lakes","Use a dodger or flasher ahead of the lure","Kokanee have soft mouths \u2014 use light tackle"],t.s)
 B.MJ=new A.f("Kokanee Salmon","Oncorhynchus nerka",B.H,"20\u201340 cm, up to 2 kg","Cold lakes, reservoirs","Freshwater","Plankton, small crustaceans","Small spoons, flies, dodgers with flies","The landlocked form of sockeye salmon. Brilliant red body and green head during spawning. Popular sport fish in BC lakes, also introduced elsewhere.",B.a1_,B.fD)
 B.Zl=s(["Fish the Fraser River and coastal BC rivers","Use flies or small lures","Sockeye are prized for their deep red flesh"],t.s)
@@ -105953,8 +105922,8 @@ B.UI=new A.f("Silver Redhorse","Moxostoma anisurum",B.H,"35\u201360 cm, up to 3 
 B.Zw=s(["Fish deep water (15-40m) during summer","Use small shiny jigs or spoons","Cisco spawn near shore in late fall under ice"],t.s)
 B.l1=new A.j(1,0.5058823529411764,0.8313725490196079,0.9803921568627451,B.d)
 B.UO=new A.f("Cisco (Lake Herring)","Coregonus artedi",B.H,"20\u201340 cm, up to 1 kg","Deep, cold lakes","Freshwater","Zooplankton, small crustaceans","Small jigs, flies, set lines","A slender, silvery whitefish found in deep, cold lakes across Canada. Once a key commercial species in the Great Lakes. Important forage for lake trout.",B.Zw,B.l1)
-B.a0a=s(["Found in cold, oligotrophic lakes","Use small jigs tipped with worm","Delicate white flesh \u2014 good eating"],t.s)
-B.T1=new A.f("Round Whitefish","Prosopium cylindraceum",B.H,"20\u201335 cm, up to 1 kg","Cold lakes, rivers","Freshwater","Insects, crustaceans, mollusks","Small jigs, flies, worms","A small, cylindrical whitefish with a rounded snout. Found in cold, clean waters across northern Canada and the Great Lakes region.",B.a0a,B.pd)
+B.a09=s(["Found in cold, oligotrophic lakes","Use small jigs tipped with worm","Delicate white flesh \u2014 good eating"],t.s)
+B.T1=new A.f("Round Whitefish","Prosopium cylindraceum",B.H,"20\u201335 cm, up to 1 kg","Cold lakes, rivers","Freshwater","Insects, crustaceans, mollusks","Small jigs, flies, worms","A small, cylindrical whitefish with a rounded snout. Found in cold, clean waters across northern Canada and the Great Lakes region.",B.a09,B.pd)
 B.YX=s(["Found in BC and Alberta mountain rivers","Use nymphs or dry flies in summer","Mountain whitefish rise to a dry fly like trout"],t.s)
 B.Pk=new A.f("Mountain Whitefish","Prosopium williamsoni",B.H,"20\u201340 cm, up to 1.5 kg","Cold mountain rivers, lakes","Freshwater","Insects, crustaceans","Flies, small spinners, worms","A slender whitefish found in cold, clear rivers of western Canada. Popular with fly anglers in BC and Alberta. Known for rising to dry flies.",B.YX,B.cz)
 B.a_j=s(["Found in Arctic watersheds across northern Canada","Important subsistence species","Fish near river mouths during summer feeding runs"],t.s)
@@ -105966,12 +105935,12 @@ B.Xu=s(["Found in prairie rivers like the Red, Saskatchewan, and Assiniboine","U
 B.Te=new A.f("Goldeye","Hiodon alosoides",B.H,"20\u201335 cm, up to 0.5 kg","Large rivers, lakes","Freshwater","Insects, crustaceans, small fish","Small jigs, spinners, flies","A distinctive fish with large golden eyes and a compressed silvery body. Found in prairie rivers across the Canadian Prairies. Famous as Winnipeg Goldeye \u2014 a smoked delicacy.",B.Xu,B.i_)
 B.ZF=s(["Found in Great Lakes and St. Lawrence drainage","Use small spinners at dusk","Mooneye jump when hooked \u2014 exciting on light tackle"],t.s)
 B.N6=new A.f("Mooneye","Hiodon tergisus",B.H,"20\u201335 cm, up to 0.5 kg","Rivers, lakes","Freshwater","Insects, crustaceans, small fish","Small jigs, spinners, flies","A silvery fish similar to goldeye but with a smaller eye. Found in the Great Lakes and St. Lawrence River system. Schooling fish that feeds near the surface.",B.ZF,B.po)
-B.a_W=s(["Fish on bottom in deeper Great Lakes waters","Use crayfish or worm baits","Drum have large molar-like teeth for crushing shells"],t.s)
-B.SQ=new A.f("Freshwater Drum","Aplodinotus grunniens",B.H,"30\u201360 cm, up to 10 kg","Lakes, large rivers","Freshwater","Mussels, crayfish, insects","Worms, crayfish, bottom rigs","The only freshwater member of the drum family in Canada. Silvery-grey with a high back. Makes a distinctive drumming sound. Found in the Great Lakes and St. Lawrence.",B.a_W,B.ic)
+B.a_V=s(["Fish on bottom in deeper Great Lakes waters","Use crayfish or worm baits","Drum have large molar-like teeth for crushing shells"],t.s)
+B.SQ=new A.f("Freshwater Drum","Aplodinotus grunniens",B.H,"30\u201360 cm, up to 10 kg","Lakes, large rivers","Freshwater","Mussels, crayfish, insects","Worms, crayfish, bottom rigs","The only freshwater member of the drum family in Canada. Silvery-grey with a high back. Makes a distinctive drumming sound. Found in the Great Lakes and St. Lawrence.",B.a_V,B.ic)
 B.a1g=s(["Found only in southern Ontario watersheds","Use weedless lures in heavy cover","Bowfin are aggressive and fight hard"],t.s)
 B.SW=new A.f("Bowfin","Amia calva",B.H,"40\u201370 cm, up to 5 kg","Weedy shallows, swamps, slow rivers","Freshwater","Fish, crustaceans, insects","Spinnerbaits, spoons, live bait","A primitive fish with a long dorsal fin and a bony head. Can breathe air. Found in southern Ontario near Lake Erie and Lake Ontario. Relict population in Canada.",B.a1g,B.pS)
-B.a00=s(["Found in Lake Erie, Lake Ontario and southern rivers","Use wire leader \u2014 they have sharp teeth","Gar are surface feeders \u2014 use floating lures"],t.s)
-B.U9=new A.f("Longnose Gar","Lepisosteus osseus",B.H,"50\u2013100 cm, up to 10 kg","Weedy shallows, lakes, rivers","Freshwater","Fish","Wire leader, spoons, live bait","A prehistoric fish with a long, slender snout filled with sharp teeth. Covered in hard diamond-shaped scales. Found in warm waters of southern Canada.",B.a00,B.ce)
+B.a0_=s(["Found in Lake Erie, Lake Ontario and southern rivers","Use wire leader \u2014 they have sharp teeth","Gar are surface feeders \u2014 use floating lures"],t.s)
+B.U9=new A.f("Longnose Gar","Lepisosteus osseus",B.H,"50\u2013100 cm, up to 10 kg","Weedy shallows, lakes, rivers","Freshwater","Fish","Wire leader, spoons, live bait","A prehistoric fish with a long, slender snout filled with sharp teeth. Covered in hard diamond-shaped scales. Found in warm waters of southern Canada.",B.a0_,B.ce)
 B.a0S=s(["Found in St. Lawrence River and tributaries","Use nightcrawlers on bottom at night","American eels are now a species of concern \u2014 practice catch and release"],t.s)
 B.Pe=new A.f("American Eel","Anguilla rostrata",B.H,"40\u2013100 cm, up to 3 kg","Rivers, lakes, estuaries","Freshwater, Saltwater","Fish, insects, crustaceans","Worms, live bait, set lines","A catadromous fish born in the Sargasso Sea, migrating to freshwater to grow. Once abundant in the St. Lawrence and Great Lakes, now endangered due to dams.",B.a0S,B.pZ)
 B.YP=s(["Fish at night in shallow, warm waters","Use worms or chicken liver on bottom","Brown bullhead are excellent panfish for eating"],t.s)
@@ -105981,9 +105950,9 @@ B.J3=new A.j(1,0.7372549019607844,0.6666666666666666,0.6431372549019608,B.d)
 B.SE=new A.f("Yellow Bullhead","Ameiurus natalis",B.H,"20\u201330 cm, up to 1 kg","Lakes, ponds, slow rivers","Freshwater","Insects, crustaceans, plant matter","Worms, chicken liver, small hooks","A yellowish-brown bullhead with white chin barbels. Prefers clearer, cleaner water than brown bullhead. Found in southern Ontario and Quebec.",B.ZN,B.J3)
 B.Ye=s(["Found in clean, rocky streams in southern Canada","Use small hooks with worms","Handle carefully \u2014 spines contain mild venom"],t.s)
 B.Qp=new A.f("Stonecat","Noturus flavus",B.H,"15\u201325 cm, up to 0.3 kg","Rocky rivers, streams","Freshwater","Insects, crustaceans","Small hooks, worms, flies","A small madtom catfish with a flattened head. Prefers clean, fast-flowing rivers with rocky bottoms. Has venomous spines \u2014 handle with care.",B.Ye,B.d5)
-B.a0k=s(["Widespread across Canada","Important food for larger game fish","Used as live bait in some regions"],t.s)
+B.a0j=s(["Widespread across Canada","Important food for larger game fish","Used as live bait in some regions"],t.s)
 B.K5=new A.j(1,0.6980392156862745,0.9215686274509803,0.9490196078431372,B.d)
-B.Rc=new A.f("Trout-perch","Percopsis omiscomaycus",B.H,"10\u201315 cm, up to 0.1 kg","Lakes, rivers","Freshwater","Insects, crustaceans","Small jigs, flies","A small, translucent fish with a trout-like adipose fin and perch-like body. Found across Canada in both lakes and rivers. Important forage fish.",B.a0k,B.K5)
+B.Rc=new A.f("Trout-perch","Percopsis omiscomaycus",B.H,"10\u201315 cm, up to 0.1 kg","Lakes, rivers","Freshwater","Insects, crustaceans","Small jigs, flies","A small, translucent fish with a trout-like adipose fin and perch-like body. Found across Canada in both lakes and rivers. Important forage fish.",B.a0j,B.K5)
 B.Zz=s(["Found in clean, gravelly rivers","Use small nymph flies","Logperch are an indicator species for clean water"],t.s)
 B.Ir=new A.j(1,0.8313725490196079,0.8823529411764706,0.3411764705882353,B.d)
 B.Po=new A.f("Logperch","Percina caprodes",B.H,"10\u201318 cm, up to 0.1 kg","Sandy rivers, lakes","Freshwater","Insects, crustaceans","Small jigs, flies, worms","A slender darter with zebra-like banding and a long, cone-shaped snout. Uses its snout to flip over rocks looking for food. Found in clean rivers across southern Canada.",B.Zz,B.Ir)
@@ -105997,8 +105966,8 @@ B.kV=new A.j(1,0.5019607843137255,0.8705882352941177,0.9176470588235294,B.d)
 B.SC=new A.f("Ninespine Stickleback","Pungitius pungitius",B.mv,"5\u20138 cm, up to 0.02 kg","Weedy shallows, ponds, rivers","Freshwater, Saltwater","Insects, crustaceans, zooplankton","Micro flies, small hooks","A tiny fish with 8-10 spines on its back. Found in cool waters across northern Canada. Known for the male building a nest and guarding the eggs.",B.Y9,B.kV)
 B.a11=s(["Found in BC and Maritimes coastal waters","Both freshwater and saltwater populations exist","Important research species in biology"],t.s)
 B.Ok=new A.f("Threespine Stickleback","Gasterosteus aculeatus",B.mv,"4\u20138 cm, up to 0.02 kg","Coastal rivers, estuaries, lakes","Freshwater, Saltwater","Insects, crustaceans","Micro flies, small hooks","A small fish with three spines on its back. Found in coastal waters of BC and the Maritimes. A model organism in evolutionary biology.",B.a11,B.l1)
-B.a0f=s(["Found across Canada in cool, vegetated waters","Easily caught in minnow traps","Males build nests and guard eggs aggressively"],t.s)
-B.RH=new A.f("Brook Stickleback","Culaea inconstans",B.H,"4\u20136 cm, up to 0.01 kg","Weedy streams, ponds","Freshwater","Insects, crustaceans","Micro flies","A small, dark stickleback with 4-6 short spines. Found across Canada in cool streams and ponds. One of the few sticklebacks that lives only in freshwater.",B.a0f,B.pM)
+B.a0e=s(["Found across Canada in cool, vegetated waters","Easily caught in minnow traps","Males build nests and guard eggs aggressively"],t.s)
+B.RH=new A.f("Brook Stickleback","Culaea inconstans",B.H,"4\u20136 cm, up to 0.01 kg","Weedy streams, ponds","Freshwater","Insects, crustaceans","Micro flies","A small, dark stickleback with 4-6 short spines. Found across Canada in cool streams and ponds. One of the few sticklebacks that lives only in freshwater.",B.a0e,B.pM)
 B.a_g=s(["Common in almost every creek in southern Canada","Aggressive \u2014 will hit small lures","Excellent live bait for pike and bass"],t.s)
 B.dF=new A.j(1,0.48627450980392156,0.7019607843137254,0.25882352941176473,B.d)
 B.Q9=new A.f("Creek Chub","Semotilus atromaculatus",B.H,"15\u201325 cm, up to 0.5 kg","Small streams, creeks","Freshwater","Insects, small fish, crustaceans","Worms, small spinners, flies","A stout minnow with a dark spot at the base of the tail and a large mouth. One of the most common stream fish across southern Canada. A favourite baitfish.",B.a_g,B.dF)
@@ -106010,15 +105979,15 @@ B.QT=new A.f("Golden Shiner","Notemigonus crysoleucas",B.H,"15\u201325 cm, up to
 B.YQ=s(["Abundant in the Great Lakes","Primary forage for game fish","Used extensively as live bait"],t.s)
 B.Ic=new A.j(1,0.5019607843137255,0.796078431372549,0.7686274509803922,B.d)
 B.Qj=new A.f("Emerald Shiner","Notropis atherinoides",B.H,"8\u201312 cm, up to 0.05 kg","Lakes, large rivers","Freshwater","Zooplankton, insects","Small flies, dip nets","A slender, silvery minnow with an emerald-green stripe on its side. One of the most abundant fish in the Great Lakes. Critical forage species for walleye, salmon, and lake trout.",B.YQ,B.Ic)
-B.a_Z=s(["Common in streams across all southern provinces","Use small hooks with worms","Males are strikingly colourful in spring"],t.s)
-B.T8=new A.f("Common Shiner","Luxilus cornutus",B.H,"10\u201318 cm, up to 0.1 kg","Rivers, streams","Freshwater","Insects, crustaceans, algae","Small hooks, worms, flies","A deep-bodied minnow with large scales and a dark stripe along the back. Males develop bright pink breeding colours. Widespread in streams across southern Canada.",B.a_Z,B.cy)
+B.a_Y=s(["Common in streams across all southern provinces","Use small hooks with worms","Males are strikingly colourful in spring"],t.s)
+B.T8=new A.f("Common Shiner","Luxilus cornutus",B.H,"10\u201318 cm, up to 0.1 kg","Rivers, streams","Freshwater","Insects, crustaceans, algae","Small hooks, worms, flies","A deep-bodied minnow with large scales and a dark stripe along the back. Males develop bright pink breeding colours. Widespread in streams across southern Canada.",B.a_Y,B.cy)
 B.Yo=s(["Found across southern Canada in ponds and sluggish streams","Excellent live bait","Very hardy \u2014 survives well in bait buckets"],t.s)
 B.T5=new A.f("Fathead Minnow","Pimephales promelas",B.H,"5\u20138 cm, up to 0.02 kg","Ponds, slow streams","Freshwater","Algae, insects, crustaceans","Small hooks, dip nets","A small, stout minnow with a blunt head. Extremely hardy and tolerant of poor water conditions. Commonly used as bait and in scientific research.",B.Yo,B.cz)
 B.a0Z=s(["Found in clear streams across southern Canada","Used as bait for panfish","Very common in Ontario and Quebec streams"],t.s)
 B.RT=new A.f("Bluntnose Minnow","Pimephales notatus",B.H,"5\u20139 cm, up to 0.02 kg","Rivers, streams, lakes","Freshwater","Algae, insects","Small hooks, dip nets","A common minnow with a blunt snout and dark lateral stripe. Found across southern Canada in clear streams and lakeshores. Important forage species.",B.a0Z,B.cd)
-B.a_R=s(["Found from Newfoundland to BC in cold waters","Important forage for trout and pike","Sometimes used as live bait"],t.s)
+B.a_Q=s(["Found from Newfoundland to BC in cold waters","Important forage for trout and pike","Sometimes used as live bait"],t.s)
 B.Q=new A.j(1,0.5647058823529412,0.6431372549019608,0.6823529411764706,B.d)
-B.PK=new A.f("Lake Chub","Couesius plumbeus",B.H,"10\u201315 cm, up to 0.1 kg","Cold lakes, rivers","Freshwater","Insects, crustaceans","Small hooks, worms, flies","A small, chubby minnow with a dark lateral stripe. Found across northern Canada in cold lakes and rivers. One of the most widespread freshwater fish in Canada.",B.a_R,B.Q)
+B.PK=new A.f("Lake Chub","Couesius plumbeus",B.H,"10\u201315 cm, up to 0.1 kg","Cold lakes, rivers","Freshwater","Insects, crustaceans","Small hooks, worms, flies","A small, chubby minnow with a dark lateral stripe. Found across northern Canada in cold lakes and rivers. One of the most widespread freshwater fish in Canada.",B.a_Q,B.Q)
 B.a0V=s(["Found in fast-flowing streams with rocky bottoms","Use small nymph patterns","Adapted to high-oxygen, fast water"],t.s)
 B.TG=new A.f("Longnose Dace","Rhinichthys cataractae",B.H,"8\u201312 cm, up to 0.03 kg","Fast-flowing streams, rivers","Freshwater","Insects, crustaceans","Small hooks, flies","A small minnow with a long, fleshy snout perfectly adapted for life in fast currents. Found in clean, rocky streams across Canada.",B.a0V,B.d5)
 B.a_k=s(["Found in small creeks and streams in eastern Canada","Use micro nymph flies","Important prey for brook trout"],t.s)
@@ -106036,10 +106005,10 @@ B.a_8=s(["Found in cold streams and lakes across Canada","Indicator of clean, co
 B.Ux=new A.f("Slimy Sculpin","Cottus cognatus",B.H,"6\u201312 cm, up to 0.03 kg","Cold streams, lakeshores","Freshwater","Insects, crustaceans","Small hooks, flies","A small, bottom-dwelling fish with a large head and fan-like pectoral fins. Found in cold, clean waters across Canada. An important indicator species for water quality.",B.a_8,B.dD)
 B.Ym=s(["Found in deep, cold lakes across Canada","Important forage for lake trout","Lives on the bottom in deep water"],t.s)
 B.Ra=new A.f("Spoonhead Sculpin","Cottus ricei",B.H,"6\u201310 cm, up to 0.02 kg","Deep, cold lakes","Freshwater","Insects, crustaceans","Small hooks","A small sculpin with a flattened, spoon-shaped head. Lives in deep, cold lakes across Canada. Often found in the same waters as lake trout.",B.Ym,B.cd)
-B.a05=s(["Found in Great Lakes shallows and Maritimes estuaries","Use micro gear in shallow weedy areas","Often found in schools near shore"],t.s)
-B.Ny=new A.f("Banded Killifish","Fundulus diaphanus",B.H,"6\u201310 cm, up to 0.02 kg","Shallow lakeshores, estuaries","Freshwater, Saltwater","Insects, crustaceans","Small hooks, dip nets","A small, slender fish with pale vertical bars. Found in shallow, weedy waters along the shores of the Great Lakes and Atlantic coast. Tolerates brackish water.",B.a05,B.kV)
-B.a0n=s(["Ice fish through the ice with small jigs","Smelt runs in coastal streams in spring","Excellent eating \u2014 light, flaky white meat"],t.s)
-B.Nj=new A.f("Rainbow Smelt","Osmerus mordax",B.H,"15\u201325 cm, up to 0.2 kg","Coastal waters, rivers, lakes","Freshwater, Saltwater","Small fish, crustaceans","Small jigs, flies, set lines","A slender, silvery fish with a distinctive cucumber-like smell. Anadromous populations in the Maritimes, landlocked in Great Lakes. Prized for ice fishing and eating.",B.a0n,B.l1)
+B.a04=s(["Found in Great Lakes shallows and Maritimes estuaries","Use micro gear in shallow weedy areas","Often found in schools near shore"],t.s)
+B.Ny=new A.f("Banded Killifish","Fundulus diaphanus",B.H,"6\u201310 cm, up to 0.02 kg","Shallow lakeshores, estuaries","Freshwater, Saltwater","Insects, crustaceans","Small hooks, dip nets","A small, slender fish with pale vertical bars. Found in shallow, weedy waters along the shores of the Great Lakes and Atlantic coast. Tolerates brackish water.",B.a04,B.kV)
+B.a0m=s(["Ice fish through the ice with small jigs","Smelt runs in coastal streams in spring","Excellent eating \u2014 light, flaky white meat"],t.s)
+B.Nj=new A.f("Rainbow Smelt","Osmerus mordax",B.H,"15\u201325 cm, up to 0.2 kg","Coastal waters, rivers, lakes","Freshwater, Saltwater","Small fish, crustaceans","Small jigs, flies, set lines","A slender, silvery fish with a distinctive cucumber-like smell. Anadromous populations in the Maritimes, landlocked in Great Lakes. Prized for ice fishing and eating.",B.a0m,B.l1)
 B.YM=s(["Fish deep holes in large rivers like the Fraser and Winnipeg",u.cM,u.I],t.s)
 B.O4=new A.f("Lake Sturgeon","Acipenser fulvescens",B.H,"100\u2013200 cm, up to 100 kg","Large lakes and rivers","Freshwater","Bottom invertebrates, small fish","Heavy rod, large hooks, cut bait, worms",u.G,B.YM,B.cc)
 B.a_y=s(["Found only in southern Ontario","Use small spinners in weedy shallows","Grass pickerel are aggressive for their size"],t.s)
@@ -106406,9 +106375,9 @@ B.mG=s([u.fY,u.E,"Match lure color to water clarity"],t.s)
 B.Ur=new A.f("Choctaw bass","Choctaw bass",B.f,"25\u201360 cm, up to 5 kg","found in the upper panhandle of Florida","Freshwater","Small fish, insects, crustaceans",u.o,"The Choctaw bass is a provisional new species of black bass found in the upper panhandle of Florida.",B.mG,B.pP)
 B.I4=new A.j(1,0.37254901960784315,0.1803921568627451,0.6196078431372549,B.d)
 B.Pn=new A.f("Clear chub","Clear chub",B.f,"Size varies","found in the United States","Freshwater","Small fish, insects, crustaceans","Varies \u2014 try live bait, jigs, or spoons","The clear chub is a species of freshwater ray-finned fish belonging to the family Leuciscidae, the shiners, daces and minnows. This species is found in the United States.",B.h,B.I4)
-B.a0b=s([u.Y,"Match your bait to the local forage","Timing: spawn"],t.s)
+B.a0a=s([u.Y,"Match your bait to the local forage","Timing: spawn"],t.s)
 B.Ia=new A.j(1,0.1803921568627451,0.592156862745098,0.6196078431372549,B.d)
-B.U0=new A.f("Clear Lake hitch","Clear Lake hitch",B.f,"Size varies","Lake hitch is a freshwater fish and a subspecies of the hitch","Freshwater","eatened by the state of California","Varies \u2014 try live bait, jigs, or spoons","The Clear Lake hitch is a freshwater fish and a subspecies of the hitch. It is a cyprinid fish that is endemic to Clear Lake, California.",B.a0b,B.Ia)
+B.U0=new A.f("Clear Lake hitch","Clear Lake hitch",B.f,"Size varies","Lake hitch is a freshwater fish and a subspecies of the hitch","Freshwater","eatened by the state of California","Varies \u2014 try live bait, jigs, or spoons","The Clear Lake hitch is a freshwater fish and a subspecies of the hitch. It is a cyprinid fish that is endemic to Clear Lake, California.",B.a0a,B.Ia)
 B.IN=new A.j(1,0.3058823529411765,0.1803921568627451,0.6196078431372549,B.d)
 B.UX=new A.f("Coldwater darter","Coldwater darter",B.f,"Size varies","occurs in the Coosa River system of Georgia, Alabama, and Tennessee","Freshwater","Small fish, insects, crustaceans","Varies \u2014 try live bait, jigs, or spoons","The coldwater darter is a species of freshwater ray-finned fish, a darter from the subfamily Etheostomatinae, part of the family Percidae, which also contains the perches, ruffes and pikeperches. It is endemic to the United States, where it occurs in the Coosa River system of Georgia, Alabama, and Tennessee.",B.h,B.IN)
 B.Hi=new A.j(1,0.6196078431372549,0.5019607843137255,0.1803921568627451,B.d)
@@ -106751,7 +106720,38 @@ B.QX=new A.f("Zander","Zander",B.m,"Size varies","found in freshwater and bracki
 B.mC=s([B.Sm,B.RD,B.UL,B.So,B.O6,B.TL,B.Qn,B.RV,B.Mm,B.TI,B.No,B.MW,B.Tl,B.UM,B.Tv,B.NZ,B.SK,B.Nt,B.Tr,B.Uc,B.Qf,B.Mq,B.Rh,B.S3,B.QB,B.O0,B.Oo,B.R9,B.NE,B.TQ,B.NQ,B.Mz,B.Sn,B.Mr,B.Re,B.Q6,B.R1,B.Td,B.O1,B.Nd,B.Ss,B.Qv,B.Tm,B.Q0,B.N7,B.Sp,B.PC,B.Sg,B.SS,B.MJ,B.Mi,B.Ob,B.Sb,B.MA,B.SN,B.NO,B.QZ,B.UI,B.UO,B.T1,B.Pk,B.S7,B.MC,B.Te,B.N6,B.SQ,B.SW,B.U9,B.Pe,B.Rx,B.SE,B.Qp,B.Rc,B.Po,B.RO,B.RC,B.SC,B.Ok,B.RH,B.Q9,B.Oa,B.QT,B.Qj,B.T8,B.T5,B.RT,B.PK,B.TG,B.P4,B.NJ,B.RU,B.UA,B.Qc,B.Ux,B.Ra,B.Ny,B.Nj,B.O4,B.Nh,B.QQ,B.UH,B.Rb,B.Q4,B.R6,B.NK,B.TR,B.Mo,B.MI,B.PY,B.MP,B.OV,B.N1,B.NF,B.TD,B.RQ,B.Nv,B.MU,B.QF,B.RZ,B.N0,B.S0,B.Ta,B.OB,B.Ro,B.UZ,B.Ub,B.Rt,B.S4,B.Up,B.OE,B.UD,B.NI,B.Ul,B.SU,B.MX,B.TT,B.SX,B.TY,B.QK,B.OK,B.O9,B.ON,B.RK,B.U_,B.QJ,B.Mw,B.NH,B.Ud,B.TV,B.Ot,B.Rj,B.SM,B.Tk,B.Tx,B.Uo,B.Sf,B.QO,B.Sd,B.PF,B.NN,B.TS,B.SG,B.OI,B.Pl,B.RE,B.NM,B.Uy,B.Pi,B.P5,B.Nq,B.U7,B.Uf,B.Sx,B.NT,B.Px,B.Tw,B.P9,B.N8,B.RJ,B.PG,B.R3,B.Py,B.PM,B.Sw,B.O2,B.Na,B.Qy,B.V1,B.NA,B.S1,B.SA,B.QN,B.R7,B.N9,B.Oq,B.Or,B.PJ,B.Sy,B.SP,B.MV,B.Mn,B.OA,B.Sl,B.Ua,B.PZ,B.Tq,B.Tu,B.Qs,B.T3,B.RF,B.SO,B.OZ,B.TU,B.OF,B.TN,B.Qu,B.Uk,B.UR,B.Mh,B.RS,B.UP,B.Qh,B.Rf,B.QR,B.Sz,B.NV,B.PP,B.Pr,B.T4,B.Og,B.OG,B.TF,B.R5,B.UE,B.Qb,B.Sc,B.OQ,B.PN,B.QU,B.Ry,B.RI,B.RA,B.NS,B.Qq,B.Ty,B.Qi,B.Rm,B.RP,B.Tz,B.O3,B.TE,B.OC,B.Mt,B.MK,B.On,B.Oe,B.MZ,B.PO,B.P0,B.O7,B.Qo,B.SH,B.TZ,B.Rn,B.T2,B.Uw,B.Mp,B.Pj,B.MR,B.Ow,B.Oj,B.MF,B.T_,B.UC,B.P3,B.Uv,B.St,B.PH,B.QV,B.Su,B.SJ,B.Pt,B.To,B.MN,B.O8,B.Pp,B.T6,B.ST,B.N5,B.QL,B.Qz,B.Om,B.Rk,B.S9,B.Tb,B.NL,B.Mk,B.T7,B.P1,B.P6,B.Pw,B.PW,B.Pd,B.PX,B.PE,B.P2,B.UT,B.OT,B.Sa,B.Uh,B.T0,B.O5,B.NB,B.MQ,B.P7,B.Rg,B.Mv,B.Nk,B.QC,B.U6,B.QA,B.Rq,B.OO,B.Sv,B.Uz,B.Ov,B.S6,B.Ue,B.QY,B.Q7,B.SF,B.Qr,B.Ng,B.NW,B.Pg,B.Mx,B.OX,B.Qe,B.MT,B.Sr,B.Od,B.P_,B.QE,B.Nl,B.Tt,B.Ps,B.Qm,B.MD,B.TB,B.UW,B.O_,B.RW,B.UY,B.UF,B.MG,B.Tc,B.MB,B.Ur,B.Pn,B.U0,B.UX,B.SB,B.UN,B.S2,B.Nx,B.OW,B.Rr,B.V2,B.Ql,B.PB,B.SI,B.SL,B.Np,B.NX,B.Pa,B.RB,B.P8,B.U8,B.Q1,B.Nw,B.Nz,B.TK,B.Ni,B.Rv,B.Rd,B.SY,B.U1,B.Ts,B.Nb,B.Oz,B.TC,B.R8,B.Nc,B.Mu,B.Rz,B.Oh,B.Si,B.OY,B.Nn,B.Mj,B.OH,B.OS,B.Ne,B.Um,B.QH,B.UV,B.Pc,B.U3,B.Ug,B.Rs,B.SV,B.Th,B.Qa,B.Pz,B.Sk,B.Op,B.PA,B.PD,B.UB,B.PL,B.NU,B.Ph,B.MO,B.Q2,B.UG,B.Ox,B.S5,B.Sh,B.Rw,B.Q8,B.RL,B.NC,B.TP,B.N4,B.Uq,B.R2,B.Ti,B.R0,B.ME,B.ND,B.Pb,B.Rp,B.Ml,B.OM,B.Qg,B.Tp,B.Sq,B.NR,B.ML,B.Tn,B.RG,B.Rl,B.Nu,B.Qk,B.Nr,B.U5,B.Uu,B.Tj,B.My,B.U4,B.QM,B.PU,B.Uj,B.N2,B.SZ,B.Pu,B.PS,B.QW,B.MH,B.NP,B.Pq,B.Oi,B.R4,B.Ns,B.N3,B.NY,B.Of,B.Qw,B.Q3,B.QS,B.Mg,B.TA,B.UJ,B.Ou,B.QD,B.QP,B.SR,B.Ui,B.TX,B.Qx,B.Ri,B.Tg,B.OR,B.MS,B.Q5,B.NG,B.TM,B.V0,B.SD,B.UQ,B.US,B.Nm,B.Pf,B.Os,B.RM,B.TO,B.Ru,B.PR,B.R_,B.OJ,B.PV,B.PQ,B.Us,B.Qt,B.U2,B.UK,B.UU,B.Ut,B.Ms,B.S8,B.TW,B.Pm,B.OU,B.QI,B.OL,B.T9,B.Qd,B.QG,B.OP,B.OD,B.RR,B.Un,B.Ol,B.RY,B.Oy,B.RX,B.TH,B.S_,B.MM,B.TJ,B.Sj,B.Nf,B.Q_,B.Pv,B.PT,B.RN,B.V_,B.Se,B.PI,B.Tf,B.N_,B.MY,B.Oc,B.QX],A.an("F<f>"))
 B.WL=new A.wB(0,"success")
 B.WM=new A.wB(1,"failure")
-B.a0o=s([B.WL,B.WM],A.an("F<wB>"))
+B.a0n=s([B.WL,B.WM],A.an("F<wB>"))
+B.Vv=new A.b5(58337,"MaterialIcons",!1)
+B.afs=new A.f6(B.Vv,"Voice Recording","Log catches completely hands-free with natural speech commands.",'Tap the \ud83c\udfa4 mic button at the bottom of the screen and speak naturally.\n\n\u2022 Say "[name] caught [species]" \u2014 e.g. "Jason caught a largemouth bass"\n\u2022 Add location: "at Lake St. Clair", "from the pier", "in the channel"\n\u2022 The form opens with all details pre-filled from your voice\n\nThe app learns from your edits! Fix a species name once and future voice commands auto-correct.','Fix a species name once (tap to edit) and future voice commands auto-correct. Example: edit "pipe" \u2192 "pike" once, then saying "caught a pipe" auto-records as "pike".')
+B.rm=new A.b5(57527,"MaterialIcons",!1)
+B.afE=new A.f6(B.rm,"AI Fish ID","Snap a photo and AI instantly identifies the species.","Open the Fish ID feature and tap the camera button.\n\n\u2022 Take or choose a photo of your catch\n\u2022 AI analyzes the photo and suggests matching species\n\u2022 View detailed info about the identified species\n\nPerfect for identifying unfamiliar catches or confirming your guess.",'Use the sort feature to prioritise fish you haven\'t caught yet. Mark species as "Mastered" to track your expertise.')
+B.Vt=new A.b5(58312,"MaterialIcons",!1)
+B.afq=new A.f6(B.Vt,"Interactive Map","Nautical charts, depth contours, GPS tracking, and weather overlays.","See all your catches plotted on an interactive map with species pins.\n\n\u2022 Tap a pin to see species and angler\n\u2022 Pinch to zoom and pan around\n\u2022 Right-side menu: Offline maps, Nautical charts, Depth contours, Weather overlays\n\nLong-press anywhere to log a depth reading. Toggle depth logs on/off in the side menu.\nEvery submission helps build a free community depth database!","GPS and weather are automatic when you log a catch. Download offline map tiles before heading out to areas with poor cell service.")
+B.VJ=new A.b5(59097,"MaterialIcons",!1)
+B.afy=new A.f6(B.VJ,"Weather & Forecast","Current conditions and 5-day forecast for your location.","View real-time weather data including temperature, humidity, wind speed and direction.\n\n\u2022 Current conditions at your location\n\u2022 5-day forecast with highs and lows\n\u2022 Wind speed and direction for planning\n\nWeather data is automatically attached to every catch you log, so you can see what conditions produce the best fishing.","Cold weather (under 12\xb0C)? Jigs and slow presentations score higher. Warm weather? Topwater and spinnerbaits get a boost.")
+B.Vx=new A.b5(58416,"MaterialIcons",!1)
+B.afv=new A.f6(B.Vx,"Solunar Calendar","Best fishing times based on moon phase and position.","The solunar calendar shows major and minor feeding periods for each day.\n\n\u2022 Major periods: Best fishing times (usually 1-2 hours long)\n\u2022 Minor periods: Secondary feeding times\n\u2022 Moon phase indicator shows current lunar cycle\n\u2022 Combines with dawn/dusk times for peak action\n\nPlan your trips around major feeding periods for the best results.","Fish during major periods for the best results. New moon and full moon phases produce the most active feeding. Combine with dawn/dusk for peak action.")
+B.Vh=new A.b5(57548,"MaterialIcons",!1)
+B.afp=new A.f6(B.Vh,"Stats & Analytics","Detailed statistics on your catches, species breakdown, and trends.","View comprehensive statistics about your fishing history.\n\n\u2022 Total catches, species count, and weight tracking\n\u2022 Species breakdown with counts per fish type\n\u2022 Trip and session summaries\n\u2022 Export your data for external analysis","Export your data as CSV for Excel, JSON for complete backups, or KML to see all your catch locations on Google Earth.")
+B.Vm=new A.b5(57900,"MaterialIcons",!1)
+B.afB=new A.f6(B.Vm,"Brag Board","Share photos of your biggest catches with the community.","Post your catch photos to the Brag Board and connect with other anglers.\n\n\u2022 Upload photos of your biggest catches\n\u2022 Add species, description, and details\n\u2022 Like and comment on other anglers' posts\n\u2022 Build your reputation in the fishing community",null)
+B.W8=new A.b5(984763,"MaterialIcons",!1)
+B.aft=new A.f6(B.W8,"Calendar View","See your fishing history organized on a calendar.","Browse your catch history by date on an interactive calendar.\n\n\u2022 Days with catches are highlighted\n\u2022 Tap any day to see catches from that trip\n\u2022 Navigate between months and years\n\u2022 Get a quick overview of your fishing activity",null)
+B.Vj=new A.b5(57691,"MaterialIcons",!1)
+B.afu=new A.f6(B.Vj,"Prepare for Fishing","Pre-trip checklist to make sure you're ready to hit the water.","Get organized before your fishing trip with the Prepare checklist.\n\n\u2705 Add Anglers \u2014 List who's coming along\n\u2705 Check Weather \u2014 View forecast for your trip\n\u2b50 Best Fishing Times \u2014 Check solunar peaks\n\u2705 Set Up Tackle \u2014 Choose your lures and gear\n\u2705 Review Fish ID \u2014 Study target species\n\u2705 Check Map & Spots \u2014 Plan where to fish\n\ud83c\udfa3 Start New Trip \u2014 Begin your fishing session\n\nItems auto-check based on your data (e.g. anglers check once added).","Items auto-check based on your data. Use the summary card at the bottom to see your readiness at a glance.")
+B.Vq=new A.b5(58186,"MaterialIcons",!1)
+B.afr=new A.f6(B.Vq,"Tackle Box","Build a digital tackle box. Track which lures work best.","Manage your fishing tackle digitally.\n\n\u2022 Add tackle items with photos\n\u2022 Categorize by type: spinnerbait, crankbait, jig, soft plastic, spoon, topwater\n\u2022 Tag target species for each lure\n\u2022 Add fishing tips for each piece of tackle\n\u2022 Browse the catalog of recommended tackle","Build your tackle box from the catalog first \u2014 each entry comes pre-loaded with target species and fishing tips.")
+B.afx=new A.f6(B.rm,"Today's Pick","AI-powered lure recommendation based on current conditions.","Get personalized lure recommendations from AI based on:\n\n\u2022 Current weather conditions\n\u2022 Season and time of year\n\u2022 Time of day\n\u2022 Water temperature and clarity\n\nThe AI considers what typically works best for current conditions.","Cold weather? Jigs and slow presentations. Warm weather? Topwater and spinnerbaits. Overcast days are prime for topwater.")
+B.VM=new A.b5(61282,"MaterialIcons",!1)
+B.afA=new A.f6(B.VM,"Cloud Sync","Back up catches to the cloud and sync across devices.","Keep your data safe and accessible everywhere.\n\n\u2601\ufe0f **Cloud Sync:** Upload and download your catch data\n\ud83d\udcf1 **Cross-device:** Access your data from any device\n\ud83c\udf10 **Web Dashboard:** View your catches online at catchtales.com/cloud\n\n\ud83c\udfa3 **Fish Together \u2014 How to use:**\n1. Tap Fish Together from the Cloud Sync screen\n2. Your **personal fishing room** is created automatically and lasts forever\n3. Share your **room code** with a buddy (e.g. PIKE-73)\n4. Chat, share photos, GPS location, and emergency alerts!\n5. Open chat as a **separate window** to switch between apps freely","Fish Together now features permanent rooms, photo sharing, and a separate window mode.")
+B.afw=new A.f6(B.ro,"Selfie Camera","Auto-capture selfie camera with countdown timer.","Take perfect catch photos every time with the auto selfie camera.\n\n\u2022 Opens the front camera automatically\n\u2022 3-second countdown so you can pose with your fish\n\u2022 Auto-captures \u2014 no need to tap the screen\n\u2022 Photo is saved directly to your catch entry",null)
+B.Vn=new A.b5(57962,"MaterialIcons",!1)
+B.afz=new A.f6(B.Vn,"Export & Import","Export catches as CSV, JSON, or KML files.","Three export formats for different needs:\n\n\ud83d\udcca **CSV (Excel/Sheets)** \u2014 Opens in any spreadsheet app. All fields included: species, weight, length, GPS, weather, notes.\n\n\ud83d\udcbe **JSON (Backup)** \u2014 Raw structured data perfect for backups or transferring to another app.\n\n\ud83c\udf0d **KML (Google Earth)** \u2014 GPS coordinates formatted for Google Earth. See all your catch locations on a map.\n\n\ud83d\udcc5 Filter by date range to export specific trips or seasons.","CSV for Excel analysis. JSON for complete backups. KML to see locations on Google Earth.")
+B.VK=new A.b5(59111,"MaterialIcons",!1)
+B.afC=new A.f6(B.VK,"WiFi-Only Mode","Only transfer data over WiFi to save mobile data.","Toggle WiFi-only mode to restrict data transfers to WiFi connections only.\n\n\u2022 Cloud sync only runs on WiFi\n\u2022 Weather updates wait for WiFi\n\u2022 Map downloads use WiFi only\n\nPerfect for when you're out on the water and want to save your mobile data plan.",null)
+B.VH=new A.b5(59079,"MaterialIcons",!1)
+B.afD=new A.f6(B.VH,"Pro Features","Unlimited catches, AI fish ID, advanced stats, cloud sync, and more.","The Pro version unlocks the full CatchTales experience:\n\n\u2022 Unlimited catch logging\n\u2022 AI-powered fish identification\n\u2022 Advanced statistics and analytics\n\u2022 Cloud sync and backup\n\u2022 Brag Board social features\n\u2022 Weather and solunar data\n\u2022 No ads, no limits","Download the Pro version from the CatchTales website to unlock all features!")
+B.a0p=s([B.afs,B.afE,B.afq,B.afy,B.afv,B.afp,B.afB,B.aft,B.afu,B.afr,B.afx,B.afA,B.afw,B.afz,B.afC,B.afD],A.an("F<f6>"))
 B.afM=new A.iQ("Asian Carp","Hypophthalmichthys spp.","\ud83d\udc1f Fish","Large, fast-growing filter-feeding fish that outcompetes native species for food.","Can dominate biomass, reduce plankton populations, and harm native fisheries.","IL, IN, KY, MO, TN, AR, MS, LA, AL, IA, MN, WI, OH, MI, PA, NY")
 B.afL=new A.iQ("Zebra Mussel","Dreissena polymorpha","\ud83d\udc1a Mollusk","Small striped mussel that forms dense colonies on hard surfaces like boats and pipes.","Clogs water intakes, damages boats, alters ecosystems by filtering plankton.","Found in 35+ states across the US and parts of Canada")
 B.afS=new A.iQ("Northern Snakehead","Channa argus","\ud83d\udc1f Fish","Predatory fish with a snake-like head that can breathe air and survive on land for days.","Top predator that devastates native fish populations in ponds and slow rivers.","MD, VA, DC, PA, DE, NJ, NY, NC, AR, CA")
@@ -107386,38 +107386,38 @@ B.XG=s([4294968072,null,null,8589935161],t.Z)
 B.ZY=s([8589934850,8589934850,8589934851,null],t.Z)
 B.ye=new A.ds(["*",B.XJ,"+",B.XK,"-",B.XL,".",B.XM,"/",B.XN,"0",B.XO,"1",B.XP,"2",B.XT,"3",B.XV,"4",B.XW,"5",B.XX,"6",B.XY,"7",B.XZ,"8",B.Y_,"9",B.Y1,"Alt",B.ZV,"AltGraph",B.Xy,"ArrowDown",B.Xz,"ArrowLeft",B.XA,"ArrowRight",B.XB,"ArrowUp",B.XC,"Clear",B.XH,"Control",B.ZW,"Delete",B.Xx,"End",B.XD,"Enter",B.Xw,"Home",B.XE,"Insert",B.XI,"Meta",B.ZX,"PageDown",B.XF,"PageUp",B.XG,"Shift",B.ZY],A.an("ds<o,N<q?>>"))
 B.Y0=s([B.tk,null,null,B.y0],t.L)
-B.a_S=s([B.xN,null,null,B.y1],t.L)
+B.a_R=s([B.xN,null,null,B.y1],t.L)
 B.Z1=s([B.xO,null,null,B.y2],t.L)
 B.a_3=s([B.xP,null,null,B.dR],t.L)
 B.Xh=s([B.xQ,null,null,B.y3],t.L)
 B.a0w=s([B.xR,null,null,B.mQ],t.L)
-B.a0i=s([B.xS,null,null,B.hd],t.L)
+B.a0h=s([B.xS,null,null,B.hd],t.L)
 B.Yd=s([B.xT,null,null,B.dS],t.L)
 B.a0R=s([B.xU,null,null,B.he],t.L)
-B.a0g=s([B.xV,null,null,B.dT],t.L)
+B.a0f=s([B.xV,null,null,B.dT],t.L)
 B.Y6=s([B.xW,null,null,B.mR],t.L)
 B.Xq=s([B.xX,null,null,B.dU],t.L)
 B.Yx=s([B.xY,null,null,B.hf],t.L)
-B.a_Y=s([B.xZ,null,null,B.dV],t.L)
-B.a02=s([B.y_,null,null,B.hg],t.L)
+B.a_X=s([B.xZ,null,null,B.dV],t.L)
+B.a01=s([B.y_,null,null,B.hg],t.L)
 B.Yg=s([B.hb,B.hb,B.j8,null],t.L)
 B.a0x=s([B.j4,null,B.j4,null],t.L)
 B.Zo=s([B.ci,null,null,B.dS],t.L)
 B.Zp=s([B.c2,null,null,B.dT],t.L)
 B.Zq=s([B.c3,null,null,B.dU],t.L)
 B.a0H=s([B.cj,null,null,B.dV],t.L)
-B.a0c=s([B.mK,null,null,B.mR],t.L)
+B.a0b=s([B.mK,null,null,B.mR],t.L)
 B.Yh=s([B.ha,B.ha,B.j7,null],t.L)
 B.a_s=s([B.be,null,null,B.dR],t.L)
 B.Zr=s([B.dO,null,null,B.hd],t.L)
 B.Y3=s([B.j3,null,null,B.mP],t.L)
 B.Zs=s([B.dP,null,null,B.hf],t.L)
-B.a0d=s([B.h9,null,null,B.mQ],t.L)
+B.a0c=s([B.h9,null,null,B.mQ],t.L)
 B.Yi=s([B.hc,B.hc,B.j9,null],t.L)
 B.Zt=s([B.h7,null,null,B.he],t.L)
 B.a_C=s([B.h8,null,null,B.hg],t.L)
 B.Yj=s([B.de,B.de,B.dQ,null],t.L)
-B.a31=new A.ds(["*",B.Y0,"+",B.a_S,"-",B.Z1,".",B.a_3,"/",B.Xh,"0",B.a0w,"1",B.a0i,"2",B.Yd,"3",B.a0R,"4",B.a0g,"5",B.Y6,"6",B.Xq,"7",B.Yx,"8",B.a_Y,"9",B.a02,"Alt",B.Yg,"AltGraph",B.a0x,"ArrowDown",B.Zo,"ArrowLeft",B.Zp,"ArrowRight",B.Zq,"ArrowUp",B.a0H,"Clear",B.a0c,"Control",B.Yh,"Delete",B.a_s,"End",B.Zr,"Enter",B.Y3,"Home",B.Zs,"Insert",B.a0d,"Meta",B.Yi,"PageDown",B.Zt,"PageUp",B.a_C,"Shift",B.Yj],A.an("ds<o,N<k?>>"))
+B.a31=new A.ds(["*",B.Y0,"+",B.a_R,"-",B.Z1,".",B.a_3,"/",B.Xh,"0",B.a0w,"1",B.a0h,"2",B.Yd,"3",B.a0R,"4",B.a0f,"5",B.Y6,"6",B.Xq,"7",B.Yx,"8",B.a_X,"9",B.a01,"Alt",B.Yg,"AltGraph",B.a0x,"ArrowDown",B.Zo,"ArrowLeft",B.Zp,"ArrowRight",B.Zq,"ArrowUp",B.a0H,"Clear",B.a0b,"Control",B.Yh,"Delete",B.a_s,"End",B.Zr,"Enter",B.Y3,"Home",B.Zs,"Insert",B.a0c,"Meta",B.Yi,"PageDown",B.Zt,"PageUp",B.a_C,"Shift",B.Yj],A.an("ds<o,N<k?>>"))
 B.a3A={KeyA:0,KeyB:1,KeyC:2,KeyD:3,KeyE:4,KeyF:5,KeyG:6,KeyH:7,KeyI:8,KeyJ:9,KeyK:10,KeyL:11,KeyM:12,KeyN:13,KeyO:14,KeyP:15,KeyQ:16,KeyR:17,KeyS:18,KeyT:19,KeyU:20,KeyV:21,KeyW:22,KeyX:23,KeyY:24,KeyZ:25,Digit1:26,Digit2:27,Digit3:28,Digit4:29,Digit5:30,Digit6:31,Digit7:32,Digit8:33,Digit9:34,Digit0:35,Minus:36,Equal:37,BracketLeft:38,BracketRight:39,Backslash:40,Semicolon:41,Quote:42,Backquote:43,Comma:44,Period:45,Slash:46}
 B.mW=new A.c5(B.a3A,["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","-","=","[","]","\\",";","'","`",",",".","/"],t.li)
 B.a3t={"User-Agent":0,Accept:1}
