@@ -28,9 +28,18 @@
 
 ## Last verified correct state
 
-- **Commit:** `f5f7bcc` — "Remove entire hero section"
+- **Commit:** `a60da5a` — "Fix header branding: single catchtales-logo.png on all pages; add underwater background to cloud dashboard"
 - **Date:** July 15, 2026
+
+## Cleanup completed (July 15, 2026)
+
+- 🗑️ Deleted stale `gh-pages` branch from `louismales-a11y/CatchTales` (had old website + CNAME claiming catchtales.com)
+- 🗑️ Removed stale `CatchTales-Dev/web/` directory (35 files — old website snapshot tracked in Flutter dev repo)
+- 🗑️ Removed `CatchTales-v2.14.27-dev.apk` from public downloads (internal use only)
+- 🗑️ Removed dev APK download link from `/dev/` page
+- 🗑️ Deleted `CNAME` from stale `gh-pages` branch
+- ✅ Added `CANONICAL-SITE.md` to live site repo
 
 ---
 
-> ⚠️ **For pi (AI assistant):** This is THE website repo. When the user says "my website", "GitHub site", or "catchtales.com", always work in **`/home/louis/catchtales-site`**. Do not confuse with `~/CatchTales/` (Flutter app), `~/CatchTales-Dev/` (app dev), `~/CatchTales-Free/` (app free), or `~/catchtales_cloud/` (cloud build output — deployed inside this site). If unsure, read this file first.
+> ⚠️ **For pi (AI assistant):** This is THE website repo. When the user says "my website", "GitHub site", or "catchtales.com", always work in **`/home/louis/catchtales-site`**. Do not confuse with `~/CatchTales/` (Flutter app), `~/CatchTales-Dev/` (app dev), `~/CatchTales-Free/` (app free), or `~/catchtales_cloud/` (cloud build source — not deployed standalone). If unsure, read this file first.
