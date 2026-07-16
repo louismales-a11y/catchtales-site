@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Fish Behavior: How Fish Think, See & Feed | CatchTales</title>
+  <meta name="description" content="Learn how fish perceive their world — vision, hearing, smell, feeding triggers, and how water temperature and weather affect fish behavior.">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://catchtales.com/blog/understanding-fish-behavior/">
+  <meta property="og:title" content="Understanding Fish Behavior: How Fish Think, See & Feed">
+  <meta property="og:description" content="How fish see, hear, smell, and what triggers them to feed — essential knowledge for every angler.">
+  <meta property="og:image" content="https://catchtales.com/catchtales-192.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="CatchTales">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Understanding Fish Behavior">
+  <meta name="twitter:description" content="How fish see, hear, smell, and feed.">
+  <meta name="twitter:image" content="https://catchtales.com/catchtales-192.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://catchtales.com/blog/understanding-fish-behavior/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Understanding Fish Behavior: How Fish Think, See & Feed",
+    "description": "Learn how fish perceive their world.",
+    "author": {"@type": "Organization", "name": "CatchTales"},
+    "publisher": {"@type": "Organization", "name": "CatchTales"}
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/catchtales-192.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF; line-height: 1.6; overflow-x: hidden;
+      background: #0A1628;
+    }
+    .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+    .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; pointer-events: none; }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.75; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto; transform: scaleX(-1); }
+    .swim-fish.f1 { width: 70px; top: 10%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 55px; top: 40%; animation-duration: 28s; animation-delay: -6s; }
+    .swim-fish.f3 { width: 85px; top: 70%; animation-duration: 20s; animation-delay: -12s; }
+    @keyframes swim {
+      0% { left: -140px; }
+      100% { left: calc(100vw + 80px); }
+    }
+    .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 24px 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    .header-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .header-logo img { height: 60px; width: auto; border-radius: 6px; }
+    .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 4px 8px; }
+    header nav { display: flex; flex-wrap: wrap; gap: 4px; }
+    header nav a { color: #B0C4DE; text-decoration: none; font-size: 14px; margin-left: 18px; transition: color 0.2s; position: relative; }
+    header nav a:hover { color: #76FF03; }
+    header nav a.active { color: #76FF03; }
+    .page-title { padding: 40px 0 30px; text-align: center; }
+    .page-title h1 { font-size: 2em; color: #76FF03; }
+    .page-title p { color: #B0C4DE; font-size: 1em; margin-top: 8px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .content-page { padding: 20px 0 40px; }
+    .content-page p, .content-page li { color: #B0C4DE; font-size: 15px; line-height: 1.8; }
+    .content-page h2 { color: #fff; margin-top: 28px; margin-bottom: 12px; font-size: 1.3em; }
+    .content-page h3 { color: #76FF03; margin-top: 20px; margin-bottom: 8px; font-size: 1.1em; }
+    .content-page ul { margin-left: 20px; margin-top: 8px; margin-bottom: 12px; }
+    .content-page ul li { margin-bottom: 4px; }
+    .content-page ol { margin-left: 20px; margin-top: 8px; margin-bottom: 12px; }
+    .content-page ol li { margin-bottom: 4px; }
+    .card { background: rgba(14,20,34,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 24px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; }
+    .btn-primary { background: linear-gradient(135deg, #00BCD4, #26C6DA); color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(0,188,212,0.5); }
+    .btn-secondary { background: rgba(0,188,212,0.08); color: #00BCD4; border: 2px solid rgba(0,188,212,0.4); backdrop-filter: blur(8px); }
+    .btn-secondary:hover { background: rgba(0,188,212,0.18); transform: translateY(-3px); border-color: #00BCD4; }
+    footer { padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: 40px; }
+    footer .links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    footer .links a { color: #99B0CC; text-decoration: none; font-size: 18px; transition: color 0.2s; }
+    footer .links a:hover { color: #00BCD4; }
+    footer .copy { color: #667; font-size: 14px; }
+    @media (max-width: 700px) {
+      header nav a { margin-left: 12px; font-size: 13px; }
+    }
+    @media (max-width: 600px) {
+      .nav-toggle { display: block; }
+      header nav { display: none; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; }
+      header nav.open { display: flex; }
+      header nav a { margin-left: 0; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    }
+  </style>
+</head>
+<body>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+    <div class="swim-fish f1"><img src="/tfish1.png" alt=""></div>
+    <div class="swim-fish f2"><img src="/tfish2.png" alt=""></div>
+    <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
+  </div>
+  <div class="content">
+    <header>
+      <a href="/" class="header-logo">
+        <img src="/catchtales-logo.png" alt="CatchTales" style="height: 60px; width: auto;">
+      </a>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+      <nav id="navLinks">
+        <a href="/">Home</a>
+        <a href="/features/">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/cloud/">🔒 Pro Login</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </header>
+
+    <div class="page-title">
+      <h1>Understanding Fish Behavior: How Fish Think, See &amp; Feed</h1>
+      <p>The more you understand how fish perceive their world, the better angler you'll become. Here's what science tells us about fish senses and behaviour.</p>
+    </div>
+
+    <div class="content-page">
+      <div class="card" style="padding:32px;">
+
+        <p>Every angler has asked the same question: "Why are they biting today and not yesterday?" The answer lies in understanding how fish perceive their environment. Fish aren't random — they respond to specific stimuli based on their senses, their biology, and the conditions around them.</p>
+
+        <h2>How Fish See</h2>
+        <p>A fish's vision is adapted to its underwater world and is very different from human vision.</p>
+        <ul>
+          <li><strong>Wide field of view</strong> — most fish have nearly 360-degree vision thanks to eyes positioned on the sides of their heads. However, they have a narrow binocular field (directly in front) where they see depth.</li>
+          <li><strong>Colour perception</strong> — fish see colours differently than humans. Red disappears first as depth increases (within 10-15 feet in clear water), followed by orange, yellow, and green. Blue and purple penetrate deepest.</li>
+          <li><strong>Light sensitivity</strong> — many game fish have excellent low-light vision. Walleye have a special reflective layer (tapetum lucidum) that makes them exceptional night hunters. Bass have good colour vision in bright light but rely more on vibration and sound in low light.</li>
+          <li><strong>What this means for lure selection:</strong> In clear, shallow water, colour matters. In deep or murky water, focus on silhouette, vibration, and sound rather than colour.</li>
+        </ul>
+
+        <h2>How Fish Hear</h2>
+        <p>Fish don't have external ears, but their hearing is remarkably sensitive.</p>
+        <ul>
+          <li><strong>Inner ear</strong> — fish have internal ears that detect vibrations and sound waves. They hear low-frequency sounds best.</li>
+          <li><strong>Lateral line</strong> — this is a fish's superpower. The lateral line runs along each side of the body and detects vibration, pressure changes, and movement in the water. It can sense prey from several feet away, even in total darkness.</li>
+          <li><strong>What this means:</strong> A loudly splashing topwater lure attracts fish through both sound and lateral line vibration. A lure that "pauses" and flutters can trigger a strike from fish that sensed it with their lateral line but lost visual contact.</li>
+        </ul>
+
+        <h2>How Fish Smell and Taste</h2>
+        <ul>
+          <li><strong>Olfaction (smell)</strong> — fish have nostrils (nares) that detect chemicals in the water. Salmon use smell to return to their home rivers. Catfish have exceptionally sensitive smell and can locate bait from great distances.</li>
+          <li><strong>Taste</strong> — some fish (catfish, carp, sturgeon) have taste buds all over their bodies, including their barbels and fins. Others have taste buds concentrated in their mouth and throat.</li>
+          <li><strong>What this means:</strong> Scented baits and attractants can make a difference, especially in murky water or for species like catfish. Avoid strong unnatural smells (sunscreen, fuel) on your hands when handling bait.</li>
+        </ul>
+
+        <h2>How Water Temperature Affects Fish</h2>
+        <p>Fish are cold-blooded — their body temperature matches the water around them. This has a direct effect on their metabolism and feeding behaviour.</p>
+        <ul>
+          <li><strong>Cold water (below 10°C / 50°F):</strong> Fish metabolism slows dramatically. They feed less often and require less food. Slow your presentation way down.</li>
+          <li><strong>Optimal range (15-25°C / 60-77°F):</strong> Most game fish are most active in this range. Metabolism is high, feeding is frequent, and fish are willing to chase lures.</li>
+          <li><strong>Warm water (above 27°C / 80°F):</strong> Fish become stressed and less active. They seek deeper, cooler water and feed primarily during low-light periods (dawn, dusk, night).</li>
+          <li><strong>Thermal fronts:</strong> Areas where warm and cold water meet (thermoclines, river mouths, spring seeps) concentrate both baitfish and game fish.</li>
+        </ul>
+
+        <h2>How Weather Affects Fish</h2>
+        <ul>
+          <li><strong>Barometric pressure</strong> — falling pressure (approaching storm) often triggers aggressive feeding. Rising pressure (clearing skies) can slow the bite. Stable pressure produces consistent, predictable feeding.</li>
+          <li><strong>Wind</strong> — light to moderate wind pushes baitfish toward shorelines, concentrating game fish. Wind also oxygenates the water and can trigger feeding activity.</li>
+          <li><strong>Cloud cover</strong> — overcast skies make fish feel more secure in shallow water and extend feeding periods throughout the day. Some of the best fishing days are overcast with light wind.</li>
+          <li><strong>Rain</strong> — light rain can trigger feeding, especially if it washes terrestrial insects into the water. Heavy rain muddies water and can turn fish off temporarily.</li>
+        </ul>
+
+        <h2>Feeding Triggers</h2>
+        <p>Fish don't eat on a schedule. Their feeding is triggered by specific conditions:</p>
+        <ul>
+          <li><strong>Light levels</strong> — dawn and dusk are the most reliable feeding periods for most species. The transition from dark to light and light to dark triggers a feeding response.</li>
+          <li><strong>Solunar periods</strong> — major and minor feeding periods predicted by the positions of the sun and moon. Many anglers find these periods consistently productive.</li>
+          <li><strong>Baitfish activity</strong> — when baitfish school and move, predator fish follow. Look for surface activity, birds diving, or fish jumping.</li>
+          <li><strong>Oxygen levels</strong> — fish need oxygen to digest food. Areas with moving water, wind, or aquatic plants have higher oxygen levels and more active fish.</li>
+        </ul>
+
+        <h2>Practical Takeaways</h2>
+        <ol>
+          <li><strong>Match the conditions</strong> — bright, calm day? Use natural colours, fish deeper. Overcast and windy? Dark lures, shallow water, faster presentations.</li>
+          <li><strong>Slow down in cold water</strong> — fish won't chase. Let your lure sit longer, use slower retrieves.</li>
+          <li><strong>Fish the transitions</strong> — dawn, dusk, weather changes, solunar periods. The best fishing happens during change.</li>
+          <li><strong>Use the lateral line</strong> — lures that vibrate, rattle, or push water get attention even in murky conditions.</li>
+          <li><strong>Watch the baitfish</strong> — find the bait, find the fish. If you don't see baitfish activity, keep moving until you do.</li>
+        </ol>
+
+        <div style="margin-top:32px;padding:20px;background:rgba(0,188,212,0.06);border-radius:12px;border:1px solid rgba(0,188,212,0.15);">
+          <h3 style="margin-bottom:8px;">Apply Fish Behavior Knowledge with CatchTales</h3>
+          <p style="margin-bottom:12px;">The CatchTales app gives you solunar predictions, weather forecasts, moon phases, and barometric pressure data — all the information you need to predict when fish will be most active.</p>
+          <a href="/blog/" class="btn btn-secondary" style="display:inline-block;padding:12px 24px;background:linear-gradient(135deg,#4CAF50,#388E3C);color:#fff;border-radius:10px;font-weight:700;">← Back to Blog</a>
+        </div>
+
+        <p style="margin-top:32px;font-size:0.85rem;color:#6b7280;">Published July 2026 by the CatchTales team.</p>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/features/">Features</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+        <a href="/cloud/">🔒 Pro User Login</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="copy">&copy; 2026 Maison Louis Design &mdash; Made with &hearts; for anglers everywhere &#x1f3a3;</p>
+    </footer>
+  </div>
+</body>
+</html>
