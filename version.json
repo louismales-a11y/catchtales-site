@@ -3,8 +3,8 @@
   "tag_name": "v2.14.32",
   "html_url": "https://catchtales.com/download/",
   "apks": {
-    "free": "/download/CatchTales-v2.14.32.apk",
-    "pro": "/download/CatchTales-v2.14.29-pro.apk",
-    "dev": "/download/CatchTales-v2.14.29-dev.apk"
+    "free": "/download/CatchTales-v2.14.32-free.apk",
+    "pro": "/download/CatchTales-v2.14.32-pro.apk",
+    "dev": "/download/CatchTales-v2.14.32-dev.apk"
   }
 }
