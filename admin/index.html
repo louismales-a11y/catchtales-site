@@ -153,8 +153,6 @@ const ds=Math.floor((Date.now()-last.getTime())/86400000);
 let ac,al;
 if(ds===0){ac='#76FF03';al='Today'}else if(ds<=3){ac='#8BC34A';al=ds+'d'}else if(ds<=7){ac='#FFC107';al=ds+'d'}else if(ds<=30){ac='#FF9800';al=ds+'d'}else{ac='#F44336';al=ds+'d'}
 actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens total</span>`;
-const rawSess = JSON.stringify(u);
-actHtml+=`<br><span style="color:#FF0;font-size:11px;background:#000;padding:2px">${rawSess}</span>`;
 if(fish>0)actHtml+=`<br><span style="color:#667;font-size:9px">${fish} fish</span>`
 }else actHtml='<span style="color:#FF9800;font-size:11px">Never</span>'
 }}
