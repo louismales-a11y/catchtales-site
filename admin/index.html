@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>CatchTales Admin</title>
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore-compat.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0A1628; color: #fff; }
+    .login-box { max-width: 360px; margin: 100px auto; padding: 32px; background: #162033; border-radius: 12px; }
+    .login-box h1 { margin-bottom: 20px; font-size: 20px; }
+    .login-box input { width: 100%; padding: 10px 12px; margin-bottom: 12px; background: #0A1628; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 14px; }
+    .login-box button { width: 100%; padding: 10px; background: #00BCD4; border: none; border-radius: 6px; color: #003544; font-weight: 600; font-size: 14px; cursor: pointer; }
+    .login-box button:hover { background: #00ACC1; }
+    .login-box .error { color: #F44336; font-size: 13px; margin-top: 8px; }
+    .app { max-width: 960px; margin: 0 auto; padding: 16px; }
+    .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+    .header h1 { font-size: 18px; }
+    .header .user { font-size: 12px; color: #8899AA; }
+    .header button { background: none; border: 1px solid #2a3a55; color: #B0C4DE; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+    .header button:hover { border-color: #00BCD4; color: #00BCD4; }
+    .toolbar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+    .toolbar .btn { padding: 6px 14px; border-radius: 6px; border: 1px solid #2a3a55; background: #162033; color: #B0C4DE; cursor: pointer; font-size: 12px; }
+    .toolbar .btn:hover { border-color: #00BCD4; }
+    .toolbar .btn.active { background: #00BCD4; color: #003544; border-color: #00BCD4; font-weight: 600; }
+    .toolbar .btn.gen { background: #76FF03; color: #003544; border-color: #76FF03; font-weight: 600; }
+    .toolbar .btn.gen:hover { background: #66EE00; }
+    .count { font-size: 12px; color: #667; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2a3a55; color: #8899AA; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    td { padding: 8px 10px; border-bottom: 1px solid #1a2a44; font-family: monospace; }
+    td.code { font-size: 13px; letter-spacing: 1px; cursor: pointer; }
+    td.code:hover { color: #76FF03; }
+    .badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; }
+    .badge-life { background: #6663; color: #aaa; }
+    .badge-yr { background: #FF8F0033; color: #FF8F00; }
+    .badge-avail { background: #76FF0333; color: #76FF03; }
+    .badge-used { background: #607D8B33; color: #78909C; }
+    .badge-given { background: #FF980033; color: #FF9800; }
+    .detail-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
+    .detail-overlay.open { display: flex; }
+    .detail-box { background: #162033; border: 1px solid #2a3a55; border-radius: 12px; padding: 24px; width: 90%; max-width: 420px; }
+    .detail-box h2 { font-size: 15px; font-family: monospace; letter-spacing: 1px; margin-bottom: 16px; }
+    .detail-box label { font-size: 12px; color: #8899AA; display: block; margin-bottom: 4px; }
+    .detail-box input, .detail-box textarea { width: 100%; padding: 8px 10px; margin-bottom: 12px; background: #0A1628; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 13px; }
+    .detail-box textarea { resize: vertical; min-height: 50px; }
+    .detail-box .row { display: flex; gap: 8px; }
+    .detail-box .row button { flex: 1; padding: 8px; border-radius: 6px; border: none; font-size: 13px; cursor: pointer; font-weight: 600; }
+    .detail-box .btn-close { background: #2a3a55; color: #B0C4DE; }
+    .detail-box .btn-copy { background: #1a5a7a; color: #fff; }
+    .detail-box .btn-save { background: #00BCD4; color: #003544; }
+    .gen-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
+    .gen-overlay.open { display: flex; }
+    .gen-box { background: #162033; border: 1px solid #2a3a55; border-radius: 12px; padding: 24px; width: 90%; max-width: 360px; }
+    .gen-box h2 { font-size: 16px; margin-bottom: 16px; }
+    .gen-box label { font-size: 12px; color: #8899AA; display: block; margin-bottom: 4px; }
+    .gen-box input { width: 100%; padding: 8px 10px; margin-bottom: 12px; background: #0A1628; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 13px; }
+    .gen-box .type-select { display: flex; gap: 8px; margin-bottom: 16px; }
+    .gen-box .type-select button { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #2a3a55; background: #0A1628; color: #B0C4DE; cursor: pointer; font-size: 13px; }
+    .gen-box .type-select button.active { background: #00BCD4; color: #003544; border-color: #00BCD4; font-weight: 600; }
+    .gen-box .actions { display: flex; gap: 8px; }
+    .gen-box .actions button { flex: 1; padding: 8px; border-radius: 6px; border: none; font-size: 13px; cursor: pointer; font-weight: 600; }
+    .gen-box .btn-cancel { background: #2a3a55; color: #B0C4DE; }
+    .gen-box .btn-gen { background: #76FF03; color: #003544; }
+    .loading { text-align: center; padding: 40px; color: #667; font-size: 14px; }
+    @media (max-width: 600px) { .app { padding: 8px; } td, th { padding: 6px 6px; font-size: 12px; } }
+  </style>
+</head>
+<body>
+  <div class="login-box" id="loginBox">
+    <h1>CatchTales Admin</h1>
+    <input type="email" id="emailInput" placeholder="Email" autocomplete="email">
+    <input type="password" id="passInput" placeholder="Password" autocomplete="current-password">
+    <button onclick="signIn()">Sign In</button>
+    <div class="error" id="loginError"></div>
+  </div>
+
+  <div class="app" id="app" style="display:none">
+    <div class="header">
+      <div><h1>Pro Key Manager</h1><span class="user" id="userInfo"></span></div>
+      <button onclick="signOut()">Sign Out</button>
+    </div>
+
+    <div class="toolbar" id="toolbar">
+      <span class="count" id="countInfo">Loading...</span>
+      <span style="flex:1"></span>
+      <button class="btn active" data-filter="all" onclick="setFilter('all')">All</button>
+      <button class="btn" data-filter="available" onclick="setFilter('available')">Available</button>
+      <button class="btn" data-filter="given" onclick="setFilter('given')">Given</button>
+      <button class="btn" data-filter="used" onclick="setFilter('used')">Used</button>
+      <button class="btn gen" onclick="showGen()">+ Generate</button>
+    </div>
+
+    <div id="keyList"><div class="loading">Loading keys...</div></div>
+  </div>
+
+  <div class="detail-overlay" id="detailOverlay">
+    <div class="detail-box">
+      <h2 id="detailCode"></h2>
+      <label>Given to (store name / contact)</label>
+      <input type="text" id="detailGiven">
+      <label>Notes</label>
+      <textarea id="detailNotes"></textarea>
+      <div class="row" style="margin-top:8px">
+        <button class="btn-copy" onclick="copyKey()">Copy Key</button>
+        <button class="btn-save" onclick="saveDetail()">Save</button>
+        <button class="btn-close" onclick="closeDetail()">Close</button>
+      </div>
+      <div id="detailStatus" style="margin-top:8px;font-size:12px;color:#667"></div>
+    </div>
+  </div>
+
+  <div class="gen-overlay" id="genOverlay">
+    <div class="gen-box">
+      <h2>Generate Keys</h2>
+      <label>Number of keys</label>
+      <input type="number" id="genCount" value="10" min="1" max="200">
+      <label>Type</label>
+      <div class="type-select">
+        <button class="active" data-type="lifetime" onclick="setGenType('lifetime')">Lifetime</button>
+        <button data-type="yearly" onclick="setGenType('yearly')">Yearly</button>
+      </div>
+      <div class="actions">
+        <button class="btn-cancel" onclick="closeGen()">Cancel</button>
+        <button class="btn-gen" onclick="generateKeys()">Generate</button>
+      </div>
+      <div id="genStatus" style="margin-top:8px;font-size:12px;color:#667"></div>
+    </div>
+  </div>
+
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBSAXvYCrHF5DjQGp-ISkY92QKoy-acJTw",
+      authDomain: "catchtales-prod.firebaseapp.com",
+      projectId: "catchtales-prod",
+      storageBucket: "catchtales-prod.firebasestorage.app",
+      appId: "1:883108283866:web:admin",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    let allDocs = [];
+    let currentFilter = 'all';
+    let currentDoc = null;
+    let genType = 'lifetime';
+
+    // Auth state
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        document.getElementById('userInfo').textContent = user.email;
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+        loadKeys();
+      } else {
+        document.getElementById('loginBox').style.display = 'block';
+        document.getElementById('app').style.display = 'none';
+      }
+    });
+
+    async function signIn() {
+      const email = document.getElementById('emailInput').value;
+      const pass = document.getElementById('passInput').value;
+      document.getElementById('loginError').textContent = '';
+      try {
+        await auth.signInWithEmailAndPassword(email, pass);
+      } catch (e) {
+        document.getElementById('loginError').textContent = e.message;
+      }
+    }
+
+    function signOut() { auth.signOut(); }
+
+    async function loadKeys() {
+      document.getElementById('keyList').innerHTML = '<div class="loading">Loading keys...</div>';
+      try {
+        const snap = await db.collection('pro_licenses').get();
+        allDocs = [];
+        snap.forEach(d => allDocs.push({ id: d.id, ...d.data() }));
+        render();
+      } catch (e) {
+        document.getElementById('keyList').innerHTML = `<div class="loading" style="color:#F44336">Error: ${e.message}</div>`;
+      }
+    }
+
+    function getFiltered() {
+      if (currentFilter === 'all') return allDocs;
+      return allDocs.filter(d => {
+        if (currentFilter === 'used') return d.used === true;
+        if (currentFilter === 'available') return d.used !== true && (d.givenTo || '').trim() === '';
+        if (currentFilter === 'given') return d.used !== true && (d.givenTo || '').trim() !== '';
+        return true;
+      });
+    }
+
+    function render() {
+      const filtered = getFiltered();
+      document.getElementById('countInfo').textContent = `${allDocs.length} total, ${filtered.length} shown`;
+
+      if (filtered.length === 0) {
+        document.getElementById('keyList').innerHTML = `<div class="loading">${allDocs.length === 0 ? 'No keys yet' : 'No keys match this filter'}</div>`;
+        return;
+      }
+
+      let html = '<table><thead><tr><th>Code</th><th>Type</th><th>Status</th><th>Given To</th></tr></thead><tbody>';
+      for (const d of filtered) {
+        const type = d.type || 'lifetime';
+        const used = d.used === true;
+        const given = (d.givenTo || '').trim();
+        const typeClass = type === 'yearly' ? 'badge-yr' : 'badge-life';
+        const typeLabel = type === 'yearly' ? '1YR' : 'LIFE';
+        let statusClass, statusLabel;
+        if (used) { statusClass = 'badge-used'; statusLabel = 'Used'; }
+        else if (given) { statusClass = 'badge-given'; statusLabel = 'Given'; }
+        else { statusClass = 'badge-avail'; statusLabel = 'Available'; }
+
+        html += `<tr onclick="openDetail('${d.id}')">
+          <td class="code">${d.id}</td>
+          <td><span class="badge ${typeClass}">${typeLabel}</span></td>
+          <td><span class="badge ${statusClass}">${statusLabel}</span></td>
+          <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${given || '-'}</td>
+        </tr>`;
+      }
+      html += '</tbody></table>';
+      document.getElementById('keyList').innerHTML = html;
+    }
+
+    function setFilter(f) {
+      currentFilter = f;
+      document.querySelectorAll('.toolbar .btn[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
+      render();
+    }
+
+    function openDetail(id) {
+      currentDoc = allDocs.find(d => d.id === id);
+      if (!currentDoc) return;
+      document.getElementById('detailCode').textContent = currentDoc.id;
+      document.getElementById('detailGiven').value = currentDoc.givenTo || '';
+      document.getElementById('detailNotes').value = currentDoc.notes || '';
+      document.getElementById('detailStatus').textContent = '';
+      document.getElementById('detailOverlay').classList.add('open');
+    }
+
+    function closeDetail() {
+      document.getElementById('detailOverlay').classList.remove('open');
+      currentDoc = null;
+    }
+
+    async function saveDetail() {
+      if (!currentDoc) return;
+      const given = document.getElementById('detailGiven').value.trim();
+      const notes = document.getElementById('detailNotes').value.trim();
+      document.getElementById('detailStatus').textContent = 'Saving...';
+      try {
+        const upd = { givenTo: given || null, notes: notes || null };
+        if (given && !currentDoc.givenAt) upd.givenAt = firebase.firestore.FieldValue.serverTimestamp();
+        await db.collection('pro_licenses').doc(currentDoc.id).update(upd);
+        document.getElementById('detailStatus').textContent = 'Saved!';
+        setTimeout(closeDetail, 500);
+        await loadKeys();
+      } catch (e) {
+        document.getElementById('detailStatus').textContent = 'Error: ' + e.message;
+      }
+    }
+
+    async function copyKey() {
+      if (!currentDoc) return;
+      try {
+        await navigator.clipboard.writeText(currentDoc.id);
+        document.getElementById('detailStatus').textContent = 'Copied!';
+      } catch (e) {
+        document.getElementById('detailStatus').textContent = 'Copy failed';
+      }
+    }
+
+    function showGen() {
+      document.getElementById('genCount').value = '10';
+      document.getElementById('genStatus').textContent = '';
+      document.getElementById('genOverlay').classList.add('open');
+    }
+
+    function closeGen() { document.getElementById('genOverlay').classList.remove('open'); }
+
+    function setGenType(t) {
+      genType = t;
+      document.querySelectorAll('.gen-box .type-select button').forEach(b => b.classList.toggle('active', b.dataset.type === t));
+    }
+
+    async function generateKeys() {
+      const count = parseInt(document.getElementById('genCount').value) || 10;
+      const clamped = Math.max(1, Math.min(200, count));
+      document.getElementById('genStatus').textContent = `Generating ${clamped} keys...`;
+
+      try {
+        const codes = [];
+        let attempts = 0;
+        while (codes.length < clamped && attempts < 200) {
+          attempts++;
+          const code = generateCode();
+          if (codes.includes(code)) continue;
+          const doc = await db.collection('pro_licenses').doc(code).get();
+          if (!doc.exists) {
+            codes.push(code);
+          }
+        }
+
+        const batch = db.batch();
+        for (const code of codes) {
+          batch.set(db.collection('pro_licenses').doc(code), {
+            type: genType, used: false, usedAt: null, givenTo: null, givenAt: null, notes: null,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          });
+        }
+        await batch.commit();
+
+        document.getElementById('genStatus').textContent = `Generated ${codes.length} keys (${genType})`;
+        setTimeout(closeGen, 1000);
+        await loadKeys();
+      } catch (e) {
+        document.getElementById('genStatus').textContent = 'Error: ' + e.message;
+      }
+    }
+
+    function generateCode() {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      const seed = Date.now();
+      const parts = [0,1,2].map(p => {
+        const ps = seed + p * 7919;
+        return [0,1,2,3].map(i => chars[(ps + i * 37) % chars.length]).join('');
+      });
+      return 'PRO-' + parts.join('-');
+    }
+  </script>
+</body>
+</html>
