@@ -265,9 +265,26 @@
             else if (daysSince <= 7) { actColor = '#FFC107'; actLabel = `${daysSince}d`; }
             else if (daysSince <= 30) { actColor = '#FF9800'; actLabel = `${daysSince}d`; }
             else { actColor = '#F44336'; actLabel = `${daysSince}d`; }
+            // Build 7-day activity bar
+            const log = u.activityLog || {};
+            let barHtml = '';
+            let weekOpens = 0;
+            const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            for (let i = 6; i >= 0; i--) {
+              const d = new Date(Date.now() - i * 86400000);
+              const key = d.toISOString().substring(0, 10);
+              const count = log[key] || 0;
+              weekOpens += count;
+              const color = count > 5 ? '#76FF03' : count > 2 ? '#8BC34A' : count > 0 ? '#FFC107' : '#1a2a44';
+              const dayLabel = days[d.getDay()];
+              barHtml += `<span title="${dayLabel}: ${count} opens" style="display:inline-block;width:14px;height:14px;margin:1px;border-radius:2px;background:${color}"></span>`;
+            }
+
             activityHtml = `<span style="color:${actColor};font-size:11px;font-weight:600">${actLabel}</span>`;
-            activityHtml += `<br><span style="color:#8899AA;font-size:10px">${sessions} opens</span>`;
-            if (catches > 0) activityHtml += ` <span style="color:#667;font-size:10px">${catches} fish</span>`;
+            activityHtml += `<br><span style="color:#8899AA;font-size:10px">${sessions} total</span>`;
+            activityHtml += `<br><span style="color:#667;font-size:9px">${weekOpens} this week</span>`;
+            activityHtml += `<br><div style="margin-top:2px">${barHtml}</div>`;
+            if (catches > 0) activityHtml += `<br><span style="color:#667;font-size:9px">${catches} fish caught</span>`;
           } else {
             activityHtml = '<span style="color:#FF9800;font-size:11px">Never</span>';
           }
