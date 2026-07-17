@@ -185,8 +185,12 @@ function openDet(id){curDoc=allDocs.find(d=>d.id===id);if(!curDoc)return;
 document.getElementById('detModal').innerHTML=`<h2>${curDoc.id}</h2>
 <div class="field"><label>Given to</label><input id="detGiven" value="${(curDoc.givenTo||'').replace(/"/g,'&quot;')}"></div>
 <div class="field"><label>Notes</label><textarea id="detNotes">${(curDoc.notes||'').replace(/"/g,'&quot;')}</textarea></div>
-<div class="actions"><button class="btn-copy" onclick="copyKey()">Copy</button><button class="btn-save" onclick="saveDet()">Save</button><button class="btn-close" onclick="closeOverlay('detOverlay')">Close</button></div>
+<div class="actions"><button class="btn-copy" onclick="copyKey()">Copy</button><button class="btn-save" onclick="saveDet()">Save</button><button class="btn-close" onclick="closeOverlay('detOverlay')">Close</button><button style="padding:8px;border-radius:6px;border:none;font-size:13px;cursor:pointer;font-weight:600;background:#F44336;color:#fff" onclick="deleteKey()">Delete</button></div>
 <div class="status" id="detStatus"></div>`;document.getElementById('detOverlay').classList.add('open')}
+
+async function deleteKey(){if(!curDoc)return;if(!confirm('Delete this key permanently?'))return;document.getElementById('detStatus').textContent='Deleting...';try{
+await db.collection('pro_licenses').doc(curDoc.id).delete();closeOverlay('detOverlay');await loadKeys()
+}catch(e){document.getElementById('detStatus').textContent='Error: '+e.message}}
 
 async function saveDet(){if(!curDoc)return;const g=document.getElementById('detGiven').value.trim(),n=document.getElementById('detNotes').value.trim();document.getElementById('detStatus').textContent='Saving...';try{
 const upd={givenTo:g||null,notes:n||null};if(g&&!curDoc.givenAt)upd.givenAt=firebase.firestore.FieldValue.serverTimestamp();
