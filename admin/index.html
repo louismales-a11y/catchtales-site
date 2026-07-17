@@ -183,7 +183,7 @@
         const snap = await db.collection('pro_licenses').get();
         allDocs = [];
         snap.forEach(d => allDocs.push({ id: d.id, ...d.data() }));
-        render();
+        await render();
       } catch (e) {
         document.getElementById('keyList').innerHTML = `<div class="loading" style="color:#F44336">Error: ${e.message}</div>`;
       }
@@ -199,7 +199,7 @@
       });
     }
 
-    function render() {
+    async function render() {
       const filtered = getFiltered();
       document.getElementById('countInfo').textContent = `${allDocs.length} total, ${filtered.length} shown`;
 
@@ -208,7 +208,18 @@
         return;
       }
 
-      let html = '<table><thead><tr><th>Code</th><th>Type</th><th>Status</th><th>Given To</th><th>Activated By</th></tr></thead><tbody>';
+      let html = '<table><thead><tr><th>Code</th><th>Type</th><th>Status</th><th>Given To</th><th>Activated By</th><th>Activity</th></tr></thead><tbody>';
+      // Collect emails to look up user activity
+      const emails = [...new Set(filtered.filter(d => d.used && d.activatedByEmail).map(d => d.activatedByEmail))];
+      const userCache = {};
+      // Batch fetch users by email (limit 10 per query to avoid issues)
+      for (const email of emails) {
+        try {
+          const snap = await db.collection('users').where('email', '==', email).limit(1).get();
+          snap.forEach(doc => { userCache[email] = doc.data(); });
+        } catch(e) { /* ignore lookup errors */ }
+      }
+
       for (const d of filtered) {
         const type = d.type || 'lifetime';
         const used = d.used === true;
@@ -220,22 +231,44 @@
         else if (given) { statusClass = 'badge-given'; statusLabel = 'Given'; }
         else { statusClass = 'badge-avail'; statusLabel = 'Available'; }
 
+        // Activity status
+        let activityHtml = '<span style="color:#667;font-size:11px">-</span>';
+        if (used && d.activatedByEmail && userCache[d.activatedByEmail]) {
+          const u = userCache[d.activatedByEmail];
+          const last = u.lastLogin ? u.lastLogin.toDate() : null;
+          const catches = u.catchCount || 0;
+          if (last) {
+            const days = Math.floor((Date.now() - last.getTime()) / 86400000);
+            let actColor, actLabel;
+            if (days === 0) { actColor = '#76FF03'; actLabel = 'Active today'; }
+            else if (days <= 3) { actColor = '#8BC34A'; actLabel = `${days}d ago`; }
+            else if (days <= 7) { actColor = '#FFC107'; actLabel = `${days}d ago`; }
+            else if (days <= 30) { actColor = '#FF9800'; actLabel = `${days}d ago`; }
+            else { actColor = '#F44336'; actLabel = `${days}d ago`; }
+            activityHtml = `<span style="color:${actColor};font-size:11px;font-weight:600">${actLabel}</span>`;
+            if (catches > 0) activityHtml += ` <span style="color:#667;font-size:10px">${catches} catches</span>`;
+          } else {
+            activityHtml = '<span style="color:#FF9800;font-size:11px">Never opened</span>';
+          }
+        }
+
         html += `<tr onclick="openDetail('${d.id}')">
           <td class="code">${d.id}</td>
           <td><span class="badge ${typeClass}">${typeLabel}</span></td>
           <td><span class="badge ${statusClass}">${statusLabel}</span></td>
           <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${given || '-'}</td>
           <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${d.activatedByName || d.activatedByEmail || '-'}</td>
+          <td>${activityHtml}</td>
         </tr>`;
       }
       html += '</tbody></table>';
       document.getElementById('keyList').innerHTML = html;
     }
 
-    function setFilter(f) {
+    async function setFilter(f) {
       currentFilter = f;
       document.querySelectorAll('.toolbar .btn[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
-      render();
+      await render();
     }
 
     function openDetail(id) {
