@@ -120,7 +120,7 @@ if(filtered.length===0){document.getElementById('keyList').innerHTML=`<div class
 actCache={};
 const emails=[...new Set(filtered.filter(d=>d.used&&d.activatedByEmail).map(d=>d.activatedByEmail))];
 for(const email of emails){try{
-const snap=await db.collection('users').where('email','==',email).limit(1).get();
+const snap=await db.collection('users').where('email','==',email).orderBy('createdAt','desc').limit(1).get();
 if(snap.empty)actCache[email]={deleted:true};else snap.forEach(d=>actCache[email]=d.data())
 }catch(e){}}
 
