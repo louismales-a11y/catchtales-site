@@ -108,12 +108,12 @@
     .card .phone-frame { margin-top: 12px; }
 
     /* ─── Download ─── */
-    .download { padding: 50px 0; text-align: center; margin: 40px 0; border-radius: 20px; background: linear-gradient(135deg, rgba(0,188,212,0.08), rgba(118,255,3,0.04)); border: 1px solid rgba(0,188,212,0.1); backdrop-filter: blur(8px); }
+    .download { padding: 50px 0; text-align: center; margin: 40px 0; border-radius: 20px; background: rgba(0,188,212,0.06); border: 1px solid rgba(0,188,212,0.1); backdrop-filter: blur(8px); }
     .download h2 { font-size: 1.6em; color: #fff; margin-bottom: 8px; }
     .download p { color: #B0C4DE; margin-bottom: 24px; font-size: 1em; }
     .download-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; }
-    .btn-primary { background: linear-gradient(135deg, #00BCD4, #26C6DA); color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
+    .btn-primary { background: #00BCD4; color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(0,188,212,0.5); }
     .btn-secondary { background: rgba(0,188,212,0.08); color: #00BCD4; border: 2px solid rgba(0,188,212,0.4); backdrop-filter: blur(8px); }
     .btn-secondary:hover { background: rgba(0,188,212,0.18); transform: translateY(-3px); border-color: #00BCD4; }
@@ -159,7 +159,7 @@
         <a href="/">Home</a>
         <a href="/features/" class="active">Features</a>
         <a href="/blog/">Blog</a>
-        <a href="/cloud/">🔒 Pro Login</a>
+        <a href="/cloud/">Pro Login</a>
         <a href="/about/">About</a>
         <a href="/faq/">FAQ</a>
         <a href="/contact/">Contact</a>
@@ -189,21 +189,31 @@
 
     <!-- AI Features -->
     <div class="category">
-      <h2>🤖 AI-Powered</h2>
+      <h2>AI-Powered</h2>
       <div class="grid">
         <div class="card">
-          <div class="icon">🐟</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 12s2-5 8-5 8 5 8 5-2 5-8 5-8-5-8-5z"/>
+  <circle cx="10" cy="12" r="1" fill="#00BCD4"/>
+  <path d="M16 11l5-2v6l-5-2"/>
+</svg>
           <h3>AI Fish ID <span class="badge">AI</span></h3>
           <p>Snap a photo and AI identifies the species instantly. No more guessing.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-fishid.png" alt="AI Fish ID"></div></div>
         </div>
         <div class="card">
-          <div class="icon">🤖</div>
+          
           <h3>AI Lake Insights <span class="badge">AI</span></h3>
           <p style="line-height: 1.8;">Chat with your personal fishing data. Ask questions like "What's my most productive lure for walleye?" or "Which lake has the best bass fishing in June?" — AI instantly analyzes your catch history, weather patterns, and seasonal trends to give you actionable answers. The more you log, the smarter it gets.</p>
         </div>
         <div class="card">
-          <div class="icon">🎣</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 3l-9 9"/>
+  <path d="M20 3c1 0 2 1 2 2s-1 2-2 2"/>
+  <path d="M11 12c-2 2-3 4-3 6"/>
+  <path d="M8 18h6"/>
+  <circle cx="8" cy="18" r="1.5" fill="#00BCD4"/>
+</svg>
           <h3>AI Tackle Picks <span class="badge">AI</span></h3>
           <p>Smart lure suggestions based on species, weather, season, and water type.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-tackle.png" alt="AI Tackle"></div></div>
@@ -213,20 +223,24 @@
 
     <!-- Catch Logging -->
     <div class="category">
-      <h2>🎣 Catch Logging</h2>
+      <h2>Catch Logging</h2>
       <div class="grid">
         <div class="card">
-          <div class="icon">🎤</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="9" y="2" width="6" height="11" rx="3"/>
+  <path d="M5 10a7 7 0 0014 0"/>
+  <path d="M12 19v3"/>
+</svg>
           <h3>Voice Recording</h3>
           <p>Log catches hands-free. Say "caught a 5lb bass" and the form fills itself.</p>
         </div>
         <div class="card">
-          <div class="icon">🤳</div>
+          
           <h3>Selfie Camera</h3>
           <p>Built-in camera with countdown timer. Perfect catch photos every time.</p>
         </div>
         <div class="card">
-          <div class="icon">📅</div>
+          
           <h3>Calendar &amp; History</h3>
           <p>Calendar heatmap, gallery view, search, and export to CSV / JSON / KML.</p>
         </div>
@@ -235,22 +249,28 @@
 
     <!-- Maps & Weather -->
     <div class="category">
-      <h2>🗺️ Maps &amp; Weather</h2>
+      <h2>Maps &amp; Weather</h2>
       <div class="grid">
         <div class="card">
-          <div class="icon">🗺️</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="10" r="3"/>
+  <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
+</svg>
           <h3>Interactive Map</h3>
           <p>Catch pins, nautical charts, depth contours, and weather overlays — all in one map.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-map.png" alt="Interactive Map"></div></div>
         </div>
         <div class="card">
-          <div class="icon">🌤️</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round">
+  <circle cx="12" cy="12" r="4"/>
+  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+</svg>
           <h3>Weather &amp; Forecast</h3>
           <p>Real-time conditions, 5-day forecast, auto-fetched from your GPS location.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-weather.png" alt="Weather"></div></div>
         </div>
         <div class="card">
-          <div class="icon">🌙</div>
+          
           <h3>Solunar Times</h3>
           <p>Daily major/minor fishing periods, moon phase, and a 0-10 rating. Know when they bite.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-solunar.png" alt="Solunar"></div></div>
@@ -260,22 +280,28 @@
 
     <!-- Community -->
     <div class="category">
-      <h2>🌐 Community &amp; Cloud</h2>
+      <h2>Community &amp; Cloud</h2>
       <div class="grid">
         <div class="card">
-          <div class="icon">🏆</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 9H4a2 2 0 01-2-2V5a2 2 0 012-2h2"/>
+  <path d="M18 9h2a2 2 0 002-2V5a2 2 0 00-2-2h-2"/>
+  <path d="M6 3h12v6c0 4-3 7-6 7s-6-3-6-7V3z"/>
+  <path d="M12 16v4"/>
+  <path d="M8 20h8"/>
+</svg>
           <h3>Brag Board</h3>
           <p>Share catch photos, like, comment, and show off your biggest fish. Friendly community.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-brag.png" alt="Brag Board"></div></div>
         </div>
         <div class="card">
-          <div class="icon">☁️</div>
+          
           <h3>Cloud Sync</h3>
           <p>Back up, sync across devices, and fish together with friends in real-time sessions with photo sharing, permanent fishing rooms, and notification sounds.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-cloudsync.png" alt="Cloud Sync"></div></div>
         </div>
         <div class="card">
-          <div class="icon">📊</div>
+          
           <h3>Stats &amp; Badges</h3>
           <p style="line-height: 1.8;">Track your progress with detailed charts showing your catch activity over time, species breakdown by percentage, personal bests by weight and length, and seasonal patterns. Earn achievement badges as you hit milestones — First Catch, Master Angler, Species Collector, Big Catch, and more. Share your stats card as an image to show off on social media.</p>
         </div>
@@ -284,10 +310,16 @@
 
     <!-- Tools -->
     <div class="category">
-      <h2>🧰 Tools</h2>
+      <h2>Tools</h2>
       <div class="grid">
         <div class="card">
-          <div class="icon">🎣</div>
+          <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M20 3l-9 9"/>
+  <path d="M20 3c1 0 2 1 2 2s-1 2-2 2"/>
+  <path d="M11 12c-2 2-3 4-3 6"/>
+  <path d="M8 18h6"/>
+  <circle cx="8" cy="18" r="1.5" fill="#00BCD4"/>
+</svg>
           <h3>Fish Together</h3>
           <p>Real-time chat with friends while fishing. Share photos, GPS location, and emergency alerts. Open as a separate window to switch between apps freely.</p>
           <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-cloudsync.png" alt="Fish Together"></div></div>
@@ -297,11 +329,11 @@
 
     <!-- Download -->
     <div class="download">
-      <h2>📲 Get CatchTales</h2>
+      <h2>Get CatchTales</h2>
       <p>Free and Pro versions available. Start logging your catches today.</p>
       <div class="download-buttons">
-        <a href="/download/CatchTales-v2.14.29-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.29-pro.apk">⬇️ Download Pro v2.14.29</a>
-        <a href="/download/CatchTales-v2.14.29-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.29-free.apk">🆓 Download Free v2.14.29</a>
+        <a href="/download/CatchTales-v2.14.29-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.29-pro.apk">Download Pro v2.14.29</a>
+        <a href="/download/CatchTales-v2.14.29-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.29-free.apk">Download Free v2.14.29</a>
       </div>
     </div>
 
@@ -311,13 +343,13 @@
         <a href="/features/">Features</a>
         <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
-        <a href="/cloud/">🔒 Pro User Login</a>
+        <a href="/cloud/">Pro User Login</a>
         <a href="/faq/">FAQ</a>
         <a href="/contact/">Contact</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
       </div>
-      <p class="copy">© 2026 Maison Louis Design — Made with ❤️ for anglers everywhere 🎣</p>
+      <p class="copy">© 2026 Maison Louis Design — Made for anglers everywhere</p>
     </footer>
   </div>
 </body>
