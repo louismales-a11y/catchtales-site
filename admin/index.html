@@ -319,8 +319,9 @@
         }
         await batch.commit();
 
-        document.getElementById('genStatus').textContent = `Generated ${codes.length} keys (${genType})`;
-        setTimeout(closeGen, 1000);
+        const first = codes.length > 0 ? codes[0] : '';
+        document.getElementById('genStatus').textContent = `Generated ${codes.length} keys (${genType})${first ? '. First: ' + first : ''}`;
+        setTimeout(closeGen, 2000);
         await loadKeys();
       } catch (e) {
         document.getElementById('genStatus').textContent = 'Error: ' + e.message;
