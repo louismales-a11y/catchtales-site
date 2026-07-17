@@ -152,8 +152,8 @@ let wk=0,days=[];
 for(let i=6;i>=0;i--){const dt=new Date(Date.now()-i*86400000),k=dt.toISOString().substring(0,10),c=log[k]||0;wk+=c;days.push({d:dt.toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}),c})}
 actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens, ${wk} this week</span><br><a class="act-link" onclick="showAct('${d.id}');return false">Details</a>`;
 // Debug: show raw totalSessions value
-const rawSess = JSON.stringify(u.totalSessions);
-actHtml+=`<br><span style="color:#555;font-size:8px">raw:${rawSess}</span>`;
+const rawSess = JSON.stringify(u);
+actHtml+=`<br><span style="color:#FF0;font-size:11px;background:#000;padding:2px">${rawSess}</span>`;
 // Store activity data for this key
 window['_act_'+d.id]={days,wk,sess,fish};
 if(fish>0)actHtml+=`<br><span style="color:#667;font-size:9px">${fish} fish</span>`
