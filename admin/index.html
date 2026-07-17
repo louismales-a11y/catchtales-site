@@ -120,8 +120,12 @@ if(filtered.length===0){document.getElementById('keyList').innerHTML=`<div class
 actCache={};
 const emails=[...new Set(filtered.filter(d=>d.used&&d.activatedByEmail).map(d=>d.activatedByEmail))];
 for(const email of emails){try{
-const snap=await db.collection('users').where('email','==',email).orderBy('createdAt','desc').limit(1).get();
-if(snap.empty)actCache[email]={deleted:true};else snap.forEach(d=>actCache[email]=d.data())
+const snap=await db.collection('users').where('email','==',email).get();
+if(snap.empty)actCache[email]={deleted:true};else{
+let latest=null,latestTs=0;
+snap.forEach(d=>{const data=d.data();const ts=data.createdAt?.seconds||0;if(ts>latestTs){latest=data;latestTs=ts}});
+actCache[email]=latest;
+}
 }catch(e){}}
 
 // Sort deleted to bottom
