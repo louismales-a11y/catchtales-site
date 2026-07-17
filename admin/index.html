@@ -152,7 +152,8 @@ if(last){
 const ds=Math.floor((Date.now()-last.getTime())/86400000);
 let ac,al;
 if(ds===0){ac='#76FF03';al='Today'}else if(ds<=3){ac='#8BC34A';al=ds+'d'}else if(ds<=7){ac='#FFC107';al=ds+'d'}else if(ds<=30){ac='#FF9800';al=ds+'d'}else{ac='#F44336';al=ds+'d'}
-actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens total</span>`;
+actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens total</span><br><a class="act-link" onclick="showAct('${d.id}');return false">Details</a>`;
+window['_act_'+d.id]={sess,fish};
 if(fish>0)actHtml+=`<br><span style="color:#667;font-size:9px">${fish} fish</span>`
 }else actHtml='<span style="color:#FF9800;font-size:11px">Never</span>'
 }}
@@ -169,10 +170,10 @@ document.getElementById('keyList').innerHTML=html}
 
 function setF(f){curF=f;document.querySelectorAll('.toolbar .btn[data-f]').forEach(b=>b.classList.toggle('active',b.dataset.f===f));render()}
 
-function showAct(id){const w=window['_act_'+id];if(!w)return;let rows='';for(const d of w.days)rows+=`<tr><td>${d.d}</td><td>${d.c}</td></tr>`;
-document.getElementById('actModal').innerHTML=`<h2>Activity: ${id}</h2>
-<table><tr><td>Total opens</td><td>${w.sess}</td></tr><tr><td>Opens this week</td><td>${w.wk}</td></tr><tr><td>Fish caught</td><td>${w.fish}</td></tr></table>
-<h3>Last 7 Days</h3><table>${rows}</table><button onclick="closeOverlay('actOverlay')">Close</button>`;
+function showAct(id){const w=window['_act_'+id];if(!w)return;
+document.getElementById('actModal').innerHTML=`<h2>Activity</h2>
+<table><tr><td>Total opens</td><td>${w.sess}</td></tr><tr><td>Fish caught</td><td>${w.fish}</td></tr></table>
+<button onclick="closeOverlay('actOverlay')">Close</button>`;
 document.getElementById('actOverlay').classList.add('open')}
 
 function closeOverlay(id){document.getElementById(id).classList.remove('open')}
