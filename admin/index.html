@@ -212,13 +212,26 @@
       // Collect emails to look up user activity
       const emails = [...new Set(filtered.filter(d => d.used && d.activatedByEmail).map(d => d.activatedByEmail))];
       const userCache = {};
-      // Batch fetch users by email (limit 10 per query to avoid issues)
+      // Batch fetch users by email — track missing accounts as 'deleted'
       for (const email of emails) {
         try {
           const snap = await db.collection('users').where('email', '==', email).limit(1).get();
-          snap.forEach(doc => { userCache[email] = doc.data(); });
+          if (snap.empty) {
+            userCache[email] = { deleted: true }; // account no longer exists
+          } else {
+            snap.forEach(doc => { userCache[email] = doc.data(); });
+          }
         } catch(e) { /* ignore lookup errors */ }
       }
+
+      // Sort: deleted accounts to bottom
+      filtered.sort((a, b) => {
+        const aDel = a.activatedByEmail && userCache[a.activatedByEmail]?.deleted;
+        const bDel = b.activatedByEmail && userCache[b.activatedByEmail]?.deleted;
+        if (aDel && !bDel) return 1;
+        if (!aDel && bDel) return -1;
+        return 0;
+      });
 
       for (const d of filtered) {
         const type = d.type || 'lifetime';
@@ -233,8 +246,13 @@
 
         // Activity status
         let activityHtml = '<span style="color:#667;font-size:11px">-</span>';
-        if (used && d.activatedByEmail && userCache[d.activatedByEmail]) {
+        if (used && d.activatedByEmail) {
           const u = userCache[d.activatedByEmail];
+          if (!u) {
+            activityHtml = '<span style="color:#F44336;font-size:11px">No data</span>';
+          } else if (u.deleted) {
+            activityHtml = '<span style="color:#666;font-size:10px;font-style:italic">Account deleted</span>';
+          } else {
           const last = u.lastLogin ? u.lastLogin.toDate() : null;
           const sessions = u.totalSessions || 0;
           const catches = u.catchCount || 0;
@@ -253,7 +271,8 @@
           } else {
             activityHtml = '<span style="color:#FF9800;font-size:11px">Never</span>';
           }
-        }
+          } // end else (user exists)
+        } // end if (used && email)
 
         html += `<tr onclick="openDetail('${d.id}')">
           <td class="code">${d.id}</td>
