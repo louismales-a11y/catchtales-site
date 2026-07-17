@@ -265,26 +265,26 @@
             else if (daysSince <= 7) { actColor = '#FFC107'; actLabel = `${daysSince}d`; }
             else if (daysSince <= 30) { actColor = '#FF9800'; actLabel = `${daysSince}d`; }
             else { actColor = '#F44336'; actLabel = `${daysSince}d`; }
-            // Build 7-day activity bar
+            // Build activity summary with clickable detail link
             const log = u.activityLog || {};
-            let barHtml = '';
             let weekOpens = 0;
-            const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            const daysNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            const detailLines = [];
             for (let i = 6; i >= 0; i--) {
               const d = new Date(Date.now() - i * 86400000);
               const key = d.toISOString().substring(0, 10);
               const count = log[key] || 0;
               weekOpens += count;
-              const color = count > 5 ? '#76FF03' : count > 2 ? '#8BC34A' : count > 0 ? '#FFC107' : '#1a2a44';
-              const dayLabel = days[d.getDay()];
-              barHtml += `<span title="${dayLabel}: ${count} opens" style="display:inline-block;width:14px;height:14px;margin:1px;border-radius:2px;background:${color}"></span>`;
+              const dayLabel = d.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' });
+              detailLines.push(`${dayLabel}: ${count} opens`);
             }
+            const detailText = detailLines.join('\n');
 
-            activityHtml = `<span style="color:${actColor};font-size:11px;font-weight:600">${actLabel}</span>`;
-            activityHtml += `<br><span style="color:#8899AA;font-size:10px">${sessions} total</span>`;
-            activityHtml += `<br><span style="color:#667;font-size:9px">${weekOpens} this week</span>`;
-            activityHtml += `<br><div style="margin-top:2px">${barHtml}</div>`;
-            if (catches > 0) activityHtml += `<br><span style="color:#667;font-size:9px">${catches} fish caught</span>`;
+            activityHtml = `<span style="color:${actColor};font-size:12px;font-weight:600">${actLabel}</span>`;
+            activityHtml += `<br><span style="color:#8899AA;font-size:11px">${sessions} opens total</span>`;
+            activityHtml += `<br><span style="color:#667;font-size:11px">${weekOpens} this week</span>`;
+            activityHtml += `<br><a href="#" onclick="showActivityDetail('${encodeURIComponent(detailText)}', ${sessions}, ${weekOpens}, ${catches});return false;" style="color:#00BCD4;font-size:11px">Details</a>`;
+            if (catches > 0) activityHtml += `<br><span style="color:#667;font-size:10px">${catches} fish</span>`;
           } else {
             activityHtml = '<span style="color:#FF9800;font-size:11px">Never</span>';
           }
@@ -410,6 +410,30 @@
       });
       return 'PRO-' + parts.join('-');
     }
-  </script>
+  function showActivityDetail(detailText, totalOpens, weekOpens, catches) {
+    const lines = detailText.split('\n');
+    let listHtml = '';
+    for (const line of lines) {
+      listHtml += `<tr><td style="padding:4px 8px;border-bottom:1px solid #1a2a44;font-size:13px">${line.replace(':','</td><td style="padding:4px 8px;border-bottom:1px solid #1a2a44;text-align:right;font-size:13px;font-weight:600">')}</td></tr>`;
+    }
+    const html = `
+      <div style="background:#162033;border:1px solid #2a3a55;border-radius:12px;padding:24px;width:90%;max-width:380px;margin:0 auto;">
+        <h2 style="margin:0 0 16px;font-size:18px">Activity Details</h2>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><td style="padding:4px 8px;font-size:13px;color:#8899AA">Total opens</td><td style="padding:4px 8px;text-align:right;font-size:13px;font-weight:600">${totalOpens}</td></tr>
+          <tr><td style="padding:4px 8px;font-size:13px;color:#8899AA">Opens this week</td><td style="padding:4px 8px;text-align:right;font-size:13px;font-weight:600">${weekOpens}</td></tr>
+          <tr><td style="padding:4px 8px;font-size:13px;color:#8899AA">Fish caught</td><td style="padding:4px 8px;text-align:right;font-size:13px;font-weight:600">${catches}</td></tr>
+        </table>
+        <h3 style="margin:16px 0 8px;font-size:14px">Last 7 Days</h3>
+        <table style="width:100%;border-collapse:collapse">${listHtml}</table>
+        <button onclick="document.body.removeChild(this.parentNode.parentNode)" style="margin-top:16px;width:100%;padding:10px;background:#2a3a55;border:none;border-radius:8px;color:#fff;font-size:14px;cursor:pointer">Close</button>
+      </div>`;
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px';
+    overlay.innerHTML = html;
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) document.body.removeChild(overlay); });
+  }
+</script>
 </body>
 </html>
