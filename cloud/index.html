@@ -20,9 +20,10 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     body {
       background: #0A1628;
+      font-size: clamp(15px, 1.1vw, 17px);
     }
 
     /* ─── Background (behind everything) ─── */
@@ -68,7 +69,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 24px;
+      padding: clamp(10px, 1.8vw, 12px) max(24px, env(safe-area-inset-right)) clamp(10px, 1.8vw, 12px) max(24px, env(safe-area-inset-left));
       background: rgba(10,22,40,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -80,7 +81,7 @@
       text-decoration: none;
     }
     .site-header .logo-link img {
-      height: 40px;
+      height: clamp(32px, 3.5vw, 40px);
       width: auto;
     }
     .site-header nav {
@@ -91,12 +92,19 @@
     .site-header nav a {
       color: #B0C4DE;
       text-decoration: none;
-      font-size: 13px;
-      margin-left: 16px;
+      font-size: clamp(12px, 1.1vw, 13px);
+      margin-left: clamp(10px, 1.5vw, 16px);
       transition: color 0.2s;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      touch-action: manipulation;
     }
     .site-header nav a:hover {
       color: #76FF03;
+    }
+    .site-header nav a:active {
+      opacity: 0.6;
     }
     .site-header nav a.active {
       color: #76FF03;
@@ -118,7 +126,8 @@
       height: 100vh;
       color: #00BCD4;
       font-family: sans-serif;
-      font-size: 18px;
+      font-size: clamp(16px, 1.5vw, 18px);
+      padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left));
     }
   </style>
 </head>
