@@ -236,19 +236,22 @@
         if (used && d.activatedByEmail && userCache[d.activatedByEmail]) {
           const u = userCache[d.activatedByEmail];
           const last = u.lastLogin ? u.lastLogin.toDate() : null;
+          const sessions = u.totalSessions || 0;
           const catches = u.catchCount || 0;
+          const created = u.createdAt ? u.createdAt.toDate() : null;
           if (last) {
-            const days = Math.floor((Date.now() - last.getTime()) / 86400000);
+            const daysSince = Math.floor((Date.now() - last.getTime()) / 86400000);
             let actColor, actLabel;
-            if (days === 0) { actColor = '#76FF03'; actLabel = 'Active today'; }
-            else if (days <= 3) { actColor = '#8BC34A'; actLabel = `${days}d ago`; }
-            else if (days <= 7) { actColor = '#FFC107'; actLabel = `${days}d ago`; }
-            else if (days <= 30) { actColor = '#FF9800'; actLabel = `${days}d ago`; }
-            else { actColor = '#F44336'; actLabel = `${days}d ago`; }
+            if (daysSince === 0) { actColor = '#76FF03'; actLabel = 'Today'; }
+            else if (daysSince <= 3) { actColor = '#8BC34A'; actLabel = `${daysSince}d`; }
+            else if (daysSince <= 7) { actColor = '#FFC107'; actLabel = `${daysSince}d`; }
+            else if (daysSince <= 30) { actColor = '#FF9800'; actLabel = `${daysSince}d`; }
+            else { actColor = '#F44336'; actLabel = `${daysSince}d`; }
             activityHtml = `<span style="color:${actColor};font-size:11px;font-weight:600">${actLabel}</span>`;
-            if (catches > 0) activityHtml += ` <span style="color:#667;font-size:10px">${catches} catches</span>`;
+            if (sessions > 0) activityHtml += `<br><span style="color:#8899AA;font-size:10px">${sessions} opens</span>`;
+            if (catches > 0) activityHtml += ` <span style="color:#667;font-size:10px">${catches} fish</span>`;
           } else {
-            activityHtml = '<span style="color:#FF9800;font-size:11px">Never opened</span>';
+            activityHtml = '<span style="color:#FF9800;font-size:11px">Never</span>';
           }
         }
 
