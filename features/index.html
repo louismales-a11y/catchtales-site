@@ -34,10 +34,10 @@
     }
     .swim-fish { position: absolute; z-index: 2; opacity: 0.75; animation: swim linear infinite; pointer-events: none; }
     .swim-fish img { width: 100%; height: auto; transform: scaleX(-1); }
-    .swim-fish.f1 { width: clamp(40px, 6vw, 70px); top: 10%; animation-duration: 22s; }
-    .swim-fish.f2 { width: clamp(32px, 4.5vw, 55px); top: 40%; animation-duration: 28s; animation-delay: -6s; }
-    .swim-fish.f3 { width: clamp(48px, 7.5vw, 90px); top: 65%; animation-duration: 18s; animation-delay: -12s; }
-    .swim-fish.f4 { width: clamp(35px, 5vw, 60px); top: 80%; animation-duration: 25s; animation-delay: -8s; }
+    .swim-fish.f1 { width: 70px; top: auto; 10%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 55px; top: auto; 40%; animation-duration: 28s; animation-delay: -6s; }
+    .swim-fish.f3 { width: 90px; top: auto; 65%; animation-duration: 18s; animation-delay: -12s; }
+    .swim-fish.f4 { width: 60px; top: auto; 80%; animation-duration: 25s; animation-delay: -8s; }
     @keyframes swim {
       0% { left: -140px; }
       100% { left: calc(100vw + 80px); }
