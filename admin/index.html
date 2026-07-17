@@ -208,7 +208,7 @@
         return;
       }
 
-      let html = '<table><thead><tr><th>Code</th><th>Type</th><th>Status</th><th>Given To</th></tr></thead><tbody>';
+      let html = '<table><thead><tr><th>Code</th><th>Type</th><th>Status</th><th>Given To</th><th>Activated By</th></tr></thead><tbody>';
       for (const d of filtered) {
         const type = d.type || 'lifetime';
         const used = d.used === true;
@@ -225,6 +225,7 @@
           <td><span class="badge ${typeClass}">${typeLabel}</span></td>
           <td><span class="badge ${statusClass}">${statusLabel}</span></td>
           <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${given || '-'}</td>
+          <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${d.activatedByName || d.activatedByEmail || '-'}</td>
         </tr>`;
       }
       html += '</tbody></table>';
