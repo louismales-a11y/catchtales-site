@@ -152,8 +152,13 @@ if(last){
 const ds=Math.floor((Date.now()-last.getTime())/86400000);
 let ac,al;
 if(ds===0){ac='#76FF03';al='Today'}else if(ds<=3){ac='#8BC34A';al=ds+'d'}else if(ds<=7){ac='#FFC107';al=ds+'d'}else if(ds<=30){ac='#FF9800';al=ds+'d'}else{ac='#F44336';al=ds+'d'}
-actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens total</span><br><a class="act-link" onclick="showAct('${d.id}');return false">Details</a>`;
-window['_act_'+d.id]={sess,fish};
+// Build 30-day log data
+const log = u.activityLog || {};
+const days = [];
+for(let i=29;i>=0;i--){const dt=new Date(Date.now()-i*86400000);const k=dt.toISOString().substring(0,10);const c=log[k]||0;days.push({d:dt.toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}),c})}
+let monthOpens=0;for(const d of days)monthOpens+=d.c;
+actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens, ${monthOpens} this month</span><br><a class="act-link" onclick="showAct('${d.id}');return false">Details</a>`;
+window['_act_'+d.id]={sess,fish,days};
 if(fish>0)actHtml+=`<br><span style="color:#667;font-size:9px">${fish} fish</span>`
 }else actHtml='<span style="color:#FF9800;font-size:11px">Never</span>'
 }}
@@ -170,9 +175,11 @@ document.getElementById('keyList').innerHTML=html}
 
 function setF(f){curF=f;document.querySelectorAll('.toolbar .btn[data-f]').forEach(b=>b.classList.toggle('active',b.dataset.f===f));render()}
 
-function showAct(id){const w=window['_act_'+id];if(!w)return;
+function showAct(id){const w=window['_act_'+id];if(!w)return;let rows='',m=0;for(const d of w.days){m+=d.c;rows+=`<tr><td>${d.d}</td><td style="text-align:right;font-weight:600">${d.c}</td></tr>`}
 document.getElementById('actModal').innerHTML=`<h2>Activity</h2>
-<table><tr><td>Total opens</td><td>${w.sess}</td></tr><tr><td>Fish caught</td><td>${w.fish}</td></tr></table>
+<table><tr><td>Total opens</td><td>${w.sess}</td></tr><tr><td>Opens this month</td><td>${m}</td></tr><tr><td>Fish caught</td><td>${w.fish}</td></tr></table>
+<h3 style="margin:12px 0 6px;font-size:13px;color:#8899AA">Last 30 Days</h3>
+<table>${rows}</table>
 <button onclick="closeOverlay('actOverlay')">Close</button>`;
 document.getElementById('actOverlay').classList.add('open')}
 
