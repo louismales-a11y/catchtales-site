@@ -1,439 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex,nofollow">
-  <title>CatchTales Admin</title>
-  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore-compat.js"></script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0A1628; color: #fff; }
-    .login-box { max-width: 360px; margin: 100px auto; padding: 32px; background: #162033; border-radius: 12px; }
-    .login-box h1 { margin-bottom: 20px; font-size: 20px; }
-    .login-box input { width: 100%; padding: 10px 12px; margin-bottom: 12px; background: #0A1628; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 14px; }
-    .login-box button { width: 100%; padding: 10px; background: #00BCD4; border: none; border-radius: 6px; color: #003544; font-weight: 600; font-size: 14px; cursor: pointer; }
-    .login-box button:hover { background: #00ACC1; }
-    .login-box .error { color: #F44336; font-size: 13px; margin-top: 8px; }
-    .app { max-width: 960px; margin: 0 auto; padding: 16px; }
-    .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
-    .header h1 { font-size: 18px; }
-    .header .user { font-size: 12px; color: #8899AA; }
-    .header button { background: none; border: 1px solid #2a3a55; color: #B0C4DE; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
-    .header button:hover { border-color: #00BCD4; color: #00BCD4; }
-    .toolbar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
-    .toolbar .btn { padding: 6px 14px; border-radius: 6px; border: 1px solid #2a3a55; background: #162033; color: #B0C4DE; cursor: pointer; font-size: 12px; }
-    .toolbar .btn:hover { border-color: #00BCD4; }
-    .toolbar .btn.active { background: #00BCD4; color: #003544; border-color: #00BCD4; font-weight: 600; }
-    .toolbar .btn.gen { background: #76FF03; color: #003544; border-color: #76FF03; font-weight: 600; }
-    .toolbar .btn.gen:hover { background: #66EE00; }
-    .count { font-size: 12px; color: #667; }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2a3a55; color: #8899AA; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-    td { padding: 8px 10px; border-bottom: 1px solid #1a2a44; font-family: monospace; }
-    td.code { font-size: 13px; letter-spacing: 1px; cursor: pointer; }
-    td.code:hover { color: #76FF03; }
-    .badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; }
-    .badge-life { background: #6663; color: #aaa; }
-    .badge-yr { background: #FF8F0033; color: #FF8F00; }
-    .badge-avail { background: #76FF0333; color: #76FF03; }
-    .badge-used { background: #607D8B33; color: #78909C; }
-    .badge-given { background: #FF980033; color: #FF9800; }
-    .detail-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
-    .detail-overlay.open { display: flex; }
-    .detail-box { background: #162033; border: 1px solid #2a3a55; border-radius: 12px; padding: 24px; width: 90%; max-width: 420px; }
-    .detail-box h2 { font-size: 15px; font-family: monospace; letter-spacing: 1px; margin-bottom: 16px; }
-    .detail-box label { font-size: 12px; color: #8899AA; display: block; margin-bottom: 4px; }
-    .detail-box input, .detail-box textarea { width: 100%; padding: 8px 10px; margin-bottom: 12px; background: #0A1628; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 13px; }
-    .detail-box textarea { resize: vertical; min-height: 50px; }
-    .detail-box .row { display: flex; gap: 8px; }
-    .detail-box .row button { flex: 1; padding: 8px; border-radius: 6px; border: none; font-size: 13px; cursor: pointer; font-weight: 600; }
-    .detail-box .btn-close { background: #2a3a55; color: #B0C4DE; }
-    .detail-box .btn-copy { background: #1a5a7a; color: #fff; }
-    .detail-box .btn-save { background: #00BCD4; color: #003544; }
-    .gen-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
-    .gen-overlay.open { display: flex; }
-    .gen-box { background: #162033; border: 1px solid #2a3a55; border-radius: 12px; padding: 24px; width: 90%; max-width: 360px; }
-    .gen-box h2 { font-size: 16px; margin-bottom: 16px; }
-    .gen-box label { font-size: 12px; color: #8899AA; display: block; margin-bottom: 4px; }
-    .gen-box input { width: 100%; padding: 8px 10px; margin-bottom: 12px; background: #0A1628; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 13px; }
-    .gen-box .type-select { display: flex; gap: 8px; margin-bottom: 16px; }
-    .gen-box .type-select button { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #2a3a55; background: #0A1628; color: #B0C4DE; cursor: pointer; font-size: 13px; }
-    .gen-box .type-select button.active { background: #00BCD4; color: #003544; border-color: #00BCD4; font-weight: 600; }
-    .gen-box .actions { display: flex; gap: 8px; }
-    .gen-box .actions button { flex: 1; padding: 8px; border-radius: 6px; border: none; font-size: 13px; cursor: pointer; font-weight: 600; }
-    .gen-box .btn-cancel { background: #2a3a55; color: #B0C4DE; }
-    .gen-box .btn-gen { background: #76FF03; color: #003544; }
-    .loading { text-align: center; padding: 40px; color: #667; font-size: 14px; }
-    @media (max-width: 600px) { .app { padding: 8px; } td, th { padding: 6px 6px; font-size: 12px; } }
-  </style>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><title>CatchTales Admin</title>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore-compat.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0A1628;color:#fff;font-size:14px}
+.login-box{max-width:360px;margin:100px auto;padding:32px;background:#162033;border-radius:12px}
+.login-box h1{margin-bottom:20px;font-size:20px}
+.login-box input{width:100%;padding:10px 12px;margin-bottom:12px;background:#0A1628;border:1px solid #2a3a55;border-radius:6px;color:#fff;font-size:14px}
+.login-box button{width:100%;padding:10px;background:#00BCD4;border:none;border-radius:6px;color:#003544;font-weight:600;font-size:14px;cursor:pointer}
+.login-box .error{color:#F44336;font-size:13px;margin-top:8px}
+.app{max-width:960px;margin:0 auto;padding:12px}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.header h1{font-size:18px}
+.header .user{font-size:12px;color:#8899AA}
+.header button{background:none;border:1px solid #2a3a55;color:#B0C4DE;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px}
+.toolbar{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;align-items:center}
+.toolbar .btn{padding:6px 12px;border-radius:6px;border:1px solid #2a3a55;background:#162033;color:#B0C4DE;cursor:pointer;font-size:12px}
+.toolbar .btn:hover{border-color:#00BCD4}
+.toolbar .btn.active{background:#00BCD4;color:#003544;border-color:#00BCD4;font-weight:600}
+.toolbar .btn.gen{background:#76FF03;color:#003544;border-color:#76FF03;font-weight:600}
+.count{font-size:12px;color:#667;margin-right:8px}
+#keyList{font-size:13px}
+.row{padding:8px 6px;border-bottom:1px solid #1a2a44;display:flex;align-items:center;gap:6px;cursor:pointer;flex-wrap:wrap}
+.row:hover{background:rgba(0,188,212,0.05)}
+.row .code{font-family:monospace;font-size:12px;letter-spacing:0.5px;min-width:140px}
+.row .badge{display:inline-block;padding:2px 5px;border-radius:3px;font-size:9px;font-weight:700;letter-spacing:0.5px}
+.row .badge-life{background:#6663;color:#aaa}
+.row .badge-yr{background:#FF8F0033;color:#FF8F00}
+.row .badge-avail{background:#76FF0333;color:#76FF03}
+.row .badge-used{background:#607D8B33;color:#78909C}
+.row .badge-given{background:#FF980033;color:#FF9800}
+.row .act-label{font-size:11px;font-weight:600;min-width:40px}
+.row .act-detail{font-size:10px;color:#667}
+.row .act-link{color:#00BCD4;font-size:10px;cursor:pointer;text-decoration:none}
+.loading{text-align:center;padding:40px;color:#667;font-size:14px}
+.overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;padding:16px}
+.overlay.open{display:flex}
+.modal{background:#162033;border:1px solid #2a3a55;border-radius:12px;padding:24px;width:100%;max-width:400px;max-height:80vh;overflow-y:auto}
+.modal h2{font-size:16px;margin-bottom:12px}
+.modal h3{font-size:13px;margin:12px 0 6px;color:#8899AA}
+.modal table{width:100%;border-collapse:collapse;font-size:13px}
+.modal td{padding:5px 0;border-bottom:1px solid #1a2a44}
+.modal td:last-child{text-align:right;font-weight:600;font-family:monospace}
+.modal button{width:100%;padding:10px;margin-top:12px;background:#2a3a55;border:none;border-radius:8px;color:#fff;font-size:14px;cursor:pointer}
+.gen-modal .field{margin-bottom:10px}
+.gen-modal label{font-size:12px;color:#8899AA;display:block;margin-bottom:3px}
+.gen-modal input{width:100%;padding:8px 10px;background:#0A1628;border:1px solid #2a3a55;border-radius:6px;color:#fff;font-size:13px}
+.gen-modal .type-select{display:flex;gap:6px;margin-bottom:10px}
+.gen-modal .type-select button{flex:1;padding:8px;border-radius:6px;border:1px solid #2a3a55;background:#0A1628;color:#B0C4DE;cursor:pointer;font-size:13px}
+.gen-modal .type-select button.active{background:#00BCD4;color:#003544;border-color:#00BCD4;font-weight:600}
+.gen-modal .actions{display:flex;gap:6px}
+.gen-modal .actions button{flex:1;padding:8px;border-radius:6px;border:none;font-size:13px;cursor:pointer;font-weight:600}
+.gen-modal .btn-cancel{background:#2a3a55;color:#B0C4DE}
+.gen-modal .btn-gen{background:#76FF03;color:#003544}
+.detail-modal .field{margin-bottom:10px}
+.detail-modal label{font-size:12px;color:#8899AA;display:block;margin-bottom:3px}
+.detail-modal input,.detail-modal textarea{width:100%;padding:8px 10px;background:#0A1628;border:1px solid #2a3a55;border-radius:6px;color:#fff;font-size:13px}
+.detail-modal textarea{resize:vertical;min-height:40px}
+.detail-modal .actions{display:flex;gap:6px;margin-top:8px}
+.detail-modal .actions button{flex:1;padding:8px;border-radius:6px;border:none;font-size:13px;cursor:pointer;font-weight:600}
+.detail-modal .btn-close{background:#2a3a55;color:#B0C4DE}
+.detail-modal .btn-copy{background:#1a5a7a;color:#fff}
+.detail-modal .btn-save{background:#00BCD4;color:#003544}
+.status{font-size:12px;color:#667;margin-top:6px}
+@media(max-width:600px){.app{padding:6px}.row{font-size:12px}.row .code{min-width:100px;font-size:11px}}
+</style>
 </head>
 <body>
-  <div class="login-box" id="loginBox">
-    <h1>CatchTales Admin</h1>
-    <input type="email" id="emailInput" placeholder="Email" autocomplete="email">
-    <input type="password" id="passInput" placeholder="Password" autocomplete="current-password">
-    <button onclick="signIn()">Sign In</button>
-    <div class="error" id="loginError"></div>
-  </div>
+<div class="login-box" id="loginBox"><h1>CatchTales Admin</h1>
+<input type="email" id="emailInput" placeholder="Email" autocomplete="email">
+<input type="password" id="passInput" placeholder="Password" autocomplete="current-password">
+<button onclick="signIn()">Sign In</button><div class="error" id="loginError"></div></div>
 
-  <div class="app" id="app" style="display:none">
-    <div class="header">
-      <div><h1>Pro Key Manager</h1><span class="user" id="userInfo"></span></div>
-      <button onclick="signOut()">Sign Out</button>
-    </div>
+<div class="app" id="app" style="display:none">
+<div class="header"><div><h1>Pro Key Manager</h1><span class="user" id="userInfo"></span></div><button onclick="signOut()">Sign Out</button></div>
+<div class="toolbar"><span class="count" id="countInfo">Loading...</span>
+<button class="btn active" data-f="all" onclick="setF('all')">All</button>
+<button class="btn" data-f="available" onclick="setF('available')">Avail</button>
+<button class="btn" data-f="given" onclick="setF('given')">Given</button>
+<button class="btn" data-f="used" onclick="setF('used')">Used</button>
+<button class="btn gen" onclick="showGen()">+ Generate</button></div>
+<div id="keyList"><div class="loading">Loading keys...</div></div></div>
 
-    <div class="toolbar" id="toolbar">
-      <span class="count" id="countInfo">Loading...</span>
-      <span style="flex:1"></span>
-      <button class="btn active" data-filter="all" onclick="setFilter('all')">All</button>
-      <button class="btn" data-filter="available" onclick="setFilter('available')">Available</button>
-      <button class="btn" data-filter="given" onclick="setFilter('given')">Given</button>
-      <button class="btn" data-filter="used" onclick="setFilter('used')">Used</button>
-      <button class="btn gen" onclick="showGen()">+ Generate</button>
-    </div>
+<div class="overlay" id="detOverlay"><div class="modal detail-modal" id="detModal"></div></div>
+<div class="overlay" id="genOverlay"><div class="modal gen-modal" id="genModal"></div></div>
+<div class="overlay" id="actOverlay"><div class="modal" id="actModal"></div></div>
 
-    <div id="keyList"><div class="loading">Loading keys...</div></div>
-  </div>
+<script>
+firebase.initializeApp({apiKey:"AIzaSyBSAXvYCrHF5DjQGp-ISkY92QKoy-acJTw",authDomain:"catchtales-prod.firebaseapp.com",projectId:"catchtales-prod",storageBucket:"catchtales-prod.firebasestorage.app",appId:"1:883108283866:web:admin"});
+const auth=firebase.auth(),db=firebase.firestore();
+let allDocs=[],curF='all',curDoc=null,genType='lifetime',actCache={};
 
-  <div class="detail-overlay" id="detailOverlay">
-    <div class="detail-box">
-      <h2 id="detailCode"></h2>
-      <label>Given to (store name / contact)</label>
-      <input type="text" id="detailGiven">
-      <label>Notes</label>
-      <textarea id="detailNotes"></textarea>
-      <div class="row" style="margin-top:8px">
-        <button class="btn-copy" onclick="copyKey()">Copy Key</button>
-        <button class="btn-save" onclick="saveDetail()">Save</button>
-        <button class="btn-close" onclick="closeDetail()">Close</button>
-      </div>
-      <div id="detailStatus" style="margin-top:8px;font-size:12px;color:#667"></div>
-    </div>
-  </div>
+auth.onAuthStateChanged(u=>{if(u){document.getElementById('userInfo').textContent=u.email;document.getElementById('loginBox').style.display='none';document.getElementById('app').style.display='block';loadKeys()}else{document.getElementById('loginBox').style.display='block';document.getElementById('app').style.display='none'}});
 
-  <div class="gen-overlay" id="genOverlay">
-    <div class="gen-box">
-      <h2>Generate Keys</h2>
-      <label>Number of keys</label>
-      <input type="number" id="genCount" value="10" min="1" max="200">
-      <label>Type</label>
-      <div class="type-select">
-        <button class="active" data-type="lifetime" onclick="setGenType('lifetime')">Lifetime</button>
-        <button data-type="yearly" onclick="setGenType('yearly')">Yearly</button>
-      </div>
-      <div class="actions">
-        <button class="btn-cancel" onclick="closeGen()">Cancel</button>
-        <button class="btn-gen" onclick="generateKeys()">Generate</button>
-      </div>
-      <div id="genStatus" style="margin-top:8px;font-size:12px;color:#667"></div>
-    </div>
-  </div>
+async function signIn(){try{await auth.signInWithEmailAndPassword(document.getElementById('emailInput').value,document.getElementById('passInput').value)}catch(e){document.getElementById('loginError').textContent=e.message}}
+function signOut(){auth.signOut()}
 
-  <script>
-    // Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyBSAXvYCrHF5DjQGp-ISkY92QKoy-acJTw",
-      authDomain: "catchtales-prod.firebaseapp.com",
-      projectId: "catchtales-prod",
-      storageBucket: "catchtales-prod.firebasestorage.app",
-      appId: "1:883108283866:web:admin",
-    };
+async function loadKeys(){document.getElementById('keyList').innerHTML='<div class="loading">Loading keys...</div>';try{
+const snap=await db.collection('pro_licenses').get();allDocs=[];snap.forEach(d=>allDocs.push({id:d.id,...d.data()}));await render()
+}catch(e){document.getElementById('keyList').innerHTML=`<div class="loading" style="color:#F44336">${e.message}</div>`}}
 
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    const db = firebase.firestore();
+function getF(){
+if(curF==='all')return allDocs;
+return allDocs.filter(d=>{
+if(curF==='used')return d.used===true;
+if(curF==='available')return d.used!==true&&(d.givenTo||'').trim()==='';
+if(curF==='given')return d.used!==true&&(d.givenTo||'').trim()!=='';
+return true})}
 
-    let allDocs = [];
-    let currentFilter = 'all';
-    let currentDoc = null;
-    let genType = 'lifetime';
+async function render(){
+const filtered=getF();
+document.getElementById('countInfo').textContent=`${allDocs.length} total, ${filtered.length} shown`;
+if(filtered.length===0){document.getElementById('keyList').innerHTML=`<div class="loading">${allDocs.length===0?'No keys yet':'No keys match'}</div>`;return}
 
-    // Auth state
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        document.getElementById('userInfo').textContent = user.email;
-        document.getElementById('loginBox').style.display = 'none';
-        document.getElementById('app').style.display = 'block';
-        loadKeys();
-      } else {
-        document.getElementById('loginBox').style.display = 'block';
-        document.getElementById('app').style.display = 'none';
-      }
-    });
+// Collect emails and fetch user profiles
+actCache={};
+const emails=[...new Set(filtered.filter(d=>d.used&&d.activatedByEmail).map(d=>d.activatedByEmail))];
+for(const email of emails){try{
+const snap=await db.collection('users').where('email','==',email).limit(1).get();
+if(snap.empty)actCache[email]={deleted:true};else snap.forEach(d=>actCache[email]=d.data())
+}catch(e){}}
 
-    async function signIn() {
-      const email = document.getElementById('emailInput').value;
-      const pass = document.getElementById('passInput').value;
-      document.getElementById('loginError').textContent = '';
-      try {
-        await auth.signInWithEmailAndPassword(email, pass);
-      } catch (e) {
-        document.getElementById('loginError').textContent = e.message;
-      }
-    }
+// Sort deleted to bottom
+filtered.sort((a,b)=>{const aD=a.activatedByEmail&&actCache[a.activatedByEmail]?.deleted,bD=b.activatedByEmail&&actCache[b.activatedByEmail]?.deleted;if(aD&&!bD)return 1;if(!aD&&bD)return -1;return 0});
 
-    function signOut() { auth.signOut(); }
+let html='';
+for(const d of filtered){
+const t=d.type||'lifetime',used=d.used===true,gv=(d.givenTo||'').trim();
+const tc=t==='yearly'?'badge-yr':'badge-life',tl=t==='yearly'?'1YR':'LIFE';
+let sc,sl;
+if(used){sc='badge-used';sl='Used'}else if(gv){sc='badge-given';sl='Given'}else{sc='badge-avail';sl='Avail'}
 
-    async function loadKeys() {
-      document.getElementById('keyList').innerHTML = '<div class="loading">Loading keys...</div>';
-      try {
-        const snap = await db.collection('pro_licenses').get();
-        allDocs = [];
-        snap.forEach(d => allDocs.push({ id: d.id, ...d.data() }));
-        await render();
-      } catch (e) {
-        document.getElementById('keyList').innerHTML = `<div class="loading" style="color:#F44336">Error: ${e.message}</div>`;
-      }
-    }
+let actHtml='<span style="color:#667">-</span>';
+if(used&&d.activatedByEmail){
+const u=actCache[d.activatedByEmail];
+if(!u)actHtml='<span style="color:#F44336;font-size:11px">No data</span>';
+else if(u.deleted)actHtml='<span style="color:#666;font-size:10px;font-style:italic">Deleted</span>';
+else{
+const last=u.lastLogin?u.lastLogin.toDate():null;
+const sess=u.totalSessions||0;
+const fish=u.catchCount||0;
+const log=u.activityLog||{};
+if(last){
+const ds=Math.floor((Date.now()-last.getTime())/86400000);
+let ac,al;
+if(ds===0){ac='#76FF03';al='Today'}else if(ds<=3){ac='#8BC34A';al=ds+'d'}else if(ds<=7){ac='#FFC107';al=ds+'d'}else if(ds<=30){ac='#FF9800';al=ds+'d'}else{ac='#F44336';al=ds+'d'}
+let wk=0,days=[];
+for(let i=6;i>=0;i--){const dt=new Date(Date.now()-i*86400000),k=dt.toISOString().substring(0,10),c=log[k]||0;wk+=c;days.push({d:dt.toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}),c})}
+actHtml=`<span class="act-label" style="color:${ac}">${al}</span><br><span class="act-detail">${sess} opens, ${wk} this week</span><br><a class="act-link" onclick="showAct('${d.id}');return false">Details</a>`;
+// Store activity data for this key
+window['_act_'+d.id]={days,wk,sess,fish};
+if(fish>0)actHtml+=`<br><span style="color:#667;font-size:9px">${fish} fish</span>`
+}else actHtml='<span style="color:#FF9800;font-size:11px">Never</span>'
+}}
 
-    function getFiltered() {
-      if (currentFilter === 'all') return allDocs;
-      return allDocs.filter(d => {
-        if (currentFilter === 'used') return d.used === true;
-        if (currentFilter === 'available') return d.used !== true && (d.givenTo || '').trim() === '';
-        if (currentFilter === 'given') return d.used !== true && (d.givenTo || '').trim() !== '';
-        return true;
-      });
-    }
+html+=`<div class="row" onclick="openDet('${d.id}')">
+<span class="code">${d.id}</span>
+<span class="badge ${tc}">${tl}</span>
+<span class="badge ${sc}">${sl}</span>
+<span style="color:#8899AA;font-size:11px;flex:1;min-width:60px">${gv||'-'}</span>
+<span style="color:#8899AA;font-size:11px;min-width:80px">${d.activatedByName||d.activatedByEmail||'-'}</span>
+<span style="min-width:120px">${actHtml}</span>
+</div>`}
+document.getElementById('keyList').innerHTML=html}
 
-    async function render() {
-      const filtered = getFiltered();
-      document.getElementById('countInfo').textContent = `${allDocs.length} total, ${filtered.length} shown`;
+function setF(f){curF=f;document.querySelectorAll('.toolbar .btn[data-f]').forEach(b=>b.classList.toggle('active',b.dataset.f===f));render()}
 
-      if (filtered.length === 0) {
-        document.getElementById('keyList').innerHTML = `<div class="loading">${allDocs.length === 0 ? 'No keys yet' : 'No keys match this filter'}</div>`;
-        return;
-      }
+function showAct(id){const w=window['_act_'+id];if(!w)return;let rows='';for(const d of w.days)rows+=`<tr><td>${d.d}</td><td>${d.c}</td></tr>`;
+document.getElementById('actModal').innerHTML=`<h2>Activity: ${id}</h2>
+<table><tr><td>Total opens</td><td>${w.sess}</td></tr><tr><td>Opens this week</td><td>${w.wk}</td></tr><tr><td>Fish caught</td><td>${w.fish}</td></tr></table>
+<h3>Last 7 Days</h3><table>${rows}</table><button onclick="closeOverlay('actOverlay')">Close</button>`;
+document.getElementById('actOverlay').classList.add('open')}
 
-      let html = '<table><thead><tr><th>Code</th><th>Type</th><th>Status</th><th>Given To</th><th>Activated By</th><th>Activity</th></tr></thead><tbody>';
-      // Collect emails to look up user activity
-      const emails = [...new Set(filtered.filter(d => d.used && d.activatedByEmail).map(d => d.activatedByEmail))];
-      const userCache = {};
-      // Batch fetch users by email — track missing accounts as 'deleted'
-      for (const email of emails) {
-        try {
-          const snap = await db.collection('users').where('email', '==', email).limit(1).get();
-          if (snap.empty) {
-            userCache[email] = { deleted: true }; // account no longer exists
-          } else {
-            snap.forEach(doc => { userCache[email] = doc.data(); });
-          }
-        } catch(e) { /* ignore lookup errors */ }
-      }
+function closeOverlay(id){document.getElementById(id).classList.remove('open')}
 
-      // Sort: deleted accounts to bottom
-      filtered.sort((a, b) => {
-        const aDel = a.activatedByEmail && userCache[a.activatedByEmail]?.deleted;
-        const bDel = b.activatedByEmail && userCache[b.activatedByEmail]?.deleted;
-        if (aDel && !bDel) return 1;
-        if (!aDel && bDel) return -1;
-        return 0;
-      });
+// Detail modal
+function openDet(id){curDoc=allDocs.find(d=>d.id===id);if(!curDoc)return;
+document.getElementById('detModal').innerHTML=`<h2>${curDoc.id}</h2>
+<div class="field"><label>Given to</label><input id="detGiven" value="${(curDoc.givenTo||'').replace(/"/g,'&quot;')}"></div>
+<div class="field"><label>Notes</label><textarea id="detNotes">${(curDoc.notes||'').replace(/"/g,'&quot;')}</textarea></div>
+<div class="actions"><button class="btn-copy" onclick="copyKey()">Copy</button><button class="btn-save" onclick="saveDet()">Save</button><button class="btn-close" onclick="closeOverlay('detOverlay')">Close</button></div>
+<div class="status" id="detStatus"></div>`;document.getElementById('detOverlay').classList.add('open')}
 
-      for (const d of filtered) {
-        const type = d.type || 'lifetime';
-        const used = d.used === true;
-        const given = (d.givenTo || '').trim();
-        const typeClass = type === 'yearly' ? 'badge-yr' : 'badge-life';
-        const typeLabel = type === 'yearly' ? '1YR' : 'LIFE';
-        let statusClass, statusLabel;
-        if (used) { statusClass = 'badge-used'; statusLabel = 'Used'; }
-        else if (given) { statusClass = 'badge-given'; statusLabel = 'Given'; }
-        else { statusClass = 'badge-avail'; statusLabel = 'Available'; }
+async function saveDet(){if(!curDoc)return;const g=document.getElementById('detGiven').value.trim(),n=document.getElementById('detNotes').value.trim();document.getElementById('detStatus').textContent='Saving...';try{
+const upd={givenTo:g||null,notes:n||null};if(g&&!curDoc.givenAt)upd.givenAt=firebase.firestore.FieldValue.serverTimestamp();
+await db.collection('pro_licenses').doc(curDoc.id).update(upd);document.getElementById('detStatus').textContent='Saved!';setTimeout(()=>closeOverlay('detOverlay'),500);await loadKeys()
+}catch(e){document.getElementById('detStatus').textContent='Error: '+e.message}}
 
-        // Activity status
-        let activityHtml = '<span style="color:#667;font-size:11px">-</span>';
-        if (used && d.activatedByEmail) {
-          const u = userCache[d.activatedByEmail];
-          if (!u) {
-            activityHtml = '<span style="color:#F44336;font-size:11px">No data</span>';
-          } else if (u.deleted) {
-            activityHtml = '<span style="color:#666;font-size:10px;font-style:italic">Account deleted</span>';
-          } else {
-          const last = u.lastLogin ? u.lastLogin.toDate() : null;
-          const sessions = u.totalSessions || 0;
-          const catches = u.catchCount || 0;
-          const created = u.createdAt ? u.createdAt.toDate() : null;
-          if (last) {
-            const daysSince = Math.floor((Date.now() - last.getTime()) / 86400000);
-            let actColor, actLabel;
-            if (daysSince === 0) { actColor = '#76FF03'; actLabel = 'Today'; }
-            else if (daysSince <= 3) { actColor = '#8BC34A'; actLabel = `${daysSince}d`; }
-            else if (daysSince <= 7) { actColor = '#FFC107'; actLabel = `${daysSince}d`; }
-            else if (daysSince <= 30) { actColor = '#FF9800'; actLabel = `${daysSince}d`; }
-            else { actColor = '#F44336'; actLabel = `${daysSince}d`; }
-            // Build activity summary with clickable detail link
-            const log = u.activityLog || {};
-            let weekOpens = 0;
-            const daysNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-            const detailLines = [];
-            for (let i = 6; i >= 0; i--) {
-              const d = new Date(Date.now() - i * 86400000);
-              const key = d.toISOString().substring(0, 10);
-              const count = log[key] || 0;
-              weekOpens += count;
-              const dayLabel = d.toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' });
-              detailLines.push(`${dayLabel}: ${count} opens`);
-            }
-            const detailText = detailLines.join('\n');
+function copyKey(){navigator.clipboard.writeText(curDoc.id);document.getElementById('detStatus').textContent='Copied!'}
 
-            activityHtml = `<span style="color:${actColor};font-size:12px;font-weight:600">${actLabel}</span>`;
-            activityHtml += `<br><span style="color:#8899AA;font-size:11px">${sessions} opens total</span>`;
-            activityHtml += `<br><span style="color:#667;font-size:11px">${weekOpens} this week</span>`;
-            activityHtml += `<br><a href="#" onclick="showActivityDetail('${encodeURIComponent(detailText)}', ${sessions}, ${weekOpens}, ${catches});return false;" style="color:#00BCD4;font-size:11px">Details</a>`;
-            if (catches > 0) activityHtml += `<br><span style="color:#667;font-size:10px">${catches} fish</span>`;
-          } else {
-            activityHtml = '<span style="color:#FF9800;font-size:11px">Never</span>';
-          }
-          } // end else (user exists)
-        } // end if (used && email)
+// Generate modal
+function showGen(){document.getElementById('genModal').innerHTML=`<h2>Generate Keys</h2>
+<div class="field"><label>Number of keys</label><input id="genCount" value="10" type="number" min="1" max="200"></div>
+<div class="field"><label>Type</label><div class="type-select"><button class="active" data-t="lifetime" onclick="setGT('lifetime')">Lifetime</button><button data-t="yearly" onclick="setGT('yearly')">Yearly</button></div></div>
+<div class="actions"><button class="btn-cancel" onclick="closeOverlay('genOverlay')">Cancel</button><button class="btn-gen" onclick="genKeys()">Generate</button></div>
+<div class="status" id="genStatus"></div>`;document.getElementById('genOverlay').classList.add('open')}
+function setGT(t){genType=t;document.querySelectorAll('.gen-modal .type-select button').forEach(b=>b.classList.toggle('active',b.dataset.t===t))}
 
-        html += `<tr onclick="openDetail('${d.id}')">
-          <td class="code">${d.id}</td>
-          <td><span class="badge ${typeClass}">${typeLabel}</span></td>
-          <td><span class="badge ${statusClass}">${statusLabel}</span></td>
-          <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${given || '-'}</td>
-          <td style="font-family:sans-serif;color:#8899AA;font-size:12px">${d.activatedByName || d.activatedByEmail || '-'}</td>
-          <td>${activityHtml}</td>
-        </tr>`;
-      }
-      html += '</tbody></table>';
-      document.getElementById('keyList').innerHTML = html;
-    }
+async function genKeys(){const c=Math.max(1,Math.min(200,parseInt(document.getElementById('genCount').value)||10));document.getElementById('genStatus').textContent='Generating...';try{
+const codes=[];let att=0;
+while(codes.length<c&&att<200){att++;const code=genCode();if(codes.includes(code))continue;const e=await db.collection('pro_licenses').doc(code).get();if(!e.exists)codes.push(code)}
+const batch=db.batch();for(const code of codes)batch.set(db.collection('pro_licenses').doc(code),{type:genType,used:false,usedAt:null,givenTo:null,givenAt:null,notes:null,createdAt:firebase.firestore.FieldValue.serverTimestamp()});
+await batch.commit();document.getElementById('genStatus').textContent='Generated '+codes.length+' ('+genType+')';setTimeout(()=>closeOverlay('genOverlay'),1500);await loadKeys()
+}catch(e){document.getElementById('genStatus').textContent='Error: '+e.message}}
 
-    async function setFilter(f) {
-      currentFilter = f;
-      document.querySelectorAll('.toolbar .btn[data-filter]').forEach(b => b.classList.toggle('active', b.dataset.filter === f));
-      await render();
-    }
-
-    function openDetail(id) {
-      currentDoc = allDocs.find(d => d.id === id);
-      if (!currentDoc) return;
-      document.getElementById('detailCode').textContent = currentDoc.id;
-      document.getElementById('detailGiven').value = currentDoc.givenTo || '';
-      document.getElementById('detailNotes').value = currentDoc.notes || '';
-      document.getElementById('detailStatus').textContent = '';
-      document.getElementById('detailOverlay').classList.add('open');
-    }
-
-    function closeDetail() {
-      document.getElementById('detailOverlay').classList.remove('open');
-      currentDoc = null;
-    }
-
-    async function saveDetail() {
-      if (!currentDoc) return;
-      const given = document.getElementById('detailGiven').value.trim();
-      const notes = document.getElementById('detailNotes').value.trim();
-      document.getElementById('detailStatus').textContent = 'Saving...';
-      try {
-        const upd = { givenTo: given || null, notes: notes || null };
-        if (given && !currentDoc.givenAt) upd.givenAt = firebase.firestore.FieldValue.serverTimestamp();
-        await db.collection('pro_licenses').doc(currentDoc.id).update(upd);
-        document.getElementById('detailStatus').textContent = 'Saved!';
-        setTimeout(closeDetail, 500);
-        await loadKeys();
-      } catch (e) {
-        document.getElementById('detailStatus').textContent = 'Error: ' + e.message;
-      }
-    }
-
-    async function copyKey() {
-      if (!currentDoc) return;
-      try {
-        await navigator.clipboard.writeText(currentDoc.id);
-        document.getElementById('detailStatus').textContent = 'Copied!';
-      } catch (e) {
-        document.getElementById('detailStatus').textContent = 'Copy failed';
-      }
-    }
-
-    function showGen() {
-      document.getElementById('genCount').value = '10';
-      document.getElementById('genStatus').textContent = '';
-      document.getElementById('genOverlay').classList.add('open');
-    }
-
-    function closeGen() { document.getElementById('genOverlay').classList.remove('open'); }
-
-    function setGenType(t) {
-      genType = t;
-      document.querySelectorAll('.gen-box .type-select button').forEach(b => b.classList.toggle('active', b.dataset.type === t));
-    }
-
-    async function generateKeys() {
-      const count = parseInt(document.getElementById('genCount').value) || 10;
-      const clamped = Math.max(1, Math.min(200, count));
-      document.getElementById('genStatus').textContent = `Generating ${clamped} keys...`;
-
-      try {
-        const codes = [];
-        let attempts = 0;
-        while (codes.length < clamped && attempts < 200) {
-          attempts++;
-          const code = generateCode();
-          if (codes.includes(code)) continue;
-          const doc = await db.collection('pro_licenses').doc(code).get();
-          if (!doc.exists) {
-            codes.push(code);
-          }
-        }
-
-        const batch = db.batch();
-        for (const code of codes) {
-          batch.set(db.collection('pro_licenses').doc(code), {
-            type: genType, used: false, usedAt: null, givenTo: null, givenAt: null, notes: null,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          });
-        }
-        await batch.commit();
-
-        const first = codes.length > 0 ? codes[0] : '';
-        document.getElementById('genStatus').textContent = `Generated ${codes.length} keys (${genType})${first ? '. First: ' + first : ''}`;
-        setTimeout(closeGen, 2000);
-        await loadKeys();
-      } catch (e) {
-        document.getElementById('genStatus').textContent = 'Error: ' + e.message;
-      }
-    }
-
-    function generateCode() {
-      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-      const seed = Date.now();
-      const parts = [0,1,2].map(p => {
-        const ps = seed + p * 7919;
-        return [0,1,2,3].map(i => chars[(ps + i * 37) % chars.length]).join('');
-      });
-      return 'PRO-' + parts.join('-');
-    }
-  function showActivityDetail(detailText, totalOpens, weekOpens, catches) {
-    const lines = detailText.split('\n');
-    let listHtml = '';
-    for (const line of lines) {
-      listHtml += `<tr><td style="padding:4px 8px;border-bottom:1px solid #1a2a44;font-size:13px">${line.replace(':','</td><td style="padding:4px 8px;border-bottom:1px solid #1a2a44;text-align:right;font-size:13px;font-weight:600">')}</td></tr>`;
-    }
-    const html = `
-      <div style="background:#162033;border:1px solid #2a3a55;border-radius:12px;padding:24px;width:90%;max-width:380px;margin:0 auto;">
-        <h2 style="margin:0 0 16px;font-size:18px">Activity Details</h2>
-        <table style="width:100%;border-collapse:collapse">
-          <tr><td style="padding:4px 8px;font-size:13px;color:#8899AA">Total opens</td><td style="padding:4px 8px;text-align:right;font-size:13px;font-weight:600">${totalOpens}</td></tr>
-          <tr><td style="padding:4px 8px;font-size:13px;color:#8899AA">Opens this week</td><td style="padding:4px 8px;text-align:right;font-size:13px;font-weight:600">${weekOpens}</td></tr>
-          <tr><td style="padding:4px 8px;font-size:13px;color:#8899AA">Fish caught</td><td style="padding:4px 8px;text-align:right;font-size:13px;font-weight:600">${catches}</td></tr>
-        </table>
-        <h3 style="margin:16px 0 8px;font-size:14px">Last 7 Days</h3>
-        <table style="width:100%;border-collapse:collapse">${listHtml}</table>
-        <button onclick="document.body.removeChild(this.parentNode.parentNode)" style="margin-top:16px;width:100%;padding:10px;background:#2a3a55;border:none;border-radius:8px;color:#fff;font-size:14px;cursor:pointer">Close</button>
-      </div>`;
-    const overlay = document.createElement('div');
-    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px';
-    overlay.innerHTML = html;
-    document.body.appendChild(overlay);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) document.body.removeChild(overlay); });
-  }
+function genCode(){const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',seed=Date.now();return 'PRO-'+[0,1,2].map(p=>[0,1,2,3].map(i=>chars[(seed+p*7919+i*37)%chars.length]).join('')).join('-')}
 </script>
 </body>
 </html>
