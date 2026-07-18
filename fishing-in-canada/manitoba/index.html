@@ -74,13 +74,9 @@
       <div class="stat"><div class="num">40+</div><div class="lbl">Species</div></div>
     </div>
 
-    <div style="text-align:center;margin-bottom:16px;">
-      <a href="/images/manitoba-topo.svg">
-        <img src="/images/manitoba-topo.svg" alt="Topographic map of Manitoba" style="max-width:100%;height:auto;border-radius:12px;max-height:500px;width:auto;">
-      </a>
-      <p style="color:#667;font-size:12px;margin-top:6px;">Topographic map of Manitoba — click to view full size</p>
-    </div>
-    <div class="region-list">
+    <div style="display:flex;gap:clamp(12px,2vw,24px);align-items:flex-start;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;">
+        <div class="region-list">
         <a href="/fishing-near/winnipeg/" class="region-item" style="--clr:#EF5350;">
           <span class="dot" style="background:#EF5350;"></span>
           <div><h3>Winnipeg &amp; Red River Valley</h3><p>Red River catfish, Lake Winnipeg walleye, Assiniboine River</p></div>
@@ -110,6 +106,14 @@
           <div><h3>Hudson Bay Coast</h3><p>Churchill River, Arctic char, Seal River, Nueltin Lake</p></div>
         </a>
       </div>
+    </div>
+    <div style="flex:0 0 clamp(200px,35vw,350px);text-align:center;">
+      <a href="/images/manitoba-topo.svg">
+        <img src="/images/manitoba-topo.svg" alt="Topographic map of Manitoba" style="max-width:100%;height:auto;border-radius:12px;max-height:500px;">
+      </a>
+      <p style="color:#667;font-size:11px;margin-top:4px;">Topographic map — click to view full size</p>
+    </div>
+    </div>
 
     <footer>
       <div class="links">
