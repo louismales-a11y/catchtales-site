@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fishing in Saskatchewan — Regions & Fishing Guides | CatchTales</title>
+  <meta name="description" content="Explore fishing in Saskatchewan by region. Over 100,000 lakes — from Tobin Lake walleye to trophy lake trout in the northern shield.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0A1628; color: #fff; line-height: 1.6;
+      font-size: clamp(15px, 1.1vw, 17px);
+    }
+    .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+    .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
+    .content { position: relative; z-index: 3; max-width: 1100px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
+    header { padding: clamp(16px, 2.5vw, 24px) 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    .header-logo img { height: clamp(40px, 5vw, 60px); border-radius: 6px; }
+    nav a { color: #B0C4DE; text-decoration: none; font-size: clamp(13px, 1.1vw, 14px); margin-left: 18px; min-height: 44px; display: inline-flex; align-items: center; }
+    nav a:hover { color: #76FF03; }
+    h1 { font-size: clamp(1.4em, 4vw, 2em); color: #76FF03; text-align: center; padding: clamp(20px, 3vw, 32px) 0 4px; }
+    .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); margin-bottom: clamp(16px, 2.5vw, 24px); }
+    .note { text-align: center; color: #667; font-size: clamp(12px, 1vw, 13px); font-style: italic; margin-bottom: clamp(16px, 2.5vw, 24px); }
+    .stat { text-align: center; padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px); background: rgba(255,255,255,0.03); border-radius: 10px; }
+    .stat .num { font-size: clamp(1.2em, 3vw, 1.6em); font-weight: 800; color: #76FF03; }
+    .stat .lbl { font-size: clamp(11px, 1vw, 12px); color: #8899AA; }
+    .stats { display: flex; gap: clamp(12px, 2vw, 20px); justify-content: center; flex-wrap: wrap; margin: clamp(16px, 2.5vw, 24px) 0; }
+    .region-item {
+      display: flex; align-items: center; gap: 12px; padding: clamp(10px, 1.5vw, 14px);
+      background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #fff;
+      transition: all 0.3s;
+    }
+    .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
+    .region-item .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .region-item h3 { font-size: clamp(17px, 1.6vw, 20px); color: var(--clr); }
+    .region-item p { font-size: clamp(14px, 1.2vw, 15px); color: #99B0CC; }
+    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(20px, 3vw, 30px); }
+    footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); min-height: 44px; display: inline-flex; align-items: center; }
+    footer .links a:hover { color: #00BCD4; }
+    footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
+    @media (max-width: 700px) { nav a { margin-left: 12px; } }
+  </style>
+</head>
+<body>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+  </div>
+  <div class="content">
+    <header>
+      <a href="/" class="header-logo"><img src="/catchtales-logo.png" alt="CatchTales"></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/fishing-in-canada/">Canada</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+
+    <a href="/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:14px;display:inline-block;min-height:44px;line-height:44px;">&larr; All Provinces</a>
+    <h1>Fishing in Saskatchewan</h1>
+    <p class="subtitle">Click a region to explore top fishing spots, species, and local tips.</p>
+    <p class="note">Saskatchewan has over 100,000 lakes. We can't list them all, but here are the best fishing regions to get you started.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
+      <div class="stat"><div class="num">150+</div><div class="lbl">Spots Listed</div></div>
+      <div class="stat"><div class="num">30+</div><div class="lbl">Species</div></div>
+    </div>
+
+    <div style="display:flex;gap:clamp(16px,2.5vw,32px);align-items:flex-start;flex-wrap:wrap;justify-content:center;">
+      <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
+        <a href="/images/saskatchewan-topo.svg">
+          <img src="/images/saskatchewan-topo.svg" alt="Topographic map of Saskatchewan" style="max-width:100%;height:auto;border-radius:12px;max-height:420px;">
+        </a>
+        <p style="color:#667;font-size:11px;margin-top:4px;">Topographic map — click to view full size</p>
+      </div>
+      <div style="flex:0 1 clamp(260px,35vw,400px);">
+        <a href="/fishing-near/regina-southern-saskatchewan/" class="region-item" style="--clr:#EF5350;">
+          <span class="dot" style="background:#EF5350;"></span>
+          <div><h3>Regina &amp; Southern</h3><p>Last Mountain Lake, Buffalo Pound, Diefenbaker, Qu'Appelle Valley</p></div>
+        </a>
+        <a href="/fishing-near/saskatoon-central-saskatchewan/" class="region-item" style="--clr:#FF8A65;">
+          <span class="dot" style="background:#FF8A65;"></span>
+          <div><h3>Saskatoon &amp; Central</h3><p>South Saskatchewan River, Pike Lake, Jackfish, Blackstrap</p></div>
+        </a>
+        <a href="/fishing-near/eastern-saskatchewan-tobin/" class="region-item" style="--clr:#81C784;">
+          <span class="dot" style="background:#81C784;"></span>
+          <div><h3>Eastern / Tobin Lake</h3><p>Tobin Lake, Good Spirit, Madge Lake, Round Lake, Yorkton area</p></div>
+        </a>
+        <a href="/fishing-near/western-saskatchewan/" class="region-item" style="--clr:#7986CB;">
+          <span class="dot" style="background:#7986CB;"></span>
+          <div><h3>Western Saskatchewan</h3><p>Jackfish, Brightsand, Turtle Lake, Meadow Lake, Lloydminster area</p></div>
+        </a>
+        <a href="/fishing-near/northern-saskatchewan-shield/" class="region-item" style="--clr:#FFB74D;">
+          <span class="dot" style="background:#FFB74D;"></span>
+          <div><h3>Northern Shield</h3><p>Lac La Ronge, Churchill River, Pinehouse Lake, Deschambault Lake</p></div>
+        </a>
+        <a href="/fishing-near/far-north-saskatchewan-athabasca/" class="region-item" style="--clr:#4FC3F7;">
+          <span class="dot" style="background:#4FC3F7;"></span>
+          <div><h3>Far North / Athabasca</h3><p>Lake Athabasca, Cree Lake, Black Lake, Wollaston Lake, Reindeer Lake</p></div>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="links">
+        <a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a>
+        <a href="/fishing-in-canada/">Canada Fishing Guide</a>
+        <a href="/about/">About</a><a href="/contact/">Contact</a>
+      </div>
+      <p class="copy">(c) 2026 Maison Louis Design</p>
+    </footer>
+  </div>
+</body>
+</html>
