@@ -53,6 +53,41 @@
     header nav a:hover { color: #76FF03; }
     header nav a:active { opacity: 0.6; }
     header nav a.active { color: #76FF03; }
+    /* ─── Filter Bar ─── */
+    .filter-bar {
+      margin: clamp(8px, 1.5vw, 16px) 0 clamp(16px, 3vw, 24px);
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .filter-bar input {
+      width: 100%; padding: 12px 16px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(14,20,34,0.5); color: #fff;
+      font-size: clamp(14px, 1.2vw, 15px);
+      backdrop-filter: blur(8px);
+      outline: none; transition: border-color 0.2s;
+      min-height: 48px;
+    }
+    .filter-bar input:focus { border-color: #00BCD4; }
+    .filter-bar input::placeholder { color: #667; }
+    .filter-bar .cats {
+      display: flex; flex-wrap: wrap; gap: 6px;
+    }
+    .filter-bar .cats button {
+      padding: 6px 14px; border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(14,20,34,0.3); color: #99B0CC;
+      font-size: clamp(12px, 1vw, 13px); cursor: pointer;
+      transition: all 0.2s; touch-action: manipulation;
+      min-height: 36px;
+    }
+    .filter-bar .cats button:hover { border-color: #00BCD4; color: #fff; }
+    .filter-bar .cats button.active {
+      background: rgba(0,188,212,0.15); border-color: #00BCD4; color: #00BCD4;
+    }
+    .filter-bar .result-count {
+      font-size: clamp(12px, 1vw, 13px); color: #667;
+      text-align: center; margin-top: 4px;
+    }
     .page-title { padding: clamp(24px, 5vw, 40px) 0 clamp(16px, 3vw, 30px); text-align: center; }
     .page-title h1 { font-size: clamp(1.4em, 4.5vw, 2em); color: #76FF03; }
     .page-title p { color: #B0C4DE; font-size: clamp(0.85em, 2.5vw, 1em); margin-top: 8px; max-width: 500px; margin-left: auto; margin-right: auto; }
@@ -117,6 +152,15 @@
     <div class="page-title">
     <h1>CatchTales Blog</h1>
     <p>Fishing tips, species guides, location recommendations, and tackle advice for anglers across Canada and the United States.</p>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" style="max-width:960px;margin:0 auto;padding:0 max(24px,env(safe-area-inset-right)) 0 max(24px,env(safe-area-inset-left));position:relative;z-index:3;">
+    <input type="text" id="blogSearch" placeholder="Search articles..." oninput="filterBlog()">
+    <div class="cats" id="blogCats">
+      <button class="active" onclick="setCat(this,'all')">All</button>
+    </div>
+    <div class="result-count" id="blogCount"></div>
   </div>
 
 <div class="content-page">
@@ -617,5 +661,62 @@
       <p class="copy">&copy; 2026 Maison Louis Design &mdash; Made for anglers everywhere</p>
     </footer>
   </div>
+  <script>
+    function setCat(btn, cat) {
+      document.querySelectorAll('#blogCats button').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      filterBlog();
+    }
+
+    function filterBlog() {
+      var q = (document.getElementById('blogSearch').value || '').toLowerCase();
+      var active = document.querySelector('#blogCats button.active');
+      var cat = active ? active.dataset.cat || 'all' : 'all';
+      var cards = document.querySelectorAll('.content-page .card');
+      var visible = 0;
+      cards.forEach(function(card) {
+        var link = card.closest('a');
+        var title = (card.querySelector('h3') || card).textContent.toLowerCase();
+        var desc = (card.querySelector('p') || card).textContent.toLowerCase();
+        var cardCat = '';
+        var spans = card.querySelectorAll('span');
+        spans.forEach(function(s) {
+          var t = s.textContent.trim();
+          if (['Bass Fishing','Education','Family','Fish ID','Game Fish','Gear','Ice Fishing','Kayak','Locations','Panfish','Planning','Rigging','Safety','Salmon & Trout','Salmon &amp; Trout','Techniques','Tips & How-To'].indexOf(t) >= 0) {
+            cardCat = t.replace('&amp;', '&');
+          }
+        });
+        var matchCat = (cat === 'all' || cardCat === cat);
+        var matchSearch = title.indexOf(q) >= 0 || desc.indexOf(q) >= 0;
+        if (link) { link.style.display = (matchCat && matchSearch) ? '' : 'none'; }
+        if (matchCat && matchSearch) visible++;
+      });
+      document.getElementById('blogCount').textContent = visible + ' of ' + cards.length + ' articles';
+    }
+
+    // Build category buttons from existing cards, then run filter
+    (function() {
+      var cats = {};
+      document.querySelectorAll('.content-page .card').forEach(function(card) {
+        var spans = card.querySelectorAll('span');
+        spans.forEach(function(s) {
+          var t = s.textContent.trim().replace('&amp;', '&');
+          if (['Bass Fishing','Education','Family','Fish ID','Game Fish','Gear','Ice Fishing','Kayak','Locations','Panfish','Planning','Rigging','Safety','Salmon & Trout','Salmon &amp; Trout','Techniques','Tips & How-To'].indexOf(t) >= 0) {
+            cats[t] = (cats[t] || 0) + 1;
+          }
+        });
+      });
+      var container = document.getElementById('blogCats');
+      var sorted = Object.keys(cats).sort();
+      sorted.forEach(function(c) {
+        var btn = document.createElement('button');
+        btn.textContent = c.replace('&amp;', '&') + ' (' + cats[c] + ')';
+        btn.dataset.cat = c.replace('&amp;', '&');
+        btn.onclick = function() { setCat(this, this.dataset.cat); };
+        container.appendChild(btn);
+      });
+      filterBlog();
+    })();
+  </script>
 </body>
 </html>
