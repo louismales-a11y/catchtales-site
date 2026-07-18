@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fishing in Canada — Province & Territory Guides | CatchTales</title>
+  <meta name="description" content="Explore fishing guides for every Canadian province and territory. Click a province to find top species, best fishing spots, and regional guides.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0A1628; color: #fff; line-height: 1.6;
+      font-size: clamp(15px, 1.1vw, 17px);
+    }
+    .content { max-width: 960px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
+    header { padding: clamp(16px, 2.5vw, 24px) 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    .header-logo img { height: clamp(40px, 5vw, 60px); border-radius: 6px; }
+    h1 { font-size: clamp(1.5em, 5vw, 2.2em); color: #76FF03; text-align: center; padding: clamp(24px, 4vw, 40px) 0 clamp(8px, 1.5vw, 16px); }
+    .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); max-width: 600px; margin: 0 auto clamp(20px, 3vw, 32px); }
+    .prov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px; padding-bottom: 40px; }
+    .prov-card {
+      background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px; padding: clamp(14px, 2vw, 20px); text-decoration: none; color: #fff;
+      transition: all 0.3s; display: flex; align-items: center; gap: 12px;
+    }
+    .prov-card:hover { border-color: #00BCD4; transform: translateY(-2px); background: rgba(14,20,34,0.7); }
+    .prov-card .flag { font-size: clamp(24px, 3vw, 32px); }
+    .prov-card h3 { font-size: clamp(15px, 1.2vw, 17px); color: #00BCD4; }
+    .prov-card p { font-size: clamp(12px, 1vw, 13px); color: #99B0CC; }
+    .prov-card.spotlight { border-color: #76FF03; background: rgba(118,255,3,0.06); }
+    .prov-card.spotlight h3 { color: #76FF03; }
+    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: 20px; }
+    footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); transition: color 0.2s; min-height: 44px; display: inline-flex; align-items: center; }
+    footer .links a:hover { color: #00BCD4; }
+    footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <a href="/" class="header-logo"><img src="/catchtales-logo.png" alt="CatchTales"></a>
+    </header>
+    <h1>Fishing in Canada</h1>
+    <p class="subtitle">Select a province or territory to explore top species, best fishing spots, and regional guides.</p>
+    <div class="prov-grid">
+      <a href="/fishing-in-canada/manitoba/" class="prov-card spotlight">
+        <span class="flag">MB</span>
+        <div><h3>Manitoba</h3><p>7 regions, 150+ lakes mapped</p></div>
+      </a>
+      <a href="/blog/fishing-in-british-columbia-top-species-and-spots/" class="prov-card">
+        <span class="flag">BC</span>
+        <div><h3>British Columbia</h3><p>Salmon, halibut, steelhead</p></div>
+      </a>
+      <a href="/blog/fishing-in-alberta-top-species-and-spots/" class="prov-card">
+        <span class="flag">AB</span>
+        <div><h3>Alberta</h3><p>Bow River trout, walleye, pike</p></div>
+      </a>
+      <a href="/blog/fishing-in-saskatchewan-top-species-and-spots/" class="prov-card">
+        <span class="flag">SK</span>
+        <div><h3>Saskatchewan</h3><p>Walleye, lake trout, pike</p></div>
+      </a>
+      <a href="/blog/fishing-in-ontario-top-species-and-spots/" class="prov-card">
+        <span class="flag">ON</span>
+        <div><h3>Ontario</h3><p>Great Lakes, walleye, bass</p></div>
+      </a>
+      <a href="/blog/fishing-in-quebec-top-species-and-spots/" class="prov-card">
+        <span class="flag">QC</span>
+        <div><h3>Quebec</h3><p>Atlantic salmon, brook trout</p></div>
+      </a>
+      <a href="/blog/fishing-in-nova-scotia-top-species-and-spots/" class="prov-card">
+        <span class="flag">NS</span>
+        <div><h3>Nova Scotia</h3><p>Salmon, sea-run brook trout</p></div>
+      </a>
+      <a href="/blog/fishing-in-new-brunswick-top-species-and-spots/" class="prov-card">
+        <span class="flag">NB</span>
+        <div><h3>New Brunswick</h3><p>Miramichi salmon, bass</p></div>
+      </a>
+      <a href="/blog/fishing-in-prince-edward-island-top-species-and-spots/" class="prov-card">
+        <span class="flag">PE</span>
+        <div><h3>Prince Edward Island</h3><p>Brook trout, striped bass</p></div>
+      </a>
+      <a href="/blog/fishing-in-newfoundland-labrador-top-species-and-spots/" class="prov-card">
+        <span class="flag">NL</span>
+        <div><h3>Newfoundland & Labrador</h3><p>Atlantic salmon, Arctic char</p></div>
+      </a>
+      <a href="/blog/fishing-in-yukon-top-species-and-spots/" class="prov-card">
+        <span class="flag">YT</span>
+        <div><h3>Yukon</h3><p>Chinook salmon, grayling</p></div>
+      </a>
+      <a href="/blog/fishing-in-northwest-territories-top-species-and-spots/" class="prov-card">
+        <span class="flag">NT</span>
+        <div><h3>Northwest Territories</h3><p>Great Bear Lake trout</p></div>
+      </a>
+      <a href="/blog/fishing-in-nunavut-top-species-and-spots/" class="prov-card">
+        <span class="flag">NU</span>
+        <div><h3>Nunavut</h3><p>Arctic char, lake trout</p></div>
+      </a>
+    </div>
+    <footer>
+      <div class="links">
+        <a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a>
+        <a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>
+      </div>
+      <p class="copy">(c) 2026 Maison Louis Design</p>
+    </footer>
+  </div>
+</body>
+</html>

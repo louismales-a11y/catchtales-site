@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fishing in Manitoba — Regions & Fishing Guides | CatchTales</title>
+  <meta name="description" content="Explore fishing in Manitoba by region. Interactive map of Manitoba's 7 fishing regions — Winnipeg, Whiteshell, Interlake, Parklands, Central Plains, Northern Manitoba, and Hudson Bay Coast.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0A1628; color: #fff; line-height: 1.6;
+      font-size: clamp(15px, 1.1vw, 17px);
+    }
+    .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+    .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
+    .content { position: relative; z-index: 3; max-width: 1100px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
+    header { padding: clamp(16px, 2.5vw, 24px) 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    .header-logo img { height: clamp(40px, 5vw, 60px); border-radius: 6px; }
+    nav a { color: #B0C4DE; text-decoration: none; font-size: clamp(13px, 1.1vw, 14px); margin-left: 18px; min-height: 44px; display: inline-flex; align-items: center; }
+    nav a:hover { color: #76FF03; }
+    h1 { font-size: clamp(1.4em, 4vw, 2em); color: #76FF03; text-align: center; padding: clamp(20px, 3vw, 32px) 0 4px; }
+    .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); margin-bottom: clamp(16px, 2.5vw, 24px); }
+    .note { text-align: center; color: #667; font-size: clamp(12px, 1vw, 13px); font-style: italic; margin-bottom: clamp(16px, 2.5vw, 24px); }
+
+    .map-section { display: flex; gap: clamp(16px, 2.5vw, 32px); align-items: flex-start; flex-wrap: wrap; justify-content: center; }
+    .map-container { flex: 1; min-width: 300px; max-width: 600px; }
+    .map-container svg { width: 100%; height: auto; }
+    .region-list { flex: 0 0 clamp(280px, 35vw, 350px); }
+    .region-item {
+      display: flex; align-items: center; gap: 12px; padding: clamp(10px, 1.5vw, 14px);
+      background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #fff;
+      transition: all 0.3s;
+    }
+    .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
+    .region-item .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .region-item h3 { font-size: clamp(14px, 1.2vw, 16px); color: var(--clr); }
+    .region-item p { font-size: clamp(11px, 1vw, 12px); color: #99B0CC; }
+
+    .region-link { transition: opacity 0.2s; }
+    .region-link:hover { opacity: 0.7; cursor: pointer; }
+
+    .stats { display: flex; gap: clamp(12px, 2vw, 20px); justify-content: center; flex-wrap: wrap; margin: clamp(16px, 2.5vw, 24px) 0; }
+    .stat { text-align: center; padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px); background: rgba(255,255,255,0.03); border-radius: 10px; }
+    .stat .num { font-size: clamp(1.2em, 3vw, 1.6em); font-weight: 800; color: #76FF03; }
+    .stat .lbl { font-size: clamp(11px, 1vw, 12px); color: #8899AA; }
+
+    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(20px, 3vw, 30px); }
+    footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); min-height: 44px; display: inline-flex; align-items: center; }
+    footer .links a:hover { color: #00BCD4; }
+    footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
+
+    @media (max-width: 700px) {
+      .map-section { flex-direction: column; align-items: center; }
+      .map-container { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+  </div>
+  <div class="content">
+    <header>
+      <a href="/" class="header-logo"><img src="/catchtales-logo.png" alt="CatchTales"></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/fishing-in-canada/">Canada</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+
+    <a href="/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:14px;display:inline-block;min-height:44px;line-height:44px;">&larr; All Provinces</a>
+    <h1>Fishing in Manitoba</h1>
+    <p class="subtitle">Click a region on the map to explore top fishing spots, species, and local tips.</p>
+    <p class="note">Manitoba has over 100,000 lakes. We can't list them all, but here are the best fishing regions to get you started.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">7</div><div class="lbl">Regions</div></div>
+      <div class="stat"><div class="num">150+</div><div class="lbl">Spots Listed</div></div>
+      <div class="stat"><div class="num">40+</div><div class="lbl">Species</div></div>
+    </div>
+
+    <div class="map-section">
+      <div class="map-container">
+        <svg viewBox="0 0 500 650" xmlns="http://www.w3.org/2000/svg" style="background:rgba(14,20,34,0.3);border-radius:16px;">
+          <!-- Hudson Bay Coast -->
+          <a href="/fishing-near/hudson-bay-coast-manitoba/">
+            <path d="M150,20 L180,15 L220,10 L260,15 L290,20 L310,25 L320,35 L310,45 L290,55 L270,60 L250,58 L230,55 L210,50 L190,45 L170,38 L155,30 Z" fill="#4FC3F7" fill-opacity="0.3" stroke="#4FC3F7" stroke-width="1.5" class="region-link"/>
+          </a>
+          <!-- Northern Manitoba -->
+          <a href="/fishing-near/northern-manitoba/">
+            <path d="M155,30 L170,38 L190,45 L210,50 L230,55 L250,58 L270,60 L290,55 L310,45 L340,60 L360,90 L370,120 L365,140 L350,155 L330,165 L310,170 L290,168 L270,165 L250,160 L230,155 L210,148 L190,140 L175,130 L165,115 L155,95 L150,70 L152,50 Z" fill="#FFB74D" fill-opacity="0.3" stroke="#FFB74D" stroke-width="1.5" class="region-link"/>
+          </a>
+          <!-- Interlake -->
+          <a href="/fishing-near/interlake-manitoba/">
+            <path d="M210,148 L230,155 L250,160 L270,165 L290,168 L310,170 L330,165 L350,155 L365,140 L370,120 L380,140 L390,165 L395,195 L390,220 L380,240 L365,255 L345,260 L325,258 L305,252 L285,245 L265,235 L245,225 L225,215 L210,205 L200,190 L195,175 L200,160 Z" fill="#81C784" fill-opacity="0.3" stroke="#81C784" stroke-width="1.5" class="region-link"/>
+          </a>
+          <!-- Eastern / Whiteshell -->
+          <a href="/fishing-near/eastern-manitoba-whiteshell/">
+            <path d="M370,120 L360,90 L380,95 L400,105 L420,120 L435,145 L440,175 L435,205 L425,230 L410,250 L395,260 L390,240 L380,220 L370,195 L365,170 L365,140 Z" fill="#CE93D8" fill-opacity="0.3" stroke="#CE93D8" stroke-width="1.5" class="region-link"/>
+          </a>
+          <!-- Winnipeg & Red River Valley -->
+          <a href="/fishing-near/winnipeg/">
+            <path d="M200,160 L195,175 L200,190 L210,205 L225,215 L245,225 L265,235 L285,245 L305,252 L325,258 L345,260 L365,255 L380,240 L390,220 L395,195 L400,210 L410,230 L415,255 L410,280 L395,300 L375,315 L350,322 L330,320 L310,315 L290,305 L270,290 L250,275 L230,260 L215,245 L205,230 L195,215 L190,200 L190,185 L195,170 Z" fill="#EF5350" fill-opacity="0.2" stroke="#EF5350" stroke-width="1.5" class="region-link"/>
+          </a>
+          <!-- Central Plains -->
+          <a href="/fishing-near/central-plains-manitoba/">
+            <path d="M190,200 L195,215 L205,230 L215,245 L230,260 L250,275 L270,290 L290,305 L310,315 L330,320 L350,322 L375,315 L395,300 L410,280 L415,290 L410,310 L400,330 L385,345 L365,355 L340,360 L315,358 L290,350 L265,340 L245,325 L225,310 L210,295 L200,280 L195,260 L190,240 L188,220 Z" fill="#FF8A65" fill-opacity="0.25" stroke="#FF8A65" stroke-width="1.5" class="region-link"/>
+          </a>
+          <!-- Western / Parklands -->
+          <a href="/fishing-near/western-manitoba-parklands/">
+            <path d="M152,50 L150,70 L155,95 L165,115 L175,130 L190,140 L200,148 L200,160 L195,170 L190,185 L188,200 L188,220 L190,240 L195,260 L200,280 L210,295 L190,290 L170,280 L155,270 L140,255 L128,238 L120,218 L115,195 L112,170 L115,145 L120,120 L128,95 L135,72 Z" fill="#7986CB" fill-opacity="0.25" stroke="#7986CB" stroke-width="1.5" class="region-link"/>
+          </a>
+
+          <!-- Region labels -->
+          <text x="220" y="35" fill="#4FC3F7" font-size="11" font-weight="700" text-anchor="middle">Hudson Bay Coast</text>
+          <text x="245" y="105" fill="#FFB74D" font-size="11" font-weight="700" text-anchor="middle">Northern</text>
+          <text x="290" y="215" fill="#81C784" font-size="11" font-weight="700" text-anchor="middle">Interlake</text>
+          <text x="415" y="195" fill="#CE93D8" font-size="10" font-weight="700" text-anchor="middle">Eastern /</text>
+          <text x="415" y="208" fill="#CE93D8" font-size="10" font-weight="700" text-anchor="middle">Whiteshell</text>
+          <text x="300" y="290" fill="#EF5350" font-size="10" font-weight="700" text-anchor="middle">Winnipeg &amp;</text>
+          <text x="300" y="303" fill="#EF5350" font-size="10" font-weight="700" text-anchor="middle">Red River Valley</text>
+          <text x="300" y="338" fill="#FF8A65" font-size="10" font-weight="700" text-anchor="middle">Central Plains</text>
+          <text x="155" y="175" fill="#7986CB" font-size="10" font-weight="700" text-anchor="middle">Western /</text>
+          <text x="155" y="188" fill="#7986CB" font-size="10" font-weight="700" text-anchor="middle">Parklands</text>
+
+          <!-- Services marks -->
+          <circle cx="300" cy="248" r="2.5" fill="#fff" opacity="0.6"/>
+          <text x="300" y="242" fill="#fff" font-size="7" text-anchor="middle">Winnipeg</text>
+          <circle cx="280" cy="200" r="2" fill="#fff" opacity="0.4"/>
+          <text x="280" y="195" fill="#fff" font-size="7" text-anchor="middle">Arborg</text>
+          <circle cx="330" cy="285" r="2" fill="#fff" opacity="0.4"/>
+          <text x="330" y="280" fill="#fff" font-size="7" text-anchor="middle">Steinbach</text>
+          <circle cx="190" cy="265" r="2" fill="#fff" opacity="0.4"/>
+          <text x="190" y="260" fill="#fff" font-size="7" text-anchor="middle">Brandon</text>
+          <text x="120" y="150" fill="#fff" font-size="7" text-anchor="middle" transform="rotate(-70,120,150)">Saskatchewan</text>
+          <text x="430" y="100" fill="#fff" font-size="7" text-anchor="middle" transform="rotate(70,430,100)">Ontario</text>
+        </svg>
+      </div>
+
+      <div class="region-list">
+        <a href="/fishing-near/winnipeg/" class="region-item" style="--clr:#EF5350;">
+          <span class="dot" style="background:#EF5350;"></span>
+          <div><h3>Winnipeg &amp; Red River Valley</h3><p>Red River catfish, Lake Winnipeg walleye, Assiniboine River</p></div>
+        </a>
+        <a href="/fishing-near/eastern-manitoba-whiteshell/" class="region-item" style="--clr:#CE93D8;">
+          <span class="dot" style="background:#CE93D8;"></span>
+          <div><h3>Eastern / Whiteshell &amp; Nopiming</h3><p>West Hawk, Falcon Lake, Lac du Bonnet, Winnipeg River</p></div>
+        </a>
+        <a href="/fishing-near/interlake-manitoba/" class="region-item" style="--clr:#81C784;">
+          <span class="dot" style="background:#81C784;"></span>
+          <div><h3>Interlake</h3><p>Hecla, Icelandic River, Arborg, Lake Manitoba, Gull Lake</p></div>
+        </a>
+        <a href="/fishing-near/western-manitoba-parklands/" class="region-item" style="--clr:#7986CB;">
+          <span class="dot" style="background:#7986CB;"></span>
+          <div><h3>Western / Parklands</h3><p>Duck Mountain, Riding Mountain, Souris River, Turtle Mountain</p></div>
+        </a>
+        <a href="/fishing-near/central-plains-manitoba/" class="region-item" style="--clr:#FF8A65;">
+          <span class="dot" style="background:#FF8A65;"></span>
+          <div><h3>Central Plains</h3><p>Portage Reservoir, Delta Marsh, Pembina Valley, Minnewasta</p></div>
+        </a>
+        <a href="/fishing-near/northern-manitoba/" class="region-item" style="--clr:#FFB74D;">
+          <span class="dot" style="background:#FFB74D;"></span>
+          <div><h3>Northern Manitoba</h3><p>Clearwater Lake, Flin Flon, Thompson, Gods Lake</p></div>
+        </a>
+        <a href="/fishing-near/hudson-bay-coast-manitoba/" class="region-item" style="--clr:#4FC3F7;">
+          <span class="dot" style="background:#4FC3F7;"></span>
+          <div><h3>Hudson Bay Coast</h3><p>Churchill River, Arctic char, Seal River, Nueltin Lake</p></div>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="links">
+        <a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a>
+        <a href="/fishing-in-canada/">Canada Fishing Guide</a>
+        <a href="/about/">About</a><a href="/contact/">Contact</a>
+      </div>
+      <p class="copy">(c) 2026 Maison Louis Design</p>
+    </footer>
+  </div>
+</body>
+</html>
