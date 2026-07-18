@@ -8,12 +8,12 @@
   <url>
     <loc>https://catchtales.com/features/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://catchtales.com/about/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://catchtales.com/faq/</loc>
@@ -23,30 +23,65 @@
   <url>
     <loc>https://catchtales.com/contact/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://catchtales.com/privacy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://catchtales.com/terms/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/download/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/free/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/pro/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/dev/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://catchtales.com/blog/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://catchtales.com/blog/top-bass-fishing-lakes-ontario/</loc>
+    <loc>https://catchtales.com/blog/bass-identification-largemouth-vs-smallmouth-vs-spotted-bass/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://catchtales.com/blog/identify-panfish-canada-usa/</loc>
+    <loc>https://catchtales.com/blog/best-bass-fishing-lakes-united-states-by-region/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/best-fishing-apps-for-canada-and-the-united-states-in-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/best-fishing-lakes-british-columbia-salmon/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/best-fishing-rod-and-reel-combos-for-beginners/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -56,144 +91,243 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://catchtales.com/blog/best-fishing-lakes-british-columbia-salmon/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/top-walleye-fishing-spots-ontario/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/fishing-great-lakes-species-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/best-bass-fishing-lakes-united-states-by-region/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/ice-fishing-hotspots-canada/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/fishing-in-florida-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/lake-trout-fishing-canada-northern-lakes/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://catchtales.com/blog/how-to-identify-trout-species-rainbow-brown-brook-cutthroat/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/bass-identification-largemouth-vs-smallmouth-vs-spotted-bass/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/ontario-fish-species-complete-guide-to-native-and-introduced-species/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/freshwater-fish-of-the-great-lakes-species-identification-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/how-to-identify-salmon-species-chinook-coho-sockeye-pink-chum/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/common-panfish-of-north-america-complete-identification-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://catchtales.com/blog/best-lures-for-bass-fishing-in-canada-and-the-united-states/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/top-10-lures-every-walleye-angler-needs/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/spinnerbait-vs-crankbait-vs-jerkbait-when-to-use-each-lure/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/best-fishing-rod-and-reel-combos-for-beginners/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/how-to-choose-the-right-fishing-line-mono-fluoro-braid/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/how-to-catch-walleye-tips-for-beginners/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/how-to-catch-northern-pike-lures-locations-techniques/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/catch-and-release-best-practices-a-complete-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/how-to-read-a-fish-finder-sonar-basics-for-anglers/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/fishing-license-guide-canada-vs-us-requirements/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://catchtales.com/blog/how-to-plan-a-fishing-trip-step-by-step-guide/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://catchtales.com/blog/best-times-to-fish-for-every-species-in-north-america/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://catchtales.com/blog/best-fishing-apps-for-canada-and-the-united-states-in-2026/</loc>
+    <loc>https://catchtales.com/blog/catch-and-release-best-practices-a-complete-guide/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/common-panfish-of-north-america-complete-identification-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://catchtales.com/blog/digital-fishing-log-why-you-should-track-your-catches/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-great-lakes-species-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-alberta-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-british-columbia-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-florida-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-manitoba-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-new-brunswick-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-newfoundland-labrador-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-northwest-territories-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-nova-scotia-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-nunavut-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-ontario-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-prince-edward-island-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-quebec-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-saskatchewan-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-in-yukon-top-species-and-spots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-knots-every-angler-should-know/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-license-guide-canada-vs-us-requirements/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-safety-tips/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/fishing-with-kids/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://catchtales.com/blog/fishing-with-voice-controls-how-hands-free-logging-works/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/freshwater-fish-of-the-great-lakes-species-identification-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-catch-northern-pike-lures-locations-techniques/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-catch-walleye-tips-for-beginners/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-choose-fishing-rod-reel-advanced-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-choose-the-right-fishing-line-mono-fluoro-braid/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-identify-salmon-species-chinook-coho-sockeye-pink-chum/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-identify-trout-species-rainbow-brown-brook-cutthroat/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-plan-a-fishing-trip-step-by-step-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/how-to-read-a-fish-finder-sonar-basics-for-anglers/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/ice-fishing-gear-techniques/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/ice-fishing-hotspots-canada/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/identify-panfish-canada-usa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/kayak-fishing-guide-canada-us/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/lake-trout-fishing-canada-northern-lakes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/night-fishing-tips/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/ontario-fish-species-complete-guide-to-native-and-introduced-species/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/spinnerbait-vs-crankbait-vs-jerkbait-when-to-use-each-lure/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/top-10-lures-every-walleye-angler-needs/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/top-bass-fishing-lakes-ontario/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/top-walleye-fishing-spots-ontario/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/blog/understanding-fish-behavior/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/admin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://catchtales.com/cloud/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
