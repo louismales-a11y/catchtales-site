@@ -1,10 +1,10 @@
 {
-  "version": "2.14.50",
-  "tag_name": "v2.14.50",
+  "version": "2.14.51",
+  "tag_name": "v2.14.51",
   "html_url": "https://catchtales.com/download/",
   "apks": {
-    "free": "/download/CatchTales-v2.14.50-free.apk",
-    "pro": "/download/CatchTales-v2.14.50-pro.apk",
-    "dev": "/download/CatchTales-v2.14.50-dev.apk"
+    "free": "/download/CatchTales-v2.14.51-free.apk",
+    "pro": "/download/CatchTales-v2.14.51-pro.apk",
+    "dev": "/download/CatchTales-v2.14.51-dev.apk"
   }
 }
