@@ -26,6 +26,22 @@
     .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); margin-bottom: clamp(16px, 2.5vw, 24px); }
     .note { text-align: center; color: #667; font-size: clamp(12px, 1vw, 13px); font-style: italic; margin-bottom: clamp(16px, 2.5vw, 24px); }
 
+
+    .region-list { max-width: 600px; margin: 0 auto; }
+    .region-item {
+      display: flex; align-items: center; gap: 12px; padding: clamp(10px, 1.5vw, 14px);
+      background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #fff;
+      transition: all 0.3s;
+    }
+    .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
+    .region-item .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .region-item h3 { font-size: clamp(14px, 1.2vw, 16px); color: var(--clr); }
+    .region-item p { font-size: clamp(11px, 1vw, 12px); color: #99B0CC; }
+
+
+
+    .stats { display: flex; gap: clamp(12px, 2vw, 20px); justify-content: center; flex-wrap: wrap; margin: clamp(16px, 2.5vw, 24px) 0; }
     .stat { text-align: center; padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px); background: rgba(255,255,255,0.03); border-radius: 10px; }
     .stat .num { font-size: clamp(1.2em, 3vw, 1.6em); font-weight: 800; color: #76FF03; }
     .stat .lbl { font-size: clamp(11px, 1vw, 12px); color: #8899AA; }
@@ -36,4 +52,74 @@
     footer .links a:hover { color: #00BCD4; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
 
-    @media (max-width: 700px) {
+
+  </style>
+</head>
+<body>
+  <div class="underwater-bg">
+    <img src="/underwater.jpg" alt="" class="bg">
+    <div class="overlay"></div>
+  </div>
+  <div class="content">
+    <header>
+      <a href="/" class="header-logo"><img src="/catchtales-logo.png" alt="CatchTales"></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/fishing-in-canada/">Canada</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+
+    <a href="/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:14px;display:inline-block;min-height:44px;line-height:44px;">&larr; All Provinces</a>
+    <h1>Fishing in Manitoba</h1>
+    <p class="subtitle">Click a region on the map to explore top fishing spots, species, and local tips.</p>
+    <p class="note">Manitoba has over 100,000 lakes. We can't list them all, but here are the best fishing regions to get you started.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">7</div><div class="lbl">Regions</div></div>
+      <div class="stat"><div class="num">150+</div><div class="lbl">Spots Listed</div></div>
+      <div class="stat"><div class="num">40+</div><div class="lbl">Species</div></div>
+    </div>
+
+    <div class="region-list">
+        <a href="/fishing-near/winnipeg/" class="region-item" style="--clr:#EF5350;">
+          <span class="dot" style="background:#EF5350;"></span>
+          <div><h3>Winnipeg &amp; Red River Valley</h3><p>Red River catfish, Lake Winnipeg walleye, Assiniboine River</p></div>
+        </a>
+        <a href="/fishing-near/eastern-manitoba-whiteshell/" class="region-item" style="--clr:#CE93D8;">
+          <span class="dot" style="background:#CE93D8;"></span>
+          <div><h3>Eastern / Whiteshell &amp; Nopiming</h3><p>West Hawk, Falcon Lake, Lac du Bonnet, Winnipeg River</p></div>
+        </a>
+        <a href="/fishing-near/interlake-manitoba/" class="region-item" style="--clr:#81C784;">
+          <span class="dot" style="background:#81C784;"></span>
+          <div><h3>Interlake</h3><p>Hecla, Icelandic River, Arborg, Lake Manitoba, Gull Lake</p></div>
+        </a>
+        <a href="/fishing-near/western-manitoba-parklands/" class="region-item" style="--clr:#7986CB;">
+          <span class="dot" style="background:#7986CB;"></span>
+          <div><h3>Western / Parklands</h3><p>Duck Mountain, Riding Mountain, Souris River, Turtle Mountain</p></div>
+        </a>
+        <a href="/fishing-near/central-plains-manitoba/" class="region-item" style="--clr:#FF8A65;">
+          <span class="dot" style="background:#FF8A65;"></span>
+          <div><h3>Central Plains</h3><p>Portage Reservoir, Delta Marsh, Pembina Valley, Minnewasta</p></div>
+        </a>
+        <a href="/fishing-near/northern-manitoba/" class="region-item" style="--clr:#FFB74D;">
+          <span class="dot" style="background:#FFB74D;"></span>
+          <div><h3>Northern Manitoba</h3><p>Clearwater Lake, Flin Flon, Thompson, Gods Lake</p></div>
+        </a>
+        <a href="/fishing-near/hudson-bay-coast-manitoba/" class="region-item" style="--clr:#4FC3F7;">
+          <span class="dot" style="background:#4FC3F7;"></span>
+          <div><h3>Hudson Bay Coast</h3><p>Churchill River, Arctic char, Seal River, Nueltin Lake</p></div>
+        </a>
+      </div>
+
+    <footer>
+      <div class="links">
+        <a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a>
+        <a href="/fishing-in-canada/">Canada Fishing Guide</a>
+        <a href="/about/">About</a><a href="/contact/">Contact</a>
+      </div>
+      <p class="copy">(c) 2026 Maison Louis Design</p>
+    </footer>
+  </div>
+</body>
+</html>
