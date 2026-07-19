@@ -556,6 +556,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://catchtales.com/fishing-in-canada/nova-scotia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
+    <loc>https://catchtales.com/fishing-near/mainland-nova-scotia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
+    <loc>https://catchtales.com/fishing-near/cape-breton/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
