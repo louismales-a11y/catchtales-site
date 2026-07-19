@@ -48,6 +48,14 @@
     footer .links a:hover { color: #00BCD4; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
     @media (max-width: 700px) { nav a { margin-left: 12px; } }
+  
+    @media (max-width: 700px) { header nav a { margin-left: 12px; } }
+    @media (max-width: 600px) {
+      .nav-toggle { display: block; }
+      header nav { display: flex; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; max-height: 0; opacity: 0; overflow: hidden; }
+      header nav.open { max-height: 500px; opacity: 1; }
+      header nav a { margin-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+    }
   </style>
 </head>
 <body>
@@ -57,7 +65,10 @@
     <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
   </div>
   <div class="content">
-    <header><a href="/" class="header-logo"><img src="/catchtales-logo.png" alt="CatchTales"></a><nav><a href="/">Home</a><a href="/fishing-in-canada/">Canada</a><a href="/fishing-in-canada/new-brunswick/">New Brunswick</a><a href="/blog/">Blog</a></nav></header>
+    <header><a href="/" class="header-logo"><img src="/catchtales-logo.png" alt="CatchTales"></a><button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+      <nav id="navLinks">
+        <a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a>
+      </nav></header>
     <div class="page-title">
       <a href="/fishing-in-canada/new-brunswick/" style="color:#00BCD4;text-decoration:none;font-size:14px;display:inline-block;min-height:44px;line-height:44px;">&larr; Back to New Brunswick</a>
       <h1>Fishing in the Saint John River Valley</h1>
@@ -190,5 +201,11 @@
 </div>
     <footer><div class="links"><a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a><a href="/fishing-in-canada/">Canada Fishing Guide</a><a href="/about/">About</a><a href="/contact/">Contact</a></div><p class="copy">(c) 2026 Maison Louis Design</p></footer>
   </div>
+
+  <script>
+    document.querySelector('.nav-toggle')?.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
