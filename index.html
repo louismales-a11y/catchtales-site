@@ -198,6 +198,52 @@
       header nav a { margin-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); }
     }
   </style>
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://catchtales.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://catchtales.com/">
+  <meta property="og:title" content="CatchTales — For Bragging Rights!">
+  <meta property="og:description" content="CatchTales — For Bragging Rights! The all-in-one fishing companion for Canadian and US waters. Log catches, explore maps, identify 305 species.">
+  <meta property="og:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="CatchTales">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CatchTales — For Bragging Rights!">
+  <meta name="twitter:description" content="CatchTales — For Bragging Rights! The all-in-one fishing companion for Canadian and US waters. Log catches, explore maps, identify 305 species.">
+  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
+  <link rel="manifest" href="/manifest.json">    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CatchTales",
+    "url": "https://catchtales.com",
+    "description": "Fishing companion app for Canada and US waters. Log catches, AI fish ID, weather, solunar, maps.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CatchTales",
+    "url": "https://catchtales.com",
+    "logo": "https://catchtales.com/images/og-image.jpg",
+    "description": "Fishing companion app for Canada and US waters."
+  }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://catchtales.com/"}]
+  }
+  </script>
 </head>
 <body>
   <!-- Splash Overlay -->
@@ -207,13 +253,13 @@
   </div>
 
   <div class="underwater-bg">
-    <img src="/underwater.jpg" alt="" class="bg">
+    <img src="/underwater.webp" alt="" class="bg">
     <div class="overlay"></div>
-    <div class="swim-fish f1"><img src="/tfish1.png" alt=""></div>
-    <div class="swim-fish f2"><img src="/tfish2.png" alt=""></div>
-    <div class="swim-fish f3"><img src="/tfish3.png" alt=""></div>
-    <div class="swim-fish f4"><img src="/tfish4.png" alt=""></div>
-    <div class="swim-fish f5"><img src="/tfish5.png" alt=""></div>
+    <div class="swim-fish f1"><img src="/tfish1.webp" alt=""></div>
+    <div class="swim-fish f2"><img src="/tfish2.webp" alt=""></div>
+    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div>
+    <div class="swim-fish f4"><img src="/tfish4.webp" alt=""></div>
+    <div class="swim-fish f5"><img src="/tfish5.webp" alt=""></div>
   </div>
 
   <div class="content">
@@ -247,7 +293,7 @@
 
     <!-- Featured Photo Strip -->
     <div class="photo-strip">
-      <img src="/images/angling-ocean.jpg" alt="Angler fishing in the ocean">
+      <img loading="lazy" src="/images/angling-ocean.webp" alt="Angler fishing in the ocean">
       <div class="overlay">
         <h3>Fish Smarter, Brag Bigger</h3>
         <p>From lake to ocean — CatchTales works everywhere you fish. AI-powered identification, weather, solunar, and maps in your pocket.</p>
@@ -266,7 +312,7 @@
         <div class="badge">AI POWERED</div>
         <h3>AI Fish ID</h3>
         <p>Snap a photo and AI identifies the species instantly.</p>
-        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-fishid.png" alt="Fish species close-up"></div></div>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img loading="lazy" src="/images/screenshot-fishid.png" alt="Fish species close-up"></div></div>
       </div>
       <div class="card">
         <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -276,7 +322,7 @@
 </svg>
         <h3>Voice Recording</h3>
         <p>Log catches hands-free. Just speak naturally.</p>
-        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-catches.png" alt="Voice recording screen"></div></div>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img loading="lazy" src="/images/screenshot-catches.png" alt="Voice recording screen"></div></div>
       </div>
       <div class="card">
         <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -285,7 +331,7 @@
 </svg>
         <h3>Interactive Map</h3>
         <p>Nautical charts, depth contours, and weather overlays.</p>
-        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-map.png" alt="Interactive map screen"></div></div>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img loading="lazy" src="/images/screenshot-map.png" alt="Interactive map screen"></div></div>
       </div>
       <div class="card">
         <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round">
@@ -294,7 +340,7 @@
 </svg>
         <h3>Weather &amp; Solunar</h3>
         <p>5-day forecast, best fishing times, moon phase.</p>
-        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-weather.png" alt="Weather and solunar screen"></div></div>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img loading="lazy" src="/images/screenshot-weather.png" alt="Weather and solunar screen"></div></div>
       </div>
       <div class="card">
         <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -306,7 +352,7 @@
 </svg>
         <h3>Brag Board</h3>
         <p>Share photos, like and comment. Show off your catch!</p>
-        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-brag.png" alt="Proud angler with catch"></div></div>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img loading="lazy" src="/images/screenshot-brag.png" alt="Proud angler with catch"></div></div>
       </div>
       <div class="card">
         <svg class="icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -318,7 +364,7 @@
 </svg>
         <h3>Fish Together</h3>
         <p>Chat, share photos &amp; GPS with friends in real-time. Separate window mode.</p>
-        <div class="phone-frame"><div class="notch"></div><div class="screen"><img src="/images/screenshot-cloudsync.png" alt="Fish Together"></div></div>
+        <div class="phone-frame"><div class="notch"></div><div class="screen"><img loading="lazy" src="/images/screenshot-cloudsync.png" alt="Fish Together"></div></div>
       </div>
     </div>
     <div style="text-align: center; margin-top: 20px;">
