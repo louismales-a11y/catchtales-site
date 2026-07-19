@@ -41,15 +41,17 @@
     header nav a:hover::after { width: 100%; }
     h1 { font-size: clamp(1.5em, 5vw, 2.2em); color: #76FF03; text-align: center; padding: clamp(24px, 4vw, 40px) 0 clamp(8px, 1.5vw, 16px); position: relative; z-index: 3; }
     .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); max-width: 600px; margin: 0 auto clamp(20px, 3vw, 32px); position: relative; z-index: 3; }
-    .state-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 12px; padding-bottom: 40px; position: relative; z-index: 3; }
+    .state-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 16px; padding-bottom: 40px; position: relative; z-index: 3; }
     .state-card {
-      background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px; padding: clamp(16px, 2vw, 22px); text-decoration: none; color: #fff;
-      transition: all 0.3s; display: flex; align-items: center; gap: 14px;
+      background: rgba(14,20,34,0.55); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: clamp(20px, 2.5vw, 28px); text-decoration: none; color: #fff;
+      transition: all 0.3s; display: flex; align-items: center; gap: 18px;
+      backdrop-filter: blur(8px); min-height: 80px;
     }
-    .state-card:hover { border-color: #00BCD4; transform: translateY(-2px); background: rgba(14,20,34,0.7); }
-    .state-card .abbr { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; color: #76FF03; width: 36px; flex-shrink: 0; text-align: center; }
-    .state-card h3 { font-size: clamp(15px, 1.3vw, 17px); color: #00BCD4; }
+    .state-card:hover { border-color: #00BCD4; transform: translateY(-3px); background: rgba(14,20,34,0.75); }
+    .state-card .abbr { font-size: clamp(28px, 3.5vw, 38px); font-weight: 700; flex-shrink: 0; }
+    .state-card h3 { font-size: clamp(17px, 1.5vw, 20px); color: #00BCD4; }
+    .state-card p { font-size: clamp(14px, 1.2vw, 15px); color: #99B0CC; margin-top: 2px; }
     footer { padding: clamp(24px, 3vw, 32px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: 20px; position: relative; z-index: 3; }
     footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
     footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); min-height: 44px; display: inline-flex; align-items: center; }
