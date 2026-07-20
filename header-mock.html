@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Header Logo Mock</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #fff; line-height: 1.6;
+    background: #0A1628;
+    font-size: 17px;
+  }
+  .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
+  .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+  .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
+  .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ─── HEADER: nav sits at bottom of logo ─── */
+  header {
+    padding: 20px 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .header-logo { display: flex; align-items: flex-start; gap: 10px; text-decoration: none; }
+  .header-logo img {
+    height: 200px;
+    width: auto;
+    border-radius: 6px;
+  }
+  header nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  header nav a {
+    color: #B0C4DE; text-decoration: none; font-size: 14px;
+    margin-left: 18px; transition: color 0.2s;
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  header nav a:hover { color: #76FF03; }
+
+  /* ─── MOBILE: centered logo ─── */
+  .nav-toggle {
+    display: none;
+    background: none; border: none;
+    color: #B0C4DE; font-size: 1.5em;
+    cursor: pointer; padding: 8px;
+    min-width: 44px; min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  @media (max-width: 600px) {
+    .mobile { display: revert; }
+  }
+  .mobile,
+  .mobile-preview .mobile { display: revert; }
+  .mobile { display: none; }
+
+  .mobile-preview header { justify-content: center; }
+  .mobile-preview .header-logo { margin: 0 auto; }
+  .mobile-preview .nav-toggle {
+    display: block;
+    position: absolute;
+    right: max(24px, env(safe-area-inset-right));
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .mobile-preview header nav {
+    display: flex; width: 100%; flex-direction: column; gap: 0;
+    margin-top: 12px; max-height: 0; opacity: 0; overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+    order: 3;
+  }
+  .mobile-preview header nav.open { max-height: 500px; opacity: 1; }
+  .mobile-preview header nav a { margin-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+
+  /* ─── Page content ─── */
+  .hero { text-align: center; padding: 60px 0 40px; }
+  .hero h1 { font-size: 2em; color: #76FF03; margin-bottom: 12px; }
+  .hero p { color: #B0C4DE; max-width: 600px; margin: 0 auto; }
+  .stats { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding: 30px 0 50px; max-width: 700px; margin: 0 auto; }
+  .stat { text-align: center; padding: 16px; min-width: 100px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.04); }
+  .stat .num { font-size: 1.5em; font-weight: 800; color: #76FF03; }
+  .stat .label { font-size: 0.75em; color: #8899AA; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── Controls ─── */
+  .controls { position: relative; z-index: 3; max-width: 960px; margin: 0 auto 30px; padding: 0 24px; }
+  .controls-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; }
+  .controls h2 { color: #76FF03; font-size: 1.2em; margin-bottom: 16px; }
+  .controls label { display: block; margin-bottom: 6px; color: #B0C4DE; font-size: 0.95em; }
+  .controls input[type="range"] { width: 100%; margin: 6px 0 2px; }
+  .controls .value { color: #fff; font-weight: bold; font-size: 1.2em; }
+  .controls .note { color: #667; font-size: 0.8em; margin-bottom: 12px; }
+  .controls .row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .controls .col { flex: 1; min-width: 200px; }
+  .dimensions { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 24px; flex-wrap: wrap; }
+  .dimensions div { color: #8899AA; font-size: 0.9em; }
+  .dimensions span { color: #fff; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="underwater-bg">
+  <img src="underwater.webp" alt="" class="bg">
+  <div class="overlay"></div>
+</div>
+
+<div class="content">
+  <header id="header">
+    <a href="#" class="header-logo">
+      <img id="logo" src="catchtales-logo.png" alt="CatchTales">
+    </a>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <nav id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Blog</a>
+      <a href="#">Pro Login</a>
+      <a href="#">About</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>For Bragging Rights!</h1>
+    <p>Your hands-free fishing companion. Track catches by voice, snap selfies with your fish, and let AI identify your catch.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">305</div><div class="label">Species</div></div>
+    <div class="stat"><div class="num">13</div><div class="label">Provinces</div></div>
+    <div class="stat"><div class="num">50</div><div class="label">States</div></div>
+    <div class="stat"><div class="num">69</div><div class="label">Regions</div></div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="controls-box">
+    <h2>Header Preview — Your Settings</h2>
+    <div class="row">
+      <div class="col">
+        <label>Logo height: <span class="value" id="logoVal">200</span>px</label>
+        <input type="range" id="logoRange" min="40" max="300" value="200">
+        <div class="note">You chose: <strong>200px</strong></div>
+      </div>
+      <div class="col">
+        <label>Header padding: <span class="value" id="padVal">20</span>px</label>
+        <input type="range" id="padRange" min="4" max="60" value="20">
+        <div class="note">You chose: <strong>20px</strong></div>
+      </div>
+    </div>
+    <div class="dimensions">
+      <div>📐 Logo: <span id="dimLogo">200</span> px tall</div>
+      <div>📐 Padding: <span id="dimPad">20</span> px top + <span id="dimPad2">20</span> px bottom</div>
+      <div><strong>📏 Total header: ≈ <span id="dimTotal">241</span> px</strong></div>
+    </div>
+    <div style="margin-top:12px;color:#76FF03;font-size:0.85em;">
+      ✅ Nav aligned to bottom of logo &nbsp;|&nbsp; 📱 On mobile: logo centered
+    </div>
+    <button id="mobileBtn" style="margin-top:14px;background:#00BCD4;color:#003544;border:none;padding:10px 24px;border-radius:8px;font-weight:600;cursor:pointer;font-size:0.9em;">📱 Preview mobile (375px)</button>
+  </div>
+</div>
+
+<script>
+  const logo = document.getElementById('logo');
+  const logoRange = document.getElementById('logoRange');
+  const padRange = document.getElementById('padRange');
+  const logoVal = document.getElementById('logoVal');
+  const padVal = document.getElementById('padVal');
+  const dimLogo = document.getElementById('dimLogo');
+  const dimPad = document.getElementById('dimPad');
+  const dimPad2 = document.getElementById('dimPad2');
+  const dimTotal = document.getElementById('dimTotal');
+  const header = document.getElementById('header');
+
+  function update() {
+    const lh = parseInt(logoRange.value);
+    const pp = parseInt(padRange.value);
+    document.documentElement.style.setProperty('--logo-height', lh + 'px');
+    document.documentElement.style.setProperty('--header-pad', pp + 'px');
+    logo.style.height = lh + 'px';
+    header.style.padding = pp + 'px 0';
+    logoVal.textContent = lh;
+    padVal.textContent = pp;
+    dimLogo.textContent = lh;
+    dimPad.textContent = pp;
+    dimPad2.textContent = pp;
+    dimTotal.textContent = lh + pp * 2 + 1;
+  }
+  logoRange.addEventListener('input', update);
+  padRange.addEventListener('input', update);
+  update();
+
+  document.getElementById('mobileBtn').addEventListener('click', function() {
+    document.body.classList.toggle('mobile-preview');
+    const isMobile = document.body.classList.contains('mobile-preview');
+    this.textContent = isMobile ? '🖥️ Back to desktop' : '📱 Preview mobile (375px)';
+  });
+</script>
+
+</body>
+</html>

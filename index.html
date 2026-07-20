@@ -37,9 +37,9 @@
     .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
 
     /* ─── Header ─── */
-    header { padding: clamp(16px, 2.5vw, 24px) 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
+    header { padding: clamp(12px, 2vw, 20px) 0; display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; position: relative; }
     .header-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .header-logo img { height: clamp(40px, 5vw, 60px); width: auto; border-radius: 6px; }
+    .header-logo img { height: clamp(70px, 12vw, 200px); width: auto; border-radius: 6px; }
     .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 8px; min-width: 44px; min-height: 44px; touch-action: manipulation; }
     header nav { display: flex; flex-wrap: wrap; gap: 4px; transition: max-height 0.35s ease, opacity 0.3s ease; }
     header nav a { color: #B0C4DE; text-decoration: none; font-size: clamp(13px, 1.1vw, 14px); margin-left: 18px; transition: color 0.2s; position: relative; min-height: 44px; display: inline-flex; align-items: center; touch-action: manipulation; }
@@ -154,37 +154,7 @@
     footer .links a:active { opacity: 0.6; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); letter-spacing: 0.5px; }
 
-    /* ─── Splash Overlay ─── */
-    .splash-overlay {
-      position: fixed; inset: 0; z-index: 1000;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      background: #0A1628;
-      opacity: 1;
-      transition: opacity 0.8s ease;
-      pointer-events: none;
-    }
-    .splash-overlay.hidden {
-      opacity: 0;
-    }
-    .splash-overlay img {
-      max-width: min(360px, 70vw);
-      height: auto;
-      border-radius: 24px;
-      margin-bottom: 16px;
-    }
-    .splash-overlay .splash-text {
-      font-size: clamp(14px, 2.5vw, 18px);
-      color: #B0C4DE;
-      letter-spacing: 2px;
-      font-weight: 400;
-    }
-    .splash-overlay .splash-text .dots {
-      display: inline-block;
-      width: 1.2em;
-      text-align: left;
-    }
-    @media (max-width: 480px) {
+@media (max-width: 480px) {
       .photo-strip { aspect-ratio: 4 / 3; }
     }
     @media (max-width: 700px) {
@@ -192,7 +162,9 @@
       header nav a { margin-left: 12px; }
     }
     @media (max-width: 600px) {
-      .nav-toggle { display: block; }
+      .nav-toggle { display: block; position: absolute; right: max(24px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); }
+      .header-logo { margin: 0 auto; }
+      header { justify-content: center; }
       header nav { display: flex; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; max-height: 0; opacity: 0; overflow: hidden; }
       header nav.open { max-height: 500px; opacity: 1; }
       header nav a { margin-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); }
@@ -246,13 +218,7 @@
   </script>
 </head>
 <body>
-  <!-- Splash Overlay -->
-  <div class="splash-overlay" id="splashOverlay">
-    <img src="/images/ctotga.png" alt="CatchTales">
-    <div class="splash-text">Site Loading<span class="dots" id="loadingDots"></span></div>
-  </div>
-
-  <div class="underwater-bg">
+<div class="underwater-bg">
     <img src="/underwater.webp" alt="" class="bg">
     <div class="overlay"></div>
     <div class="swim-fish f1"><img src="/tfish1.webp" alt=""></div>
@@ -407,27 +373,6 @@
     </footer>
   </div>
 
-  <script>
-    // Animated dots
-    (function() {
-      var dots = document.getElementById('loadingDots');
-      if (dots) {
-        var count = 0;
-        setInterval(function() {
-          count = (count + 1) % 4;
-          dots.textContent = '.'.repeat(count);
-        }, 500);
-      }
-    })();
 
-    // Splash fade
-    setTimeout(function() {
-      var splash = document.getElementById('splashOverlay');
-      if (splash) {
-        splash.classList.add('hidden');
-        setTimeout(function() { splash.style.display = 'none'; }, 900);
-      }
-    }, 5000);
-  </script>
 </body>
 </html>

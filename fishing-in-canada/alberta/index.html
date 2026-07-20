@@ -22,8 +22,8 @@
     .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
     .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
     .content { position: relative; z-index: 3; max-width: 1100px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
-    header { padding: clamp(16px, 2.5vw, 24px) 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; }
-    .header-logo img { height: clamp(40px, 5vw, 60px); border-radius: 6px; }
+    header { padding: clamp(12px, 2vw, 20px) 0; display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; position: relative; }
+    .header-logo img { height: clamp(70px, 12vw, 200px); border-radius: 6px; }
     nav a:hover { color: #76FF03; }
     .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 8px; min-width: 44px; min-height: 44px; touch-action: manipulation; }
     header nav { display: flex; flex-wrap: wrap; gap: 4px; transition: max-height 0.35s ease, opacity 0.3s ease; }
@@ -51,7 +51,9 @@
   
     @media (max-width: 700px) { header nav a { margin-left: 12px; } }
     @media (max-width: 600px) {
-      .nav-toggle { display: block; }
+      .nav-toggle { display: block; position: absolute; right: max(24px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); }
+      .header-logo { margin: 0 auto; }
+      header { justify-content: center; }
       header nav { display: flex; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; max-height: 0; opacity: 0; overflow: hidden; }
       header nav.open { max-height: 500px; opacity: 1; }
       header nav a { margin-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); }
