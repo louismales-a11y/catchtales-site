@@ -52,12 +52,11 @@
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
     @media (max-width: 700px) { header nav a { margin-left: 12px; } }
     @media (max-width: 600px) {
-      .nav-toggle { display: block; position: absolute; right: max(24px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); }
-      .header-logo { margin: 0 auto; }
-      header { justify-content: center; }
-      header nav { display: flex; width: 100%; flex-direction: column; gap: 0; margin-top: 12px; max-height: 0; opacity: 0; overflow: hidden; }
-      header nav.open { max-height: 500px; opacity: 1; }
-      header nav a { margin-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+      .nav-toggle { display: none !important; }
+      header { flex-direction: column; align-items: center; }
+      .header-logo { margin-bottom: 8px; }
+      header nav { display: flex; width: 100%; flex-direction: column; gap: 0; margin-top: 4px; }
+      header nav a { margin-left: 0; padding: 8px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); font-size: clamp(13px, 1.1vw, 14px); }
     }
   </style>
 
@@ -219,9 +218,7 @@
     <footer><div class="links"><a href="/">Home</a><a href="/features/">Features</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/cloud/">Pro User Login</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div><p class="copy">&copy; 2026 Maison Louis Design &mdash; Designed for anglers everywhere</p></footer>
   </div>
   <script>
-    document.querySelector('.nav-toggle')?.addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
+
   </script>
 </body>
 </html>
