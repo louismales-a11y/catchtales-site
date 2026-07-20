@@ -76,7 +76,9 @@
     footer .links a:hover { color: #00BCD4; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
   
-    @media (max-width: 700px) { header nav a { margin-left: 12px; } }
+      .nav-toggle { display: none; background: none; border: none; color: #B0C4DE; font-size: 1.5em; cursor: pointer; padding: 8px; min-width: 44px; min-height: 44px; touch-action: manipulation; }
+  
+  @media (max-width: 700px) { header nav a { margin-left: 12px; } }
     @media (max-width: 600px) {
       .nav-toggle { display: block; position: absolute; right: max(24px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); }
       .header-logo { margin: 0 auto; }
