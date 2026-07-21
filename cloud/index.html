@@ -130,10 +130,25 @@
       padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left));
     }
 
+    /* ─── Book image strip (between header and Flutter) ─── */
+    .book-strip {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 12px 0 8px;
+      margin-top: 152px; /* below fixed header */
+      pointer-events: none;
+    }
+    .book-strip img {
+      width: 200px;
+      height: 200px;
+      border-radius: 16px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
-  <!-- Simple header: nav only — each Flutter tab shows its own book image -->
+  <!-- Header: nav only -->
   <div class="site-header">
     <a href="/" class="logo-link">
       <div style="width:128px;height:128px;"></div>
@@ -150,6 +165,30 @@
       <a href="/terms/">Terms</a>
     </nav>
   </div>
+
+  <!-- Book image: swapped via URL hash by Flutter -->
+  <div class="book-strip">
+    <img id="book-image" src="/images/prologinbook.png" alt="">
+  </div>
+
+  <script>
+    // Watch URL hash to swap book image (Flutter sets hash on tab change)
+    var bookMap = {
+      '#login': '/images/prologinbook.png',
+      '#dashboard': '/images/prodashbook.png',
+      '#bragboard': '/images/bragboardbook.png'
+    };
+    function updateBook() {
+      var hash = location.hash || '#login';
+      var img = document.getElementById('book-image');
+      if (bookMap[hash]) {
+        img.src = bookMap[hash];
+        img.alt = hash.replace('#', '');
+      }
+    }
+    window.addEventListener('hashchange', updateBook);
+    updateBook();
+  </script>
 
   <div class="underwater-bg">
     <img src="/underwater.jpg" alt="" class="bg">
