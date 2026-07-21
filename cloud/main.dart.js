@@ -48570,7 +48570,7 @@ A.aup.prototype={
 $2(a,b){var s,r,q,p
 if(b.a===B.lo){s=b.b
 try{r=t.hd.a(document.getElementById("book-image"))
-if(r!=null){q=s!=null?"/images/prodashbook.png":"/images/prologinbook.png"
+if(r!=null){q=s!=null?"/images/prodashbook.webp":"/images/prologinbook.webp"
 r.src=q}}catch(p){}if(s==null)return B.a2J
 return B.KV}return B.a61},
 $S:295}
@@ -48994,7 +48994,7 @@ A.awr.prototype={
 $0(){var s,r,q=this.a,p=this.b
 q.a3(new A.awq(q,p))
 try{s=t.hd.a(document.getElementById("book-image"))
-if(s!=null){q=p===3?"/images/bragboardbook.png":"/images/prodashbook.png"
+if(s!=null){q=p===3?"/images/bragboardbook.webp":"/images/prodashbook.webp"
 s.src=q}}catch(r){}},
 $S:0}
 A.awq.prototype={
