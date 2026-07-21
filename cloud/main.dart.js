@@ -48586,7 +48586,7 @@ return A.m7(A.b([new A.bY(new A.aw(B.d8,B.adv,r),r),new A.bY(new A.aw(B.qK,p,r),
 A5(a,b){var s=null,r=A.aQ(8),q=A.cU(B.W)
 return new A.aw(B.fR,A.aZ(s,A.c3(A.b([A.V(a,s,s,s,A.X(s,s,B.r,s,s,s,s,s,s,s,s,14,s,s,B.M,s,s,!0,s,0.5,s,s,s,s,s,s),s,s),B.bS,A.V(b,s,s,s,A.X(s,s,B.j.aw(0.8),s,s,s,s,s,s,s,s,13,s,s,s,s,1.6,!0,s,s,s,s,s,s,s,s),s,s)],t.p),B.P,B.p,B.q),B.o,s,s,new A.b4(B.a0,s,q,r,s,s,B.x),s,s,s,B.bw,s,s,s),s)}}
 A.NN.prototype={
-K(a){var s=null,r=t.p,q=A.cr(A.c3(A.b([A.vJ(A.aQ(12),A.wq("/images/bragboardbook.webp",B.O,new A.a7F(),B.fm,104,s,260)),B.c6,A.V("BRAG BOARD",s,s,s,A.X(s,s,B.r,s,s,s,s,s,s,s,s,16,s,s,B.fX,s,s,!0,s,4,s,s,s,s,s,s),s,s)],r),B.y,B.p,B.q),s,s),p=A.V("See what other anglers are sharing",s,s,s,A.X(s,s,B.z,s,s,s,s,s,s,s,s,13,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),o=$.br,n=(o==null?$.br=$.d0():o).cQ("[DEFAULT]")
+K(a){var s=null,r=t.p,q=A.cr(A.c3(A.b([A.vJ(A.aQ(12),A.wq("/images/bragboardbook.webp",B.O,new A.a7F(),B.fm,200,s,200)),B.c6,A.V("BRAG BOARD",s,s,s,A.X(s,s,B.r,s,s,s,s,s,s,s,s,16,s,s,B.fX,s,s,!0,s,4,s,s,s,s,s,s),s,s)],r),B.y,B.p,B.q),s,s),p=A.V("See what other anglers are sharing",s,s,s,A.X(s,s,B.z,s,s,s,s,s,s,s,s,13,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s,s),o=$.br,n=(o==null?$.br=$.d0():o).cQ("[DEFAULT]")
 A.bQ(n,$.dc(),!0)
 return A.m7(A.b([new A.bY(new A.aw(B.lI,q,s),s),new A.bY(new A.aw(B.iy,p,s),s),A.V0(new A.a7G(this),A.r8(new A.cx(n)).fn("brag_posts").Mi("timestamp",!0).wX(50).ym(),t.l7),B.dm],r))},
 a9O(a4,a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0=this,a1=null,a2="profilePhotoUrl",a3=A.a3(a5.h(0,"userName"))
@@ -48960,7 +48960,7 @@ return new A.k7(q,1)}catch(p){return o}return new A.mG(a,1,o,B.k1)},
 K(a){var s,r,q=this,p=null,o=t.w,n=A.bP(a,p,o).w.r.arM(152)
 o=A.bP(a,p,o).w.rH(n)
 s=t.p
-r=A.aZ(p,A.ju(B.cr,A.b([A.cr(A.c3(A.b([A.vJ(A.aQ(8),A.wq("/images/prodashbook.webp",B.O,new A.aws(),B.fm,96,p,240)),B.ao,A.bG(A.b([A.V("PRO",p,p,p,A.X(p,p,B.r,p,p,p,p,p,p,p,p,14,p,p,B.fX,p,p,!0,p,2,p,p,p,p,p,p),p,p),B.dk,A.V("DASHBOARD",p,p,p,A.X(p,p,B.j.aw(0.7),p,p,p,p,p,p,p,p,14,p,p,B.rj,p,p,!0,p,3,p,p,p,p,p,p),p,p)],s),B.y,B.p,B.bz,0)],s),B.y,B.p,B.q),p,p),A.amg(p,A.bG(A.b([new A.wn(q.zA(),new A.awt(q),p,t.CB),A.CV(p,p,A.cF(B.Wc,B.z,p,20),p,p,new A.awu(),p,20,p,"Sign out")],s),B.y,B.p,B.bz,0),p,p,p,16,0,p)],s),B.a4,B.cp,p),B.o,p,p,new A.b4(B.Hn,p,new A.dV(B.w,B.w,new A.aL(B.W,0.5,B.u,-1),B.w),p,p,p,B.x),p,p,p,B.lI,p,p,p)
+r=A.aZ(p,A.ju(B.cr,A.b([A.cr(A.c3(A.b([A.vJ(A.aQ(8),A.wq("/images/prodashbook.webp",B.O,new A.aws(),B.fm,200,p,200)),B.ao,A.bG(A.b([A.V("PRO",p,p,p,A.X(p,p,B.r,p,p,p,p,p,p,p,p,14,p,p,B.fX,p,p,!0,p,2,p,p,p,p,p,p),p,p),B.dk,A.V("DASHBOARD",p,p,p,A.X(p,p,B.j.aw(0.7),p,p,p,p,p,p,p,p,14,p,p,B.rj,p,p,!0,p,3,p,p,p,p,p,p),p,p)],s),B.y,B.p,B.bz,0)],s),B.y,B.p,B.q),p,p),A.amg(p,A.bG(A.b([new A.wn(q.zA(),new A.awt(q),p,t.CB),A.CV(p,p,A.cF(B.Wc,B.z,p,20),p,p,new A.awu(),p,20,p,"Sign out")],s),B.y,B.p,B.bz,0),p,p,p,16,0,p)],s),B.a4,B.cp,p),B.o,p,p,new A.b4(B.Hn,p,new A.dV(B.w,B.w,new A.aL(B.W,0.5,B.u,-1),B.w),p,p,p,B.x),p,p,p,B.lI,p,p,p)
 return A.aZ(p,A.oN(A.aKD(!0,A.c3(A.b([r,A.d3(A.bG(A.b([A.aZ(p,new A.rO(new A.lr(new A.awv(q),16,!0,!0,!0,p),B.qM,B.aB,!1,p,p,B.hP,p,!1,p,0,p,p,16,B.nN,B.aO,p,p,B.a4,B.aX,p),B.o,p,p,new A.b4(B.Jk,p,new A.dV(B.w,new A.aL(B.W,0.5,B.u,-1),B.w,B.w),p,p,p,B.x),p,p,p,p,p,p,220),A.d3(new A.QL(q.d,q.f,p),1)],s),B.em,B.p,B.q,0),1)],s),B.y,B.p,B.q),!0),o),B.o,B.IS,p,p,p,p,p,p,p,p,p)}}
 A.aws.prototype={
 $3(a,b,c){return B.rC},
@@ -49718,7 +49718,7 @@ break
 case 10:case 1:return A.z(q,r)
 case 2:return A.y(o.at(-1),r)}})
 return A.A($async$uR,r)},
-K(a){var s,r,q,p,o=this,n=null,m=t.p,l=A.b([B.a8d,A.vJ(A.aQ(16),A.wq("/images/prologinbook.webp",B.O,new A.azW(),B.fm,132,n,330)),B.bS,A.V("Pro User Login",n,n,n,A.X(n,n,B.l8,n,n,n,n,n,n,n,n,14,n,n,B.M,n,n,!0,n,4,n,n,n,n,n,n),n,n),B.Di],m)
+K(a){var s,r,q,p,o=this,n=null,m=t.p,l=A.b([B.a8d,A.vJ(A.aQ(16),A.wq("/images/prologinbook.webp",B.O,new A.azW(),B.fm,n,n,200)),B.bS,A.V("Pro User Login",n,n,n,A.X(n,n,B.l8,n,n,n,n,n,n,n,n,14,n,n,B.M,n,n,!0,n,4,n,n,n,n,n,n),n,n),B.Di],m)
 if(o.x!=null)o.a.toString
 s=B.j.aw(0.05)
 l.push(A.arU(!1,o.d,A.QO(n,new A.f0(4,A.aQ(12),B.w),n,n,n,n,n,n,!0,n,n,n,n,n,n,s,!0,n,n,n,n,n,n,n,n,n,n,n,n,n,B.DQ,"Email or Username",n,n,n,n,n,n,n,n,n,!0,!0,!1,n,B.Wr,B.id,n,n,n,n,n,n,n,n,n,n,n),B.DJ,!1,n,n,B.DM))
@@ -49822,7 +49822,7 @@ $0(){return this.a.r=!1},
 $S:0}
 A.azW.prototype={
 $3(a,b,c){var s=null
-return A.aZ(s,B.GR,B.o,s,s,new A.b4(B.fy,s,s,A.aQ(12),s,s,B.x),s,132,s,s,s,s,330)},
+return A.aZ(s,B.GR,B.o,s,s,new A.b4(B.fy,s,s,A.aQ(12),s,s,B.x),s,s,s,s,s,s,200)},
 $S:520}
 A.azX.prototype={
 $1(a){return this.a.jm()},
