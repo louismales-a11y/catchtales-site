@@ -49718,7 +49718,7 @@ break
 case 10:case 1:return A.z(q,r)
 case 2:return A.y(o.at(-1),r)}})
 return A.A($async$uR,r)},
-K(a){var s,r,q,p,o=this,n=null,m=t.p,l=A.b([B.a8d,A.vJ(A.aQ(16),A.wq("/images/prologinbook.webp",B.O,new A.azW(),B.fm,n,n,200)),B.bS,A.V("Pro User Login",n,n,n,A.X(n,n,B.l8,n,n,n,n,n,n,n,n,14,n,n,B.M,n,n,!0,n,4,n,n,n,n,n,n),n,n),B.Di],m)
+K(a){var s,r,q,p,o=this,n=null,m=t.p,l=A.b([B.a8d,A.vJ(A.aQ(16),A.wq("/images/prologinbook.webp",B.O,new A.azW(),B.fm,200,n,200)),B.bS,A.V("Pro User Login",n,n,n,A.X(n,n,B.l8,n,n,n,n,n,n,n,n,14,n,n,B.M,n,n,!0,n,4,n,n,n,n,n,n),n,n),B.Di],m)
 if(o.x!=null)o.a.toString
 s=B.j.aw(0.05)
 l.push(A.arU(!1,o.d,A.QO(n,new A.f0(4,A.aQ(12),B.w),n,n,n,n,n,n,!0,n,n,n,n,n,n,s,!0,n,n,n,n,n,n,n,n,n,n,n,n,n,B.DQ,"Email or Username",n,n,n,n,n,n,n,n,n,!0,!0,!1,n,B.Wr,B.id,n,n,n,n,n,n,n,n,n,n,n),B.DJ,!1,n,n,B.DM))
