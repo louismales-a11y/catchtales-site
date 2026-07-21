@@ -95,6 +95,31 @@
 
 ---
 
+## 🎨 Quick Style Specs
+
+Full style guide in `CODING_STANDARDS.md`. Key values:
+
+| Element | Value |
+|---------|-------|
+| Body bg | `#0A1628` |
+| Primary accent | `#00BCD4` (cyan) |
+| Secondary accent | `#76FF03` (neon green) |
+| Body text | `#FFFFFF` |
+| Body font | `system-ui, sans-serif` |
+| Body size | `clamp(15px, 1.1vw, 17px)` |
+| Content max-width | `960px` |
+| Logo size (main) | `clamp(80px, 16vw, 200px)` |
+| Logo size (cloud) | **150×150 px** |
+| Border-radius cards | `14px` |
+| Border-radius buttons | `12px` |
+| Button min-height | `48px` |
+| Nav/footer touch target | `44px` min-height |
+| Responsive breakpoints | 960px, 700px, 600px, 480px |
+| Image format | WebP (quality 95), PNG only for small icons |
+| Cloud header padding | Flutter top padding = **170px** |
+
+---
+
 ## 🖼️ Image Rules (Cloud Dashboard)
 
 1. **Never duplicate images across layers.** Pick ONE layer (HTML or Flutter) for each image.
