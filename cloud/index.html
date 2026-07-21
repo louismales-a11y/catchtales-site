@@ -130,14 +130,20 @@
       padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left));
     }
 
-    /* ─── Dual header toggling ─── */
-    .site-header.dashboard-header { display: none; }
-    body.show-dashboard .site-header.login-header { display: none; }
-    body.show-dashboard .site-header.dashboard-header { display: flex; }
+    /* ─── Header toggling (login / dashboard / bragboard) ─── */
+    .site-header.dashboard-header,
+    .site-header.bragboard-header { display: none; }
+    body.header-dashboard .site-header.login-header { display: none; }
+    body.header-dashboard .site-header.dashboard-header { display: flex; }
+    body.header-dashboard .site-header.bragboard-header { display: none; }
+    body.header-bragboard .site-header.login-header { display: none; }
+    body.header-bragboard .site-header.dashboard-header { display: none; }
+    body.header-bragboard .site-header.bragboard-header { display: flex; }
   </style>
   <script>
-    window.setCloudAuthState = function(isLoggedIn) {
-      document.body.classList.toggle('show-dashboard', isLoggedIn);
+    window.setCloudHeaderState = function(state) {
+      // state: 'login', 'dashboard', 'bragboard'
+      document.body.className = 'header-' + state;
     };
   </script>
 </head>
@@ -170,6 +176,24 @@
       <a href="/features/">Features</a>
       <a href="/blog/">Blog</a>
       <a href="/cloud/" class="active">Dashboard</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+  </div>
+
+  <!-- Header for Brag Board -->
+  <div class="site-header bragboard-header">
+    <a href="/" class="logo-link">
+      <img src="/images/bragboardbook.webp" alt="Brag Board" style="width:128px;height:128px;border-radius:16px;">
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/features/">Features</a>
+      <a href="/blog/">Blog</a>
+      <a href="/cloud/" class="active">Brag Board</a>
       <a href="/about/">About</a>
       <a href="/faq/">FAQ</a>
       <a href="/contact/">Contact</a>
