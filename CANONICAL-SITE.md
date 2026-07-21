@@ -95,9 +95,21 @@
 
 ---
 
+## 🖼️ Image Rules (Cloud Dashboard)
+
+1. **Never duplicate images across layers.** Pick ONE layer (HTML or Flutter) for each image.
+2. **Browser renders images best.** For crisp quality, put images in the HTML layer. The browser's native downscaling is far superior to Flutter CanvasKit.
+3. **Flutter → HTML communication:** Directly set `img.src` via `dart:html`. Avoid CSS class toggling or URL hash tricks — they're unreliable.
+4. **When images must be in Flutter,** always add `filterQuality: FilterQuality.high` to prevent aliasing.
+5. **If an image looks bad in Flutter but clean in the browser,** the issue is CanvasKit downscaling. Move it to HTML.
+6. **WebP conversion:** Use `quality=95` for near-lossless quality at ~75% smaller files.
+7. **Book image in header: 150×150 px** — side-by-side with nav. Keeps header compact. Flutter padding must match (≈170px).
+
+---
+
 ## 🐛 Debugging with Mock Pages
 
-When investigating visual issues (overlapping elements, wrong z-index, duplicate content, clipping):
+When investigating visual issues (overlapping elements, wrong z-index, duplicate content, clipping, poor image quality):
 
 1. **Create a standalone mock page** that mirrors the real page's structure exactly
 2. **Wrap each major element** in a colored outline with a `data-layer-name` attribute
@@ -105,4 +117,5 @@ When investigating visual issues (overlapping elements, wrong z-index, duplicate
 4. **Disable JavaScript/Flutter** if the app overwrites the DOM — keep the page static so layers stay visible
 5. **Use distinct colors** for each layer (e.g., red for background, yellow for header, green for canvas, purple for login form)
 6. **Show z-index and position info** on each element so stacking order is clear
-7. **Delete the mock page** once the bug is fixed (or keep it as a reusable diagnostic)
+7. **Have the user identify the problematic element by its label letter** — don't guess
+8. **Delete the mock page** once the bug is fixed
