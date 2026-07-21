@@ -129,10 +129,22 @@
       font-size: clamp(16px, 1.5vw, 18px);
       padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left));
     }
+
+    /* ─── Dual header toggling ─── */
+    .site-header.dashboard-header { display: none; }
+    body.show-dashboard .site-header.login-header { display: none; }
+    body.show-dashboard .site-header.dashboard-header { display: flex; }
   </style>
+  <script>
+    // Called by Flutter when auth state changes
+    window.setCloudAuthState = function(isLoggedIn) {
+      document.body.classList.toggle('show-dashboard', isLoggedIn);
+    };
+  </script>
 </head>
 <body>
-  <div class="site-header">
+  <!-- Header when logged out (Login) -->
+  <div class="site-header login-header">
     <a href="/" class="logo-link">
       <img src="/images/prologinbook.webp" alt="CatchTales Pro Login" style="width:128px;height:128px;border-radius:16px;">
     </a>
@@ -149,7 +161,23 @@
     </nav>
   </div>
 
-
+  <!-- Header when logged in (Dashboard) -->
+  <div class="site-header dashboard-header">
+    <a href="/" class="logo-link">
+      <img src="/images/prodashbook.webp" alt="CatchTales Pro Dashboard" style="width:128px;height:128px;border-radius:16px;">
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/features/">Features</a>
+      <a href="/blog/">Blog</a>
+      <a href="/cloud/" class="active">Dashboard</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+    </nav>
+  </div>
 
   <div class="underwater-bg">
     <img src="/underwater.jpg" alt="" class="bg">
