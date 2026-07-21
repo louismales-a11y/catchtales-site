@@ -92,3 +92,17 @@
 > **Workflow:** Edit → `git add` → `git commit` → `git push` → wait ~2 min for deploy → user hard refreshes
 > **Always verify before pushing:** check HTML is valid, check paths exist, check nothing is broken.
 > **If unsure, read this file first.**
+
+---
+
+## 🐛 Debugging with Mock Pages
+
+When investigating visual issues (overlapping elements, wrong z-index, duplicate content, clipping):
+
+1. **Create a standalone mock page** that mirrors the real page's structure exactly
+2. **Wrap each major element** in a colored outline with a `data-layer-name` attribute
+3. **Add a toggle button** that adds a CSS class (e.g. `diag-active`) to `<body>` which uses `::before` pseudo-elements to display the layer name on each outlined element
+4. **Disable JavaScript/Flutter** if the app overwrites the DOM — keep the page static so layers stay visible
+5. **Use distinct colors** for each layer (e.g., red for background, yellow for header, green for canvas, purple for login form)
+6. **Show z-index and position info** on each element so stacking order is clear
+7. **Delete the mock page** once the bug is fixed (or keep it as a reusable diagnostic)
