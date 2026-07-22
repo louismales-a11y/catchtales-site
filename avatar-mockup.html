@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Picture Mockup</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 30px; }
+  h2 { color: #76FF03; margin-bottom: 20px; }
+  
+  .preview-wrap {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #0A1628;
+    border: 3px solid #333;
+    box-shadow: 0 0 40px rgba(0,188,212,0.2);
+  }
+  .preview-wrap img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: none;
+    cursor: grab;
+    user-select: none;
+  }
+  
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+    width: 500px;
+    background: #1a1a2e;
+    padding: 24px;
+    border-radius: 12px;
+  }
+  .controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    color: #99B0CC;
+  }
+  .controls input[type=range] { width: 100%; }
+  .controls .val { color: #76FF03; font-weight: bold; }
+  .controls .preview-small {
+    width: 80px; height: 80px; border-radius: 50%; overflow: hidden;
+    border: 2px solid #333; margin: 0 auto;
+    position: relative; background: #0A1628;
+  }
+  .controls .preview-small img {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: none;
+  }
+  .output {
+    margin-top: 16px;
+    font-family: monospace;
+    color: #76FF03;
+    font-size: 14px;
+    width: 500px;
+    text-align: center;
+    background: #1a1a2e;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  .btn-row { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
+  .btn { padding: 10px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+  .btn-primary { background: #00BCD4; color: #003544; }
+  .btn-secondary { background: #333; color: #fff; }
+  .btn:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<h2>YouTube Profile Picture — Position Your Logo</h2>
+<p style="color:#B0C4DE;margin-bottom:16px;">The circle shows how it will look on YouTube. Resize and drag to position.</p>
+
+<div class="preview-wrap" id="preview">
+  <img id="logo" src="" alt="Logo" draggable="false">
+</div>
+
+<div class="controls">
+  <label>Zoom <input type="range" id="zoom" min="20" max="200" value="70"><span class="val" id="zoomV">70</span>%</label>
+  <label>Offset X <input type="range" id="offsetX" min="-100" max="100" value="0"><span class="val" id="offsetXV">0</span></label>
+  <label>Offset Y <input type="range" id="offsetY" min="-100" max="100" value="0"><span class="val" id="offsetYV">0</span></label>
+  <label>Preview at 80px
+    <div class="preview-small" id="smallPreview">
+      <img id="smallLogo" src="" draggable="false">
+    </div>
+  </label>
+</div>
+
+<div class="btn-row">
+  <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">Choose Logo File</button>
+  <button class="btn btn-secondary" onclick="reset()">Reset</button>
+</div>
+<input type="file" id="fileInput" accept="image/*" style="display:none">
+
+<div class="output" id="output">
+  Zoom: 70% | Offset: (0, 0)
+</div>
+
+<script>
+  const logo = document.getElementById('logo');
+  const smallLogo = document.getElementById('smallLogo');
+  const zoom = document.getElementById('zoom');
+  const offsetX = document.getElementById('offsetX');
+  const offsetY = document.getElementById('offsetY');
+  const output = document.getElementById('output');
+  const fileInput = document.getElementById('fileInput');
+
+  function update() {
+    const z = parseInt(zoom.value) / 100;
+    const ox = parseInt(offsetX.value);
+    const oy = parseInt(offsetY.value);
+
+    const tx = -50 + ox * 0.3;
+    const ty = -50 + oy * 0.3;
+
+    logo.style.transform = `translate(${tx}%, ${ty}%) scale(${z})`;
+    smallLogo.style.transform = `translate(${tx}%, ${ty}%) scale(${z})`;
+
+    document.getElementById('zoomV').textContent = zoom.value;
+    document.getElementById('offsetXV').textContent = ox;
+    document.getElementById('offsetYV').textContent = oy;
+    output.textContent = `Zoom: ${zoom.value}% | Offset: (${ox}, ${oy})`;
+  }
+
+  function reset() {
+    zoom.value = 70;
+    offsetX.value = 0;
+    offsetY.value = 0;
+    update();
+  }
+
+  // Load logo from default URL
+  function loadLogo(src) {
+    logo.src = src;
+    smallLogo.src = src;
+    reset();
+  }
+
+  // File picker
+  fileInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      loadLogo(ev.target.result);
+    };
+    reader.readAsDataURL(file);
+  });
+
+  zoom.addEventListener('input', update);
+  offsetX.addEventListener('input', update);
+  offsetY.addEventListener('input', update);
+
+  // Load default logo from website
+  loadLogo('/catchtales.png');
+</script>
+
+</body>
+</html>
