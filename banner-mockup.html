@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banner Mockup</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+  .canvas-wrap { position: relative; width: 960px; height: 540px; border: 1px solid #333; overflow: hidden; background: #0A1628; }
+  .canvas-wrap img.bg { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+  .canvas-wrap .overlay { position: absolute; inset: 0; background: rgba(10,22,40,0.45); }
+  .canvas-wrap .logo { position: absolute; }
+  .canvas-wrap .text-group { position: absolute; display: flex; flex-direction: column; align-items: flex-end; font-family: Helvetica, Arial, sans-serif; }
+  .canvas-wrap .text-group .line1 { font-size: 48px; color: #B0C4DE; white-space: nowrap; }
+  .canvas-wrap .text-group .line2 { font-size: 30px; color: #00BCD4; white-space: nowrap; }
+  .canvas-wrap .text-group .line3 { font-size: 40px; color: #FFFFFF; white-space: nowrap; }
+  .controls { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; width: 960px; background: #1a1a2e; padding: 20px; border-radius: 12px; }
+  .controls label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #99B0CC; }
+  .controls input[type=range] { width: 100%; }
+  .controls .val { color: #76FF03; font-weight: bold; }
+  .output { margin-top: 12px; font-family: monospace; color: #76FF03; font-size: 14px; width: 960px; text-align: center; background: #1a1a2e; padding: 12px; border-radius: 8px; }
+</style>
+</head>
+<body>
+
+<h2 style="color:#76FF03;margin-bottom:12px;">Banner Mockup — Adjust & Report Numbers</h2>
+
+<div class="canvas-wrap" id="canvas">
+  <img class="bg" src="/underwater.webp" alt="">
+  <div class="overlay"></div>
+  <img class="logo" id="logo" src="/catchtales.png" alt="Logo">
+  <div class="text-group" id="textGroup">
+    <span class="line1">For Bragging Rights!</span>
+    <span class="line2">Canada &amp; United States</span>
+    <span class="line3">catchtales.com</span>
+  </div>
+</div>
+
+<div class="controls">
+  <label>Logo Height (px) <input type="range" id="logoH" min="30" max="400" value="120"><span class="val" id="logoHv">120</span></label>
+  <label>Logo X (left) <input type="range" id="logoX" min="0" max="700" value="80"><span class="val" id="logoXv">80</span></label>
+  <label>Logo Y (top) <input type="range" id="logoY" min="0" max="400" value="230"><span class="val" id="logoYv">230</span></label>
+  <label>Text X (right) <input type="range" id="textX" min="0" max="700" value="660"><span class="val" id="textXv">660</span></label>
+  <label>Text Y (top) <input type="range" id="textY" min="0" max="400" value="210"><span class="val" id="textYv">210</span></label>
+  <label>Text size <input type="range" id="textSize" min="50" max="150" value="100"><span class="val" id="textSizev">100</span></label>
+  <label>Logo file
+    <select id="logoSrc">
+      <option value="/catchtales.png">catchtales.png (small)</option>
+      <option value="https://raw.githubusercontent.com/louismales-a11y/catchtales-site/main/images/youtube-shots/channel-banner.png">Last banner</option>
+    </select>
+  </label>
+</div>
+
+<div class="output" id="output">
+  Logo: 120px h, x=80, y=230 | Text: x=660, y=210 | Scale: 100%
+</div>
+
+<script>
+  const logo = document.getElementById('logo');
+  const textGroup = document.getElementById('textGroup');
+  const logoH = document.getElementById('logoH');
+  const logoX = document.getElementById('logoX');
+  const logoY = document.getElementById('logoY');
+  const textX = document.getElementById('textX');
+  const textY = document.getElementById('textY');
+  const textSize = document.getElementById('textSize');
+  const logoSrc = document.getElementById('logoSrc');
+  const output = document.getElementById('output');
+
+  function update() {
+    const lh = parseInt(logoH.value);
+    const lx = parseInt(logoX.value);
+    const ly = parseInt(logoY.value);
+    const tx = parseInt(textX.value);
+    const ty = parseInt(textY.value);
+    const ts = parseInt(textSize.value) / 100;
+
+    logo.style.height = lh + 'px';
+    logo.style.left = lx + 'px';
+    logo.style.top = ly + 'px';
+
+    textGroup.style.right = (960 - tx) + 'px';
+    textGroup.style.top = ty + 'px';
+    textGroup.style.transform = `scale(${ts})`;
+    textGroup.style.transformOrigin = 'top right';
+
+    document.getElementById('logoHv').textContent = lh;
+    document.getElementById('logoXv').textContent = lx;
+    document.getElementById('logoYv').textContent = ly;
+    document.getElementById('textXv').textContent = tx;
+    document.getElementById('textYv').textContent = ty;
+    document.getElementById('textSizev').textContent = Math.round(ts * 100);
+
+    output.textContent = `Logo: ${lh}px h, x=${lx}, y=${ly} | Text: x=${tx}, y=${ty} | Scale: ${Math.round(ts*100)}%`;
+  }
+
+  logoH.addEventListener('input', update);
+  logoX.addEventListener('input', update);
+  logoY.addEventListener('input', update);
+  textX.addEventListener('input', update);
+  textY.addEventListener('input', update);
+  textSize.addEventListener('input', update);
+  logoSrc.addEventListener('change', () => { logo.src = logoSrc.value; });
+
+  update();
+</script>
+
+</body>
+</html>
