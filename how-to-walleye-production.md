@@ -2,34 +2,38 @@
 
 ## Assets Needed
 
-### Photos (from website/images/)
+All assets are in one folder for easy import:
+
+**`\\wsl.localhost\Ubuntu\home\louis\catchtales-site\images\how-to-walleye-video\`**
+
+### Photos (23 files)
 | File | Used In |
 |------|---------|
 | fisherman-cast.jpg | Slide 1 |
 | fishermen-boats.webp | Slide 2 |
-| underwater.webp | Slides 3, 6, 13, 17, 27 |
+| underwater.webp | Slides 3, 6, 13, 17, 21, 27 |
 | walleye-real.webp | Slides 4, 5 |
-| walkthrough/screen-solunar.png | Slide 6 |
-| ontario-topo.webp | Slide 7, 8 |
+| screen-solunar.png | Slide 6 |
+| ontario-topo.webp | Slides 7, 8 |
 | depth-chart-illustration.jpg | Slide 9 |
 | fisherman-holding-fish.webp | Slides 10, 22 |
 | angler-bend-rod.jpg | Slide 11 |
 | ice-fishing.webp | Slide 12 |
-| walkthrough/screen-catches.png | Slide 13 |
+| screen-catches.png | Slide 13 |
 | trolling-boat.webp | Slides 15, 19 |
 | fishing-lures.webp | Slide 16 |
-| walkthrough/screen-tackle.png | Slide 17 |
+| screen-tackle.png | Slide 17 |
 | hand-rod.webp | Slide 18 |
 | live-bait.jpg | Slide 20 |
-| underwater.webp | Slide 21 |
-| lake-sunset.webp | Slide 23 (already there) |
-| angler-casting.webp | Slide 24 (already there) |
+| lake-sunset.webp | Slide 23 |
+| angler-casting.webp | Slide 24 |
 | fish-finder.jpg | Slide 25 |
-| walkthrough/screen-brag.png | Slide 26 |
+| screen-brag.png | Slide 26 |
 | catchtales-logo-video.png | Slide 27 |
 
 ### Audio
-- 28 MP3 files in `/audio/` (01-intro.mp3 through 28-subscribe.mp3)
+- 28 MP3 files in: `\\wsl.localhost\Ubuntu\home\louis\catchtales-site\images\how-to-walleye-video\audio\`
+- Files: 01-intro.mp3 through 28-subscribe.mp3
 - OR record your own voiceover
 
 ---
@@ -182,8 +186,8 @@
 
 ## CapCut Workflow
 
-1. **Import all photos** from `images/` folder
-2. **Import audio files** from `audio/` folder (or record your own)
+1. **Import all photos** from: `\wsl.localhost\Ubuntu\home\louis\catchtales-site\images\how-to-walleye-video\`
+2. **Import audio files** from: `\wsl.localhost\Ubuntu\home\louis\catchtales-site\images\how-to-walleye-video\audio\`
 3. **Timeline layout:**
    - Each photo = 1 scene at specified duration
    - Add transitions (fade 0.3s between scenes)
