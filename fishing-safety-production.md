@@ -19,13 +19,13 @@
 | angler-boat.jpg | Slide 12 |
 
 ### Video Clips (5 files) — in \videos\ subfolder
-| File | Duration | Used In |
-|------|----------|---------|
-| lake-water.mp4 | 10s | Slide 1 (intro B-roll) |
-| storm.mp4 | 14s | Slides 2-3 (weather section) |
-| lightning.mp4 | 6s | Slides 4-5 (lightning section) |
-| boat.mp4 | 10s | Slides 6-7 (boat/kayak section) |
-| angler.mp4 | 12s | Slide 12 (emergency) |
+| File | Duration | Description | Used In |
+|------|----------|-------------|---------|
+| lake-water.mp4 | 45s | Drone aerial of calm lake with mountains | Slide 1 (intro B-roll) |
+| storm.mp4 | 11s | Time-lapse dramatic stormy sky, dark clouds | Slides 2-3 (weather section) |
+| lightning.mp4 | 6s | Lightning flashing in night sky | Slides 4-5 (lightning section) |
+| boat.mp4 | 15s | Wooden boat on mountain lake, Austria | Slides 6-7 (boat/kayak section) |
+| angler.mp4 | 12s | Angler fishing from boat on lake | Slide 12 (emergency) |
 
 ### Audio (15 files)
 **`...\fishing-safety-video\audio\`**
