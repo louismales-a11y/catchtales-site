@@ -6,17 +6,26 @@
 ### Photos (12 files)
 | File | Used In |
 |------|---------|
-| underwater.webp | Slides 1, 13, 14, 15 |
+| underwater.webp | Slides 13, 14 |
 | catchtales-logo-video.png | Slides 1, 15 |
-| storm-clouds.jpg | Slide 2 |
-| fog-lake.jpg | Slide 3 |
-| lightning.jpg | Slides 4, 5 |
+| storm-clouds.jpg | Slide 2 (backup) |
+| fog-lake.jpg | Slide 3 (backup) |
+| lightning.jpg | Slides 4, 5 (backup) |
 | life-jacket.jpg | Slide 6 |
 | kayak.jpg | Slide 7 |
 | first-aid-kit.jpg | Slides 8, 9 |
 | sunscreen.jpg | Slide 10 |
 | cold-water.jpg | Slide 11 |
 | angler-boat.jpg | Slide 12 |
+
+### Video Clips (5 files) — in \videos\ subfolder
+| File | Duration | Used In |
+|------|----------|---------|
+| lake-water.mp4 | 10s | Slide 1 (intro B-roll) |
+| storm.mp4 | 14s | Slides 2-3 (weather section) |
+| lightning.mp4 | 6s | Slides 4-5 (lightning section) |
+| boat.mp4 | 10s | Slides 6-7 (boat/kayak section) |
+| angler.mp4 | 12s | Slide 12 (emergency) |
 
 ### Audio (15 files)
 **`...\fishing-safety-video\audio\`**
@@ -27,37 +36,38 @@
 ## Scene-by-Scene — 2 min 44 sec
 
 ### 0:00 — Slide 1 (10 sec) — Intro
-**Image:** underwater + logo centered
+**Video:** lake-water.mp4 (loop if needed)
+**Overlay:** logo centered
 **Audio:** "Fishing is one of the safest..."
 **Text:** None
 
 ### 0:10 — Slide 2 (12 sec) — Weather Before You Go
-**Image:** storm-clouds.jpg
+**Video:** storm.mp4 (loop if needed)
 **Audio:** "Weather is the biggest safety factor..."
 **Text:** "Weather Awareness" (green) + "Check marine forecast / Wind over 20 km/h is dangerous / Tell someone your trip plan"
 
 ### 0:22 — Slide 3 (10 sec) — Weather On the Water
-**Image:** fog-lake.jpg
+**Video:** storm.mp4 (continued)
 **Audio:** "Watch for darkening skies..."
 **Text:** "On the Water" (cyan) + "Watch for darkening skies / Head for nearest shore / Fog can roll in fast — carry GPS"
 
 ### 0:32 — Slide 4 (12 sec) — Lightning 30-30 Rule
-**Image:** lightning.jpg
+**Video:** lightning.mp4 (loop)
 **Audio:** "Lightning is the most dangerous..."
 **Text:** "Lightning Safety" (green) + "30-30 rule: under 30 sec = get off water / Wait 30 min after last strike"
 
 ### 0:44 — Slide 5 (10 sec) — If Caught in Lightning
-**Image:** lightning.jpg
+**Video:** lightning.mp4 (continued)
 **Audio:** "If you cannot get off the water..."
 **Text:** "If Caught in Lightning" (cyan) + "Lay rods flat / Stay low / Avoid metal"
 
 ### 0:54 — Slide 6 (10 sec) — Wear Your PFD
-**Image:** life-jacket.jpg
+**Video:** boat.mp4 (loop)
 **Audio:** "Always wear your PFD..."
 **Text:** "Wear Your PFD" (green) + "Not sitting on it — wearing it / Carry a whistle / Know navigation rules"
 
 ### 1:04 — Slide 7 (10 sec) — Boat & Kayak Safety
-**Image:** kayak.jpg
+**Video:** boat.mp4 (continued)
 **Audio:** "Do not overload your boat..."
 **Text:** "Boat & Kayak Safety" (cyan) + "Don't overload / No alcohol / Kayakers: practice self-rescue"
 
@@ -82,7 +92,7 @@
 **Text:** "Cold Water Safety" (cyan) + "Cold shock: 0-2 min / Loss of motor control: 2-15 min / Hypothermia: 15-30 min / Dress for water temp"
 
 ### 2:00 — Slide 12 (12 sec) — Emergency Procedures
-**Image:** angler-boat.jpg
+**Video:** angler.mp4
 **Audio:** "Stay calm. Call 911..."
 **Text:** "Emergency Procedures" (green) + "Stay calm / Call 911 or channel 16 / Throw, don't go / Stay with the boat"
 
