@@ -609,7 +609,7 @@ let sceneElapsed = 0;
 let playing = false;
 let speed = 1;
 let animFrame = null;
-let lastTimestamp = 0;
+
 
 // DOM refs
 const bgImg = document.getElementById('bgImg');
@@ -689,18 +689,18 @@ function goToScene(idx) {
   if (idx >= scenes.length) idx = scenes.length - 1;
   sceneElapsed = 0;
   countdownVal = 5;
-  if (sceneTimer) { clearTimeout(sceneTimer); sceneTimer = null; }
+  stopPlayback();
   renderScene(idx, true);
   updateProgress();
 }
 
 function goNext() {
-  if (playing) { clearTimeout(sceneTimer); sceneTimer = null; playing = false; playBtn.textContent = '▶'; }
+  stopPlayback();
   if (currentScene < scenes.length - 1) goToScene(currentScene + 1);
 }
 
 function goPrev() {
-  if (playing) { clearTimeout(sceneTimer); sceneTimer = null; playing = false; playBtn.textContent = '▶'; }
+  stopPlayback();
   goToScene(currentScene - 1);
 }
 
@@ -711,38 +711,53 @@ function updateProgress() {
   timestamp.textContent = formatTime(global);
 }
 
-function scheduleNext() {
-  if (!playing) return;
-  const scene = scenes[currentScene];
-  const ms = (scene.duration / speed) * 1000;
-  sceneTimer = setTimeout(advanceScene, ms);
+function stopPlayback() {
+  if (sceneTimer) { clearInterval(sceneTimer); sceneTimer = null; }
+  playing = false;
+  playBtn.textContent = '▶';
 }
 
-function advanceScene() {
+function tickLoop() {
   if (!playing) return;
-  if (currentScene < scenes.length - 1) {
-    goToScene(currentScene + 1);
-    scheduleNext();
-  } else {
-    playing = false;
-    playBtn.textContent = '▶';
-    sceneTimer = null;
+  const now = performance.now();
+  const elapsedTotal = (now - playStartTime) / 1000 * speed;
+  if (elapsedTotal >= totalDuration) {
+    renderScene(scenes.length - 1, true);
+    sceneElapsed = scenes[scenes.length - 1].duration;
     updateProgress();
+    stopPlayback();
+    return;
+  }
+  let acc = 0;
+  for (let i = 0; i < scenes.length; i++) {
+    if (acc + scenes[i].duration >= elapsedTotal) {
+      if (i !== currentScene) {
+        currentScene = i;
+        sceneElapsed = elapsedTotal - acc;
+        renderScene(i, true);
+      }
+      updateProgress();
+      return;
+    }
+    acc += scenes[i].duration;
   }
 }
 
 function togglePlay() {
   if (playing) {
-    if (sceneTimer) { clearTimeout(sceneTimer); sceneTimer = null; }
-    playing = false;
-    playBtn.textContent = '▶';
+    stopPlayback();
   } else {
     playing = true;
     playBtn.textContent = '⏸';
     if (currentScene >= scenes.length - 1 && sceneElapsed >= scenes[currentScene].duration) {
-      goToScene(0);
+      currentScene = 0;
+      sceneElapsed = 0;
     }
-    scheduleNext();
+    let acc = 0;
+    for (let i = 0; i < currentScene; i++) acc += scenes[i].duration;
+    acc += sceneElapsed;
+    playStartTime = performance.now() - (acc / speed) * 1000;
+    sceneTimer = setInterval(tickLoop, 100);
   }
 }
 
@@ -764,10 +779,10 @@ speedBtn.addEventListener('click', () => {
   i = (i + 1) % speeds.length;
   speed = speeds[i];
   speedBtn.textContent = speed + '×';
-  // Restart timer if playing
+  // Restart playback at new speed
   if (playing) {
-    if (sceneTimer) clearTimeout(sceneTimer);
-    scheduleNext();
+    stopPlayback();
+    togglePlay();
   }
 });
 
@@ -781,9 +796,9 @@ document.getElementById('progressWrap').addEventListener('click', (e) => {
   let acc = 0;
   for (let i = 0; i < scenes.length; i++) {
     if (acc + scenes[i].duration >= targetGlobal) {
-      if (playing) { clearTimeout(sceneTimer); sceneTimer = null; playing = false; playBtn.textContent = '▶'; }
+      stopPlayback();
       currentScene = i;
-      sceneElapsed = targetGlobal - acc;
+      sceneElapsed = 0;
       renderScene(i, true);
       updateProgress();
       return;
