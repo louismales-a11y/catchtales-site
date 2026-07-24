@@ -701,7 +701,7 @@
           }
         });
         var matchCat = (cat === 'all' || cardCat === cat);
-        var matchSearch = title.indexOf(q) >= 0 || desc.indexOf(q) >= 0;
+        var matchSearch = q.split(' ').filter(function(w){return w;}).every(function(w){return title.indexOf(w) >= 0 || desc.indexOf(w) >= 0;});
         if (link) { link.style.display = (matchCat && matchSearch) ? '' : 'none'; }
         if (matchCat && matchSearch) visible++;
       });
