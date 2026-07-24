@@ -702,7 +702,7 @@
         });
         var matchCat = (cat === 'all' || cardCat === cat);
         var searchWords = q.split(' ').filter(function(w){return w && ['the','a','an','and','or','for','of','to','in','on','at','by','with','is','it','as','be','but','not','you','your','are','can','how','why','what','its'].indexOf(w) < 0;});
-        var matchSearch = searchWords.length === 0 || searchWords.every(function(w){return title.indexOf(w) >= 0 || desc.indexOf(w) >= 0;});
+        var matchSearch = searchWords.length === 0 || searchWords.some(function(w){return title.indexOf(w) >= 0 || desc.indexOf(w) >= 0;});
         if (link) { link.style.display = (matchCat && matchSearch) ? '' : 'none'; }
         if (matchCat && matchSearch) visible++;
       });
