@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fishing in Quebec — Regions & Fishing Guides | CatchTales</title>
-  <meta name="description" content="Explore fishing in Quebec by region. Atlantic salmon, brook trout, walleye, pike — from the St. Lawrence to Nunavik.">
-    <meta property="og:type" content="website">
+  <title>Fishing in Quebec | CatchTales</title>
+  <meta name="description" content="Fishing in Quebec: 6 regions and 258 real, verified fishing spots. Lakes, rivers, and boat launches across Quebec.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://catchtales.com/fishing-in-canada/quebec/">
-  <meta property="og:title" content="Fishing in Quebec &mdash; Regions &amp; Fishing Guides | CatchTales">
-  <meta property="og:description" content="Explore fishing in Quebec by region. Find top species, best fishing spots, and regional guides.">
+  <meta property="og:title" content="Fishing in Quebec">
+  <meta property="og:description" content="Fishing in Quebec: 6 regions and 258 real, verified fishing spots. Lakes, rivers, and boat launches across Quebec.">
   <meta property="og:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="CatchTales">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fishing in Quebec">
+  <meta name="twitter:description" content="Fishing in Quebec: 6 regions and 258 real, verified fishing spots. Lakes, rivers, and boat launches across Quebec.">
+  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://catchtales.com/fishing-in-canada/quebec/">
   <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/catchtales-192.png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0A1628; color: #fff; line-height: 1.6; font-size: clamp(15px, 1.1vw, 17px); }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF; line-height: 1.6; overflow-x: hidden;
+      background: #0A1628;
+      font-size: clamp(15px, 1.1vw, 17px);
+    }
     .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
     .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; pointer-events: none; }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.75; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto; transform: scaleX(-1); }
+    .swim-fish.f1 { width: 70px; top: 10%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 55px; top: 40%; animation-duration: 28s; animation-delay: -6s; }
+    .swim-fish.f3 { width: 85px; top: 70%; animation-duration: 20s; animation-delay: -12s; }
+    @keyframes swim {
+      0% { left: -140px; }
+      100% { left: calc(100vw + 80px); }
+    }
     .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
     header {padding:clamp(16px,2.5vw,24px) 0 8px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
     .header-logo {margin-bottom:6px}
@@ -31,24 +52,25 @@
     header nav a:hover {color:#76FF03}
     header nav a::after {content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#76FF03;transition:width .2s}
     header nav a:hover::after {width:100%}
-    h1 { font-size: clamp(1.4em, 4vw, 2em); color: #76FF03; text-align: center; padding: clamp(20px, 3vw, 32px) 0 4px; }
-    .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); margin-bottom: clamp(16px, 2.5vw, 24px); }
-    .note { text-align: center; color: #FFD54F; font-size: clamp(14px, 1.3vw, 17px); margin-bottom: clamp(16px, 2.5vw, 24px); }
-    .stats { display: flex; gap: clamp(12px, 2vw, 20px); justify-content: center; flex-wrap: wrap; margin: clamp(16px, 2.5vw, 24px) 0; }
-    .stat { text-align: center; padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px); background: rgba(255,255,255,0.03); border-radius: 10px; }
-    .stat .num { font-size: clamp(1.2em, 3vw, 1.6em); font-weight: 800; color: #76FF03; }
-    .stat .lbl { font-size: clamp(11px, 1vw, 12px); color: #8899AA; }
-    .region-item { display: flex; align-items: center; gap: 12px; padding: clamp(10px, 1.5vw, 14px); background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #fff; transition: all 0.3s; }
-    .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
-    .region-item .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
-    .region-item h3 { font-size: clamp(17px, 1.6vw, 20px); color: var(--clr); }
-    .region-item p { font-size: clamp(14px, 1.2vw, 15px); color: #99B0CC; }
-    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(20px, 3vw, 30px); }
+    .page-title { padding: clamp(24px, 5vw, 40px) 0 clamp(16px, 3vw, 30px); text-align: center; }
+    .page-title h1 { font-size: clamp(1.4em, 4.5vw, 2em); color: #76FF03; }
+    .page-title p { color: #B0C4DE; font-size: clamp(0.85em, 2.5vw, 1em); margin-top: 8px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .content-page { padding: clamp(16px, 3vw, 20px) 0 clamp(24px, 4vw, 40px); }
+    .content-page p, .content-page li { color: #B0C4DE; font-size: clamp(14px, 1.2vw, 15px); line-height: 1.8; }
+    .content-page h2 { color: #fff; margin-top: clamp(20px, 3vw, 28px); margin-bottom: clamp(8px, 1.5vw, 12px); font-size: clamp(1.1em, 3vw, 1.3em); }
+    .content-page h3 { color: #00BCD4; margin-top: clamp(12px, 2vw, 16px); margin-bottom: 6px; font-size: clamp(1em, 2.5vw, 1.1em); }
+    .content-page .card { background: rgba(14,20,34,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: clamp(20px, 3.5vw, 32px); }
+    .content-page .distance { font-size: clamp(12px, 1vw, 13px); color: #76FF03; display: block; margin-bottom: 4px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: clamp(12px, 2vw, 14px) clamp(24px, 3vw, 32px); border-radius: 12px; font-size: clamp(14px, 1.2vw, 16px); font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; touch-action: manipulation; min-height: 48px; }
+    .btn-primary { background: #00BCD4; color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(0,188,212,0.5); }
+    .btn-secondary { background: rgba(0,188,212,0.08); color: #00BCD4; border: 2px solid rgba(0,188,212,0.4); backdrop-filter: blur(8px); }
+    .btn-secondary:hover { background: rgba(0,188,212,0.18); transform: translateY(-3px); border-color: #00BCD4; }
+    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(24px, 4vw, 40px); }
     footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
-    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); min-height: 44px; display: inline-flex; align-items: center; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); transition: color 0.2s; min-height: 44px; display: inline-flex; align-items: center; touch-action: manipulation; }
     footer .links a:hover { color: #00BCD4; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
-  
     @media (max-width:700px){header nav a{margin-right:12px}}
     @media (max-width:600px){.nav-toggle{display:none!important}header{padding:clamp(12px,2vw,18px) 0 4px}.header-logo{margin-bottom:4px}header nav{justify-content:center;gap:4px 10px;margin-top:2px}header nav a{margin-right:0;padding:4px 0;font-size:clamp(12px,1.1vw,14px);min-height:36px}}
   
@@ -64,67 +86,77 @@
     .download-buttons { display: flex; gap: clamp(10px, 2vw, 16px); justify-content: center; flex-wrap: wrap; }
     .version-note { font-size: clamp(0.7em, 2vw, 0.8em); color: #667; margin-top: 12px; }
 
-    .btn {display:inline-flex;align-items:center;gap:8px;padding:clamp(12px,2vw,14px) clamp(24px,3vw,32px);border-radius:12px;font-size:clamp(14px,1.2vw,16px);font-weight:600;text-decoration:none;cursor:pointer;min-height:48px} .btn-primary {background:#00BCD4;color:#003544;box-shadow:0 4px 25px rgba(0,188,212,.35)} .btn-primary:hover {transform:translateY(-3px);box-shadow:0 8px 35px rgba(0,188,212,.5)} .btn-secondary {background:rgba(0,188,212,.08);color:#00BCD4;border:2px solid rgba(0,188,212,.4)} .btn-secondary:hover {background:rgba(0,188,212,.18);transform:translateY(-3px);border-color:#00BCD4}</style>
-
-  <meta name="robots" content="index, follow">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="CatchTales">
-  <meta name="twitter:title" content="Fishing in Quebec — Regions & Fishing Guides | CatchTales">
-  <meta name="twitter:description" content="Explore fishing in Quebec by region. Atlantic salmon, brook trout, walleye, pike — from the St. Lawrence to Nunavik.">
-  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
-  <link rel="manifest" href="/manifest.json">  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://catchtales.com/"},{"@type":"ListItem","position":2,"name":"Fishing in Canada","item":"https://catchtales.com/fishing-in-canada/"},{"@type":"ListItem","position":3,"name":"Quebec","item":"https://catchtales.com/fishing-in-canada/quebec/"}]
-  }
-  </script>
+  .region-list { display:flex; flex-direction:column; gap:8px; }
+  .region-item { display:flex; align-items:center; gap:12px; padding:clamp(10px,1.5vw,14px); background:rgba(14,20,34,0.5); border:1px solid rgba(255,255,255,0.06); border-radius:12px; margin-bottom:8px; text-decoration:none; transition:all .2s; min-height:44px; }
+  .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
+  .region-item .dot { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
+  .region-item h3 { font-size:clamp(17px,1.6vw,20px); color:var(--clr); }
+  .region-item p { font-size:clamp(14px,1.2vw,15px); color:#99B0CC; }
+  .stats { display:flex; gap:clamp(16px,2.5vw,32px); justify-content:center; flex-wrap:wrap; margin:24px 0; }
+  .stat { text-align:center; }
+  .stat .num { font-size:clamp(26px,4vw,40px); font-weight:800; color:#76FF03; }
+  .stat .lbl { font-size:clamp(12px,1.2vw,14px); color:#99B0CC; }
+  </style>
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-  <div class="underwater-bg"><img src="/underwater.webp" alt="" class="bg"><div class="overlay"></div>
+  <div class="underwater-bg">
+    <img src="/underwater.webp" alt="" class="bg">
+    <div class="overlay"></div>
     <div class="swim-fish f1"><img src="/tfish1.webp" alt=""></div>
     <div class="swim-fish f2"><img src="/tfish2.webp" alt=""></div>
-    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div></div>
+    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div>
+  </div>
   <div class="content">
-    <header><a href="/" class="header-logo"><img src="/catchtales-logo.webp" alt="CatchTales" ></a><button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
-      <nav id="navLinks"><a href="/">Home</a><a href="/features/">Features</a><a href="/fishing-in-canada/">Canada Fishing</a><a href="/fishing-in-united-states/">US Fishing</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></header>
-    <a href="/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:20px;display:inline-block;min-height:44px;line-height:44px;font-weight:600">&larr; All Provinces</a>
-    <div class="breadcrumb" style="display:flex;flex-wrap:wrap;gap:4px;padding:12px 0 0;position:relative;z-index:3;font-size:15px;"><a href="https://catchtales.com/" style="color:#00BCD4;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Home</a><span style="color:#667;font-size:15px;min-height:44px;display:inline-flex;align-items:center;margin:0 6px;">›</span><a href="https://catchtales.com/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Fishing in Canada</a><span style="color:#667;font-size:15px;min-height:44px;display:inline-flex;align-items:center;margin:0 6px;">›</span><span style="color:#99B0CC;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Fishing in Quebec</span></div>
-<h1>Fishing in Quebec</h1>
-    <p class="subtitle">Click a region to explore top fishing spots, species, and local tips.</p>
-    <p class="note">Quebec has over 500,000 lakes and thousands of rivers spanning from the St. Lawrence River to Ungava Bay. The province offers world-class brook trout fishing in the remote rivers of northern Quebec, exceptional walleye and northern pike in the Laurentian lakes, and some of the best Atlantic salmon rivers in the world on the Gaspe Peninsula and North Shore. Lake Mistassini and the vast reservoir lakes like Caniapiscau provide trophy lake trout fishing in the boreal wilderness.</p>
-    <div class="stats">
-      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
-      <div class="stat"><div class="num">200+</div><div class="lbl">Spots Listed</div></div>
-      <div class="stat"><div class="num">40+</div><div class="lbl">Species</div></div>
-    </div>
-    <div style="display:flex;gap:clamp(16px,2.5vw,32px);align-items:flex-start;flex-wrap:wrap;justify-content:center;">
-      <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
-        <a href="/images/quebec-topo.jpg"><img loading="lazy" src="/images/quebec-topo.webp" alt="Topographic map of Quebec" style="max-width:100%;height:auto;border-radius:12px;max-height:420px;"></a>
-        <p style="color:#667;font-size:11px;margin-top:4px;">Topographic map — click to view full size</p>
-      </div>
-      <div style="flex:0 1 clamp(260px,35vw,400px);">
-        <a href="/fishing-near/southern-quebec-st-lawrence/" class="region-item" style="--clr:#EF5350;"><span class="dot" style="background:#EF5350;"></span><div><h3>Southern Quebec & St. Lawrence</h3><p>St. Lawrence River, Eastern Townships, Montreal area, walleye, bass, pike</p></div></a>
-        <a href="/fishing-near/laurentians-lanaudiere/" class="region-item" style="--clr:#81C784;"><span class="dot" style="background:#81C784;"></span><div><h3>Laurentians & Lanaudiere</h3><p>Brook trout, lake trout, walleye — the classic Quebec fishing getaway</p></div></a>
-        <a href="/fishing-near/eastern-quebec-gaspe/" class="region-item" style="--clr:#4FC3F7;"><span class="dot" style="background:#4FC3F7;"></span><div><h3>Eastern Quebec & Gaspe</h3><p>Atlantic salmon rivers, Matapedia, brook trout, Gaspe Peninsula</p></div></a>
-        <a href="/fishing-near/saguenay-cote-nord/" class="region-item" style="--clr:#FF8A65;"><span class="dot" style="background:#FF8A65;"></span><div><h3>Saguenay & Cote-Nord</h3><p>Saguenay River, north shore, salmon, brook trout, Manicouagan</p></div></a>
-        <a href="/fishing-near/abitibi-northwest/" class="region-item" style="--clr:#FFB74D;"><span class="dot" style="background:#FFB74D;"></span><div><h3>Abitibi & Northwest</h3><p>Lake Abitibi, Gouin Reservoir, walleye, pike, lake trout, remote lakes</p></div></a>
-        <a href="/fishing-near/far-north-quebec-nunavik/" class="region-item" style="--clr:#CE93D8;"><span class="dot" style="background:#CE93D8;"></span><div><h3>Far North & Nunavik</h3><p>Caniapiscau, Mistassini, Arctic char, fly-in trophy fishing</p></div></a>
-      </div>
+    <header>
+      <a href="/" class="header-logo">
+        <img src="/catchtales-logo.webp" alt="CatchTales">
+      </a>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+      <nav id="navLinks"><a href="/">Home</a><a href="/features/">Features</a><a href="/fishing-in-canada/">Canada Fishing</a><a href="/fishing-in-united-states/">US Fishing</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    </header>
+    <div class="page-title">
+      <h1>Fishing in Quebec</h1>
+      <p>6 regions &middot; 258 verified fishing spots &middot; 30+ species</p>
     </div>
 
-    <!-- Download -->
+    <div class="stats">
+      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
+      <div class="stat"><div class="num">258+</div><div class="lbl">Spots Listed</div></div>
+      <div class="stat"><div class="num">30+</div><div class="lbl">Species</div></div>
+    </div>
+
+    <p class="note" style="color:#B0C4DE;font-size:clamp(14px,1.2vw,15px);line-height:1.8;margin-bottom:24px;">Quebec has over 500,000 lakes and thousands of rivers spanning from the St. Lawrence River to Ungava Bay. The province offers world-class brook trout fishing in the remote rivers of northern Quebec, exceptional walleye and northern pike in the Laurentian lakes, and some of the best Atlantic salmon rivers in the world on the Gaspe Peninsula and North Shore. Lake Mistassini and the vast reservoir lakes like Caniapiscau provide trophy lake trout fishing in the boreal wilderness.</p>
+
+    <div style="position:sticky;top:0;z-index:50;max-width:960px;margin:0 auto;padding:12px 24px 4px;background:rgba(10,22,40,0.9);">
+    <input type="search" id="hubSearch" placeholder="Search Quebec..." autocomplete="off" aria-label="Search Quebec" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid rgba(0,188,212,0.3);background:rgba(14,20,34,0.85);color:#fff;font-size:15px;outline:none;box-sizing:border-box;">
+  </div>
+  <div id="hubResults" style="display:none;padding:8px 24px 24px;position:relative;z-index:40;"></div>
+
+    <div style="display:flex;gap:clamp(16px,2.5vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:24px;">
+    <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
+      <p style="color:#667;font-size:13px;">Pick a region below to explore its fishing spots.</p>
+    </div>
+    <div style="flex:0 1 clamp(260px,35vw,400px);">
+      <div class="region-list" id="regionListWrap">
+<a href="/fishing-near/abitibi-northwest/" class="region-item" style="--clr:#EF5350;"><span class="dot" style="background:#EF5350;"></span><div><h3>Abitibi &amp; Northwest Quebec</h3><p>Lake Abitibi, Gouin Reservoir, Cabonga Reservoir, Baskatong Reservoir</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/eastern-quebec-gaspe/" class="region-item" style="--clr:#CE93D8;"><span class="dot" style="background:#CE93D8;"></span><div><h3>Eastern Quebec &amp; the Gaspe Peninsula</h3><p>Matapedia River, Restigouche River, Cascapedia River, Bonaventure River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/far-north-quebec-nunavik/" class="region-item" style="--clr:#81C784;"><span class="dot" style="background:#81C784;"></span><div><h3>Far North Quebec &amp; Nunavik</h3><p>Caniapiscau Reservoir, Lake Mistassini, Lake Albanel, Lake Bienville</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/saguenay-cote-nord/" class="region-item" style="--clr:#7986CB;"><span class="dot" style="background:#7986CB;"></span><div><h3>Saguenay &amp; Cote-Nord</h3><p>Saguenay River, Manicouagan Reservoir, Saint-Jean River, Moisie River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/southern-quebec-st-lawrence/" class="region-item" style="--clr:#FF8A65;"><span class="dot" style="background:#FF8A65;"></span><div><h3>Southern Quebec &amp; St. Lawrence</h3><p>St. Lawrence River, St. Lawrence River, St. Lawrence River, St. Lawrence River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">58 spots</p></div></a>
+<a href="/fishing-near/laurentians-lanaudiere/" class="region-item" style="--clr:#FFB74D;"><span class="dot" style="background:#FFB74D;"></span><div><h3>Laurentians &amp; Lanaudiere</h3><p>Lake des Sables, Lake Archambault, Lake Maskinonge, Lake Simon</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+      </div>
+    </div>
+    </div>
+            <!-- Download -->
     <div class="download">
       <h2>Get CatchTales</h2>
       <p>Ready to start bragging? Download the app and hit the water.</p>
       <div class="download-buttons">
-        <a href="/download/CatchTales-v2.14.64-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.64-pro.apk" style="color:#003544;">Download Pro v2.14.64</a>
-        <a href="/download/CatchTales-v2.14.64-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.64-free.apk" style="color:#00BCD4;">Download Free v2.14.64</a>
+        <a href="/download/CatchTales-v2.14.76-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.76-pro.apk" style="color:#003544;">Download Pro v2.14.76</a>
+        <a href="/download/CatchTales-v2.14.76-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.76-free.apk" style="color:#00BCD4;">Download Free v2.14.76</a>
       </div>
-      <p class="version-note">Free version available — upgrade to Pro for $8.99/year or $19.99 lifetime (CAD).</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://catchtales.com/download/CatchTales-v2.14.68-free.apk" alt="Scan to download CatchTales Free" style="display:block;margin:16px auto 0;border-radius:12px;">
     
-
 <footer>
       <div class="links">
         <a href="/contact/">Contact</a>
@@ -133,9 +165,37 @@
       </div>
       <p class="copy">&copy; 2026 Maison Louis Design &mdash; Designed for anglers everywhere</p></footer>
   </div>
-
   <script>
-
+const HUB_DATA = [{"slug": "abitibi-northwest", "title": "Abitibi & Northwest Quebec", "subtitle": "", "spots": [{"n": "Lake Abitibi", "d": "Abitibi region", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Gouin Reservoir", "d": "Haute-Mauricie", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Cabonga Reservoir", "d": "La Verendrye", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Baskatong Reservoir", "d": "La Verendrye", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Dozois Reservoir", "d": "La Verendrye", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Témiscamingue", "d": "Abitibi-Temiscamingue", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Lake Dasserat", "d": "Abitibi region", "s": "Northern Pike, Walleye"}, {"n": "Lake Blouin", "d": "Rouyn-Noranda area", "s": "Northern Pike, Walleye"}, {"n": "Lake Hébert", "d": "Abitibi region", "s": "Northern Pike, Walleye"}, {"n": "Lake Preissac", "d": "Abitibi region", "s": "Northern Pike, Walleye"}, {"n": "Lake Opasatica", "d": "Abitibi region", "s": "Northern Pike, Walleye"}, {"n": "Lake Vaudray", "d": "Abitibi region", "s": "Northern Pike, Walleye"}, {"n": "Lake Pelletier", "d": "Abitibi region", "s": "Northern Pike, Walleye"}, {"n": "La Verendrye Reserve", "d": "Northwest Quebec", "s": "Lake Trout, Walleye"}, {"n": "Lake Parent", "d": "Abitibi", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Senneterre", "d": "Abitibi", "s": "Northern Pike, Walleye"}, {"n": "Lake Pascalis", "d": "Val-d'Or area", "s": "Northern Pike, Walleye"}, {"n": "Lake De Montigny", "d": "Val-d'Or", "s": "Northern Pike, Walleye"}, {"n": "Lake Lemoine", "d": "Val-d'Or", "s": "Northern Pike, Walleye"}, {"n": "Lake Malartic", "d": "Malartic", "s": "Northern Pike, Walleye"}, {"n": "Lake La Motte", "d": "Amos area", "s": "Northern Pike, Walleye"}, {"n": "Lake Lacs des Quinze", "d": "Temiscamingue", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Lake Simard", "d": "Temiscamingue", "s": "Northern Pike, Walleye"}, {"n": "Lake Winneway", "d": "Temiscamingue", "s": "Northern Pike, Walleye"}, {"n": "Lake Kipawa", "d": "Temiscamingue", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Hunter", "d": "Abitibi", "s": "Northern Pike, Walleye"}, {"n": "Lake Chicobi", "d": "Abitibi", "s": "Northern Pike, Walleye"}, {"n": "Lake Macamic", "d": "Abitibi", "s": "Northern Pike, Walleye"}, {"n": "Lake Aylmer", "d": "Near Lac-Megantic", "s": "Lake Trout, Northern Pike, Smallmouth Bass"}, {"n": "Lake Dana", "d": "Lake Dana, Quebec", "s": ""}, {"n": "Lake Matagami", "d": "Lake Matagami, Quebec", "s": ""}, {"n": "Lake Poncheville", "d": "Lake Poncheville, Quebec", "s": ""}, {"n": "Lake Timiskaming", "d": "Lake Timiskaming, Quebec", "s": ""}, {"n": "Lake Édouard", "d": "Lake Édouard, Quebec", "s": ""}, {"n": "Low Lake", "d": "Low Lake, Quebec", "s": ""}, {"n": "7e Lac", "d": "7e Lac, Quebec", "s": ""}, {"n": "9e Lac", "d": "9e Lac, Quebec", "s": ""}, {"n": "Baie à Dion", "d": "Baie à Dion, Quebec", "s": ""}, {"n": "Baie à Lilile", "d": "Baie à Lilile, Quebec", "s": ""}, {"n": "Baie à Riendeau", "d": "Baie à Riendeau, Quebec", "s": ""}]}, {"slug": "eastern-quebec-gaspe", "title": "Eastern Quebec & the Gaspe Peninsula", "subtitle": "", "spots": [{"n": "Matapedia River", "d": "Matapedia Valley", "s": "Atlantic Salmon"}, {"n": "Restigouche River", "d": "Gaspe border", "s": "Quebec side"}, {"n": "Cascapedia River", "d": "Gaspe", "s": "Atlantic Salmon"}, {"n": "Bonaventure River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "York River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Dartmouth River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Saint-Jean River", "d": "Gaspe", "s": "Gaspe"}, {"n": "Madeleine River", "d": "Gaspe", "s": "Atlantic Salmon"}, {"n": "Cap-Chat River", "d": "Gaspe", "s": "Brook Trout"}, {"n": "Sainte-Anne River", "d": "Gaspe", "s": "Gaspe"}, {"n": "Matane River", "d": "Lower St. Lawrence", "s": "Atlantic Salmon"}, {"n": "Rimouski River", "d": "Bas-Saint-Laurent", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Mitis River", "d": "Bas-Saint-Laurent", "s": "Atlantic Salmon"}, {"n": "Lake Matapedia", "d": "Matapedia Valley", "s": "Brook Trout, Lake Trout, Smallmouth Bass"}, {"n": "Lake au Saumon", "d": "Matapedia Valley", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Taché", "d": "Gaspe", "s": "Brook Trout"}, {"n": "Causapscal River", "d": "Causapscal area", "s": "Atlantic Salmon"}, {"n": "Humqui River", "d": "Matapedia Valley", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Grande Cascapedia River", "d": "Gaspe", "s": "Atlantic Salmon"}, {"n": "Petite Cascapedia River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Nouvelle River", "d": "Gaspe", "s": "Atlantic Salmon"}, {"n": "Port-Daniel River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Grande River", "d": "Gaspe", "s": "Gaspe"}, {"n": "Anse-Pleureuse River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Mont-Louis River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Riviere-à-Claude River", "d": "Gaspe", "s": "Atlantic Salmon"}, {"n": "Marsoui River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Murdochville Lakes", "d": "Gaspe", "s": "Brook Trout"}, {"n": "Little Cascapedia River", "d": "Gaspe", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Causapscal Lake", "d": "Gaspe", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Humqui", "d": "Matapedia Valley", "s": "Brook Trout"}, {"n": "Lake Macpès", "d": "Bas-Saint-Laurent", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Wickenden", "d": "Lake Wickenden, Quebec", "s": ""}, {"n": "Baie Pérodeau", "d": "Baie Pérodeau, Quebec", "s": ""}, {"n": "Baie Pickerel", "d": "Baie Pickerel, Quebec", "s": ""}, {"n": "Baie Thibodeau", "d": "Baie Thibodeau, Quebec", "s": ""}, {"n": "Baie Tremblay", "d": "Baie Tremblay, Quebec", "s": ""}, {"n": "Bassin aux Huîtres", "d": "Bassin aux Huîtres, Quebec", "s": ""}, {"n": "Bassin de Chambly", "d": "Bassin de Chambly, Quebec", "s": ""}, {"n": "Bassin des Murailles", "d": "Bassin des Murailles, Quebec", "s": ""}]}, {"slug": "far-north-quebec-nunavik", "title": "Far North Quebec & Nunavik", "subtitle": "", "spots": [{"n": "Caniapiscau Reservoir", "d": "Far northern Quebec", "s": "Lake Trout, Northern Pike"}, {"n": "Lake Mistassini", "d": "Northern Quebec", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Albanel", "d": "Mistassini region", "s": "Lake Trout, Northern Pike"}, {"n": "Lake Bienville", "d": "Far northern Quebec", "s": "Arctic Char, Lake Trout"}, {"n": "Lake Minto", "d": "Nunavik", "s": "Arctic Char, Lake Trout"}, {"n": "Koksoak River", "d": "Nunavik", "s": "Arctic Char, Atlantic Salmon"}, {"n": "George River", "d": "Nunavik", "s": "Arctic Char, Brook Trout"}, {"n": "Leaf River", "d": "Nunavik", "s": "Arctic Char, Brook Trout"}, {"n": "Whale River", "d": "Nunavik", "s": "Arctic Char, Brook Trout"}, {"n": "Koroc River", "d": "Nunavik", "s": "Arctic Char"}, {"n": "Payne River", "d": "Nunavik", "s": "Arctic Char, Brook Trout"}, {"n": "Lake Payne", "d": "Nunavik", "s": "Arctic Char, Lake Trout"}, {"n": "Lake Sakami", "d": "James Bay region", "s": "Northern Pike, Walleye"}, {"n": "Opinaca Reservoir", "d": "James Bay region", "s": "Northern Pike, Walleye"}, {"n": "Eastmain Reservoir", "d": "James Bay", "s": "Northern Pike, Walleye"}, {"n": "Robert-Bourassa Reservoir", "d": "James Bay", "s": "Northern Pike, Walleye"}, {"n": "False River", "d": "Ungava Bay", "s": "Arctic Char, Brook Trout"}, {"n": "Tulugak Lake", "d": "Nunavik", "s": "Arctic Char, Lake Trout"}, {"n": "Desauniers Lake", "d": "Ungava region", "s": "Arctic Char, Lake Trout"}, {"n": "Brizard Lake", "d": "Caniapiscau", "s": "Lake Trout, Northern Pike"}, {"n": "Méchamec Reservoir", "d": "James Bay", "s": "Northern Pike, Walleye"}, {"n": "Lake Yasinski", "d": "Caniapiscau", "s": "Lake Trout, Northern Pike"}, {"n": "Lake Moine", "d": "Caniapiscau", "s": "Arctic Char, Lake Trout"}, {"n": "Lake Coady", "d": "Mistassini area", "s": "Northern Pike, Walleye"}, {"n": "Lake Tichegami", "d": "Mistassini", "s": "Northern Pike, Walleye"}, {"n": "Lake Pletipi", "d": "Mistassini area", "s": "Lake Trout, Northern Pike"}, {"n": "Lake Fromenteau", "d": "Caniapiscau", "s": "Arctic Char, Lake Trout"}, {"n": "Lake La Fortelle", "d": "Caniapiscau", "s": "Arctic Char, Lake Trout"}, {"n": "Lake Potel", "d": "Caniapiscau", "s": "Arctic Char, Lake Trout"}, {"n": "Lake D'Iberville", "d": "Nunavik", "s": "Arctic Char, Lake Trout"}, {"n": "Lake La Potherie", "d": "Nunavik", "s": "Arctic Char, Lake Trout"}, {"n": "Lake Bourdel", "d": "Nunavik", "s": "Arctic Char"}, {"n": "Lake Bricola", "d": "Caniapiscau region", "s": "Arctic Char, Lake Trout"}, {"n": "Clearwater Lakes", "d": "Clearwater Lakes, Quebec", "s": ""}, {"n": "Lake Juillet", "d": "Lake Juillet, Quebec", "s": ""}, {"n": "Lake Nemiscau", "d": "Lake Nemiscau, Quebec", "s": ""}, {"n": "Baie Caron", "d": "Baie Caron, Quebec", "s": ""}, {"n": "Baie Grassy", "d": "Baie Grassy, Quebec", "s": ""}, {"n": "Baie Kawawiyakamach", "d": "Baie Kawawiyakamach, Quebec", "s": ""}, {"n": "Baie Marmette Sud", "d": "Baie Marmette Sud, Quebec", "s": ""}]}, {"slug": "saguenay-cote-nord", "title": "Saguenay & Cote-Nord", "subtitle": "", "spots": [{"n": "Saguenay River", "d": "Saguenay region", "s": "Brook Trout"}, {"n": "Manicouagan Reservoir", "d": "Cote-Nord", "s": "Brook Trout, Lake Trout"}, {"n": "Saint-Jean River", "d": "Cote-Nord", "s": "Cote-Nord"}, {"n": "Moisie River", "d": "Cote-Nord", "s": "Atlantic Salmon"}, {"n": "Magpie River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Piashti River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Rivière aux Rochers", "d": "Cote-Nord", "s": "Atlantic Salmon"}, {"n": "Rivière aux Anglais", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Rivière à la Truite", "d": "Cote-Nord", "s": "Brook Trout"}, {"n": "Lake Kénogami", "d": "Saguenay", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Saint-Jean", "d": "Saguenay-Lac-Saint-Jean", "s": "Landlocked Salmon, Northern Pike, Walleye"}, {"n": "Peribonka River", "d": "Lac-Saint-Jean", "s": "Brook Trout"}, {"n": "Mistassini River", "d": "Lac-Saint-Jean", "s": "Brook Trout"}, {"n": "Ashuapmushuan River", "d": "Lac-Saint-Jean", "s": "Brook Trout"}, {"n": "Lake Chibougamau", "d": "Nord-du-Quebec", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Kenogami", "d": "Saguenay region", "s": "Lake Trout, Northern Pike, Walleye"}, {"n": "Lake Piékouagami", "d": "Saguenay", "s": "Northern Pike, Walleye"}, {"n": "Shipshaw River", "d": "Saguenay", "s": "Brook Trout"}, {"n": "Valin River", "d": "Saguenay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Sainte-Marguerite River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Portneuf River", "d": "Cote-Nord", "s": "Cote-Nord"}, {"n": "Sault-au-Mouton River", "d": "Cote-Nord", "s": "Atlantic Salmon"}, {"n": "Sault-aux-Cochons River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Godbout River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Trinité River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Pentecôte River", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Lake Walker", "d": "Cote-Nord", "s": "Brook Trout, Lake Trout"}, {"n": "Lake au-Grave", "d": "Cote-Nord", "s": "Brook Trout, Lake Trout"}, {"n": "Aux Rochers River", "d": "Cote-Nord", "s": "Atlantic Salmon"}, {"n": "Rivière du Sault Plat", "d": "Cote-Nord", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Kenogami Lake", "d": "Kenogami Lake, Quebec", "s": ""}, {"n": "Lake Plétipi", "d": "Lake Plétipi, Quebec", "s": ""}, {"n": "Pipmuacan Reservoir", "d": "Pipmuacan Reservoir, Quebec", "s": ""}, {"n": "Baie Carpentier", "d": "Baie Carpentier, Quebec", "s": ""}, {"n": "Baie Charlie", "d": "Baie Charlie, Quebec", "s": ""}, {"n": "Baie Coalpit", "d": "Baie Coalpit, Quebec", "s": ""}, {"n": "Baie de La Blanche", "d": "Baie de La Blanche, Quebec", "s": ""}, {"n": "Baie Dufault", "d": "Baie Dufault, Quebec", "s": ""}, {"n": "Baie en Bas du Caribou", "d": "Baie en Bas du Caribou, Quebec", "s": ""}, {"n": "Baie Gabrielle", "d": "Baie Gabrielle, Quebec", "s": ""}]}, {"slug": "southern-quebec-st-lawrence", "title": "Southern Quebec & St. Lawrence", "subtitle": "", "spots": [{"n": "St. Lawrence River", "d": "Montreal area", "s": "Montreal"}, {"n": "St. Lawrence River", "d": "Montreal area", "s": "Lake St-Louis"}, {"n": "St. Lawrence River", "d": "Salaberry-de-Valleyfield", "s": "Lake St-Francois"}, {"n": "St. Lawrence River", "d": "Trois-Rivieres area", "s": "Lake St-Pierre"}, {"n": "Richelieu River", "d": "Montreal to Lake Champlain", "s": "Northern Pike, Walleye"}, {"n": "Lake Champlain", "d": "Missisquoi Bay", "s": "Quebec side"}, {"n": "Lake Memphremagog", "d": "Eastern Townships", "s": "Lake Trout, Rainbow Trout, Smallmouth Bass"}, {"n": "Lake Massawippi", "d": "Eastern Townships", "s": "Lake Trout, Rainbow Trout, Smallmouth Bass"}, {"n": "Lake Brompton", "d": "Eastern Townships", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Lake Brome", "d": "Eastern Townships", "s": "Northern Pike, Smallmouth Bass"}, {"n": "Lake Waterloo", "d": "Eastern Townships", "s": "Northern Pike, Smallmouth Bass"}, {"n": "Lake Magog", "d": "Eastern Townships", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Lake Témiscouata", "d": "Bas-Saint-Laurent", "s": "Lake Trout, Smallmouth Bass, Walleye"}, {"n": "Rouge River", "d": "Laurentians south", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake of Two Mountains", "d": "Montreal area", "s": "Walleye"}, {"n": "Mille Îles River", "d": "Montreal area", "s": "Northern Pike, Walleye"}, {"n": "Des Prairies River", "d": "Laval/Montreal", "s": "Walleye"}, {"n": "Lac Saint-Louis", "d": "Near Valleyfield", "s": "Beauharnois"}, {"n": "Lake Temiscouata", "d": "Bas-Saint-Laurent", "s": "Lake Trout, Smallmouth Bass, Walleye"}, {"n": "Lake Megantic", "d": "Eastern Townships", "s": "Lake Trout, Rainbow Trout, Smallmouth Bass"}, {"n": "Yamaska River", "d": "Estrie region", "s": "Northern Pike, Smallmouth Bass"}, {"n": "Nicolet River", "d": "Centre-du-Quebec", "s": "Smallmouth Bass, Walleye"}, {"n": "Becancour River", "d": "Centre-du-Quebec", "s": "Smallmouth Bass, Walleye"}, {"n": "Chaudiere River", "d": "Beauce region", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Etchemin River", "d": "Bellechasse region", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Lake Etchemin", "d": "Bellechasse", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Saint-Joseph", "d": "Quebec City area", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Saint-Charles", "d": "Quebec City", "s": "Arctic Char, Brook Trout"}, {"n": "Lake Delage", "d": "Portneuf region", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Jacques-Cartier", "d": "Quebec City area", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Sergent", "d": "Portneuf region", "s": "Brook Trout, Rainbow Trout"}, {"n": "Sept-Îles Lake", "d": "Portneuf", "s": "Brook Trout, Lake Trout"}, {"n": "Montauban Lake", "d": "Portneuf", "s": "Brook Trout"}, {"n": "Rouge River", "d": "Laurentians", "s": "Arctic Char, Atlantic Salmon, Brook Trout, Lake Trout, Northern Pike, Rainbow Trout, Smallmouth Bass, Walleye"}, {"n": "Lake Saint-Louis", "d": "Beauharnois", "s": "Beauharnois"}, {"n": "Otto River", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Lake Lyster", "d": "Eastern Townships", "s": "Northern Pike, Smallmouth Bass"}, {"n": "Lake Selby", "d": "Eastern Townships", "s": "Rainbow Trout, Smallmouth Bass"}, {"n": "Batiscan Lake", "d": "Batiscan Lake, Quebec", "s": ""}, {"n": "Blue Sea Lake", "d": "Blue Sea Lake, Quebec", "s": ""}, {"n": "Brome Lake", "d": "Brome Lake, Quebec", "s": ""}, {"n": "Harrington Lake", "d": "Harrington Lake, Quebec", "s": ""}, {"n": "Lake 3.1416", "d": "Lake 3.1416, Quebec", "s": ""}, {"n": "Lake Evans", "d": "Lake Evans, Quebec", "s": ""}, {"n": "Lake Lovering", "d": "Lake Lovering, Quebec", "s": ""}, {"n": "Lake Manouane", "d": "Lake Manouane, Quebec", "s": ""}, {"n": "Lake Saint Francis", "d": "Lake Saint Francis, Quebec", "s": ""}, {"n": "Lake Saint François", "d": "Lake Saint François, Quebec", "s": ""}, {"n": "Lake Traverse", "d": "Lake Traverse, Quebec", "s": ""}, {"n": "Lake Tremblant", "d": "Lake Tremblant, Quebec", "s": ""}, {"n": "Leamy Lake", "d": "Leamy Lake, Quebec", "s": ""}, {"n": "McTavish reservoir", "d": "McTavish reservoir, Quebec", "s": ""}, {"n": "Meech Lake", "d": "Meech Lake, Quebec", "s": ""}, {"n": "Pink Lake", "d": "Pink Lake, Quebec", "s": ""}, {"n": "Reservoir Blanc", "d": "Reservoir Blanc, Quebec", "s": ""}, {"n": "Selby Lake", "d": "Selby Lake, Quebec", "s": ""}, {"n": "Taureau Reservoir", "d": "Taureau Reservoir, Quebec", "s": ""}, {"n": "Taylor Lake", "d": "Taylor Lake, Quebec", "s": ""}]}, {"slug": "laurentians-lanaudiere", "title": "Laurentians & Lanaudiere", "subtitle": "", "spots": [{"n": "Lake des Sables", "d": "Sainte-Agathe-des-Monts", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Lake Archambault", "d": "Sainte-Anne-des-Plaines", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake Maskinonge", "d": "Saint-Gabriel area", "s": "Northern Pike, Walleye"}, {"n": "Lake Simon", "d": "Saint-Michel-des-Saints", "s": "Brook Trout, Lake Trout, Walleye"}, {"n": "Lake Taureau", "d": "Saint-Michel-des-Saints", "s": "Northern Pike, Smallmouth Bass, Walleye"}, {"n": "Lake Sacacomie", "d": "Saint-Alexis-des-Monts", "s": "Brook Trout, Lake Trout, Walleye"}, {"n": "Lake à la Tortue", "d": "Shawinigan area", "s": "Northern Pike, Walleye"}, {"n": "Lake Saint-Pierre", "d": "Near Trois-Rivieres", "s": "Mauricie"}, {"n": "Lake Masketsi", "d": "La Tuque area", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Châteauvert", "d": "La Tuque area", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Wayagamac", "d": "La Tuque area", "s": "Brook Trout, Lake Trout, Walleye"}, {"n": "Lake des Cèdres", "d": "La Tuque area", "s": "Northern Pike, Walleye"}, {"n": "Lake Kempt", "d": "Matawinie area", "s": "Brook Trout, Lake Trout"}, {"n": "Lake de la Pêche", "d": "Matawinie area", "s": "Brook Trout"}, {"n": "Lake Sorcier", "d": "Laurentians", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake des Îles", "d": "Saint-Donat area", "s": "Laurentians"}, {"n": "Lake Ouareau", "d": "Saint-Donat", "s": "Brook Trout, Lake Trout, Walleye"}, {"n": "Lake Manitou", "d": "Laurentians", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Croche", "d": "Sainte-Thecle area", "s": "Brook Trout"}, {"n": "Lake Blanc", "d": "Laurentians", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Rond", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Lake Pin Rouge", "d": "Laurentians", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake des Isles", "d": "Saint-Donat", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Laperriere", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Lake de la Montagne Noire", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Lake de l'Est", "d": "Laurentians", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake Carufel", "d": "Mauricie", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Nair", "d": "Laurentians", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Laloge", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Lake Lajeunesse", "d": "Laurentians", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake Gascon", "d": "Lanaudiere", "s": "Brook Trout"}, {"n": "Lake Noire", "d": "Laurentians", "s": "Brook Trout, Lake Trout"}, {"n": "Lake Dufresne", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Lake Pinson", "d": "Lanaudiere", "s": "Brook Trout, Rainbow Trout"}, {"n": "Lake Cornu", "d": "Laurentians", "s": "Brook Trout"}, {"n": "Baie du Havre aux Basques", "d": "Baie du Havre aux Basques, Quebec", "s": ""}, {"n": "Baie Marc", "d": "Baie Marc, Quebec", "s": ""}, {"n": "Baie Martin", "d": "Baie Martin, Quebec", "s": ""}, {"n": "Baie McLaurin", "d": "Baie McLaurin, Quebec", "s": ""}, {"n": "Baie Rouillard", "d": "Baie Rouillard, Quebec", "s": ""}]}];
+const searchInput = document.getElementById('hubSearch');
+const resultsDiv = document.getElementById('hubResults');
+const regionWrap = document.getElementById('regionListWrap');
+function anchorOf(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60); }
+function escT(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+searchInput.addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  if (!q) { resultsDiv.style.display='none'; resultsDiv.innerHTML=''; regionWrap.style.display=''; return; }
+  const mRegions = [], mSpots = [];
+  for (const r of HUB_DATA) {
+    if (r.title.toLowerCase().includes(q) || r.subtitle.toLowerCase().includes(q)) mRegions.push(r);
+    for (const sp of r.spots) {
+      if (sp.n.toLowerCase().includes(q) || sp.s.toLowerCase().includes(q) || sp.d.toLowerCase().includes(q)) mSpots.push({r:r, sp:sp});
+    }
+  }
+  regionWrap.style.display='none'; resultsDiv.style.display='';
+  let html = '<h3 style="color:#76FF03;font-size:15px;margin:10px 0 6px;">' + mRegions.length + ' Region' + (mRegions.length===1?'':'s') + '</h3>';
+  for (const r of mRegions) html += '<a href="/fishing-near/' + r.slug + '/" style="display:block;padding:10px 14px;background:rgba(14,20,34,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:6px;color:#00BCD4;text-decoration:none;font-weight:600;">' + escT(r.title) + '</a>';
+  html += '<h3 style="color:#76FF03;font-size:15px;margin:12px 0 6px;">' + mSpots.length + ' Spot' + (mSpots.length===1?'':'s') + '</h3>';
+  for (const it of mSpots) {
+    const anchor = anchorOf(it.sp.n);
+    html += '<a href="/fishing-near/' + it.r.slug + '/#spot-' + anchor + '" style="display:block;padding:10px 14px;background:rgba(14,20,34,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:6px;text-decoration:none;">' +
+      '<span style="color:#fff;font-weight:600;">' + escT(it.sp.n) + '</span> ' +
+      '<span style="color:#76FF03;font-size:13px;">' + escT(it.sp.s) + '</span><br>' +
+      '<span style="color:#99B0CC;font-size:12px;">' + escT(it.r.title) + (it.sp.d ? ' &middot; ' + escT(it.sp.d) : '') + '</span></a>';
+  }
+  if (!mRegions.length && !mSpots.length) html = '<p style="color:#99B0CC;padding:12px 0;">No matches found for &quot;' + escT(q) + '&quot;.</p>';
+  resultsDiv.innerHTML = html;
+});
   </script>
 </body>
 </html>

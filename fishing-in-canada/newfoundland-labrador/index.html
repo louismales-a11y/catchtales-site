@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fishing in Newfoundland and Labrador — Regions & Fishing Guides | CatchTales</title>
-  <meta name="description" content="Explore fishing in Newfoundland and Labrador by region. Atlantic salmon, sea-run brook trout, Arctic char, trophy pike, and world-class wilderness fishing.">
-    <meta property="og:type" content="website">
+  <title>Fishing in Newfoundland and Labrador | CatchTales</title>
+  <meta name="description" content="Fishing in Newfoundland and Labrador: 6 regions and 241 real, verified fishing spots. Lakes, rivers, and boat launches across Newfoundland and Labrador.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://catchtales.com/fishing-in-canada/newfoundland-labrador/">
-  <meta property="og:title" content="Fishing in Newfoundland Labrador &mdash; Regions &amp; Fishing Guides | CatchTales">
-  <meta property="og:description" content="Explore fishing in Newfoundland Labrador by region. Find top species, best fishing spots, and regional guides.">
+  <meta property="og:title" content="Fishing in Newfoundland and Labrador">
+  <meta property="og:description" content="Fishing in Newfoundland and Labrador: 6 regions and 241 real, verified fishing spots. Lakes, rivers, and boat launches across Newfoundland and Labrador.">
   <meta property="og:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="CatchTales">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fishing in Newfoundland and Labrador">
+  <meta name="twitter:description" content="Fishing in Newfoundland and Labrador: 6 regions and 241 real, verified fishing spots. Lakes, rivers, and boat launches across Newfoundland and Labrador.">
+  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://catchtales.com/fishing-in-canada/newfoundland-labrador/">
   <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/catchtales-192.png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0A1628; color: #fff; line-height: 1.6; font-size: clamp(15px, 1.1vw, 17px); }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF; line-height: 1.6; overflow-x: hidden;
+      background: #0A1628;
+      font-size: clamp(15px, 1.1vw, 17px);
+    }
     .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
     .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; pointer-events: none; }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.75; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto; transform: scaleX(-1); }
+    .swim-fish.f1 { width: 70px; top: 10%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 55px; top: 40%; animation-duration: 28s; animation-delay: -6s; }
+    .swim-fish.f3 { width: 85px; top: 70%; animation-duration: 20s; animation-delay: -12s; }
+    @keyframes swim {
+      0% { left: -140px; }
+      100% { left: calc(100vw + 80px); }
+    }
     .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
     header {padding:clamp(16px,2.5vw,24px) 0 8px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
     .header-logo {margin-bottom:6px}
@@ -31,24 +52,25 @@
     header nav a:hover {color:#76FF03}
     header nav a::after {content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#76FF03;transition:width .2s}
     header nav a:hover::after {width:100%}
-    h1 { font-size: clamp(1.4em, 4vw, 2em); color: #76FF03; text-align: center; padding: clamp(20px, 3vw, 32px) 0 4px; }
-    .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); margin-bottom: clamp(16px, 2.5vw, 24px); }
-    .note { text-align: center; color: #FFD54F; font-size: clamp(14px, 1.3vw, 17px); margin-bottom: clamp(16px, 2.5vw, 24px); }
-    .stats { display: flex; gap: clamp(12px, 2vw, 20px); justify-content: center; flex-wrap: wrap; margin: clamp(16px, 2.5vw, 24px) 0; }
-    .stat { text-align: center; padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px); background: rgba(255,255,255,0.03); border-radius: 10px; }
-    .stat .num { font-size: clamp(1.2em, 3vw, 1.6em); font-weight: 800; color: #76FF03; }
-    .stat .lbl { font-size: clamp(11px, 1vw, 12px); color: #8899AA; }
-    .region-item { display: flex; align-items: center; gap: 12px; padding: clamp(10px, 1.5vw, 14px); background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #fff; transition: all 0.3s; }
-    .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
-    .region-item .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
-    .region-item h3 { font-size: clamp(17px, 1.6vw, 20px); color: var(--clr); }
-    .region-item p { font-size: clamp(14px, 1.2vw, 15px); color: #99B0CC; }
-    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(20px, 3vw, 30px); }
+    .page-title { padding: clamp(24px, 5vw, 40px) 0 clamp(16px, 3vw, 30px); text-align: center; }
+    .page-title h1 { font-size: clamp(1.4em, 4.5vw, 2em); color: #76FF03; }
+    .page-title p { color: #B0C4DE; font-size: clamp(0.85em, 2.5vw, 1em); margin-top: 8px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .content-page { padding: clamp(16px, 3vw, 20px) 0 clamp(24px, 4vw, 40px); }
+    .content-page p, .content-page li { color: #B0C4DE; font-size: clamp(14px, 1.2vw, 15px); line-height: 1.8; }
+    .content-page h2 { color: #fff; margin-top: clamp(20px, 3vw, 28px); margin-bottom: clamp(8px, 1.5vw, 12px); font-size: clamp(1.1em, 3vw, 1.3em); }
+    .content-page h3 { color: #00BCD4; margin-top: clamp(12px, 2vw, 16px); margin-bottom: 6px; font-size: clamp(1em, 2.5vw, 1.1em); }
+    .content-page .card { background: rgba(14,20,34,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: clamp(20px, 3.5vw, 32px); }
+    .content-page .distance { font-size: clamp(12px, 1vw, 13px); color: #76FF03; display: block; margin-bottom: 4px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: clamp(12px, 2vw, 14px) clamp(24px, 3vw, 32px); border-radius: 12px; font-size: clamp(14px, 1.2vw, 16px); font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; touch-action: manipulation; min-height: 48px; }
+    .btn-primary { background: #00BCD4; color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(0,188,212,0.5); }
+    .btn-secondary { background: rgba(0,188,212,0.08); color: #00BCD4; border: 2px solid rgba(0,188,212,0.4); backdrop-filter: blur(8px); }
+    .btn-secondary:hover { background: rgba(0,188,212,0.18); transform: translateY(-3px); border-color: #00BCD4; }
+    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(24px, 4vw, 40px); }
     footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
-    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); min-height: 44px; display: inline-flex; align-items: center; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); transition: color 0.2s; min-height: 44px; display: inline-flex; align-items: center; touch-action: manipulation; }
     footer .links a:hover { color: #00BCD4; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
-  
     @media (max-width:700px){header nav a{margin-right:12px}}
     @media (max-width:600px){.nav-toggle{display:none!important}header{padding:clamp(12px,2vw,18px) 0 4px}.header-logo{margin-bottom:4px}header nav{justify-content:center;gap:4px 10px;margin-top:2px}header nav a{margin-right:0;padding:4px 0;font-size:clamp(12px,1.1vw,14px);min-height:36px}}
   
@@ -64,67 +86,77 @@
     .download-buttons { display: flex; gap: clamp(10px, 2vw, 16px); justify-content: center; flex-wrap: wrap; }
     .version-note { font-size: clamp(0.7em, 2vw, 0.8em); color: #667; margin-top: 12px; }
 
-    .btn {display:inline-flex;align-items:center;gap:8px;padding:clamp(12px,2vw,14px) clamp(24px,3vw,32px);border-radius:12px;font-size:clamp(14px,1.2vw,16px);font-weight:600;text-decoration:none;cursor:pointer;min-height:48px} .btn-primary {background:#00BCD4;color:#003544;box-shadow:0 4px 25px rgba(0,188,212,.35)} .btn-primary:hover {transform:translateY(-3px);box-shadow:0 8px 35px rgba(0,188,212,.5)} .btn-secondary {background:rgba(0,188,212,.08);color:#00BCD4;border:2px solid rgba(0,188,212,.4)} .btn-secondary:hover {background:rgba(0,188,212,.18);transform:translateY(-3px);border-color:#00BCD4}</style>
-
-  <meta name="robots" content="index, follow">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="CatchTales">
-  <meta name="twitter:title" content="Fishing in Newfoundland and Labrador — Regions & Fishing Guides | CatchTales">
-  <meta name="twitter:description" content="Explore fishing in Newfoundland and Labrador by region. Atlantic salmon, sea-run brook trout, Arctic char, trophy pike, and world-class wilderness fishing.">
-  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
-  <link rel="manifest" href="/manifest.json">  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://catchtales.com/"},{"@type":"ListItem","position":2,"name":"Fishing in Canada","item":"https://catchtales.com/fishing-in-canada/"},{"@type":"ListItem","position":3,"name":"Newfoundland and Labrador","item":"https://catchtales.com/fishing-in-canada/newfoundland-labrador/"}]
-  }
-  </script>
+  .region-list { display:flex; flex-direction:column; gap:8px; }
+  .region-item { display:flex; align-items:center; gap:12px; padding:clamp(10px,1.5vw,14px); background:rgba(14,20,34,0.5); border:1px solid rgba(255,255,255,0.06); border-radius:12px; margin-bottom:8px; text-decoration:none; transition:all .2s; min-height:44px; }
+  .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
+  .region-item .dot { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
+  .region-item h3 { font-size:clamp(17px,1.6vw,20px); color:var(--clr); }
+  .region-item p { font-size:clamp(14px,1.2vw,15px); color:#99B0CC; }
+  .stats { display:flex; gap:clamp(16px,2.5vw,32px); justify-content:center; flex-wrap:wrap; margin:24px 0; }
+  .stat { text-align:center; }
+  .stat .num { font-size:clamp(26px,4vw,40px); font-weight:800; color:#76FF03; }
+  .stat .lbl { font-size:clamp(12px,1.2vw,14px); color:#99B0CC; }
+  </style>
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-  <div class="underwater-bg"><img src="/underwater.webp" alt="" class="bg"><div class="overlay"></div>
+  <div class="underwater-bg">
+    <img src="/underwater.webp" alt="" class="bg">
+    <div class="overlay"></div>
     <div class="swim-fish f1"><img src="/tfish1.webp" alt=""></div>
     <div class="swim-fish f2"><img src="/tfish2.webp" alt=""></div>
-    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div></div>
+    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div>
+  </div>
   <div class="content">
-    <header><a href="/" class="header-logo"><img src="/catchtales-logo.webp" alt="CatchTales" ></a><button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
-      <nav id="navLinks"><a href="/">Home</a><a href="/features/">Features</a><a href="/fishing-in-canada/">Canada Fishing</a><a href="/fishing-in-united-states/">US Fishing</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></header>
-    <a href="/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:20px;display:inline-block;min-height:44px;line-height:44px;font-weight:600">&larr; All Provinces</a>
-    <div class="breadcrumb" style="display:flex;flex-wrap:wrap;gap:4px;padding:12px 0 0;position:relative;z-index:3;font-size:15px;"><a href="https://catchtales.com/" style="color:#00BCD4;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Home</a><span style="color:#667;font-size:15px;min-height:44px;display:inline-flex;align-items:center;margin:0 6px;">›</span><a href="https://catchtales.com/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Fishing in Canada</a><span style="color:#667;font-size:15px;min-height:44px;display:inline-flex;align-items:center;margin:0 6px;">›</span><span style="color:#99B0CC;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Fishing in Newfoundland Labrador</span></div>
-<h1>Fishing in Newfoundland and Labrador</h1>
-    <p class="subtitle">Click a region to explore top fishing spots, species, and local tips.</p>
-    <p class="note">Newfoundland and Labrador offer some of North America's most remote and pristine fishing across a vast subarctic landscape. The island's Atlantic salmon rivers - the Humber, Gander, and Exploits - are world-renowned, while countless ponds and lakes produce trophy brook trout exceeding five pounds. Labrador's remote fly-in rivers like the Eagle, Kanairiktok, and Minipi offer extraordinary brook trout and Arctic char fishing in untouched wilderness, and the Grand Banks offshore provide world-class cod, halibut, and tuna fishing.</p>
-    <div class="stats">
-      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
-      <div class="stat"><div class="num">200+</div><div class="lbl">Spots Listed</div></div>
-      <div class="stat"><div class="num">25+</div><div class="lbl">Species</div></div>
-    </div>
-    <div style="display:flex;gap:clamp(16px,2.5vw,32px);align-items:flex-start;flex-wrap:wrap;justify-content:center;">
-      <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
-        <a href="/images/newfoundland-labrador-topo.jpg"><img loading="lazy" src="/images/newfoundland-labrador-topo.webp" alt="Topographic map of Newfoundland and Labrador" style="max-width:100%;height:auto;border-radius:12px;max-height:420px;"></a>
-        <p style="color:#667;font-size:11px;margin-top:4px;">Topographic map — click to view full size</p>
-      </div>
-      <div style="flex:0 1 clamp(260px,35vw,400px);">
-        <a href="/fishing-near/western-newfoundland/" class="region-item" style="--clr:#EF5350;"><span class="dot" style="background:#EF5350;"></span><div><h3>Western Newfoundland</h3><p>Humber River, Gros Morne, Grand Codroy, Corner Brook, Deer Lake -- Atlantic salmon, brook trout</p></div></a>
-        <a href="/fishing-near/central-newfoundland/" class="region-item" style="--clr:#4FC3F7;"><span class="dot" style="background:#4FC3F7;"></span><div><h3>Central Newfoundland</h3><p>Exploits River, Gander River, Red Indian Lake, Grand Falls -- Atlantic salmon, brook trout, pike</p></div></a>
-        <a href="/fishing-near/eastern-newfoundland-avalon/" class="region-item" style="--clr:#76FF03;"><span class="dot" style="background:#76FF03;"></span><div><h3>Eastern Newfoundland (Avalon)</h3><p>St. John's, Terra Nova, Salmonier River, Conception Bay -- Salmon, brook trout, cod</p></div></a>
-        <a href="/fishing-near/southern-newfoundland/" class="region-item" style="--clr:#FFB74D;"><span class="dot" style="background:#FFB74D;"></span><div><h3>Southern Newfoundland</h3><p>Burin Peninsula, Fortune Bay, Burgeo, Hermitage -- Sea-run brook trout, Atlantic salmon</p></div></a>
-        <a href="/fishing-near/northern-peninsula-newfoundland/" class="region-item" style="--clr:#AB47BC;"><span class="dot" style="background:#AB47BC;"></span><div><h3>Great Northern Peninsula</h3><p>Torrent River, St. Anthony, Strait of Belle Isle, Viking Trail -- Salmon, sea trout, Arctic char</p></div></a>
-        <a href="/fishing-near/labrador/" class="region-item" style="--clr:#26A69A;"><span class="dot" style="background:#26A69A;"></span><div><h3>Labrador</h3><p>Churchill River, Eagle River, Lake Melville, Goose Bay -- Arctic char, pike, lake trout, Atlantic salmon</p></div></a>
-      </div>
+    <header>
+      <a href="/" class="header-logo">
+        <img src="/catchtales-logo.webp" alt="CatchTales">
+      </a>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+      <nav id="navLinks"><a href="/">Home</a><a href="/features/">Features</a><a href="/fishing-in-canada/">Canada Fishing</a><a href="/fishing-in-united-states/">US Fishing</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    </header>
+    <div class="page-title">
+      <h1>Fishing in Newfoundland and Labrador</h1>
+      <p>6 regions &middot; 241 verified fishing spots &middot; 30+ species</p>
     </div>
 
-    <!-- Download -->
+    <div class="stats">
+      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
+      <div class="stat"><div class="num">241+</div><div class="lbl">Spots Listed</div></div>
+      <div class="stat"><div class="num">30+</div><div class="lbl">Species</div></div>
+    </div>
+
+    <p class="note" style="color:#B0C4DE;font-size:clamp(14px,1.2vw,15px);line-height:1.8;margin-bottom:24px;">Newfoundland and Labrador offer some of North America's most remote and pristine fishing across a vast subarctic landscape. The island's Atlantic salmon rivers - the Humber, Gander, and Exploits - are world-renowned, while countless ponds and lakes produce trophy brook trout exceeding five pounds. Labrador's remote fly-in rivers like the Eagle, Kanairiktok, and Minipi offer extraordinary brook trout and Arctic char fishing in untouched wilderness, and the Grand Banks offshore provide world-class</p>
+
+    <div style="position:sticky;top:0;z-index:50;max-width:960px;margin:0 auto;padding:12px 24px 4px;background:rgba(10,22,40,0.9);">
+    <input type="search" id="hubSearch" placeholder="Search Newfoundland and Labrador..." autocomplete="off" aria-label="Search Newfoundland and Labrador" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid rgba(0,188,212,0.3);background:rgba(14,20,34,0.85);color:#fff;font-size:15px;outline:none;box-sizing:border-box;">
+  </div>
+  <div id="hubResults" style="display:none;padding:8px 24px 24px;position:relative;z-index:40;"></div>
+
+    <div style="display:flex;gap:clamp(16px,2.5vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:24px;">
+    <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
+      <p style="color:#667;font-size:13px;">Pick a region below to explore its fishing spots.</p>
+    </div>
+    <div style="flex:0 1 clamp(260px,35vw,400px);">
+      <div class="region-list" id="regionListWrap">
+<a href="/fishing-near/central-newfoundland/" class="region-item" style="--clr:#EF5350;"><span class="dot" style="background:#EF5350;"></span><div><h3>Central Newfoundland</h3><p>Exploits River, Gander River, Red Indian Lake, Beothuk Lake</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/eastern-newfoundland-avalon/" class="region-item" style="--clr:#CE93D8;"><span class="dot" style="background:#CE93D8;"></span><div><h3>Eastern Newfoundland (Avalon)</h3><p>Salmonier River, Waterford River, Paddy's Pond, Butter Pot Pond</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/labrador/" class="region-item" style="--clr:#81C784;"><span class="dot" style="background:#81C784;"></span><div><h3>Labrador</h3><p>Churchill River, Churchill River, Eagle River, Pinware River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">41 spots</p></div></a>
+<a href="/fishing-near/southern-newfoundland/" class="region-item" style="--clr:#7986CB;"><span class="dot" style="background:#7986CB;"></span><div><h3>Southern Newfoundland</h3><p>Fortune Bay, Grand Bank, Fortune Harbour, Garnish River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/western-newfoundland/" class="region-item" style="--clr:#FF8A65;"><span class="dot" style="background:#FF8A65;"></span><div><h3>Western Newfoundland</h3><p>Humber River, Grand Codroy River, Little Codroy River, Crabbes River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/northern-peninsula-newfoundland/" class="region-item" style="--clr:#FFB74D;"><span class="dot" style="background:#FFB74D;"></span><div><h3>Fishing on the Great Northern Peninsula</h3><p>Torrent River, St. Anthony Harbour, Fishing Point, Main Brook</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+      </div>
+    </div>
+    </div>
+            <!-- Download -->
     <div class="download">
       <h2>Get CatchTales</h2>
       <p>Ready to start bragging? Download the app and hit the water.</p>
       <div class="download-buttons">
-        <a href="/download/CatchTales-v2.14.64-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.64-pro.apk" style="color:#003544;">Download Pro v2.14.64</a>
-        <a href="/download/CatchTales-v2.14.64-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.64-free.apk" style="color:#00BCD4;">Download Free v2.14.64</a>
+        <a href="/download/CatchTales-v2.14.76-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.76-pro.apk" style="color:#003544;">Download Pro v2.14.76</a>
+        <a href="/download/CatchTales-v2.14.76-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.76-free.apk" style="color:#00BCD4;">Download Free v2.14.76</a>
       </div>
-      <p class="version-note">Free version available — upgrade to Pro for $8.99/year or $19.99 lifetime (CAD).</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://catchtales.com/download/CatchTales-v2.14.68-free.apk" alt="Scan to download CatchTales Free" style="display:block;margin:16px auto 0;border-radius:12px;">
     
-
 <footer>
       <div class="links">
         <a href="/contact/">Contact</a>
@@ -133,9 +165,37 @@
       </div>
       <p class="copy">&copy; 2026 Maison Louis Design &mdash; Designed for anglers everywhere</p></footer>
   </div>
-
   <script>
-
+const HUB_DATA = [{"slug": "central-newfoundland", "title": "Central Newfoundland", "subtitle": "", "spots": [{"n": "Exploits River", "d": "Grand Falls-Windsor area", "s": "Atlantic Salmon"}, {"n": "Gander River", "d": "Gander area", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Red Indian Lake", "d": "Red Indian Lake area, central Newfoundland", "s": "Brook Trout, Landlocked Salmon"}, {"n": "Beothuk Lake", "d": "Beothuk Lake area, central Newfoundland", "s": "Brook Trout, Landlocked Salmon"}, {"n": "Gander Lake", "d": "Gander area", "s": "Brook Trout, Landlocked Salmon"}, {"n": "Noel Paul's Brook", "d": "Noel Paul's Brook area, central Newfoundland", "s": "Brook Trout"}, {"n": "Terra Nova River", "d": "Terra Nova National Park", "s": "Brook Trout, Salmon"}, {"n": "Terra Nova Lake", "d": "Terra Nova National Park", "s": "Brook Trout"}, {"n": "Gambo River", "d": "Gambo area", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Indian Bay Brook", "d": "Indian Bay area, eastern Newfoundland", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Ragged Harbour River", "d": "Ragged Harbour area, Bonavista Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Bonavista Bay", "d": "Bonavista Bay area", "s": "Cod, Flounder, Mackerel"}, {"n": "Bonavista Harbour", "d": "Bonavista", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Trinity Bay", "d": "Trinity Bay area", "s": "Cod, Flounder, Mackerel"}, {"n": "Random Island", "d": "Random Island area, Trinity Bay", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Hodge's Cove", "d": "Hodge's Cove area, Trinity Bay", "s": "Cod, Mackerel"}, {"n": "Sound Island", "d": "Sound Island area, Placentia Bay", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Placentia Bay", "d": "Placentia Bay area", "s": "Capelin, Cod, Flounder, Mackerel"}, {"n": "Swift Current Brook", "d": "Swift Current area, Placentia Bay", "s": "Brook Trout"}, {"n": "Barachois River", "d": "Barachois area, Placentia Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Pipers Hole River", "d": "Pipers Hole area, Placentia Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Little River", "d": "Little River area, Placentia Bay", "s": "Placentia"}, {"n": "Northwest River", "d": "Northwest River area, Placentia Bay", "s": "Placentia"}, {"n": "Come By Chance River", "d": "Come By Chance area, Placentia Bay", "s": "Brook Trout"}, {"n": "Long Harbour River", "d": "Long Harbour area, Placentia Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Clode Sound", "d": "Clode Sound area, Bonavista Bay", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Shoal Harbour River", "d": "Shoal Harbour area, Trinity Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "West River", "d": "West River area, Bonavista", "s": "Bonavista"}, {"n": "Southern Bay", "d": "Southern Bay area, Bonavista", "s": "Cod, Flounder, Mackerel"}, {"n": "Glovertown River", "d": "Glovertown area, Bonavista Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Alexander Bay", "d": "Alexander Bay area, Bonavista Bay", "s": "Cod, Mackerel"}, {"n": "Gambo Pond", "d": "Gambo area", "s": "Brook Trout"}, {"n": "Lake St. John", "d": "Lake St. John area, central Newfoundland", "s": "NL"}, {"n": "Abbotts Steady", "d": "Abbotts Steady, Newfoundland and Labrador", "s": ""}, {"n": "Amy's Lake", "d": "Amy's Lake, Newfoundland and Labrador", "s": ""}, {"n": "Anchor Brook Waters", "d": "Anchor Brook Waters, Newfoundland and Labrador", "s": ""}, {"n": "Anne Marie Lake", "d": "Anne Marie Lake, Newfoundland and Labrador", "s": ""}, {"n": "Askel Lake", "d": "Askel Lake, Newfoundland and Labrador", "s": ""}, {"n": "Baikie Lake", "d": "Baikie Lake, Newfoundland and Labrador", "s": ""}, {"n": "Baker Lake", "d": "Baker Lake, Newfoundland and Labrador", "s": ""}]}, {"slug": "eastern-newfoundland-avalon", "title": "Eastern Newfoundland (Avalon)", "subtitle": "", "spots": [{"n": "Salmonier River", "d": "Salmonier area, Avalon Peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Waterford River", "d": "St. John's", "s": "Brook Trout"}, {"n": "Paddy's Pond", "d": "Paddy's Pond area, near St. John's", "s": "Brook Trout"}, {"n": "Butter Pot Pond", "d": "Butter Pot Provincial Park", "s": "Brook Trout"}, {"n": "Topsail Pond", "d": "Topsail area, Conception Bay", "s": "Brook Trout"}, {"n": "Windsor Lake", "d": "Windsor Lake area, near St. John's", "s": "Brook Trout"}, {"n": "Kent's Pond", "d": "Kent's Pond area, St. John's", "s": "Brook Trout"}, {"n": "Quidi Vidi Lake", "d": "St. John's", "s": "Cod, Mackerel"}, {"n": "Quidi Vidi Harbour", "d": "St. John's", "s": "Cod, Mackerel"}, {"n": "St. John's Harbour", "d": "St. John's", "s": "Cod, Mackerel"}, {"n": "Cape Spear", "d": "Cape Spear, near St. John's", "s": "Cod, Mackerel"}, {"n": "Witless Bay", "d": "Witless Bay area, Avalon", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Bay Bulls", "d": "Bay Bulls area, Avalon", "s": "Cod, Mackerel"}, {"n": "Tors Cove", "d": "Tors Cove area, Avalon", "s": "Cod, Mackerel"}, {"n": "Ferryland", "d": "Ferryland area, Avalon", "s": "Cod, Mackerel"}, {"n": "Aquaforte", "d": "Aquaforte area, Avalon", "s": "Cod, Mackerel"}, {"n": "Renews River", "d": "Renews area, Avalon", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Trepassey River", "d": "Trepassey area, Avalon", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Cappahayden River", "d": "Cappahayden area, Avalon", "s": "Brook Trout"}, {"n": "Conception Bay", "d": "Conception Bay area", "s": "Cod, Flounder, Mackerel"}, {"n": "Holyrood Harbour", "d": "Holyrood area, Conception Bay", "s": "Cod, Mackerel"}, {"n": "Harbour Main", "d": "Harbour Main area, Conception Bay", "s": "Cod, Mackerel"}, {"n": "Brigus", "d": "Brigus area, Conception Bay", "s": "Cod, Mackerel"}, {"n": "Cupids", "d": "Cupids area, Conception Bay", "s": "Cod, Mackerel"}, {"n": "Carbonear Harbour", "d": "Carbonear area, Conception Bay", "s": "Cod, Mackerel"}, {"n": "Harbour Grace", "d": "Harbour Grace area, Conception Bay", "s": "Cod, Mackerel"}, {"n": "Riverhead", "d": "Riverhead area, St. Mary's Bay", "s": "St. Mary's"}, {"n": "St. Mary's Bay", "d": "St. Mary's Bay area, Avalon", "s": "Cod, Flounder, Mackerel"}, {"n": "Mallorytown", "d": "Mallorytown area, St. Mary's Bay", "s": "Cod, Mackerel"}, {"n": "Colinet River", "d": "Colinet area, St. Mary's Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Branch River", "d": "Branch area, St. Mary's Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Cape Broyle River", "d": "Cape Broyle area, Avalon", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Biscay Bay River", "d": "Biscay Bay area, Avalon", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Bad Pond Steadies", "d": "Bad Pond Steadies, Newfoundland and Labrador", "s": ""}, {"n": "Baker Lake", "d": "Baker Lake, Newfoundland and Labrador", "s": ""}, {"n": "Bannerman Lake", "d": "Bannerman Lake, Newfoundland and Labrador", "s": ""}, {"n": "Banting Lake", "d": "Banting Lake, Newfoundland and Labrador", "s": ""}, {"n": "Barachois du Barre", "d": "Barachois du Barre, Newfoundland and Labrador", "s": ""}, {"n": "Barasway de Cerf", "d": "Barasway de Cerf, Newfoundland and Labrador", "s": ""}, {"n": "Barasway de Plate", "d": "Barasway de Plate, Newfoundland and Labrador", "s": ""}]}, {"slug": "labrador", "title": "Labrador", "subtitle": "", "spots": [{"n": "Churchill River", "d": "Churchill Falls / Labrador City area", "s": "Brook Trout, Lake Trout, Northern Pike"}, {"n": "Churchill River", "d": "Churchill River below Churchill Falls, Lake Melville", "s": "Brook Trout, Northern Pike, Whitefish"}, {"n": "Eagle River", "d": "Eagle River, eastern Labrador", "s": "Atlantic Salmon"}, {"n": "Pinware River", "d": "Pinware area, southern Labrador", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Forteau River", "d": "Forteau area, southern Labrador", "s": "Arctic Char, Atlantic Salmon"}, {"n": "Lake Melville", "d": "Lake Melville area, Happy Valley-Goose Bay", "s": "Arctic Char, Brook Trout, Northern Pike"}, {"n": "Goose River", "d": "Goose River area, Happy Valley-Goose Bay", "s": "Labrador"}, {"n": "Northwest River", "d": "Northwest River area, Lake Melville", "s": "Brook Trout, Northern Pike"}, {"n": "Kenamu River", "d": "Kenamu River area, Lake Melville", "s": "Brook Trout, Northern Pike"}, {"n": "English River", "d": "English River area, Lake Melville", "s": "Labrador"}, {"n": "Paradise River", "d": "Paradise River area, eastern Labrador", "s": "Atlantic Salmon, Brook Trout"}, {"n": "St. Lewis River", "d": "St. Lewis area, southeastern Labrador", "s": "Arctic Char, Atlantic Salmon"}, {"n": "Alexis River", "d": "Alexis River area, southeastern Labrador", "s": "Arctic Char, Atlantic Salmon"}, {"n": "Gilbert River", "d": "Gilbert River area, southeastern Labrador", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Hawke River", "d": "Hawke River area, southeastern Labrador", "s": "Arctic Char, Atlantic Salmon"}, {"n": "White Bear River", "d": "White Bear River area, southeastern Labrador", "s": "Labrador"}, {"n": "Sand Hill River", "d": "Sand Hill River area, southeastern Labrador", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Muddy Bay", "d": "Muddy Bay area, eastern Labrador", "s": "Labrador"}, {"n": "Sandwich Bay", "d": "Sandwich Bay area, eastern Labrador", "s": "Arctic Char, Brook Trout, Cod"}, {"n": "Cartwright", "d": "Cartwright area, eastern Labrador", "s": "Arctic Char, Cod"}, {"n": "Eagle River", "d": "South Eagle River area, eastern Labrador", "s": "Labrador South"}, {"n": "North River", "d": "North River area, eastern Labrador", "s": "Labrador"}, {"n": "Porcupine River", "d": "Porcupine River area, eastern Labrador", "s": "Arctic Char, Brook Trout"}, {"n": "Okak River", "d": "Okak area, northern Labrador", "s": "Arctic Char, Brook Trout"}, {"n": "Kanairiktok River", "d": "Kanairiktok River area, central Labrador coast", "s": "Arctic Char, Brook Trout"}, {"n": "Naskaupi River", "d": "Naskaupi River area, central Labrador", "s": "Brook Trout, Lake Trout, Northern Pike"}, {"n": "Red Wine River", "d": "Red Wine River area, central Labrador", "s": "Brook Trout, Northern Pike"}, {"n": "Ashuanipi River", "d": "Ashuanipi River area, western Labrador", "s": "Brook Trout, Northern Pike"}, {"n": "Smallwood Reservoir", "d": "Smallwood Reservoir area, western Labrador", "s": "Brook Trout, Lake Trout, Northern Pike"}, {"n": "Lobstick Lake", "d": "Lobstick Lake area, western Labrador", "s": "Brook Trout, Lake Trout"}, {"n": "Ossokmanuan Reservoir", "d": "Ossokmanuan area, western Labrador", "s": "Brook Trout, Northern Pike"}, {"n": "Churchill Falls River", "d": "Churchill Falls area, western Labrador", "s": "Brook Trout, Northern Pike"}, {"n": "Lac Joseph", "d": "Lac Joseph area, western Labrador", "s": "Brook Trout, Lake Trout"}, {"n": "Atikonak Lake", "d": "Atikonak Lake area, western Labrador", "s": "Brook Trout, Northern Pike"}, {"n": "Ashuanipi Lake", "d": "Ashuanipi Lake, Newfoundland and Labrador", "s": ""}, {"n": "Barron Lake", "d": "Barron Lake, Newfoundland and Labrador", "s": ""}, {"n": "De Mille Lake", "d": "De Mille Lake, Newfoundland and Labrador", "s": ""}, {"n": "Leila Wynne Lake", "d": "Leila Wynne Lake, Newfoundland and Labrador", "s": ""}, {"n": "Mistastin Lake", "d": "Mistastin Lake, Newfoundland and Labrador", "s": ""}, {"n": "Nipishish Lake", "d": "Nipishish Lake, Newfoundland and Labrador", "s": ""}, {"n": "Shabogamo Lake", "d": "Shabogamo Lake, Newfoundland and Labrador", "s": ""}]}, {"slug": "southern-newfoundland", "title": "Southern Newfoundland", "subtitle": "", "spots": [{"n": "Fortune Bay", "d": "Fortune Bay area", "s": "Capelin, Cod, Mackerel"}, {"n": "Grand Bank", "d": "Grand Bank area, Burin Peninsula", "s": "Cod, Mackerel"}, {"n": "Fortune Harbour", "d": "Fortune area, Burin Peninsula", "s": "Cod, Mackerel"}, {"n": "Garnish River", "d": "Garnish area, Burin Peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Little River", "d": "Little River area, Burin Peninsula", "s": "Burin"}, {"n": "Marystown Harbour", "d": "Marystown area, Burin Peninsula", "s": "Cod, Mackerel"}, {"n": "Mortier Bay", "d": "Mortier Bay area, Burin Peninsula", "s": "Cod, Mackerel"}, {"n": "Lawn River", "d": "Lawn area, Burin Peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "St. Lawrence River", "d": "St. Lawrence area, Burin Peninsula", "s": "NL"}, {"n": "Burin Harbour", "d": "Burin area, Burin Peninsula", "s": "Cod, Mackerel"}, {"n": "Burgeo", "d": "Burgeo area, south coast", "s": "Cod, Flounder, Mackerel"}, {"n": "Sandbanks Pond", "d": "Sandbanks Provincial Park, Burgeo", "s": "Brook Trout"}, {"n": "Grandy's River", "d": "Grandy's River area, south coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Grey River", "d": "Grey River area, south coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "White Bear River", "d": "White Bear River area, south coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Connaigre Bay", "d": "Connaigre Bay area, south coast", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Hermitage", "d": "Hermitage area, south coast", "s": "Cod, Mackerel"}, {"n": "Pool's Cove", "d": "Pool's Cove area, south coast", "s": "Cod, Mackerel"}, {"n": "Harbour Breton", "d": "Harbour Breton area, south coast", "s": "Cod, Mackerel"}, {"n": "Hermitage River", "d": "Hermitage area, south coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Gisborne Lake", "d": "Gisborne Lake area, south coast", "s": "Brook Trout"}, {"n": "La Poile River", "d": "La Poile area, south coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Grand Bruit River", "d": "Grand Bruit area, south coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Ramea", "d": "Ramea Islands, south coast", "s": "Cod, Mackerel"}, {"n": "Francois", "d": "Francois area, south coast", "s": "Cod, Mackerel"}, {"n": "McCallum", "d": "McCallum area, south coast", "s": "Cod, Mackerel"}, {"n": "Pushthrough", "d": "Pushthrough area, south coast", "s": "Cod, Mackerel"}, {"n": "Belleoram", "d": "Belleoram area, Fortune Bay", "s": "Cod, Mackerel"}, {"n": "Bay L'Argent", "d": "Bay L'Argent area, Fortune Bay", "s": "Cod, Mackerel"}, {"n": "Terrenceville River", "d": "Terrenceville area, Fortune Bay", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Meelpaeg Lake", "d": "Meelpaeg Lake, Newfoundland and Labrador", "s": ""}, {"n": "Alma Lake", "d": "Alma Lake, Newfoundland and Labrador", "s": ""}, {"n": "Alta Lake", "d": "Alta Lake, Newfoundland and Labrador", "s": ""}, {"n": "André Lake", "d": "André Lake, Newfoundland and Labrador", "s": ""}, {"n": "Angus Lake", "d": "Angus Lake, Newfoundland and Labrador", "s": ""}, {"n": "Ashuanipi Lake", "d": "Ashuanipi Lake, Newfoundland and Labrador", "s": ""}, {"n": "Astray Lake", "d": "Astray Lake, Newfoundland and Labrador", "s": ""}, {"n": "Atikonak Lake", "d": "Atikonak Lake, Newfoundland and Labrador", "s": ""}, {"n": "Atlantic Lake", "d": "Atlantic Lake, Newfoundland and Labrador", "s": ""}, {"n": "Attikamagen Lake", "d": "Attikamagen Lake, Newfoundland and Labrador", "s": ""}]}, {"slug": "western-newfoundland", "title": "Western Newfoundland", "subtitle": "", "spots": [{"n": "Humber River", "d": "Deer Lake / Corner Brook area", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Grand Codroy River", "d": "Codroy Valley, southwest coast", "s": "Atlantic Salmon, Cod"}, {"n": "Little Codroy River", "d": "Codroy Valley", "s": "Atlantic Salmon, Brook Trout, Cod"}, {"n": "Crabbes River", "d": "Crabbes area, southwest coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Robinsons River", "d": "Robinsons area", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Fischells River", "d": "Fischells area", "s": "Atlantic Salmon, Brook Trout, Cod"}, {"n": "Harrys River", "d": "Harrys area, west coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Flat Bay River", "d": "Flat Bay area", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Romaines River", "d": "Romaines area", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Port au Port River", "d": "Port au Port Peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Upper Humber River", "d": "Deer Lake area", "s": "Brook Trout"}, {"n": "Deer Lake", "d": "Deer Lake", "s": "Brook Trout, Landlocked Salmon"}, {"n": "Grand Lake", "d": "Grand Lake area, west coast", "s": "Newfoundland"}, {"n": "Serpentine River", "d": "Serpentine area, Gros Morne region", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Lomond River", "d": "Lomond area, Gros Morne", "s": "Brook Trout"}, {"n": "Bonne Bay", "d": "Bonne Bay, Gros Morne", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Trout River", "d": "Trout River, Gros Morne", "s": "Gros Morne"}, {"n": "Wallace Brook", "d": "Wallace Brook, Gros Morne", "s": "Brook Trout"}, {"n": "Corner Brook Stream", "d": "Corner Brook", "s": "Brook Trout"}, {"n": "Pinchgut Lake", "d": "Pinchgut area, near Corner Brook", "s": "Brook Trout"}, {"n": "Birchy Lake", "d": "Birchy Lake area, near Deer Lake", "s": "Brook Trout"}, {"n": "Sandy Lake", "d": "Sandy Lake area, west coast", "s": "Newfoundland"}, {"n": "St. George's Bay", "d": "St. George's area", "s": "Cod, Flounder, Mackerel"}, {"n": "Stephenville Crossing", "d": "Stephenville area", "s": "Cod, Mackerel"}, {"n": "Bay St. George", "d": "Bay St. George area", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Port Saunders", "d": "Port Saunders area, west coast", "s": "Cod, Mackerel"}, {"n": "River of Ponds", "d": "River of Ponds area, west coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Castors River", "d": "Castors River area, northern peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Torrent River", "d": "Torrent River area, west coast", "s": "West Coast"}, {"n": "Pinware River", "d": "Pinware area, southern Labrador", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Forteau River", "d": "Forteau area, southern Labrador", "s": "Arctic Char, Atlantic Salmon"}, {"n": "Georges Lake", "d": "Georges Lake, Newfoundland and Labrador", "s": ""}, {"n": "Sheffield Lake", "d": "Sheffield Lake, Newfoundland and Labrador", "s": ""}, {"n": "Abel Lake", "d": "Abel Lake, Newfoundland and Labrador", "s": ""}, {"n": "Adams Lake", "d": "Adams Lake, Newfoundland and Labrador", "s": ""}, {"n": "Adelaide Lake", "d": "Adelaide Lake, Newfoundland and Labrador", "s": ""}, {"n": "Albert Lake", "d": "Albert Lake, Newfoundland and Labrador", "s": ""}, {"n": "Alder Steady", "d": "Alder Steady, Newfoundland and Labrador", "s": ""}, {"n": "Alexander Lake", "d": "Alexander Lake, Newfoundland and Labrador", "s": ""}, {"n": "Alliger Lake", "d": "Alliger Lake, Newfoundland and Labrador", "s": ""}]}, {"slug": "northern-peninsula-newfoundland", "title": "Fishing on the Great Northern Peninsula", "subtitle": "", "spots": [{"n": "Torrent River", "d": "St. Anthony area", "s": "Atlantic Salmon"}, {"n": "St. Anthony Harbour", "d": "St. Anthony", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Fishing Point", "d": "St. Anthony", "s": "St. Anthony"}, {"n": "Main Brook", "d": "Main Brook area, northern peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Big Brook", "d": "Big Brook area, northern peninsula", "s": "Northern Peninsula"}, {"n": "Four Mile Brook", "d": "Four Mile Brook area, northern peninsula", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Three Mile Brook", "d": "Three Mile Brook area, northern peninsula", "s": "Brook Trout"}, {"n": "L'Anse aux Meadows", "d": "L'Anse aux Meadows area", "s": "Cod, Mackerel"}, {"n": "Raleigh", "d": "Raleigh area, northern tip", "s": "Cod, Mackerel"}, {"n": "Ship Cove", "d": "Ship Cove area, Strait of Belle Isle", "s": "Northern Peninsula"}, {"n": "Eddies Cove", "d": "Eddies Cove area, Strait of Belle Isle", "s": "Cod, Mackerel"}, {"n": "Flowers Cove", "d": "Flowers Cove area, Strait of Belle Isle", "s": "Cod, Mackerel"}, {"n": "Anchor Point", "d": "Anchor Point area, Strait of Belle Isle", "s": "Cod, Mackerel"}, {"n": "Savage Cove", "d": "Savage Cove area, Strait of Belle Isle", "s": "Cod, Mackerel"}, {"n": "Nameless Cove", "d": "Nameless Cove area, Strait of Belle Isle", "s": "Cod, Mackerel"}, {"n": "Pistolet Bay", "d": "Pistolet Bay area, northern peninsula", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Pikes Arm", "d": "Pikes Arm area, Pistolet Bay", "s": "Cod, Mackerel, Pike"}, {"n": "St. Anthony Bight", "d": "St. Anthony Bight area", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Goose Cove", "d": "Goose Cove area, St. Anthony Bight", "s": "Northern Peninsula"}, {"n": "Hay Cove", "d": "Hay Cove area, L'Anse aux Meadows", "s": "Cod, Mackerel"}, {"n": "Straitsview", "d": "Straitsview area, Strait of Belle Isle", "s": "Cod, Mackerel"}, {"n": "Port au Choix", "d": "Port au Choix area, west coast", "s": "Brook Trout, Cod, Mackerel"}, {"n": "Port Saunders", "d": "Port Saunders area, west coast", "s": "Northern Peninsula"}, {"n": "Hawke's Bay", "d": "Hawke's Bay area, west coast", "s": "Brook Trout, Cod, Mackerel"}, {"n": "River of Ponds", "d": "River of Ponds area, west coast", "s": "Northern Peninsula"}, {"n": "Castors River", "d": "Castors River area, west coast", "s": "Northern Peninsula"}, {"n": "Parsons Pond", "d": "Parsons Pond area, west coast", "s": "Brook Trout"}, {"n": "Daniel's Harbour", "d": "Daniel's Harbour area, west coast", "s": "Cod, Mackerel"}, {"n": "West Brook", "d": "West Brook area, west coast", "s": "Northern Peninsula"}, {"n": "Portland Creek", "d": "Portland Creek area, west coast", "s": "Atlantic Salmon, Brook Trout"}, {"n": "Shallow Bay", "d": "Shallow Bay area, west coast", "s": "Cod, Flounder, Mackerel"}, {"n": "St. Paul's River", "d": "St. Paul's area, west coast", "s": "NL"}, {"n": "Barren Lake", "d": "Barren Lake, Newfoundland and Labrador", "s": ""}, {"n": "Barry Lake", "d": "Barry Lake, Newfoundland and Labrador", "s": ""}, {"n": "Bath Lake", "d": "Bath Lake, Newfoundland and Labrador", "s": ""}, {"n": "Bean Lake", "d": "Bean Lake, Newfoundland and Labrador", "s": ""}, {"n": "Beardon Lake", "d": "Beardon Lake, Newfoundland and Labrador", "s": ""}, {"n": "Bear Lake", "d": "Bear Lake, Newfoundland and Labrador", "s": ""}, {"n": "Beatty Lake", "d": "Beatty Lake, Newfoundland and Labrador", "s": ""}, {"n": "Beaver House Long Steady", "d": "Beaver House Long Steady, Newfoundland and Labrador", "s": ""}]}];
+const searchInput = document.getElementById('hubSearch');
+const resultsDiv = document.getElementById('hubResults');
+const regionWrap = document.getElementById('regionListWrap');
+function anchorOf(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60); }
+function escT(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+searchInput.addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  if (!q) { resultsDiv.style.display='none'; resultsDiv.innerHTML=''; regionWrap.style.display=''; return; }
+  const mRegions = [], mSpots = [];
+  for (const r of HUB_DATA) {
+    if (r.title.toLowerCase().includes(q) || r.subtitle.toLowerCase().includes(q)) mRegions.push(r);
+    for (const sp of r.spots) {
+      if (sp.n.toLowerCase().includes(q) || sp.s.toLowerCase().includes(q) || sp.d.toLowerCase().includes(q)) mSpots.push({r:r, sp:sp});
+    }
+  }
+  regionWrap.style.display='none'; resultsDiv.style.display='';
+  let html = '<h3 style="color:#76FF03;font-size:15px;margin:10px 0 6px;">' + mRegions.length + ' Region' + (mRegions.length===1?'':'s') + '</h3>';
+  for (const r of mRegions) html += '<a href="/fishing-near/' + r.slug + '/" style="display:block;padding:10px 14px;background:rgba(14,20,34,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:6px;color:#00BCD4;text-decoration:none;font-weight:600;">' + escT(r.title) + '</a>';
+  html += '<h3 style="color:#76FF03;font-size:15px;margin:12px 0 6px;">' + mSpots.length + ' Spot' + (mSpots.length===1?'':'s') + '</h3>';
+  for (const it of mSpots) {
+    const anchor = anchorOf(it.sp.n);
+    html += '<a href="/fishing-near/' + it.r.slug + '/#spot-' + anchor + '" style="display:block;padding:10px 14px;background:rgba(14,20,34,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:6px;text-decoration:none;">' +
+      '<span style="color:#fff;font-weight:600;">' + escT(it.sp.n) + '</span> ' +
+      '<span style="color:#76FF03;font-size:13px;">' + escT(it.sp.s) + '</span><br>' +
+      '<span style="color:#99B0CC;font-size:12px;">' + escT(it.r.title) + (it.sp.d ? ' &middot; ' + escT(it.sp.d) : '') + '</span></a>';
+  }
+  if (!mRegions.length && !mSpots.length) html = '<p style="color:#99B0CC;padding:12px 0;">No matches found for &quot;' + escT(q) + '&quot;.</p>';
+  resultsDiv.innerHTML = html;
+});
   </script>
 </body>
 </html>

@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fishing in Yukon — Regions & Fishing Guides | CatchTales</title>
-  <meta name="description" content="Explore fishing in Yukon by region. World's largest Chinook salmon, Arctic grayling, lake trout, northern pike, and Arctic char in pristine northern wilderness.">
-    <meta property="og:type" content="website">
+  <title>Fishing in Yukon | CatchTales</title>
+  <meta name="description" content="Fishing in Yukon: 6 regions and 289 real, verified fishing spots. Lakes, rivers, and boat launches across Yukon.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://catchtales.com/fishing-in-canada/yukon/">
-  <meta property="og:title" content="Fishing in Yukon &mdash; Regions &amp; Fishing Guides | CatchTales">
-  <meta property="og:description" content="Explore fishing in Yukon by region. Find top species, best fishing spots, and regional guides.">
+  <meta property="og:title" content="Fishing in Yukon">
+  <meta property="og:description" content="Fishing in Yukon: 6 regions and 289 real, verified fishing spots. Lakes, rivers, and boat launches across Yukon.">
   <meta property="og:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="CatchTales">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fishing in Yukon">
+  <meta name="twitter:description" content="Fishing in Yukon: 6 regions and 289 real, verified fishing spots. Lakes, rivers, and boat launches across Yukon.">
+  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://catchtales.com/fishing-in-canada/yukon/">
   <link rel="icon" type="image/png" sizes="32x32" href="/catchtales.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/catchtales-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/catchtales-192.png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0A1628; color: #fff; line-height: 1.6; font-size: clamp(15px, 1.1vw, 17px); }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #FFFFFF; line-height: 1.6; overflow-x: hidden;
+      background: #0A1628;
+      font-size: clamp(15px, 1.1vw, 17px);
+    }
     .underwater-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; overflow: hidden; }
     .underwater-bg img.bg { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; }
+    .underwater-bg .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,22,40,0.45); z-index: 1; pointer-events: none; }
+    .swim-fish { position: absolute; z-index: 2; opacity: 0.75; animation: swim linear infinite; pointer-events: none; }
+    .swim-fish img { width: 100%; height: auto; transform: scaleX(-1); }
+    .swim-fish.f1 { width: 70px; top: 10%; animation-duration: 22s; }
+    .swim-fish.f2 { width: 55px; top: 40%; animation-duration: 28s; animation-delay: -6s; }
+    .swim-fish.f3 { width: 85px; top: 70%; animation-duration: 20s; animation-delay: -12s; }
+    @keyframes swim {
+      0% { left: -140px; }
+      100% { left: calc(100vw + 80px); }
+    }
     .content { position: relative; z-index: 3; max-width: 960px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left)); }
     header {padding:clamp(16px,2.5vw,24px) 0 8px;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
     .header-logo {margin-bottom:6px}
@@ -31,24 +52,25 @@
     header nav a:hover {color:#76FF03}
     header nav a::after {content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#76FF03;transition:width .2s}
     header nav a:hover::after {width:100%}
-    h1 { font-size: clamp(1.4em, 4vw, 2em); color: #76FF03; text-align: center; padding: clamp(20px, 3vw, 32px) 0 4px; }
-    .subtitle { text-align: center; color: #B0C4DE; font-size: clamp(14px, 1.2vw, 16px); margin-bottom: clamp(16px, 2.5vw, 24px); }
-    .note { text-align: center; color: #FFD54F; font-size: clamp(14px, 1.3vw, 17px); margin-bottom: clamp(16px, 2.5vw, 24px); }
-    .stats { display: flex; gap: clamp(12px, 2vw, 20px); justify-content: center; flex-wrap: wrap; margin: clamp(16px, 2.5vw, 24px) 0; }
-    .stat { text-align: center; padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 20px); background: rgba(255,255,255,0.03); border-radius: 10px; }
-    .stat .num { font-size: clamp(1.2em, 3vw, 1.6em); font-weight: 800; color: #76FF03; }
-    .stat .lbl { font-size: clamp(11px, 1vw, 12px); color: #8899AA; }
-    .region-item { display: flex; align-items: center; gap: 12px; padding: clamp(10px, 1.5vw, 14px); background: rgba(14,20,34,0.5); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 8px; text-decoration: none; color: #fff; transition: all 0.3s; }
-    .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
-    .region-item .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
-    .region-item h3 { font-size: clamp(17px, 1.6vw, 20px); color: var(--clr); }
-    .region-item p { font-size: clamp(14px, 1.2vw, 15px); color: #99B0CC; }
-    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(20px, 3vw, 30px); }
+    .page-title { padding: clamp(24px, 5vw, 40px) 0 clamp(16px, 3vw, 30px); text-align: center; }
+    .page-title h1 { font-size: clamp(1.4em, 4.5vw, 2em); color: #76FF03; }
+    .page-title p { color: #B0C4DE; font-size: clamp(0.85em, 2.5vw, 1em); margin-top: 8px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .content-page { padding: clamp(16px, 3vw, 20px) 0 clamp(24px, 4vw, 40px); }
+    .content-page p, .content-page li { color: #B0C4DE; font-size: clamp(14px, 1.2vw, 15px); line-height: 1.8; }
+    .content-page h2 { color: #fff; margin-top: clamp(20px, 3vw, 28px); margin-bottom: clamp(8px, 1.5vw, 12px); font-size: clamp(1.1em, 3vw, 1.3em); }
+    .content-page h3 { color: #00BCD4; margin-top: clamp(12px, 2vw, 16px); margin-bottom: 6px; font-size: clamp(1em, 2.5vw, 1.1em); }
+    .content-page .card { background: rgba(14,20,34,0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: clamp(20px, 3.5vw, 32px); }
+    .content-page .distance { font-size: clamp(12px, 1vw, 13px); color: #76FF03; display: block; margin-bottom: 4px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: clamp(12px, 2vw, 14px) clamp(24px, 3vw, 32px); border-radius: 12px; font-size: clamp(14px, 1.2vw, 16px); font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; touch-action: manipulation; min-height: 48px; }
+    .btn-primary { background: #00BCD4; color: #003544; box-shadow: 0 4px 25px rgba(0,188,212,0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(0,188,212,0.5); }
+    .btn-secondary { background: rgba(0,188,212,0.08); color: #00BCD4; border: 2px solid rgba(0,188,212,0.4); backdrop-filter: blur(8px); }
+    .btn-secondary:hover { background: rgba(0,188,212,0.18); transform: translateY(-3px); border-color: #00BCD4; }
+    footer { padding: clamp(20px, 3vw, 30px) 0; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; margin-top: clamp(24px, 4vw, 40px); }
     footer .links { display: flex; gap: clamp(14px, 2.5vw, 28px); justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
-    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); min-height: 44px; display: inline-flex; align-items: center; }
+    footer .links a { color: #B0C4DE; text-decoration: none; font-size: clamp(14px, 1.5vw, 18px); transition: color 0.2s; min-height: 44px; display: inline-flex; align-items: center; touch-action: manipulation; }
     footer .links a:hover { color: #00BCD4; }
     footer .copy { color: #667; font-size: clamp(12px, 1.2vw, 14px); }
-  
     @media (max-width:700px){header nav a{margin-right:12px}}
     @media (max-width:600px){.nav-toggle{display:none!important}header{padding:clamp(12px,2vw,18px) 0 4px}.header-logo{margin-bottom:4px}header nav{justify-content:center;gap:4px 10px;margin-top:2px}header nav a{margin-right:0;padding:4px 0;font-size:clamp(12px,1.1vw,14px);min-height:36px}}
   
@@ -64,67 +86,77 @@
     .download-buttons { display: flex; gap: clamp(10px, 2vw, 16px); justify-content: center; flex-wrap: wrap; }
     .version-note { font-size: clamp(0.7em, 2vw, 0.8em); color: #667; margin-top: 12px; }
 
-    .btn {display:inline-flex;align-items:center;gap:8px;padding:clamp(12px,2vw,14px) clamp(24px,3vw,32px);border-radius:12px;font-size:clamp(14px,1.2vw,16px);font-weight:600;text-decoration:none;cursor:pointer;min-height:48px} .btn-primary {background:#00BCD4;color:#003544;box-shadow:0 4px 25px rgba(0,188,212,.35)} .btn-primary:hover {transform:translateY(-3px);box-shadow:0 8px 35px rgba(0,188,212,.5)} .btn-secondary {background:rgba(0,188,212,.08);color:#00BCD4;border:2px solid rgba(0,188,212,.4)} .btn-secondary:hover {background:rgba(0,188,212,.18);transform:translateY(-3px);border-color:#00BCD4}</style>
-
-  <meta name="robots" content="index, follow">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="CatchTales">
-  <meta name="twitter:title" content="Fishing in Yukon — Regions & Fishing Guides | CatchTales">
-  <meta name="twitter:description" content="Explore fishing in Yukon by region. World's largest Chinook salmon, Arctic grayling, lake trout, northern pike, and Arctic char in pristine northern wilderness.">
-  <meta name="twitter:image" content="https://catchtales.com/images/og-image.jpg">
-  <link rel="manifest" href="/manifest.json">  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://catchtales.com/"},{"@type":"ListItem","position":2,"name":"Fishing in Canada","item":"https://catchtales.com/fishing-in-canada/"},{"@type":"ListItem","position":3,"name":"Yukon","item":"https://catchtales.com/fishing-in-canada/yukon/"}]
-  }
-  </script>
+  .region-list { display:flex; flex-direction:column; gap:8px; }
+  .region-item { display:flex; align-items:center; gap:12px; padding:clamp(10px,1.5vw,14px); background:rgba(14,20,34,0.5); border:1px solid rgba(255,255,255,0.06); border-radius:12px; margin-bottom:8px; text-decoration:none; transition:all .2s; min-height:44px; }
+  .region-item:hover { border-color: var(--clr); transform: translateX(4px); background: rgba(14,20,34,0.7); }
+  .region-item .dot { width:14px; height:14px; border-radius:50%; flex-shrink:0; }
+  .region-item h3 { font-size:clamp(17px,1.6vw,20px); color:var(--clr); }
+  .region-item p { font-size:clamp(14px,1.2vw,15px); color:#99B0CC; }
+  .stats { display:flex; gap:clamp(16px,2.5vw,32px); justify-content:center; flex-wrap:wrap; margin:24px 0; }
+  .stat { text-align:center; }
+  .stat .num { font-size:clamp(26px,4vw,40px); font-weight:800; color:#76FF03; }
+  .stat .lbl { font-size:clamp(12px,1.2vw,14px); color:#99B0CC; }
+  </style>
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
-  <div class="underwater-bg"><img src="/underwater.webp" alt="" class="bg"><div class="overlay"></div>
+  <div class="underwater-bg">
+    <img src="/underwater.webp" alt="" class="bg">
+    <div class="overlay"></div>
     <div class="swim-fish f1"><img src="/tfish1.webp" alt=""></div>
     <div class="swim-fish f2"><img src="/tfish2.webp" alt=""></div>
-    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div></div>
+    <div class="swim-fish f3"><img src="/tfish3.webp" alt=""></div>
+  </div>
   <div class="content">
-    <header><a href="/" class="header-logo"><img src="/catchtales-logo.webp" alt="CatchTales" ></a><button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
-      <nav id="navLinks"><a href="/">Home</a><a href="/features/">Features</a><a href="/fishing-in-canada/">Canada Fishing</a><a href="/fishing-in-united-states/">US Fishing</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav></header>
-    <a href="/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:20px;display:inline-block;min-height:44px;line-height:44px;font-weight:600">&larr; All Provinces</a>
-    <div class="breadcrumb" style="display:flex;flex-wrap:wrap;gap:4px;padding:12px 0 0;position:relative;z-index:3;font-size:15px;"><a href="https://catchtales.com/" style="color:#00BCD4;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Home</a><span style="color:#667;font-size:15px;min-height:44px;display:inline-flex;align-items:center;margin:0 6px;">›</span><a href="https://catchtales.com/fishing-in-canada/" style="color:#00BCD4;text-decoration:none;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Fishing in Canada</a><span style="color:#667;font-size:15px;min-height:44px;display:inline-flex;align-items:center;margin:0 6px;">›</span><span style="color:#99B0CC;font-size:15px;min-height:44px;display:inline-flex;align-items:center;">Fishing in Yukon</span></div>
-<h1>Fishing in Yukon</h1>
-    <p class="subtitle">Click a region to explore top fishing spots, species, and local tips.</p>
-    <p class="note">Yukon is a wilderness fishing destination like no other. The Yukon River produces the world's largest Chinook salmon, while countless lakes and rivers offer Arctic grayling, lake trout, and northern pike in pristine northern wilderness.</p>
-    <div class="stats">
-      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
-      <div class="stat"><div class="num">200+</div><div class="lbl">Spots Listed</div></div>
-      <div class="stat"><div class="num">20+</div><div class="lbl">Species</div></div>
-    </div>
-    <div style="display:flex;gap:clamp(16px,2.5vw,32px);align-items:flex-start;flex-wrap:wrap;justify-content:center;">
-      <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
-        <a href="/images/yukon-topo.jpg"><img loading="lazy" src="/images/yukon-topo.webp" alt="Topographic map of Yukon" style="max-width:100%;height:auto;border-radius:12px;max-height:420px;"></a>
-        <p style="color:#667;font-size:11px;margin-top:4px;">Topographic map — click to view full size</p>
-      </div>
-      <div style="flex:0 1 clamp(260px,35vw,400px);">
-        <a href="/fishing-near/southern-lakes-yukon/" class="region-item" style="--clr:#EF5350;"><span class="dot" style="background:#EF5350;"></span><div><h3>Southern Lakes</h3><p>Watson Lake, Teslin Lake, Frances Lake, Liard River -- Lake trout, northern pike, Arctic grayling</p></div></a>
-        <a href="/fishing-near/whitehorse-area/" class="region-item" style="--clr:#4FC3F7;"><span class="dot" style="background:#4FC3F7;"></span><div><h3>Whitehorse Area</h3><p>Yukon River, Fish Lake, Lake Laberge, Marsh Lake, Tagish -- Chinook salmon, lake trout, grayling</p></div></a>
-        <a href="/fishing-near/kluane-southwest-yukon/" class="region-item" style="--clr:#76FF03;"><span class="dot" style="background:#76FF03;"></span><div><h3>Kluane & Southwest</h3><p>Kluane Lake, Kathleen River, Aishihik Lake, Haines Junction -- Lake trout, rainbow trout, Arctic grayling</p></div></a>
-        <a href="/fishing-near/central-yukon-stewart-pelly/" class="region-item" style="--clr:#FFB74D;"><span class="dot" style="background:#FFB74D;"></span><div><h3>Central Yukon</h3><p>Stewart River, Pelly River, Mayo, Faro -- Chinook salmon, northern pike, Arctic grayling</p></div></a>
-        <a href="/fishing-near/dawson-klondike/" class="region-item" style="--clr:#AB47BC;"><span class="dot" style="background:#AB47BC;"></span><div><h3>Dawson & Klondike</h3><p>Yukon River at Dawson, Klondike River, Dempster Highway, Tombstone -- Chinook salmon, grayling, pike</p></div></a>
-        <a href="/fishing-near/northern-yukon/" class="region-item" style="--clr:#26A69A;"><span class="dot" style="background:#26A69A;"></span><div><h3>Northern Yukon</h3><p>Old Crow, Porcupine River, Peel River, Arctic coast -- Arctic char, Arctic grayling, northern pike</p></div></a>
-      </div>
+    <header>
+      <a href="/" class="header-logo">
+        <img src="/catchtales-logo.webp" alt="CatchTales">
+      </a>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+      <nav id="navLinks"><a href="/">Home</a><a href="/features/">Features</a><a href="/fishing-in-canada/">Canada Fishing</a><a href="/fishing-in-united-states/">US Fishing</a><a href="/blog/">Blog</a><a href="/cloud/">Pro Login</a><a href="/about/">About</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
+    </header>
+    <div class="page-title">
+      <h1>Fishing in Yukon</h1>
+      <p>6 regions &middot; 289 verified fishing spots &middot; 30+ species</p>
     </div>
 
-    <!-- Download -->
+    <div class="stats">
+      <div class="stat"><div class="num">6</div><div class="lbl">Regions</div></div>
+      <div class="stat"><div class="num">289+</div><div class="lbl">Spots Listed</div></div>
+      <div class="stat"><div class="num">30+</div><div class="lbl">Species</div></div>
+    </div>
+
+    <p class="note" style="color:#B0C4DE;font-size:clamp(14px,1.2vw,15px);line-height:1.8;margin-bottom:24px;">Yukon is a wilderness fishing destination like no other. The Yukon River produces the world's largest Chinook salmon, while countless lakes and rivers offer Arctic grayling, lake trout, and northern pike in pristine northern wilderness.</p>
+
+    <div style="position:sticky;top:0;z-index:50;max-width:960px;margin:0 auto;padding:12px 24px 4px;background:rgba(10,22,40,0.9);">
+    <input type="search" id="hubSearch" placeholder="Search Yukon..." autocomplete="off" aria-label="Search Yukon" style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid rgba(0,188,212,0.3);background:rgba(14,20,34,0.85);color:#fff;font-size:15px;outline:none;box-sizing:border-box;">
+  </div>
+  <div id="hubResults" style="display:none;padding:8px 24px 24px;position:relative;z-index:40;"></div>
+
+    <div style="display:flex;gap:clamp(16px,2.5vw,32px);flex-wrap:wrap;justify-content:center;margin-bottom:24px;">
+    <div style="flex:0 1 clamp(280px,40vw,450px);text-align:center;">
+      <p style="color:#667;font-size:13px;">Pick a region below to explore its fishing spots.</p>
+    </div>
+    <div style="flex:0 1 clamp(260px,35vw,400px);">
+      <div class="region-list" id="regionListWrap">
+<a href="/fishing-near/central-yukon-stewart-pelly/" class="region-item" style="--clr:#EF5350;"><span class="dot" style="background:#EF5350;"></span><div><h3>Central Yukon</h3><p>Stewart River, Pelly River, Mayo Lake, McQuesten River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/dawson-klondike/" class="region-item" style="--clr:#CE93D8;"><span class="dot" style="background:#CE93D8;"></span><div><h3>Dawson &amp; Klondike</h3><p>Yukon River, Klondike River, Bonanza Creek, Eldorado Creek</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">59 spots</p></div></a>
+<a href="/fishing-near/kluane-southwest-yukon/" class="region-item" style="--clr:#81C784;"><span class="dot" style="background:#81C784;"></span><div><h3>Kluane &amp; Southwest Yukon</h3><p>Kluane Lake, Kathleen River, Aishihik Lake, Dezadeash Lake</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">40 spots</p></div></a>
+<a href="/fishing-near/northern-yukon/" class="region-item" style="--clr:#7986CB;"><span class="dot" style="background:#7986CB;"></span><div><h3>Northern Yukon</h3><p>Old Crow River, Porcupine River, Peel River, Firth River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">42 spots</p></div></a>
+<a href="/fishing-near/southern-lakes-yukon/" class="region-item" style="--clr:#FF8A65;"><span class="dot" style="background:#FF8A65;"></span><div><h3>Southern Lakes Region</h3><p>Teslin Lake, Watson Lake, Frances Lake, Liard River</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">48 spots</p></div></a>
+<a href="/fishing-near/whitehorse-area/" class="region-item" style="--clr:#FFB74D;"><span class="dot" style="background:#FFB74D;"></span><div><h3>Whitehorse Area</h3><p>Yukon River, Fish Lake, Lake Laberge, Marsh Lake</p><p style="color:#76FF03;font-size:12px;margin-top:2px;">60 spots</p></div></a>
+      </div>
+    </div>
+    </div>
+            <!-- Download -->
     <div class="download">
       <h2>Get CatchTales</h2>
       <p>Ready to start bragging? Download the app and hit the water.</p>
       <div class="download-buttons">
-        <a href="/download/CatchTales-v2.14.64-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.64-pro.apk" style="color:#003544;">Download Pro v2.14.64</a>
-        <a href="/download/CatchTales-v2.14.64-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.64-free.apk" style="color:#00BCD4;">Download Free v2.14.64</a>
+        <a href="/download/CatchTales-v2.14.76-pro.apk" class="btn btn-primary" download="CatchTales-v2.14.76-pro.apk" style="color:#003544;">Download Pro v2.14.76</a>
+        <a href="/download/CatchTales-v2.14.76-free.apk" class="btn btn-secondary" download="CatchTales-v2.14.76-free.apk" style="color:#00BCD4;">Download Free v2.14.76</a>
       </div>
-      <p class="version-note">Free version available — upgrade to Pro for $8.99/year or $19.99 lifetime (CAD).</p>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https://catchtales.com/download/CatchTales-v2.14.68-free.apk" alt="Scan to download CatchTales Free" style="display:block;margin:16px auto 0;border-radius:12px;">
     
-
 <footer>
       <div class="links">
         <a href="/contact/">Contact</a>
@@ -133,9 +165,37 @@
       </div>
       <p class="copy">&copy; 2026 Maison Louis Design &mdash; Designed for anglers everywhere</p></footer>
   </div>
-
   <script>
-
+const HUB_DATA = [{"slug": "central-yukon-stewart-pelly", "title": "Central Yukon", "subtitle": "", "spots": [{"n": "Stewart River", "d": "Stewart River area, Silver Trail", "s": "Arctic Grayling, Chum Salmon"}, {"n": "Pelly River", "d": "Pelly River area, Campbell Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Mayo Lake", "d": "Mayo Lake area, near Mayo", "s": "Lake Trout, Northern Pike"}, {"n": "McQuesten River", "d": "McQuesten River area, near Mayo", "s": "Arctic Grayling, Northern Pike"}, {"n": "Minto Lake", "d": "Minto Lake area, near Minto", "s": "Lake Trout, Northern Pike"}, {"n": "Faro Area Lakes", "d": "Faro area, Campbell Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Anvil Lake", "d": "Anvil Lake area, near Faro", "s": "Arctic Grayling, Lake Trout"}, {"n": "Ross River", "d": "Ross River area, Campbell Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "South Macmillan River", "d": "South Macmillan River area, central Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "North Macmillan River", "d": "North Macmillan River area, central Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Stewart Crossing", "d": "Stewart Crossing area, Silver Trail", "s": "Arctic Grayling, Chinook Salmon"}, {"n": "Henderson Lake", "d": "Henderson Lake area, near Mayo", "s": "Lake Trout, Northern Pike"}, {"n": "Braeburn Lake", "d": "Braeburn Lake area, Klondike Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Nordenskiold River", "d": "Nordenskiold River area, Klondike Highway", "s": "Arctic Grayling"}, {"n": "Big Salmon River", "d": "Big Salmon River area, central Yukon", "s": "Arctic Grayling, Chinook Salmon"}, {"n": "Turnback Lake", "d": "Turnback Lake area, near Stewart River", "s": "Lake Trout, Northern Pike"}, {"n": "Lansing Lake", "d": "Lansing Lake area, near Mayo", "s": "Lake Trout, Northern Pike"}, {"n": "Ethel Lake", "d": "Ethel Lake area, near Mayo", "s": "Lake Trout, Northern Pike"}, {"n": "Margaret Lake", "d": "Margaret Lake area, central Yukon", "s": "Arctic Grayling, Lake Trout"}, {"n": "Moosehide Lake", "d": "Moosehide Lake area, near Stewart River", "s": "Lake Trout, Northern Pike"}, {"n": "Wolverine Lake", "d": "Wolverine Lake area, near Faro", "s": "Lake Trout, Northern Pike"}, {"n": "Hewitt Lake", "d": "Hewitt Lake area, near Mayo", "s": "Lake Trout, Northern Pike"}, {"n": "Earn Lake", "d": "Earn Lake area, near Mayo", "s": "Arctic Grayling, Lake Trout"}, {"n": "Duncan Creek", "d": "Duncan Creek area, near Mayo", "s": "Arctic Grayling"}, {"n": "Tatchun Creek", "d": "Tatchun Creek area, near Pelly Crossing", "s": "Arctic Grayling"}, {"n": "Pelly Crossing", "d": "Pelly Crossing area, Klondike Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Hootalinqua River", "d": "Hootalinqua River area, central Yukon", "s": "Arctic Grayling"}, {"n": "Nisling River", "d": "Nisling River area, central Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Albert Creek", "d": "Albert Creek area, near Stewart River", "s": "Arctic Grayling"}, {"n": "Minto Lake", "d": "Minto Lake area, south basin", "s": "Lake Trout, Northern Pike"}, {"n": "Duo Lake", "d": "Duo Lake, Yukon", "s": ""}, {"n": "Jackfish Lake", "d": "Jackfish Lake, Yukon", "s": ""}, {"n": "Toobally Lake", "d": "Toobally Lake, Yukon", "s": ""}, {"n": "Annie Lake", "d": "Annie Lake, Yukon", "s": ""}, {"n": "Antler Lake", "d": "Antler Lake, Yukon", "s": ""}, {"n": "Arrowhead Lake", "d": "Arrowhead Lake, Yukon", "s": ""}, {"n": "Askin Lake", "d": "Askin Lake, Yukon", "s": ""}, {"n": "Àtagwêx'i Âyi", "d": "Àtagwêx'i Âyi, Yukon", "s": ""}, {"n": "Atlin Lake", "d": "Atlin Lake, Yukon", "s": ""}, {"n": "Atthilu Lake", "d": "Atthilu Lake, Yukon", "s": ""}]}, {"slug": "dawson-klondike", "title": "Dawson & Klondike", "subtitle": "", "spots": [{"n": "Yukon River", "d": "Dawson City area", "s": "Chinook Salmon"}, {"n": "Klondike River", "d": "Klondike River area, near Dawson", "s": "Arctic Grayling, Chinook Salmon"}, {"n": "Bonanza Creek", "d": "Bonanza Creek area, Klondike Valley", "s": "Arctic Grayling"}, {"n": "Eldorado Creek", "d": "Eldorado Creek area, Klondike Valley", "s": "Arctic Grayling"}, {"n": "Hunker Creek", "d": "Hunker Creek area, Klondike Valley", "s": "Arctic Grayling"}, {"n": "Dominion Creek", "d": "Dominion Creek area, Klondike Valley", "s": "Arctic Grayling"}, {"n": "Sulphur River", "d": "Sulphur River area, near Dawson", "s": "Arctic Grayling"}, {"n": "Fortymile River", "d": "Fortymile River area, near US border", "s": "Arctic Grayling, Chinook Salmon"}, {"n": "Sixtymile River", "d": "Sixtymile River area, near Dawson", "s": "Arctic Grayling, Northern Pike"}, {"n": "Chandindu River", "d": "Chandindu River area, north of Dawson", "s": "Arctic Grayling"}, {"n": "Blackstone River", "d": "Blackstone River area, Dempster Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Tombstone Mountain Area", "d": "Tombstone Territorial Park, Dempster Highway", "s": "Arctic Grayling"}, {"n": "North Klondike River", "d": "North Klondike River area, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Chapman Lake", "d": "Chapman Lake area, Dempster Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Ogilvie River", "d": "Ogilvie River area, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Eagle Plains Area", "d": "Eagle Plains, Dempster Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Rock River", "d": "Rock River area, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Hart River", "d": "Hart River area, north of Dawson", "s": "Arctic Grayling, Northern Pike"}, {"n": "Whitestone River", "d": "Whitestone River area, near Dawson", "s": "Arctic Grayling"}, {"n": "Crooked Creek", "d": "Crooked Creek area, Klondike region", "s": "Klondike"}, {"n": "Moose Creek", "d": "Moose Creek area, Klondike Valley", "s": "Klondike"}, {"n": "Quartz Creek", "d": "Quartz Creek area, Klondike Valley", "s": "Klondike"}, {"n": "Little Salmon River", "d": "Little Salmon River area, near Dawson", "s": "Klondike"}, {"n": "Coal Creek", "d": "Coal Creek area, near Dawson", "s": "Klondike"}, {"n": "Swede Creek", "d": "Swede Creek area, near Dawson", "s": "Arctic Grayling"}, {"n": "Berry Creek", "d": "Berry Creek area, Klondike Valley", "s": "Arctic Grayling"}, {"n": "Dawson Harbour", "d": "Moosehide area, near Dawson", "s": "Moosehide"}, {"n": "Crocus Bluff", "d": "Crocus Bluff area, Yukon River", "s": "Arctic Grayling, Chinook Salmon"}, {"n": "Midnight Dome", "d": "Midnight Dome area, Dawson City", "s": "Arctic Grayling"}, {"n": "Scroggie Creek", "d": "Scroggie Creek area, north of Dawson", "s": "Arctic Grayling, Northern Pike"}, {"n": "Barlow Lake", "d": "Barlow Lake, Yukon", "s": ""}, {"n": "Big Kalzas Lake", "d": "Big Kalzas Lake, Yukon", "s": ""}, {"n": "Canyon Lake", "d": "Canyon Lake, Yukon", "s": ""}, {"n": "Coghlan Lake", "d": "Coghlan Lake, Yukon", "s": ""}, {"n": "Crystal Lake", "d": "Crystal Lake, Yukon", "s": ""}, {"n": "Diamain Lake", "d": "Diamain Lake, Yukon", "s": ""}, {"n": "Dogpack Lake", "d": "Dogpack Lake, Yukon", "s": ""}, {"n": "Drury Lake", "d": "Drury Lake, Yukon", "s": ""}, {"n": "Ess Lake", "d": "Ess Lake, Yukon", "s": ""}, {"n": "Fairweather Lake", "d": "Fairweather Lake, Yukon", "s": ""}, {"n": "Frenchman Lake", "d": "Frenchman Lake, Yukon", "s": ""}, {"n": "Glenlyon Lake", "d": "Glenlyon Lake, Yukon", "s": ""}, {"n": "Hungry Lake", "d": "Hungry Lake, Yukon", "s": ""}, {"n": "Janet Lake", "d": "Janet Lake, Yukon", "s": ""}, {"n": "Kloo Lake", "d": "Kloo Lake, Yukon", "s": ""}, {"n": "Little Braeburn Lake", "d": "Little Braeburn Lake, Yukon", "s": ""}, {"n": "Mandanna Lake", "d": "Mandanna Lake, Yukon", "s": ""}, {"n": "Moose Lake", "d": "Moose Lake, Yukon", "s": ""}, {"n": "North Lakes", "d": "North Lakes, Yukon", "s": ""}, {"n": "Pickhandle Lake", "d": "Pickhandle Lake, Yukon", "s": ""}, {"n": "Polecat Lake", "d": "Polecat Lake, Yukon", "s": ""}, {"n": "Stevens Lake", "d": "Stevens Lake, Yukon", "s": ""}, {"n": "Stokes Lake", "d": "Stokes Lake, Yukon", "s": ""}, {"n": "Sulphur Lake", "d": "Sulphur Lake, Yukon", "s": ""}, {"n": "Tay Lake", "d": "Tay Lake, Yukon", "s": ""}, {"n": "Tchawsahmon Lake", "d": "Tchawsahmon Lake, Yukon", "s": ""}, {"n": "Ten Mile Lake", "d": "Ten Mile Lake, Yukon", "s": ""}, {"n": "Twin Lakes", "d": "Twin Lakes, Yukon", "s": ""}, {"n": "Wellesley Lake", "d": "Wellesley Lake, Yukon", "s": ""}]}, {"slug": "kluane-southwest-yukon", "title": "Kluane & Southwest Yukon", "subtitle": "", "spots": [{"n": "Kluane Lake", "d": "Kluane Lake area, Alaska Highway", "s": "Arctic Grayling, Lake Trout"}, {"n": "Kathleen River", "d": "Kathleen River area, near Haines Junction", "s": "Arctic Grayling"}, {"n": "Aishihik Lake", "d": "Aishihik Lake area, west of Haines Junction", "s": "Lake Trout, Northern Pike"}, {"n": "Dezadeash Lake", "d": "Dezadeash Lake area, near Haines Junction", "s": "Arctic Grayling, Lake Trout"}, {"n": "Pine Lake", "d": "Pine Lake area, near Kluane National Park", "s": "Kluane"}, {"n": "Sockeye Lake", "d": "Sockeye Lake area, Kluane region", "s": "Arctic Grayling, Rainbow Trout, Sockeye Salmon"}, {"n": "Bates Lake", "d": "Bates Lake area, Kluane region", "s": "Arctic Grayling, Lake Trout"}, {"n": "Mush Lake", "d": "Mush Lake area, Kluane region", "s": "Lake Trout, Northern Pike"}, {"n": "Two Moose Lake", "d": "Two Moose Lake area, near Haines Junction", "s": "Arctic Grayling, Lake Trout"}, {"n": "Dän K'ìge Lake", "d": "Dän K'ìge Lake area, Kluane region", "s": "Lake Trout, Northern Pike"}, {"n": "Hutchi Lakes", "d": "Hutchi Lakes area, near Haines Junction", "s": "Arctic Grayling, Lake Trout"}, {"n": "Mendenhall River", "d": "Mendenhall River area, Kluane region", "s": "Kluane"}, {"n": "Jarvis River", "d": "Jarvis River area, Kluane region", "s": "Arctic Grayling"}, {"n": "Brooks Arm", "d": "Brooks Arm area, Kluane Lake", "s": "Arctic Grayling, Lake Trout"}, {"n": "Destruction Bay", "d": "Destruction Bay, Kluane Lake", "s": "Lake Trout"}, {"n": "Silver City", "d": "Silver City area, Kluane Lake", "s": "Arctic Grayling, Lake Trout"}, {"n": "Burwash Landing", "d": "Burwash Landing, Kluane Lake", "s": "Lake Trout, Northern Pike"}, {"n": "Kluane River", "d": "Kluane River area, Kluane Lake outlet", "s": "Arctic Grayling"}, {"n": "Duke River", "d": "Duke River area, Kluane region", "s": "Arctic Grayling"}, {"n": "Tincup Lake", "d": "Tincup Lake area, Kluane region", "s": "Arctic Grayling, Lake Trout"}, {"n": "Gladstone Lake", "d": "Gladstone Lake area, near Haines Junction", "s": "Lake Trout"}, {"n": "Pickhandle Lakes", "d": "Pickhandle Lakes area, Kluane region", "s": "Lake Trout, Northern Pike"}, {"n": "Sekulmun Lake", "d": "Sekulmun Lake area, Kluane region", "s": "Lake Trout, Northern Pike"}, {"n": "Onion Lake", "d": "Onion Lake area, near Haines Junction", "s": "Yukon"}, {"n": "Congdon Creek", "d": "Congdon Creek area, Kluane Lake", "s": "Arctic Grayling"}, {"n": "St. Elias Lake", "d": "St. Elias Lake area, Kluane region", "s": "Lake Trout"}, {"n": "Quill Creek", "d": "Quill Creek area, Kluane region", "s": "Arctic Grayling"}, {"n": "Slims River", "d": "Slims River area, Kluane National Park", "s": "Arctic Grayling"}, {"n": "Alsek River", "d": "Alsek River area, Kluane region", "s": "Arctic Grayling, Sockeye Salmon"}, {"n": "Tatshenshini River", "d": "Tatshenshini River area, Kluane region", "s": "Arctic Grayling, Salmon"}, {"n": "{1}útsaw Lake", "d": "{1}útsaw Lake, Yukon", "s": ""}, {"n": "Airdrop Lake", "d": "Airdrop Lake, Yukon", "s": ""}, {"n": "Airplane Lake", "d": "Airplane Lake, Yukon", "s": ""}, {"n": "Algae Lake", "d": "Algae Lake, Yukon", "s": ""}, {"n": "Allegretto Lake", "d": "Allegretto Lake, Yukon", "s": ""}, {"n": "Allen Lake", "d": "Allen Lake, Yukon", "s": ""}, {"n": "Alligator Lake", "d": "Alligator Lake, Yukon", "s": ""}, {"n": "Almost Lake", "d": "Almost Lake, Yukon", "s": ""}, {"n": "Anderson Lake", "d": "Anderson Lake, Yukon", "s": ""}, {"n": "Angel Lake", "d": "Angel Lake, Yukon", "s": ""}]}, {"slug": "northern-yukon", "title": "Northern Yukon", "subtitle": "", "spots": [{"n": "Old Crow River", "d": "Old Crow area, northern Yukon", "s": "Arctic Char, Arctic Grayling"}, {"n": "Porcupine River", "d": "Porcupine River area, northern Yukon", "s": "Arctic Grayling, Chum Salmon, Northern Pike"}, {"n": "Peel River", "d": "Peel River area, northern Yukon", "s": "Arctic Grayling, Eel, Lake Trout, Northern Pike"}, {"n": "Firth River", "d": "Firth River area, Ivvavik National Park", "s": "Arctic Char, Arctic Grayling"}, {"n": "Bell River", "d": "Bell River area, northern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Rat River", "d": "Rat River area, northern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Bonnet Plume River", "d": "Bonnet Plume River area, Peel watershed", "s": "Arctic Grayling, Eel, Northern Pike"}, {"n": "Wind River", "d": "Wind River area, Peel watershed", "s": "Arctic Grayling, Eel, Northern Pike"}, {"n": "Snake River", "d": "Snake River area, Peel watershed", "s": "Arctic Grayling, Eel, Northern Pike"}, {"n": "Hart River", "d": "Hart River area, Peel watershed", "s": "Arctic Grayling, Northern Pike"}, {"n": "Ogilvie River", "d": "Ogilvie River area, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Blackstone Uplands", "d": "Blackstone Uplands, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Engineer Creek", "d": "Engineer Creek area, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Trail River", "d": "Trail River area, Dempster Highway", "s": "Arctic Grayling"}, {"n": "Driftwood River", "d": "Driftwood River area, northern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Whitefish Lake", "d": "Whitefish Lake area, Old Crow Flats", "s": "Yukon"}, {"n": "Duck Lake", "d": "Duck Lake area, Old Crow Flats", "s": "Yukon"}, {"n": "Schooner Lake", "d": "Schooner Lake area, northern Yukon", "s": "Arctic Char, Northern Pike"}, {"n": "Clarence Lake", "d": "Clarence Lake area, northern Yukon", "s": "Arctic Char, Lake Trout"}, {"n": "Fishing Branch River", "d": "Fishing Branch River area, northern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Miner River", "d": "Miner River area, northern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Blow River", "d": "Blow River area, northern Yukon", "s": "Arctic Char, Arctic Grayling"}, {"n": "Babbage River", "d": "Babbage River area, northern Yukon coast", "s": "Arctic Char, Arctic Grayling"}, {"n": "Malcolm River", "d": "Malcolm River area, Ivvavik National Park", "s": "Arctic Char"}, {"n": "Herschel Island", "d": "Herschel Island area, Beaufort Sea coast", "s": "Arctic Char"}, {"n": "Shingle Point", "d": "Shingle Point area, Beaufort Sea", "s": "Arctic Char"}, {"n": "Komakuk Beach", "d": "Komakuk Beach area, northern coast", "s": "Arctic Char"}, {"n": "Pauline Cove", "d": "Pauline Cove, Herschel Island", "s": "Arctic Char, Cod"}, {"n": "Stokes Point", "d": "Stokes Point area, northern coast", "s": "Arctic Char"}, {"n": "Kay Point", "d": "Kay Point area, northern coast", "s": "Arctic Char, Arctic Grayling"}, {"n": "Running River", "d": "Running River area, northern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Whitestone River", "d": "Whitestone River area, northern Yukon", "s": "Arctic Grayling"}, {"n": "Bonnet Plume Lake", "d": "Bonnet Plume Lake, Yukon", "s": ""}, {"n": "Divide Lake", "d": "Divide Lake, Yukon", "s": ""}, {"n": "Emerald Lake", "d": "Emerald Lake, Yukon", "s": ""}, {"n": "Fairchild Lake", "d": "Fairchild Lake, Yukon", "s": ""}, {"n": "Gillespie Lake", "d": "Gillespie Lake, Yukon", "s": ""}, {"n": "Ladue Lake", "d": "Ladue Lake, Yukon", "s": ""}, {"n": "McQuesten Lake", "d": "McQuesten Lake, Yukon", "s": ""}, {"n": "Pinguicula Lake", "d": "Pinguicula Lake, Yukon", "s": ""}, {"n": "Swan Lake", "d": "Swan Lake, Yukon", "s": ""}, {"n": "Willow Lake", "d": "Willow Lake, Yukon", "s": ""}]}, {"slug": "southern-lakes-yukon", "title": "Southern Lakes Region", "subtitle": "", "spots": [{"n": "Teslin Lake", "d": "Teslin area, Alaska Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Watson Lake", "d": "Watson Lake area", "s": "Arctic Grayling, Northern Pike"}, {"n": "Frances Lake", "d": "Frances Lake area, Campbell Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Liard River", "d": "Liard River area, Alaska Highway", "s": "Northern Pike"}, {"n": "Rancheria River", "d": "Rancheria area, Alaska Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Coal River", "d": "Coal River area, Alaska Highway", "s": "Arctic Grayling, Northern Pike"}, {"n": "Smith River", "d": "Smith River area, southeastern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Dease Lake Area", "d": "Dease Lake area, near BC border", "s": "Yukon reach"}, {"n": "Lower Post River", "d": "Lower Post area, Liard River", "s": "Arctic Grayling, Northern Pike"}, {"n": "Hyland River", "d": "Hyland River area, near Watson Lake", "s": "Arctic Grayling, Northern Pike"}, {"n": "Simpson Lake", "d": "Simpson Lake area, near Watson Lake", "s": "Lake Trout, Northern Pike"}, {"n": "Upper Liard River", "d": "Upper Liard area, near Watson Lake", "s": "Arctic Grayling, Northern Pike"}, {"n": "La Biche River", "d": "La Biche River area, southeastern Yukon", "s": "Arctic Grayling, Northern Pike"}, {"n": "Tatchun Lake", "d": "Tatchun Lake area, Campbell Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Little Salmon Lake", "d": "Little Salmon Lake area, Campbell Highway", "s": "Arctic Grayling, Lake Trout, Salmon"}, {"n": "Big Salmon Lake", "d": "Big Salmon Lake area, central Yukon", "s": "Lake Trout, Northern Pike, Salmon"}, {"n": "Quiet Lake", "d": "Quiet Lake area, Campbell Highway", "s": "Arctic Grayling, Lake Trout"}, {"n": "Squanga Lake", "d": "Squanga Lake area, Alaska Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Marsh Lake", "d": "Marsh Lake area, Alaska Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Tagish Lake", "d": "Tagish Lake area, south of Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Bennett Lake", "d": "Bennett Lake area, near BC border", "s": "Arctic Grayling, Lake Trout"}, {"n": "Lindeman Lake", "d": "Lindeman Lake area, Chilkoot Trail", "s": "Lake Trout"}, {"n": "Lake Laberge", "d": "Lake Laberge area, south end", "s": "Lake Trout, Northern Pike"}, {"n": "Caribou Lake", "d": "Caribou Lake area, near Teslin", "s": "Yukon"}, {"n": "Wann River", "d": "Wann River area, near Watson Lake", "s": "Arctic Grayling, Northern Pike"}, {"n": "Morrison River", "d": "Morrison River area, near Teslin", "s": "Arctic Grayling, Northern Pike"}, {"n": "Hayes Lake", "d": "Hayes Lake area, near Watson Lake", "s": "Lake Trout, Northern Pike"}, {"n": "River Lake", "d": "River Lake area, near Teslin", "s": "Lake Trout, Northern Pike"}, {"n": "Nisutlin River", "d": "Nisutlin River area, near Teslin", "s": "Arctic Grayling, Northern Pike"}, {"n": "Blind Lake", "d": "Blind Lake area, near Watson Lake", "s": "Northern Pike"}, {"n": "Bruce Lake", "d": "Bruce Lake, Yukon", "s": ""}, {"n": "Coffee Lake", "d": "Coffee Lake, Yukon", "s": ""}, {"n": "Daughney Lake", "d": "Daughney Lake, Yukon", "s": ""}, {"n": "Dragon Lake", "d": "Dragon Lake, Yukon", "s": ""}, {"n": "Finlayson Lake", "d": "Finlayson Lake, Yukon", "s": ""}, {"n": "Fire Lake", "d": "Fire Lake, Yukon", "s": ""}, {"n": "Fortin Lake", "d": "Fortin Lake, Yukon", "s": ""}, {"n": "Frank Lake", "d": "Frank Lake, Yukon", "s": ""}, {"n": "Hour Lake", "d": "Hour Lake, Yukon", "s": ""}, {"n": "Lucky Lake", "d": "Lucky Lake, Yukon", "s": ""}, {"n": "McEvoy Lake", "d": "McEvoy Lake, Yukon", "s": ""}, {"n": "McPherson Lake", "d": "McPherson Lake, Yukon", "s": ""}, {"n": "Morley Lake", "d": "Morley Lake, Yukon", "s": ""}, {"n": "Sambo Lake", "d": "Sambo Lake, Yukon", "s": ""}, {"n": "Tillei Lake", "d": "Tillei Lake, Yukon", "s": ""}, {"n": "Veronica Lake", "d": "Veronica Lake, Yukon", "s": ""}, {"n": "Wolf Lake", "d": "Wolf Lake, Yukon", "s": ""}, {"n": "Wye Lake Park", "d": "Wye Lake Park, Yukon", "s": ""}]}, {"slug": "whitehorse-area", "title": "Whitehorse Area", "subtitle": "", "spots": [{"n": "Yukon River", "d": "Whitehorse area", "s": "Arctic Grayling, Chinook Salmon, Chum Salmon"}, {"n": "Fish Lake", "d": "Fish Lake Road, near Whitehorse", "s": "Arctic Grayling, Lake Trout"}, {"n": "Lake Laberge", "d": "Lake Laberge area, north of Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Marsh Lake", "d": "Marsh Lake area, Alaska Highway", "s": "Lake Trout, Northern Pike"}, {"n": "Tagish Lake", "d": "Tagish Lake area, south of Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Schwatka Lake", "d": "Whitehorse, below dam", "s": "Arctic Grayling, Rainbow Trout"}, {"n": "Kusawa Lake", "d": "Kusawa Lake area, west of Whitehorse", "s": "Arctic Grayling, Lake Trout"}, {"n": "Takhini River", "d": "Takhini River area, near Whitehorse", "s": "Arctic Grayling, Northern Pike"}, {"n": "McIntyre Creek", "d": "Whitehorse", "s": "Arctic Grayling"}, {"n": "Porter Creek", "d": "Whitehorse", "s": "Arctic Grayling"}, {"n": "Little River", "d": "Little River area, near Whitehorse", "s": "Arctic Grayling, Northern Pike"}, {"n": "Lewes Lake", "d": "Lewes Lake area, near Marsh Lake", "s": "Lake Trout, Northern Pike"}, {"n": "Fox Lake", "d": "Fox Lake area, north of Whitehorse", "s": "Yukon"}, {"n": "M'Clintock Lake", "d": "M'Clintock Lake area, near Whitehorse", "s": "Arctic Grayling, Lake Trout"}, {"n": "Canol Road Lakes", "d": "Canol Road area, near Ross River", "s": "Lake Trout, Northern Pike"}, {"n": "Braeburn Lake", "d": "Braeburn Lake area, north of Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Kusawa River", "d": "Kusawa River area, near Kusawa Lake", "s": "Arctic Grayling"}, {"n": "Takwahoni Lake", "d": "Takwahoni Lake area, near Marsh Lake", "s": "Lake Trout, Northern Pike"}, {"n": "Watson River", "d": "Watson River area, near Tagish", "s": "Arctic Grayling"}, {"n": "Wheaton River", "d": "Wheaton River area, near Carcross", "s": "Arctic Grayling"}, {"n": "Carcross River", "d": "Carcross area", "s": "Arctic Grayling"}, {"n": "Nares Lake", "d": "Nares Lake area, near Carcross", "s": "Lake Trout, Northern Pike"}, {"n": "Spirit Lake", "d": "Spirit Lake area, near Carcross", "s": "Yukon"}, {"n": "Alligator Lake", "d": "Alligator Lake area, south of Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Mendenhall Lake", "d": "Mendenhall Lake area, near Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Robinson Lake", "d": "Robinson Lake area, near Whitehorse", "s": "Lake Trout"}, {"n": "Primrose River", "d": "Primrose River area, near Carcross", "s": "Arctic Grayling"}, {"n": "Annie Lake", "d": "Annie Lake area, south of Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Dorsey Lake", "d": "Dorsey Lake area, near Whitehorse", "s": "Lake Trout"}, {"n": "Haeckel Lake", "d": "Haeckel Lake area, near Whitehorse", "s": "Lake Trout, Northern Pike"}, {"n": "Atlin Lake", "d": "Atlin Lake, Yukon", "s": ""}, {"n": "Chadburn Lake", "d": "Chadburn Lake, Yukon", "s": ""}, {"n": "Chadden Lake", "d": "Chadden Lake, Yukon", "s": ""}, {"n": "Crag Lake", "d": "Crag Lake, Yukon", "s": ""}, {"n": "Dalayee Lake", "d": "Dalayee Lake, Yukon", "s": ""}, {"n": "Granite Lake", "d": "Granite Lake, Yukon", "s": ""}, {"n": "Hidden Lakes", "d": "Hidden Lakes, Yukon", "s": ""}, {"n": "Howard Lake", "d": "Howard Lake, Yukon", "s": ""}, {"n": "Ibex Lake", "d": "Ibex Lake, Yukon", "s": ""}, {"n": "Kathleen Lake", "d": "Kathleen Lake, Yukon", "s": ""}, {"n": "Klukshu Lake", "d": "Klukshu Lake, Yukon", "s": ""}, {"n": "Kookatsoon Lake", "d": "Kookatsoon Lake, Yukon", "s": ""}, {"n": "Little Atlin Lake", "d": "Little Atlin Lake, Yukon", "s": ""}, {"n": "Little Teslin Lake", "d": "Little Teslin Lake, Yukon", "s": ""}, {"n": "Long Lake", "d": "Long Lake, Yukon", "s": ""}, {"n": "Louise Lake", "d": "Louise Lake, Yukon", "s": ""}, {"n": "Lower Snafu Lake", "d": "Lower Snafu Lake, Yukon", "s": ""}, {"n": "McLean Lake", "d": "McLean Lake, Yukon", "s": ""}, {"n": "Michie Lake", "d": "Michie Lake, Yukon", "s": ""}, {"n": "Moraine Lake", "d": "Moraine Lake, Yukon", "s": ""}, {"n": "Partridge Lake", "d": "Partridge Lake, Yukon", "s": ""}, {"n": "Pleasant Lake", "d": "Pleasant Lake, Yukon", "s": ""}, {"n": "Rainbow Lake", "d": "Rainbow Lake, Yukon", "s": ""}, {"n": "Sandy Lake", "d": "Sandy Lake, Yukon", "s": ""}, {"n": "Scout Lake", "d": "Scout Lake, Yukon", "s": ""}, {"n": "Summit Lake", "d": "Summit Lake, Yukon", "s": ""}, {"n": "Tarfu Lake", "d": "Tarfu Lake, Yukon", "s": ""}, {"n": "Taye Lake", "d": "Taye Lake, Yukon", "s": ""}, {"n": "Teenah Lake", "d": "Teenah Lake, Yukon", "s": ""}, {"n": "Upper Snafu Lake", "d": "Upper Snafu Lake, Yukon", "s": ""}]}];
+const searchInput = document.getElementById('hubSearch');
+const resultsDiv = document.getElementById('hubResults');
+const regionWrap = document.getElementById('regionListWrap');
+function anchorOf(name) { return name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60); }
+function escT(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+searchInput.addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  if (!q) { resultsDiv.style.display='none'; resultsDiv.innerHTML=''; regionWrap.style.display=''; return; }
+  const mRegions = [], mSpots = [];
+  for (const r of HUB_DATA) {
+    if (r.title.toLowerCase().includes(q) || r.subtitle.toLowerCase().includes(q)) mRegions.push(r);
+    for (const sp of r.spots) {
+      if (sp.n.toLowerCase().includes(q) || sp.s.toLowerCase().includes(q) || sp.d.toLowerCase().includes(q)) mSpots.push({r:r, sp:sp});
+    }
+  }
+  regionWrap.style.display='none'; resultsDiv.style.display='';
+  let html = '<h3 style="color:#76FF03;font-size:15px;margin:10px 0 6px;">' + mRegions.length + ' Region' + (mRegions.length===1?'':'s') + '</h3>';
+  for (const r of mRegions) html += '<a href="/fishing-near/' + r.slug + '/" style="display:block;padding:10px 14px;background:rgba(14,20,34,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:6px;color:#00BCD4;text-decoration:none;font-weight:600;">' + escT(r.title) + '</a>';
+  html += '<h3 style="color:#76FF03;font-size:15px;margin:12px 0 6px;">' + mSpots.length + ' Spot' + (mSpots.length===1?'':'s') + '</h3>';
+  for (const it of mSpots) {
+    const anchor = anchorOf(it.sp.n);
+    html += '<a href="/fishing-near/' + it.r.slug + '/#spot-' + anchor + '" style="display:block;padding:10px 14px;background:rgba(14,20,34,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:6px;text-decoration:none;">' +
+      '<span style="color:#fff;font-weight:600;">' + escT(it.sp.n) + '</span> ' +
+      '<span style="color:#76FF03;font-size:13px;">' + escT(it.sp.s) + '</span><br>' +
+      '<span style="color:#99B0CC;font-size:12px;">' + escT(it.r.title) + (it.sp.d ? ' &middot; ' + escT(it.sp.d) : '') + '</span></a>';
+  }
+  if (!mRegions.length && !mSpots.length) html = '<p style="color:#99B0CC;padding:12px 0;">No matches found for &quot;' + escT(q) + '&quot;.</p>';
+  resultsDiv.innerHTML = html;
+});
   </script>
 </body>
 </html>
