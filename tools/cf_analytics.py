@@ -33,8 +33,10 @@ def load_token():
 def snippet(token):
     return (
         f'{BEG}\n'
-        f'<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
-        f'data-cf-beacon=\'{{"sv":"2026-05-13","c":true,"snippet":"{token}"}}\'></script>\n'
+        f'<!-- Cloudflare Web Analytics -->\n'
+        f'<script type=\'module\' src=\'https://static.cloudflareinsights.com/beacon.min.js\' '
+        f'data-cf-beacon=\'{{"token": "{token}"}}\'></script>\n'
+        f'<!-- End Cloudflare Web Analytics -->\n'
         f'{END}\n'
     )
 
