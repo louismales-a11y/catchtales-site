@@ -1,10 +1,10 @@
 {
-  "version": "2.19.17",
-  "tag_name": "v2.19.17",
-  "html_url": "https://catchtales.com/download/",
+  "version": "2.19.19",
+  "tag_name": "v2.19.19",
+  "html_url": "https://github.com/louismales-a11y/catchtales-site/releases/latest",
   "apks": {
-    "free": "/download/CatchTales-v2.19.17-free.apk",
-    "pro": "/download/CatchTales-v2.19.17-pro.apk",
-    "dev": "/download/CatchTales-v2.19.17-dev.apk"
+    "free": "https://github.com/louismales-a11y/catchtales-site/releases/latest/download/CatchTales-v2.19.19-free.apk",
+    "pro": "https://github.com/louismales-a11y/catchtales-site/releases/latest/download/CatchTales-v2.19.19-pro.apk",
+    "dev": "https://github.com/louismales-a11y/catchtales-site/releases/latest/download/CatchTales-v2.19.19-dev.apk"
   }
 }
