@@ -31,6 +31,7 @@ cd "$WORK"
 git filter-repo --invert-paths \
   --path-glob '*.apk' \
   --path-glob '*.mp4' \
+  --path-glob '*-topo.svg' \
   --path download \
   --path images/rod-reel-video \
   --path images/solunar-video \
