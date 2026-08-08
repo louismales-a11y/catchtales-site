@@ -8,12 +8,12 @@
   "theme_color": "#0A1628",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/catchtalesround.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/catchtalesround.png",
       "sizes": "512x512",
       "type": "image/png"
     }
